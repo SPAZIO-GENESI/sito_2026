@@ -150,12 +150,12 @@ function renderPersone(persone: Persona[]) {
   </section>
 
   <!-- Lightbox per immagine intera -->
-  <dialog id="img-lightbox" class="fixed inset-0 z-50 bg-black/80 p-4 max-w-none w-full h-full m-0 flex items-center justify-center backdrop:bg-black/80">
+  <div id="img-lightbox" class="hidden fixed inset-0 z-50 bg-black/80 p-4 items-center justify-center" role="dialog" aria-modal="true" aria-label="Locandina intera">
     <div class="relative max-w-4xl w-full">
       <button id="img-close" class="absolute -top-10 right-0 text-white hover:opacity-80 transition-opacity text-3xl leading-none" aria-label="Chiudi">&times;</button>
       <img src={mostra.immagine} alt={`Locandina intera: ${mostra.titolo}`} class="w-full rounded-lg shadow-2xl" />
     </div>
-  </dialog>
+  </div>
 
   <!-- ② RICONOSCIMENTI + ADESIONI con loghi -->
   <section class="bg-secondary border-b border-border py-4">
@@ -340,11 +340,22 @@ function renderPersone(persone: Persona[]) {
 
 <script>
   const btn = document.getElementById('img-open')
-  const lb = document.getElementById('img-lightbox') as HTMLDialogElement | null
-  const close = document.getElementById('img-close')
+  const lb = document.getElementById('img-lightbox')
+  const closeBtn = document.getElementById('img-close')
 
-  btn?.addEventListener('click', () => lb?.showModal())
-  close?.addEventListener('click', () => lb?.close())
-  lb?.addEventListener('click', (e) => { if (e.target === lb) lb.close() })
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lb?.close() })
+  function openLb() {
+    lb?.classList.remove('hidden')
+    lb?.classList.add('flex')
+    document.body.style.overflow = 'hidden'
+  }
+  function closeLb() {
+    lb?.classList.add('hidden')
+    lb?.classList.remove('flex')
+    document.body.style.overflow = ''
+  }
+
+  btn?.addEventListener('click', openLb)
+  closeBtn?.addEventListener('click', closeLb)
+  lb?.addEventListener('click', (e) => { if (e.target === lb) closeLb() })
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb() })
 </script>
