@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import data from '../../data/artisti.json'
-import { flattenImmagini } from '../../types'
+import { flattenImmagini, extractAbstract } from '../../types'
 import type { Artista } from '../../types'
 import { u } from '../../utils/url'
 
@@ -19,7 +19,6 @@ const artisti: Artista[] = data.artisti
         Artiste e artisti associati a Spazio Genesi ETS, Accademia di Belle Arti dell'Aquila.
       </p>
 
-      <!-- Controlli ordinamento -->
       <div class="flex flex-wrap gap-2" id="sort-controls" role="group" aria-label="Ordina artisti">
         <button data-sort="alpha-asc"
           class="sort-btn px-4 py-2 rounded-full border border-border text-sm font-medium transition-colors bg-accent text-accent-foreground">
@@ -43,11 +42,12 @@ const artisti: Artista[] = data.artisti
 
   <section class="py-20 lg:py-28 bg-background">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div id="artisti-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div id="artisti-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {artisti.map((artista, index) => {
           const immagini = flattenImmagini(artista.img)
           const primaImg = immagini.find(i => i.img)
           const nomeDecoded = decodeURIComponent(artista.nome)
+          const abstract = extractAbstract(artista.bio)
           return (
             <a
               href={u(`/biografie/${artista.cartella}/`)}
@@ -69,9 +69,12 @@ const artisti: Artista[] = data.artisti
                   </div>
                 )}
               </div>
-              <h3 class="text-foreground text-base group-hover:text-accent transition-colors">
+              <h3 class="text-foreground text-base mb-1 group-hover:text-accent transition-colors">
                 {nomeDecoded}
               </h3>
+              <p class="text-xs text-muted-foreground leading-relaxed line-clamp-3">
+                {abstract}
+              </p>
             </a>
           )
         })}
@@ -86,37 +89,30 @@ const artisti: Artista[] = data.artisti
 
   function sortCards(mode: string) {
     const cards = Array.from(grid.querySelectorAll<HTMLElement>('.artista-card'))
-
     cards.sort((a, b) => {
       const nomeA = a.dataset.nome ?? ''
       const nomeB = b.dataset.nome ?? ''
       const idxA = parseInt(a.dataset.index ?? '0')
       const idxB = parseInt(b.dataset.index ?? '0')
-
       if (mode === 'alpha-asc') return nomeA.localeCompare(nomeB, 'it')
       if (mode === 'alpha-desc') return nomeB.localeCompare(nomeA, 'it')
       if (mode === 'storico-asc') return idxA - idxB
       if (mode === 'storico-desc') return idxB - idxA
       return 0
     })
-
     cards.forEach(card => grid.appendChild(card))
   }
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => {
       const mode = btn.dataset.sort!
-
-      // Aggiorna stile bottoni
       buttons.forEach(b => {
         b.className = 'sort-btn px-4 py-2 rounded-full border border-border text-sm font-medium transition-colors text-foreground hover:bg-muted'
       })
       btn.className = 'sort-btn px-4 py-2 rounded-full border border-border text-sm font-medium transition-colors bg-accent text-accent-foreground'
-
       sortCards(mode)
     })
   })
 
-  // Default: alfabetico A→Z all'avvio
   sortCards('alpha-asc')
 </script>

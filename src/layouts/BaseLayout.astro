@@ -3,6 +3,7 @@ import '../styles/global.css'
 import SgHeader from '../components/SgHeader.astro'
 import SgFooter from '../components/SgFooter.astro'
 import Matomo from '../components/Matomo.astro'
+import Tawk from '../components/Tawk.astro'
 import { u } from '../utils/url'
 
 interface Props {
@@ -43,6 +44,7 @@ const canonicalUrl = canonical ?? Astro.url.href
     <meta property="og:type" content="website" />
 
     <Matomo />
+    <Tawk />
   </head>
   <body>
     <SgHeader activePage={activePage} />

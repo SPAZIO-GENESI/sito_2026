@@ -18,15 +18,15 @@ const ultimeInserite = artisti.slice(-3).reverse()
 
   <!-- ① MOSTRA CORRENTE ------------------------------------------------- -->
   <section class="bg-background border-b border-border">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-10 lg:py-14">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-        <!-- Immagine -->
+        <!-- Immagine: ritaglio superiore ~1/3 altezza viewport -->
         <div>
           <img
             src={mostra.immagine}
             alt={`Locandina mostra: ${mostra.titolo}`}
-            class="w-full rounded-lg shadow-lg"
+            class="w-full h-64 lg:h-72 object-cover object-top rounded-lg shadow-lg"
           />
         </div>
 
@@ -91,12 +91,12 @@ const ultimeInserite = artisti.slice(-3).reverse()
           {mostra.rassegna_stampa.length > 0 && (
             <div>
               <h3 class="text-sm font-semibold text-foreground mb-2">Rassegna stampa</h3>
-              <ul class="space-y-1">
-                {mostra.rassegna_stampa.map(art => (
-                  <li>
+              <ul class="space-y-2">
+                {mostra.rassegna_stampa.map((art: { testata: string; titolo: string; url: string }) => (
+                  <li class="text-sm">
                     <a href={art.url} target="_blank" rel="noopener noreferrer"
-                      class="text-sm text-accent hover:opacity-80 transition-opacity underline">
-                      {art.testata}
+                      class="text-accent hover:opacity-80 transition-opacity underline">
+                      <span class="font-semibold">{art.testata}</span> — {art.titolo}
                     </a>
                   </li>
                 ))}
