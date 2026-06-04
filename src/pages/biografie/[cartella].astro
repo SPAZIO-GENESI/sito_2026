@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 import data from '../../data/artisti.json'
 import { flattenImmagini } from '../../types'
 import type { Artista } from '../../types'
+import { u } from '../../utils/url'
 
 export function getStaticPaths() {
   return (data.artisti as Artista[]).map(artista => ({
@@ -14,7 +15,6 @@ export function getStaticPaths() {
 interface Props { artista: Artista }
 const { artista } = Astro.props
 
-const base = import.meta.env.BASE_URL
 const nomeDecoded = decodeURIComponent(artista.nome)
 const immagini = flattenImmagini(artista.img)
 const primaImg = immagini.find(i => i.img)
@@ -34,7 +34,7 @@ const canonicalUrl = `https://spaziogenesi.org/biografie/${artista.cartella}/`
 >
   <div class="bg-background border-b border-border">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
-      <a href={`${base}biografie/`} class="inline-flex items-center gap-2 text-accent font-semibold hover:opacity-80 transition-opacity">
+      <a href={u('/biografie/')} class="inline-flex items-center gap-2 text-accent font-semibold hover:opacity-80 transition-opacity">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
           fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
           aria-hidden="true">
@@ -51,18 +51,12 @@ const canonicalUrl = `https://spaziogenesi.org/biografie/${artista.cartella}/`
 
         <div>
           <h1 class="text-foreground mb-6">{nomeDecoded}</h1>
-
           <div class="regdiv text-justify">
             <Fragment set:html={artista.bio} />
           </div>
-
           <div class="mt-6 space-y-2 regdiv">
             {artista.social && (
-              <p>
-                <a href={artista.social} target="_blank" rel="noopener noreferrer">
-                  {artista.social}
-                </a>
-              </p>
+              <p><a href={artista.social} target="_blank" rel="noopener noreferrer">{artista.social}</a></p>
             )}
             {artista.IG && (
               <p>
@@ -73,7 +67,7 @@ const canonicalUrl = `https://spaziogenesi.org/biografie/${artista.cartella}/`
             )}
             {artista.portfolio && (
               <p>
-                <a href={`${base}biografie/${artista.cartella}/${artista.portfolio}`} target="_blank" rel="noopener noreferrer">
+                <a href={u(`/biografie/${artista.cartella}/${artista.portfolio}`)} target="_blank" rel="noopener noreferrer">
                   {artista.portfolio}
                 </a>
               </p>
@@ -83,15 +77,15 @@ const canonicalUrl = `https://spaziogenesi.org/biografie/${artista.cartella}/`
 
         <div class="space-y-8">
           {immagini.map(img => img.img && (
-            <figure class="img-container">
+            <figure>
               <img
-                src={`${base}biografie/${artista.cartella}/${img.img}`}
+                src={u(`/biografie/${artista.cartella}/${img.img}`)}
                 alt={img.des || nomeDecoded}
                 class="w-full"
                 loading="lazy"
               />
               {img.deslunga && (
-                <figcaption class="regdiv text-justify mt-2 w-100">
+                <figcaption class="regdiv text-justify mt-2">
                   <Fragment set:html={img.deslunga} />
                 </figcaption>
               )}
