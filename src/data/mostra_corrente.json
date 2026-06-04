@@ -5,6 +5,12 @@
   "luogo": "Galleria Commerciale Via Roma, 215 — primo piano, L'Aquila",
   "mappa": "https://maps.app.goo.gl/3JEsBLW5Xx8aE2mj9",
   "immagine": "https://spaziogenesi.org/img/SPAZIO_GENESI_Carezze_sotto_la_pioggia.png",
+  "galleria": [
+    "/assets/media/SPAZIO_GENESI_Carezze_1.jpeg",
+    "/assets/media/SPAZIO_GENESI_Carezze_2.jpeg",
+    "/assets/media/SPAZIO_GENESI_Carezze_3.jpeg",
+    "/assets/media/SPAZIO_GENESI_Carezze_4.jpeg"
+  ],
   "curata_da": { "nome": "Sara Dias", "href": "/biografie/saradias/" },
   "artiste": [
     { "nome": "Francesca Chiola", "href": "/biografie/francescachiola/" },

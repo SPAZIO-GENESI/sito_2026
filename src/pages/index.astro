@@ -133,29 +133,34 @@ function renderPersone(persone: Persona[]) {
           )}
         </div>
 
-        <!-- Colonna destra: immagine cliccabile (1/3 altezza, ritaglio superiore) -->
+        <!-- Colonna destra: carosello 4 immagini -->
         <div class="order-1 lg:order-2">
-          <button id="img-open" class="block w-full text-left group cursor-zoom-in" aria-label="Visualizza locandina completa">
-            <img
-              src={mostra.immagine}
-              alt={`Locandina: ${mostra.titolo}`}
-              class="w-full h-64 lg:h-72 object-cover object-top rounded-lg shadow-lg group-hover:opacity-95 transition-opacity"
-            />
-            <p class="text-xs text-muted-foreground mt-1 text-right">↗ clicca per l'immagine intera</p>
-          </button>
+          <div id="carousel" class="relative w-full h-64 lg:h-72 rounded-lg shadow-lg overflow-hidden">
+            {(mostra.galleria as string[]).map((src, i) => (
+              <img
+                src={u(src)}
+                alt={`${mostra.titolo} — foto ${i + 1}`}
+                class={`carousel-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            ))}
+            <!-- Indicatori -->
+            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {(mostra.galleria as string[]).map((_, i) => (
+                <button
+                  class={`carousel-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-white' : 'bg-white/40'}`}
+                  data-index={i}
+                  aria-label={`Foto ${i + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- Lightbox per immagine intera -->
-  <div id="img-lightbox" class="hidden fixed inset-0 z-50 bg-black/80 p-4 items-center justify-center" role="dialog" aria-modal="true" aria-label="Locandina intera">
-    <div class="relative max-w-4xl w-full">
-      <button id="img-close" class="absolute -top-10 right-0 text-white hover:opacity-80 transition-opacity text-3xl leading-none" aria-label="Chiudi">&times;</button>
-      <img src={mostra.immagine} alt={`Locandina intera: ${mostra.titolo}`} class="w-full rounded-lg shadow-2xl" />
-    </div>
-  </div>
 
   <!-- ② RICONOSCIMENTI + ADESIONI con loghi -->
   <section class="bg-secondary border-b border-border py-4">
@@ -339,23 +344,35 @@ function renderPersone(persone: Persona[]) {
 </BaseLayout>
 
 <script>
-  const btn = document.getElementById('img-open')
-  const lb = document.getElementById('img-lightbox')
-  const closeBtn = document.getElementById('img-close')
+  const slides = document.querySelectorAll<HTMLImageElement>('.carousel-slide')
+  const dots = document.querySelectorAll<HTMLButtonElement>('.carousel-dot')
+  let current = 0
+  let timer: ReturnType<typeof setInterval>
 
-  function openLb() {
-    lb?.classList.remove('hidden')
-    lb?.classList.add('flex')
-    document.body.style.overflow = 'hidden'
-  }
-  function closeLb() {
-    lb?.classList.add('hidden')
-    lb?.classList.remove('flex')
-    document.body.style.overflow = ''
+  function goTo(n: number) {
+    slides[current].classList.replace('opacity-100', 'opacity-0')
+    dots[current].classList.replace('bg-white', 'bg-white/40')
+    current = (n + slides.length) % slides.length
+    slides[current].classList.replace('opacity-0', 'opacity-100')
+    dots[current].classList.replace('bg-white/40', 'bg-white')
   }
 
-  btn?.addEventListener('click', openLb)
-  closeBtn?.addEventListener('click', closeLb)
-  lb?.addEventListener('click', (e) => { if (e.target === lb) closeLb() })
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb() })
+  function startAuto() {
+    timer = setInterval(() => goTo(current + 1), 3500)
+  }
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      clearInterval(timer)
+      goTo(Number(dot.dataset.index))
+      startAuto()
+    })
+  })
+
+  // Pausa al hover
+  const carousel = document.getElementById('carousel')
+  carousel?.addEventListener('mouseenter', () => clearInterval(timer))
+  carousel?.addEventListener('mouseleave', startAuto)
+
+  startAuto()
 </script>
