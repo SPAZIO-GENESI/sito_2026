@@ -1,0 +1,24 @@
+{
+  "titolo": "Carezze sotto la pioggia",
+  "tipo": "Mostra di arte contemporanea",
+  "vernissage": "Venerdì 19 Giugno 2026 ore 18.00",
+  "luogo": "Galleria Commerciale Via Roma, 215 — primo piano, L'Aquila",
+  "mappa": "https://maps.app.goo.gl/3JEsBLW5Xx8aE2mj9",
+  "immagine": "https://spaziogenesi.org/img/SPAZIO_GENESI_Carezze_sotto_la_pioggia.png",
+  "curata_da": { "nome": "Sara Dias", "href": "/biografie/saradias/" },
+  "artiste": "Francesca Chiola, Stefania Delli Compagni",
+  "coordinamento": "Massimo Camplone / Névoa-Na-Rua",
+  "grafica": "Daniela Tracanna",
+  "allestimento": "Giulia Bartolomei, Manuela Valloscuro, Esmeralda Shefiti",
+  "comunicato": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_Carezze.pdf",
+  "rassegna_stampa": [
+    { "testata": "ARTSUPP.COM", "url": "https://artsupp.com/it/l-aquila/mostre/carezze-sotto-la-pioggia-francesca-chiola-e-stefania-delli-compagni" },
+    { "testata": "EXIBART.COM", "url": "https://www.exibart.com/evento-arte/francesca-chiola-stefania-delli-compagni-carezze-sotto-la-pioggia/" }
+  ],
+  "riconoscimenti": [
+    { "label": "Luoghi del Contemporaneo — MiC", "url": "https://luoghidelcontemporaneo.cultura.gov.it/esplora/spazio-genesi/" }
+  ],
+  "adesioni": [
+    { "label": "20° Giornata del Contemporaneo — AMACI", "url": "https://www.amaci.org/events/66fd241cf01c41ed371319e0" }
+  ]
+}
