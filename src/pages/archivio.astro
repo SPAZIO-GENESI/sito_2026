@@ -41,7 +41,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
             <p class="text-muted-foreground mb-6">
               Biblioteca Ivan Donatelli: testi, cataloghi, rarità per la consultazione delle associate.
             </p>
-            <a href="/centrodocumentazione_libri/" class="text-accent font-semibold hover:opacity-80 transition-opacity">
+            <a href={`${import.meta.env.BASE_URL}centrodocumentazione_libri/`} class="text-accent font-semibold hover:opacity-80 transition-opacity">
               Sfoglia il catalogo →
             </a>
           </div>

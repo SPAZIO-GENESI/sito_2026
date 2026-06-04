@@ -4,17 +4,19 @@ interface Props {
 }
 const { activePage = '' } = Astro.props
 
+const base = import.meta.env.BASE_URL
+
 const navLinks = [
-  { href: '/mostre/', label: 'Mostre', key: 'mostre' },
-  { href: '/biografie/', label: 'Biografie', key: 'biografie' },
-  { href: '/archivio/', label: 'Archivio', key: 'archivio' },
-  { href: '/attivita/', label: 'Attività', key: 'attivita' },
-  { href: '/chisiamo/', label: 'Chi siamo', key: 'chisiamo' },
+  { href: `${base}mostre/`, label: 'Mostre', key: 'mostre' },
+  { href: `${base}biografie/`, label: 'Biografie', key: 'biografie' },
+  { href: `${base}archivio/`, label: 'Archivio', key: 'archivio' },
+  { href: `${base}attivita/`, label: 'Attività', key: 'attivita' },
+  { href: `${base}chisiamo/`, label: 'Chi siamo', key: 'chisiamo' },
 ]
 ---
 <header class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
   <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-3 text-xl lg:text-2xl font-display font-semibold text-foreground hover:text-accent transition-colors">
+    <a href={base} class="flex items-center gap-3 text-xl lg:text-2xl font-display font-semibold text-foreground hover:text-accent transition-colors">
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
         width="36px" viewBox="0 0 580 481"
         preserveAspectRatio="xMidYMid meet" aria-hidden="true">
@@ -51,7 +53,6 @@ const navLinks = [
         </li>
       ))}
     </ul>
-    <!-- Mobile menu button (placeholder) -->
     <button class="md:hidden text-foreground" aria-label="Menu">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
