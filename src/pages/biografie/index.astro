@@ -12,24 +12,49 @@ const artisti: Artista[] = data.artisti
   description="Biografie delle artiste e degli artisti associati a Spazio Genesi ETS, Accademia di Belle Arti L'Aquila."
   activePage="biografie"
 >
-  <section class="py-16 lg:py-24 bg-secondary border-b border-border">
+  <section class="py-16 lg:py-20 bg-secondary border-b border-border">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <h1 class="text-foreground mb-4">Biografie</h1>
-      <p class="text-lg text-muted-foreground max-w-2xl">
+      <p class="text-lg text-muted-foreground max-w-2xl mb-8">
         Artiste e artisti associati a Spazio Genesi ETS, Accademia di Belle Arti dell'Aquila.
       </p>
+
+      <!-- Controlli ordinamento -->
+      <div class="flex flex-wrap gap-2" id="sort-controls" role="group" aria-label="Ordina artisti">
+        <button data-sort="alpha-asc"
+          class="sort-btn px-4 py-2 rounded-full border border-border text-sm font-medium transition-colors bg-accent text-accent-foreground">
+          Alfabetico A → Z
+        </button>
+        <button data-sort="alpha-desc"
+          class="sort-btn px-4 py-2 rounded-full border border-border text-sm font-medium transition-colors text-foreground hover:bg-muted">
+          Alfabetico Z → A
+        </button>
+        <button data-sort="storico-asc"
+          class="sort-btn px-4 py-2 rounded-full border border-border text-sm font-medium transition-colors text-foreground hover:bg-muted">
+          Storico (dal primo inserito)
+        </button>
+        <button data-sort="storico-desc"
+          class="sort-btn px-4 py-2 rounded-full border border-border text-sm font-medium transition-colors text-foreground hover:bg-muted">
+          Storico (dal più recente)
+        </button>
+      </div>
     </div>
   </section>
 
   <section class="py-20 lg:py-28 bg-background">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {artisti.map(artista => {
+      <div id="artisti-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {artisti.map((artista, index) => {
           const immagini = flattenImmagini(artista.img)
           const primaImg = immagini.find(i => i.img)
           const nomeDecoded = decodeURIComponent(artista.nome)
           return (
-            <a href={u(`/biografie/${artista.cartella}/`)} class="group block">
+            <a
+              href={u(`/biografie/${artista.cartella}/`)}
+              class="group block artista-card"
+              data-nome={nomeDecoded.toLowerCase()}
+              data-index={index}
+            >
               <div class="mb-3 rounded-lg overflow-hidden aspect-square bg-muted">
                 {primaImg ? (
                   <img
@@ -54,3 +79,44 @@ const artisti: Artista[] = data.artisti
     </div>
   </section>
 </BaseLayout>
+
+<script>
+  const grid = document.getElementById('artisti-grid')!
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.sort-btn')
+
+  function sortCards(mode: string) {
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('.artista-card'))
+
+    cards.sort((a, b) => {
+      const nomeA = a.dataset.nome ?? ''
+      const nomeB = b.dataset.nome ?? ''
+      const idxA = parseInt(a.dataset.index ?? '0')
+      const idxB = parseInt(b.dataset.index ?? '0')
+
+      if (mode === 'alpha-asc') return nomeA.localeCompare(nomeB, 'it')
+      if (mode === 'alpha-desc') return nomeB.localeCompare(nomeA, 'it')
+      if (mode === 'storico-asc') return idxA - idxB
+      if (mode === 'storico-desc') return idxB - idxA
+      return 0
+    })
+
+    cards.forEach(card => grid.appendChild(card))
+  }
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const mode = btn.dataset.sort!
+
+      // Aggiorna stile bottoni
+      buttons.forEach(b => {
+        b.className = 'sort-btn px-4 py-2 rounded-full border border-border text-sm font-medium transition-colors text-foreground hover:bg-muted'
+      })
+      btn.className = 'sort-btn px-4 py-2 rounded-full border border-border text-sm font-medium transition-colors bg-accent text-accent-foreground'
+
+      sortCards(mode)
+    })
+  })
+
+  // Default: alfabetico A→Z all'avvio
+  sortCards('alpha-asc')
+</script>
