@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "DM Serif Display", serif;
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+}
+
+:root {
+  --background: oklch(98% .01 60);
+  --foreground: oklch(12% .02 250);
+  --accent: oklch(60% .2 30);
+  --accent-foreground: oklch(99% 0 0);
+  --border: oklch(90% .01 60);
+  --card: oklch(99% .005 0);
+  --muted: oklch(93% .008 60);
+  --muted-foreground: oklch(50% .01 60);
+  --secondary: oklch(96% .01 60);
+  --secondary-foreground: oklch(12% .02 250);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: oklch(14.5% 0 0);
+    --foreground: oklch(98.5% 0 0);
+    --accent: oklch(60% .2 30);
+    --accent-foreground: oklch(99% 0 0);
+    --border: oklch(100% 0 0 / .1);
+    --card: oklch(20.5% 0 0);
+    --muted: oklch(26.9% 0 0);
+    --muted-foreground: oklch(65% 0 0);
+    --secondary: oklch(26.9% 0 0);
+    --secondary-foreground: oklch(98.5% 0 0);
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Serif Display", serif;
+}
+
+/* Stili ereditati dal sito originale spaziogenesi.org per la pagina bio */
+.regdiv {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  word-break: break-word;
+}
+
+.regdiv a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.regdiv hr {
+  border-color: var(--border);
+  margin: 1rem 0;
+}

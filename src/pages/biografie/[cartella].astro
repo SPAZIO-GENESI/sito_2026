@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import data from '../../data/artisti.json'
+import { flattenImmagini } from '../../types'
+import type { Artista } from '../../types'
+
+export function getStaticPaths() {
+  return (data.artisti as Artista[]).map(artista => ({
+    params: { cartella: artista.cartella },
+    props: { artista },
+  }))
+}
+
+interface Props { artista: Artista }
+const { artista } = Astro.props
+
+const nomeDecoded = decodeURIComponent(artista.nome)
+const immagini = flattenImmagini(artista.img)
+const primaImg = immagini.find(i => i.img)
+
+const ogImageUrl = primaImg
+  ? `https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v4/${encodeURIComponent('Biografia ' + nomeDecoded)}/${encodeURIComponent('Artista Spazio Genesi')}/${encodeURIComponent('https://spaziogenesi.org/biografie/' + artista.cartella + '/' + primaImg.img)}/og.png`
+  : undefined
+
+const canonicalUrl = `https://spaziogenesi.org/biografie/${artista.cartella}/`
+---
+<BaseLayout
+  title={`${nomeDecoded} — Spazio Genesi`}
+  description={`Biografia di ${nomeDecoded}, artista associata/o a Spazio Genesi ETS.`}
+  ogImage={ogImageUrl}
+  canonical={canonicalUrl}
+  activePage="biografie"
+>
+  <!-- Back navigation -->
+  <div class="bg-background border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
+      <a href="/biografie/" class="inline-flex items-center gap-2 text-accent font-semibold hover:opacity-80 transition-opacity">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          aria-hidden="true">
+          <path d="m12 19-7-7 7-7"/><path d="M19 12H5"/>
+        </svg>
+        Tutte le biografie
+      </a>
+    </div>
+  </div>
+
+  <!-- Contenuto bio: layout a due colonne replica bio.htm -->
+  <section class="py-12 lg:py-20 bg-background">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+        <!-- Colonna sinistra: testo -->
+        <div>
+          <h1 class="text-foreground mb-6">{nomeDecoded}</h1>
+
+          <div class="regdiv text-justify">
+            <Fragment set:html={artista.bio} />
+          </div>
+
+          <div class="mt-6 space-y-2 regdiv">
+            {artista.social && (
+              <p>
+                <a href={artista.social} target="_blank" rel="noopener noreferrer">
+                  {artista.social}
+                </a>
+              </p>
+            )}
+            {artista.IG && (
+              <p>
+                <a href={`https://www.instagram.com/${artista.IG}`} target="_blank" rel="noopener noreferrer">
+                  Instagram @{artista.IG}
+                </a>
+              </p>
+            )}
+            {artista.portfolio && (
+              <p>
+                <a href={`/biografie/${artista.cartella}/${artista.portfolio}`} target="_blank" rel="noopener noreferrer">
+                  {artista.portfolio}
+                </a>
+              </p>
+            )}
+          </div>
+        </div>
+
+        <!-- Colonna destra: galleria immagini -->
+        <div class="space-y-8">
+          {immagini.map(img => img.img && (
+            <figure class="img-container">
+              <img
+                src={`/biografie/${artista.cartella}/${img.img}`}
+                alt={img.des || nomeDecoded}
+                class="w-full"
+                loading="lazy"
+              />
+              {img.deslunga && (
+                <figcaption class="regdiv text-justify mt-2 w-100">
+                  <Fragment set:html={img.deslunga} />
+                </figcaption>
+              )}
+            </figure>
+          ))}
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- News ticker — replica originale -->
+  <div class="bg-background border-t border-border py-2">
+    <div class="max-w-7xl mx-auto flex items-center">
+      <span class="shrink-0 bg-red-600 text-white text-xs font-semibold px-3 py-2 mr-3">News</span>
+      <div class="overflow-hidden text-sm text-muted-foreground">
+        <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+          laboratorio permanente di interazione — noi che...voi che...presente e futuro — autogestito —
+          riservato ad iscritt* ABAQ + Erasmus — multi manifesto — tutte le tecniche — rotazione espositiva —
+          archivio donazioni — caffè letterario — conviviale — assemblea aperta — spazio safe
+        </marquee>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,237 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const SHEET_ID = '1Ef7n23TnmRFfpdzp4D24v0kKDrBxGQnhUPI6CNOASU4'
+const WORKER_URL = `https://cfg_googledata.it-e3f.workers.dev/?sheet=${SHEET_ID}&f=A3SD21`
+
+interface LibroRow {
+  id: string
+  visibile: string
+  autore: string
+  titolo: string
+  editore: string
+  isbn: string
+  googleBooks: string
+  coverUrl: string
+  thumbUrl: string
+  estratto1: string
+  estratto2: string
+  estratto3: string
+}
+
+let libri: LibroRow[] = []
+let fetchError = false
+let buildDate = ''
+
+try {
+  const resp = await fetch(WORKER_URL)
+  if (!resp.ok) throw new Error(`HTTP ${resp.status}`)
+  const json = await resp.json() as { values: string[][] }
+
+  libri = json.values
+    .slice(1)
+    .filter(row => row[1] === 'TRUE')
+    .sort((a, b) => Number(b[0]) - Number(a[0]))
+    .map(row => ({
+      id: row[0] ?? '',
+      visibile: row[1] ?? '',
+      autore: row[2] ?? '',
+      titolo: row[3] ?? '',
+      editore: row[4] ?? '',
+      isbn: row[5] ?? '',
+      googleBooks: row[6] ?? '',
+      coverUrl: row[7] ?? '',
+      thumbUrl: row[10] ?? '',
+      estratto1: row[8] ?? '',
+      estratto2: row[9] ?? '',
+      estratto3: row[11] ?? '',
+    }))
+
+  buildDate = new Date().toLocaleDateString('it-IT', { day: '2-digit', month: 'long', year: 'numeric' })
+} catch (e) {
+  fetchError = true
+  console.error('Centrodoc fetch error:', e)
+}
+
+function esc(s: string) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+}
+---
+<BaseLayout
+  title="Centro Documentazione Ivan Donatelli — Spazio Genesi"
+  description="Archivio libri del Centro Documentazione Ivan Donatelli presso Spazio Genesi. Testi, cataloghi, rarità, riviste, fanzine, donazioni."
+  activePage=""
+>
+  <section class="py-16 lg:py-20 bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center gap-4 mb-4">
+        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+          width="80px" height="40px" viewBox="0 0 492 224"
+          preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+          <g transform="translate(0,224) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+            <path d="M850 2120 c-102 -16 -170 -33 -170 -42 0 -5 14 -30 32 -55 l31 -46 36 42 36 41 110 0 c339 -1 652 -62 867 -170 166 -83 335 -216 412 -324 56 -79 75 -93 45 -35 -147 292 -453 489 -884 570 -122 23 -419 34 -515 19z"/>
+            <path d="M675 1240 c-180 -15 -372 -40 -501 -66 -130 -25 -174 -38 -174 -52 0 -5 53 -53 117 -108 206 -174 730 -644 913 -818 41 -39 104 -99 140 -133 l65 -62 70 20 c334 94 878 99 1403 13 l44 -7 -44 69 c-53 82 -189 315 -318 544 -51 91 -140 245 -198 343 -119 200 -96 182 -267 211 -217 37 -369 48 -755 51 -212 2 -434 -1 -495 -5z" fill="#CD161E"/>
+          </g>
+        </svg>
+        <div>
+          <h1 class="text-foreground text-2xl mb-0">Centro Documentazione</h1>
+          <h2 class="text-muted-foreground text-lg font-sans font-normal">Ivan Donatelli</h2>
+        </div>
+      </div>
+      <p class="text-sm text-muted-foreground max-w-2xl">
+        L'archivio è un progetto privato nato itinerante nel 2008, ora ospitato come consultazione e servizio per le associate.
+        Consta di un migliaio di testi e cataloghi, con rarità. Inoltre riviste, fanzine, depliant, poster, donazioni di opere d'arte.<br>
+        <a href="https://www.instagram.com/cdivandonatelli/" class="text-accent hover:opacity-80 transition-opacity" target="_blank" rel="noopener noreferrer">CDID su Instagram</a>
+        &mdash; Classificazione a cura di
+        <a href="https://www.instagram.com/marracash.albani/" class="text-accent hover:opacity-80 transition-opacity" target="_blank" rel="noopener noreferrer">Mara Albani</a>
+        e
+        <a href="https://www.instagram.com/giuli_acreator/" class="text-accent hover:opacity-80 transition-opacity" target="_blank" rel="noopener noreferrer">Giulia Bartolomei</a>.
+      </p>
+      {!fetchError && buildDate && (
+        <p class="text-xs text-muted-foreground mt-3">
+          Lista aggiornata al {buildDate} — {libri.length} titoli visibili.
+        </p>
+      )}
+    </div>
+  </section>
+
+  <section class="py-12 bg-background">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+      {fetchError && (
+        <div class="bg-red-100 border border-red-300 text-red-800 rounded-lg p-6 mb-8">
+          Impossibile caricare la lista al momento del build. Riprova più tardi.
+        </div>
+      )}
+
+      {!fetchError && (
+        <>
+          <!-- Search input -->
+          <div class="mb-6">
+            <input
+              id="cdid-search"
+              type="search"
+              placeholder="Cerca per autore, titolo, editore…"
+              class="w-full md:w-80 px-4 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50"
+            />
+          </div>
+
+          <!-- Tabella libri -->
+          <div class="overflow-x-auto rounded-lg border border-border">
+            <table id="cdid-table" class="w-full text-sm">
+              <thead class="bg-secondary border-b border-border">
+                <tr>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-foreground uppercase tracking-wider w-10">#</th>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-foreground uppercase tracking-wider">Autore</th>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-foreground uppercase tracking-wider">Titolo</th>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-foreground uppercase tracking-wider hidden md:table-cell">Editore</th>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-foreground uppercase tracking-wider hidden lg:table-cell">ISBN</th>
+                  <th class="px-4 py-3 text-left text-xs font-semibold text-foreground uppercase tracking-wider w-16">Cover</th>
+                </tr>
+              </thead>
+              <tbody>
+                {libri.map((libro, i) => (
+                  <tr
+                    class="border-b border-border hover:bg-secondary/50 transition-colors cdid-row"
+                    data-search={`${libro.autore} ${libro.titolo} ${libro.editore} ${libro.isbn}`.toLowerCase()}
+                  >
+                    <td class="px-4 py-3 text-muted-foreground">{libro.id}</td>
+                    <td class="px-4 py-3 text-foreground font-medium">{libro.autore}</td>
+                    <td class="px-4 py-3 text-foreground">
+                      {libro.titolo}
+                      {libro.estratto3 && (
+                        <p class="text-xs text-muted-foreground mt-1 line-clamp-2">{libro.estratto3}</p>
+                      )}
+                    </td>
+                    <td class="px-4 py-3 text-muted-foreground hidden md:table-cell">{libro.editore}</td>
+                    <td class="px-4 py-3 text-muted-foreground hidden lg:table-cell text-xs">{libro.isbn}</td>
+                    <td class="px-4 py-3">
+                      {libro.thumbUrl ? (
+                        <button
+                          class="cdid-thumb"
+                          data-full={esc(libro.coverUrl)}
+                          data-desc={esc(libro.estratto3)}
+                          aria-label={`Copertina: ${libro.titolo}`}
+                        >
+                          <img
+                            src={libro.thumbUrl}
+                            alt={`Copertina ${libro.titolo}`}
+                            width="50"
+                            class="cursor-pointer hover:opacity-80 transition-opacity"
+                            loading="lazy"
+                          />
+                        </button>
+                      ) : null}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-xs text-muted-foreground mt-4">
+            I testi descrittivi sono generati con AI (potrebbero esserci imprecisioni).
+            Le immagini delle copertine sono servite tramite SIRV e Google Drive.
+          </p>
+        </>
+      )}
+
+    </div>
+  </section>
+
+  <!-- Lightbox modale (vanilla JS, zero dipendenze) -->
+  <div id="cdid-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/50 p-4" role="dialog" aria-modal="true" aria-labelledby="cdid-modal-title">
+    <div class="bg-card rounded-lg shadow-xl max-w-lg w-full p-6 relative">
+      <button id="cdid-modal-close" class="absolute top-3 right-3 text-muted-foreground hover:text-foreground transition-colors" aria-label="Chiudi">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+      <h3 id="cdid-modal-title" class="text-sm font-semibold text-foreground mb-4">Copertina</h3>
+      <div class="text-center">
+        <img id="cdid-modal-img" src="" alt="Copertina" class="max-h-[60vh] w-auto mx-auto" />
+      </div>
+      <p id="cdid-modal-desc" class="text-xs text-muted-foreground mt-4"></p>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  // Ricerca client-side leggera
+  const searchInput = document.getElementById('cdid-search') as HTMLInputElement | null
+  const rows = document.querySelectorAll<HTMLTableRowElement>('.cdid-row')
+
+  searchInput?.addEventListener('input', () => {
+    const q = searchInput.value.toLowerCase().trim()
+    rows.forEach(row => {
+      const match = !q || (row.dataset.search ?? '').includes(q)
+      row.style.display = match ? '' : 'none'
+    })
+  })
+
+  // Lightbox
+  const modal = document.getElementById('cdid-modal')!
+  const modalImg = document.getElementById('cdid-modal-img') as HTMLImageElement
+  const modalDesc = document.getElementById('cdid-modal-desc')!
+  const modalClose = document.getElementById('cdid-modal-close')!
+
+  document.querySelectorAll<HTMLButtonElement>('.cdid-thumb').forEach(btn => {
+    btn.addEventListener('click', () => {
+      modalImg.src = btn.dataset.full ?? ''
+      modalDesc.textContent = btn.dataset.desc ?? ''
+      modal.classList.remove('hidden')
+      modal.classList.add('flex')
+    })
+  })
+
+  const closeModal = () => {
+    modal.classList.add('hidden')
+    modal.classList.remove('flex')
+    modalImg.src = ''
+  }
+
+  modalClose.addEventListener('click', closeModal)
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal() })
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal() })
+</script>

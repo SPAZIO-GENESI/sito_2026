@@ -1,0 +1,57 @@
+---
+import '../styles/global.css'
+import SgHeader from '../components/SgHeader.astro'
+import SgFooter from '../components/SgFooter.astro'
+import Matomo from '../components/Matomo.astro'
+
+interface Props {
+  title: string
+  description?: string
+  ogImage?: string
+  canonical?: string
+  activePage?: string
+  noFooterMargin?: boolean
+}
+
+const {
+  title,
+  description = 'Spazio Genesi ETS — laboratorio permanente di interazione, Accademia di Belle Arti L\'Aquila.',
+  ogImage = 'https://spaziogenesi.org/img/spazio_genesi_logo.png',
+  canonical,
+  activePage = '',
+  noFooterMargin = false,
+} = Astro.props
+
+const canonicalUrl = canonical ?? Astro.url.href
+---
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+
+    <link rel="shortcut icon" href="/img/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/img/icon-152x152.png" sizes="152x152" />
+    <link rel="manifest" href="/img/manifest.json" />
+
+    <Matomo />
+  </head>
+  <body>
+    <SgHeader activePage={activePage} />
+    <slot />
+    <SgFooter />
+  </body>
+</html>

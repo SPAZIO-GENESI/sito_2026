@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+<BaseLayout
+  title="Archivio — Spazio Genesi"
+  description="Archivio di Spazio Genesi: cataloghi, documentazione fotografica, rassegna stampa e materiali delle mostre passate."
+  activePage="archivio"
+>
+  <section class="py-16 lg:py-24 bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h1 class="text-foreground mb-4">Archivio e Risorse</h1>
+      <p class="text-lg text-muted-foreground max-w-2xl">
+        Cataloghi, documentazione fotografica, comunicati stampa e materiali di studio che documentano
+        la storia e le pratiche curatoriali di Spazio Genesi.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-28 bg-background">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-muted-foreground mb-12">
+        I materiali d'archivio saranno disponibili qui. Per informazioni contattare
+        <a href="mailto:info@spaziogenesi.org" class="text-accent hover:opacity-80 transition-opacity">info@spaziogenesi.org</a>.
+      </p>
+
+      <!-- Risorse di ricerca e studio -->
+      <div class="mt-8 pt-8 border-t border-border">
+        <h2 class="text-foreground mb-8">Risorse di Studio</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-card border border-border rounded-lg p-8">
+            <h3 class="text-foreground mb-4">Dichiarazioni d'artista</h3>
+            <p class="text-muted-foreground mb-6">
+              Raccolta di testi degli artisti e manifesti dalle mostre di Spazio Genesi.
+            </p>
+            <a href="mailto:info@spaziogenesi.org" class="text-accent font-semibold hover:opacity-80 transition-opacity">
+              Richiedi l'accesso →
+            </a>
+          </div>
+          <div class="bg-card border border-border rounded-lg p-8">
+            <h3 class="text-foreground mb-4">Centro Documentazione Libri</h3>
+            <p class="text-muted-foreground mb-6">
+              Biblioteca Ivan Donatelli: testi, cataloghi, rarità per la consultazione delle associate.
+            </p>
+            <a href="/centrodocumentazione_libri/" class="text-accent font-semibold hover:opacity-80 transition-opacity">
+              Sfoglia il catalogo →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

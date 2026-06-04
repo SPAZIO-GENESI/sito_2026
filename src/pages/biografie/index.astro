@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import data from '../../data/artisti.json'
+import { flattenImmagini } from '../../types'
+import type { Artista } from '../../types'
+
+const artisti: Artista[] = data.artisti
+---
+<BaseLayout
+  title="Biografie — Spazio Genesi"
+  description="Biografie delle artiste e degli artisti associati a Spazio Genesi ETS, Accademia di Belle Arti L'Aquila."
+  activePage="biografie"
+>
+  <section class="py-16 lg:py-24 bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h1 class="text-foreground mb-4">Biografie</h1>
+      <p class="text-lg text-muted-foreground max-w-2xl">
+        Artiste e artisti associati a Spazio Genesi ETS, Accademia di Belle Arti dell'Aquila.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 lg:py-28 bg-background">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        {artisti.map(artista => {
+          const immagini = flattenImmagini(artista.img)
+          const primaImg = immagini.find(i => i.img)
+          const nomeDecoded = decodeURIComponent(artista.nome)
+          return (
+            <a href={`/biografie/${artista.cartella}/`} class="group block">
+              <div class="mb-3 rounded-lg overflow-hidden aspect-square bg-muted">
+                {primaImg ? (
+                  <img
+                    src={`/biografie/${artista.cartella}/${primaImg.img}`}
+                    alt={nomeDecoded}
+                    class="w-full h-full object-cover group-hover:opacity-80 transition-opacity"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div class="w-full h-full flex items-center justify-center text-muted-foreground text-4xl font-display">
+                    {nomeDecoded.charAt(0)}
+                  </div>
+                )}
+              </div>
+              <h3 class="text-foreground text-base group-hover:text-accent transition-colors">
+                {nomeDecoded}
+              </h3>
+            </a>
+          )
+        })}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
