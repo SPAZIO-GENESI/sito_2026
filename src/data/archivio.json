@@ -1,0 +1,158 @@
+[
+  {
+    "id": "carezze-sotto-la-pioggia",
+    "titolo": "Carezze sotto la pioggia",
+    "data": "19 Giugno 2026",
+    "anno": 2026,
+    "tipo": "Mostra",
+    "artiste": ["Francesca Chiola", "Stefania Delli Compagni"],
+    "curatrice": "Sara Dias",
+    "tags": ["Performance", "Installazione"],
+    "descrizione": "Mostra di arte contemporanea. Il gesto artistico tra separazione e bisogno identitario.",
+    "comunicato": "/assets/media/SPAZIO_GENESI_Comunicato_Carezze.pdf"
+  },
+  {
+    "id": "amore-e-odio",
+    "titolo": "L'AMORE E L'ODIO",
+    "data": "28 Gennaio 2026",
+    "anno": 2026,
+    "tipo": "Mostra",
+    "artiste": ["Milena Sofkova Ignatova", "Sebastiano Bacci"],
+    "tags": ["Fotografia", "Pittura"],
+    "descrizione": "Mostra di arte contemporanea.",
+    "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+  },
+  {
+    "id": "tessere",
+    "titolo": "TESSERE",
+    "data": "3 Dicembre 2025",
+    "anno": 2025,
+    "tipo": "Mostra",
+    "artiste": ["Manuela Valloscuro", "Vincenzo Damiano Cristallo"],
+    "tags": ["Pittura", "Scultura"],
+    "descrizione": "Mostra di arte contemporanea.",
+    "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_Tessere.pdf"
+  },
+  {
+    "id": "festa-matricole-2025",
+    "titolo": "Festa delle matricole ABAQ 2025",
+    "data": "7 Novembre 2025",
+    "anno": 2025,
+    "tipo": "Evento",
+    "artiste": [],
+    "tags": ["Comunità"],
+    "descrizione": "Potluck Party di benvenuto alle nuove iscritte e ai nuovi iscritti.",
+    "comunicato": null
+  },
+  {
+    "id": "e-poi-quando-tutto-e-a-posto",
+    "titolo": "E POI QUANDO TUTTO È A POSTO",
+    "data": "29 Ottobre 2025",
+    "anno": 2025,
+    "tipo": "Mostra",
+    "artiste": ["Sara Dias", "Francesca Chiola"],
+    "tags": ["Fotografia", "Performance"],
+    "descrizione": "Indagine su un anno di attività.",
+    "comunicato": "/assets/media/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto.pdf"
+  },
+  {
+    "id": "cio-che-conosco",
+    "titolo": "CIÒ CHE CONOSCO",
+    "data": "15 Aprile 2025",
+    "anno": 2025,
+    "tipo": "Mostra",
+    "artiste": ["Alessia Donatelli", "Davide Meola"],
+    "curatrice": "Sara Dias",
+    "tags": ["Pittura", "Figurazione"],
+    "descrizione": "Due pittori emergenti indagano la dimensione umana e la rete di relazioni in cui le persone esistono. La pittura come tecnica riproduttiva e dispositivo di conoscenza.",
+    "comunicato": "/assets/media/Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco.pdf"
+  },
+  {
+    "id": "comune-esigenza",
+    "titolo": "OGNI VOLTA POI. LA COMUNE ESIGENZA DI RISPONDERE",
+    "data": "28 Maggio 2025",
+    "anno": 2025,
+    "tipo": "Mostra",
+    "artiste": ["Francesca Chiola", "Lisa Rastelli"],
+    "tags": ["Performance", "Installazione", "Pittura"],
+    "descrizione": "Mostra collettiva.",
+    "comunicato": "/assets/media/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+  },
+  {
+    "id": "aureum",
+    "titolo": "AUREUM. SUL SIGNIFICARE",
+    "data": "13 Marzo 2025",
+    "anno": 2025,
+    "tipo": "Mostra",
+    "artiste": ["Elena Mussi", "Francesca Rinella"],
+    "tags": ["Fotografia", "Moda"],
+    "descrizione": "Mostra di arte contemporanea.",
+    "comunicato": "/assets/media/SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO.pdf"
+  },
+  {
+    "id": "meden-agan",
+    "titolo": "MĒDÈN ÁGAN",
+    "data": "30 Gennaio 2025",
+    "anno": 2025,
+    "tipo": "Mostra",
+    "artiste": ["Stefania Delli Compagni", "Romario Bardhoshi"],
+    "tags": ["Arte Contemporanea"],
+    "descrizione": "Mostra di arte contemporanea.",
+    "comunicato": "/assets/media/Comunicato_stampa_Mēdèn_ágan.pdf"
+  },
+  {
+    "id": "trattienimi-pure",
+    "titolo": "TRATTIENIMI PURE",
+    "data": "19 Dicembre 2024",
+    "anno": 2024,
+    "tipo": "Mostra",
+    "artiste": ["Sabrina Iezzi", "Marianna Mancini"],
+    "tags": ["Arte Contemporanea"],
+    "descrizione": "Mostra di arte contemporanea.",
+    "comunicato": "/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+  },
+  {
+    "id": "che-non-si-potra-mai-avere",
+    "titolo": "CHE NON SI POTRÀ MAI AVERE",
+    "data": "30 Novembre 2024",
+    "anno": 2024,
+    "tipo": "Mostra",
+    "artiste": ["Debora Panaccione", "Davide Mariani"],
+    "tags": ["Fotografia", "Pittura"],
+    "descrizione": "Mostra di arte contemporanea.",
+    "comunicato": "/assets/media/Comunicato stampa Che non si potrà mai avere.pdf"
+  },
+  {
+    "id": "festa-matricole-2024",
+    "titolo": "Festa delle matricole ABAQ 2024",
+    "data": "7 Novembre 2024",
+    "anno": 2024,
+    "tipo": "Evento",
+    "artiste": [],
+    "tags": ["Comunità"],
+    "descrizione": "Potluck party di benvenuto.",
+    "comunicato": null
+  },
+  {
+    "id": "possibile-da-scrivere",
+    "titolo": "POSSIBILE DA SCRIVERE",
+    "data": "4 Ottobre 2024",
+    "anno": 2024,
+    "tipo": "Mostra",
+    "artiste": ["Collettivo Spazio Genesi"],
+    "tags": ["Collettiva"],
+    "descrizione": "A cura del collettivo delle artiste in Spazio Genesi.",
+    "comunicato": "/assets/media/Comunicato stampa Possibile da scrivere.pdf"
+  },
+  {
+    "id": "fierce-and-graceful",
+    "titolo": "FIERCE AND GRACEFUL",
+    "data": null,
+    "anno": 2024,
+    "tipo": "Mostra",
+    "artiste": [],
+    "tags": ["Arte Contemporanea"],
+    "descrizione": "Mostra di arte contemporanea.",
+    "comunicato": "/assets/media/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+  }
+]

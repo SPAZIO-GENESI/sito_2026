@@ -219,7 +219,30 @@ function renderPersone(persone: Persona[]) {
     </div>
   </section>
 
-  <!-- ④ SOCIAL + RISORSE PUBBLICHE + RISORSE ABAQ -->
+  <!-- ④ ABOUT (traduzione dalla descrizione B12) -->
+  <section class="py-16 lg:py-20 bg-background border-t border-border">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-foreground mb-6">Chi siamo</h2>
+      <p class="text-lg text-muted-foreground leading-relaxed mb-4">
+        Spazio Genesi è un'associazione autogestita di studenti e studentesse dell'Accademia di Belle Arti dell'Aquila
+        che gestisce uno spazio espositivo dedicato all'arte contemporanea.
+      </p>
+      <p class="text-muted-foreground leading-relaxed mb-8">
+        Ci impegniamo a favorire pratiche curatoriali sperimentali, a offrire opportunità espositive ad artiste ed artisti
+        emergenti, e a costruire una comunità vivace intorno alla cultura visiva contemporanea.
+        Organizziamo mostre a rotazione, eventi, presentazioni e manteniamo un archivio e risorse di studio per la comunità.
+      </p>
+      <a href={u('/chisiamo/')} class="inline-flex items-center gap-2 text-accent font-semibold hover:opacity-80 transition-opacity">
+        Scopri di più
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ⑤ SOCIAL + RISORSE PUBBLICHE + RISORSE ABAQ -->
   <section class="py-20 lg:py-28 bg-secondary border-t border-border">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -279,12 +302,15 @@ function renderPersone(persone: Persona[]) {
             <li>
               <a href={u('/centrodocumentazione_libri/')}
                 class="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors group">
-                <!-- CDID mini-logo SVG -->
+                <!-- CDID logo SVG (dal centrodocumentazione_libri.html) -->
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-                  width="40" height="40" viewBox="0 0 492 224"
+                  width="48" height="28" viewBox="0 0 492 224"
                   preserveAspectRatio="xMidYMid meet"
-                  class="opacity-60 group-hover:opacity-100 transition-opacity shrink-0" aria-hidden="true">
+                  class="opacity-70 group-hover:opacity-100 transition-opacity shrink-0" aria-hidden="true">
                   <g transform="translate(0,224) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+                    <path d="M850 2120 c-102 -16 -170 -33 -170 -42 0 -5 14 -30 32 -55 l31 -46 36 42 36 41 110 0 c339 -1 652 -62 867 -170 166 -83 335 -216 412 -324 56 -79 75 -93 45 -35 -147 292 -453 489 -884 570 -122 23 -419 34 -515 19z"/>
+                    <path d="M4642 1969 c-335 -171 -553 -232 -1057 -294 -358 -44 -471 -61 -617 -91 -361 -76 -538 -196 -538 -365 0 -121 86 -329 219 -530 83 -126 169 -225 184 -210 5 5 10 34 10 63 0 66 -22 110 -103 203 -114 132 -158 263 -139 414 10 82 33 133 81 177 116 107 255 151 767 239 465 80 615 113 819 181 182 61 412 183 492 260 13 13 22 23 20 23 -3 -1 -65 -32 -138 -70z"/>
+                    <path d="M395 1893 c-33 -2 -64 -8 -69 -13 -5 -5 0 -31 12 -62 11 -29 29 -80 39 -112 25 -84 39 -82 47 6 11 120 -13 108 231 108 512 0 921 -106 1300 -337 44 -27 94 -57 110 -67 78 -48 -173 163 -260 219 -134 85 -290 153 -450 195 -206 55 -275 62 -600 65 -165 1 -327 0 -360 -2z"/>
                     <path d="M675 1240 c-180 -15 -372 -40 -501 -66 -130 -25 -174 -38 -174 -52 0 -5 53 -53 117 -108 206 -174 730 -644 913 -818 41 -39 104 -99 140 -133 l65 -62 70 20 c334 94 878 99 1403 13 l44 -7 -44 69 c-53 82 -189 315 -318 544 -51 91 -140 245 -198 343 -119 200 -96 182 -267 211 -217 37 -369 48 -755 51 -212 2 -434 -1 -495 -5z" fill="#CD161E"/>
                   </g>
                 </svg>
@@ -327,7 +353,7 @@ function renderPersone(persone: Persona[]) {
     </div>
   </section>
 
-  <!-- ⑤ NEWS TICKER -->
+  <!-- ⑥ NEWS TICKER -->
   <div class="bg-background border-t border-border py-2">
     <div class="max-w-7xl mx-auto flex items-center">
       <span class="shrink-0 bg-red-600 text-white text-xs font-semibold px-3 py-2 mr-3">News</span>

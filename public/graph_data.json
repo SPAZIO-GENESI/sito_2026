@@ -1,0 +1,1212 @@
+{
+  "meta": {
+    "total_docs": 10,
+    "doc_names": [
+      "Comunicato_stampa_Mēdèn_ágan",
+      "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
+      "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+      "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+      "SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto",
+      "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+      "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+      "SPAZIO_GENESI_comunicato_Tessere",
+      "SPAZIO_GENESI_comunicato_amore_e_odio",
+      "trattienimi_pure_2024"
+    ],
+    "total_concepts": 19,
+    "total_edges": 45,
+    "generated": "2026-05-25T19:44:39.206796+00:00"
+  },
+  "nodes": [
+    {
+      "id": "comunità",
+      "label": "comunità",
+      "cat": "spazio",
+      "freq": 2,
+      "size": 0.737,
+      "docs": [
+        {
+          "name": "SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto",
+          "title": "Comunicato E poi quando tutto è a posto",
+          "excerpt": "Il progetto espositivo ideato, costituito da due video proiezioni, raccoglie delle tracce verbo-visive\ncapaci di narrare il percorso che ha portato l’associazione e gli operatori culturali coinvolti verso un\nprogressivo…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_%C3%A8_a_posto.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "Esso diviene per gli artisti una potenza\naffermativa, un appetito non più fondato sulla mancanza ma su una rinnovata fede nel processo\ncollettivo, un qualcosa da esperire in modo corale piuttosto che in una solitudine…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        }
+      ]
+    },
+    {
+      "id": "corpo",
+      "label": "corpo",
+      "cat": "corpo",
+      "freq": 32,
+      "size": 1.287,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "La compenetrazione tra luoghi, corpi e memorie avviene attraverso una costanza fragile ed un\nprofondo senso di cura.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Il dialogo tra le artiste Francesca Chiola e Lisa Rastelli, si rivela fondamentale per analizzare temi\nquali la sessualizzazione del corpo femminile e la performatività costantemente richiesta ad esso.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "La mostra, ponendo in dialogo Elena Mussi e Francesca Rinella, intende riflettere sul ruolo del\ncorpo e della figurazione all’interno della sperimentazione artistica, elevando la traccia a strumento\nconoscitivo…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto",
+          "title": "Comunicato E poi quando tutto è a posto",
+          "excerpt": "Alla base vi è l’intento di produrre un effimero condiviso, un corpo linguistico\ncostituito da umani inciampi e frangibili ossessioni.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_%C3%A8_a_posto.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "In tal modo, frammenti provenienti dalla comunicazione di massa vengono isolati, ricombinati e\nsottoposti a un processo di straniamento che ne altera il significato, trasformando strumenti di\npersuasione in dispositivi…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Interrogare sé stessi e gli altri in merito alle tracce che la violenza iscrive nei luoghi, nei corpi e\nnelle relazioni.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Un perenne necessitare che assume corpo tra conservazione e assestamento.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "Un appuntamento che invita a credere nel potere femminile e nella performatività del corpo.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "Nei loro lavori, la massa corporea diviene nascondiglio, spazio sicuro e legittimato, esso assurge a\ndispositivo tramite cui varcare una soglia.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "dolore",
+      "label": "dolore",
+      "cat": "relazione",
+      "freq": 16,
+      "size": 0.993,
+      "docs": [
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Elena Mussi (Alessandria, 1965)\nIn corso – Diploma accademico di primo livello in Pittura presso l’Accademia di Belle Arti di L’Aquila (AQ)\nPrecedentemente - Laurea in Geologia presso l’Università degli Studi di Genova…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "L’opera diviene così fenditura e varco, un luogo di passaggio obbligato in cui la ferita si manifesta\nnella sua ambivalenza, ossia come segno di un trauma ma anche come potenziale occasione\nrigenerativa.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "Radunarsi diviene in molti casi l’unica alternativa possibile per contrastare precarietà e vulnerabilità\npoiché agire di concerto permette di dichiarare silenziosamente la propria esistenza e resistenza.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        }
+      ]
+    },
+    {
+      "id": "emotività",
+      "label": "emotività",
+      "cat": "relazione",
+      "freq": 4,
+      "size": 0.773,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Le artiste costruiscono un paesaggio\nvisivo ed emotivo dove ogni immagine si presenta come frammento, interruzione, interrogazione.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Entrambe le pratiche condividono il tentativo di inscenare situazioni ed\nemozioni universali, attivando una dinamica di immedesimazione e di riflessione che coinvolge\nprofondamente lo spettatore.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "Nella costante stratificazione della memoria, uno spazio centrale è destinato alle reminiscenze del\npassato familiare che con emotività temperata vengono riportate alla luce mediante la pratica del\nnarrare storie.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "equilibrio",
+      "label": "equilibrio",
+      "cat": "relazione",
+      "freq": 17,
+      "size": 1.012,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
+          "title": "SPAZIOGENESI Ciò che conosco",
+          "excerpt": "Un metodo di conservazione fra ciò che accade e ciò che si\nvorrebbe vivere.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIOGENESI_Ci%C3%B2_che_conosco.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Chi osserva entra in una zona di\ncontatto tra l’intimità esposta e la tensione che la percorre.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Sul significare, minuziosi progetti di ricerca che rendono visibile un altrove a pochi passi\ndalla figurazione, una tensione tra impeto ed equilibrio.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Il legame tra la coppia Cialone-Conte e la tradizione della poesia visiva si manifesta innanzitutto in\nuna comune concezione del linguaggio come territorio di tensione politica.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Il progetto, proposto dall’artista Gemma Maria la Cecilia, intende analizzare con profondità critica e\ntensione poetica il tema della violenza – in particolare quella di genere – indagandone la persistenza\nnei luoghi…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Un appuntamento che pone al centro il rapporto tra immobilità e disfacimento, tra istinto\ndi conservazione e spinta alla rimodulazione.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "Il loro è un lavoro di delimitazione, circoscrizione, capovolgimento, nella ricerca dell'esatta misura.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "femminile",
+      "label": "femminile",
+      "cat": "corpo",
+      "freq": 19,
+      "size": 1.048,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Il dialogo tra le artiste Francesca Chiola e Lisa Rastelli, si rivela fondamentale per analizzare temi\nquali la sessualizzazione del corpo femminile e la performatività costantemente richiesta ad esso.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Elena Mussi (Alessandria, 1965)\nIn corso – Diploma accademico di primo livello in Pittura presso l’Accademia di Belle Arti di L’Aquila (AQ)\nPrecedentemente - Laurea in Geologia presso l’Università degli Studi di Genova…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Le artiste Maira Alejandra Cialone e Annalisa Conte, attraverso la stampa serigrafica, intendono\nrestituire al femminile il diritto alla propria auto-narrazione e dimostrare come il sistema patriarcale\nnon agisca solo…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Multietnica Gentium e La Compagnia della Contessa\nNati con la Camicia, di Giuseppe Tomei e regia di Gemma Maria la Cecilia , produzione Spazio Rimediato; Caffè\nStrega di Iaia Centofanti, e regia di Fabrizio Pompei,…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "Ignatova sfida cliché e convenzioni sociali esplorando il ruolo del femminile nella società\ncontemporanea e promuovendo la dissoluzione di dinamiche che per troppi anni hanno costretto il\ncorpo della donna entro la…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "La figura femminile diviene verbo, fonema autonomo che cerca di porsi in dialogo con l'altro,\nraccontando il mondo intorno a sé, la propria vita ed i propri tentativi di sublimazione.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "figura",
+      "label": "figura",
+      "cat": "corpo",
+      "freq": 16,
+      "size": 0.993,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "La mostra, ponendo in dialogo gli artisti Romario Bardhoshi e Stefania Delli Compagni, intende\nriflettere sul rapporto tra scenario antropizzato e paesaggio naturale; esplorando le modalità\noperative dell’artista,…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
+          "title": "SPAZIOGENESI Ciò che conosco",
+          "excerpt": "L’opera diviene, in tal senso, testimonianza di un passato prossimo lentamente in via di sparizione,\nciò mediante la rappresentazione di realtà ormai desuete che resistono e persistono in alcune aree o\ndi situazioni più…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIOGENESI_Ci%C3%B2_che_conosco.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Un conflitto interno insanabile si muove tra le pieghe della percezione, rendendo manifesta una\nnecessità di porre distanza tra l’immagine di sé e del proprio desiderio ed al contempo rivelando un\nbisogno di…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "La mostra, ponendo in dialogo Elena Mussi e Francesca Rinella, intende riflettere sul ruolo del\ncorpo e della figurazione all’interno della sperimentazione artistica, elevando la traccia a strumento\nconoscitivo…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Parola e immagine non\nsi limitano a coesistere, ma entrano in un rapporto dialettico e talvolta conflittuale: la scrittura non\nillustra l’immagine, né l’immagine traduce la scrittura, bensì entrambe agiscono…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Vi è un continuo tentativo di allontanarsi dal figurativo ed al contempo di rifugiarsi in esso.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "Le opere proposte, sviluppandosi in luoghi come le officine meccaniche, rifiutano una narrazione\npreconfezionata del rapporto tra i generi e danno vita a scenari alternativi in cui ciascuna donna è\ndetentrice attiva…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "Il corpo, sfidando se stesso e la propria immagine, diviene molteplice, in grado di fendersi e di\nlasciarsi attraversare.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "identità",
+      "label": "identità",
+      "cat": "relazione",
+      "freq": 7,
+      "size": 0.828,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "Graffiare, scalfire con forza, incidere nella memoria del materiale, servirsi della preponderanza del\nsegno per dar vita a forme di identità negoziabili.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Serialità, precisione chirurgica, gioco, ieraticità; alcuni degli elementi impiegati da Chiola e Rastelli\nper valorizzare ciò che concerne il piacere femminile e il necessario ruolo occupato dalla sessualità\nnel…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "In questa prospettiva, la mostra potrebbe collegarsi idealmente alle esperienze della Poesia visiva\nsviluppatasi a partire dagli anni ‘60, richiamando in modo esplicito ricerche di artiste quali Ketty La\nRocca o Lucia…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Pur traendo origine da una riflessione sulla violenza di genere, il progetto estende il proprio raggio\nd’azione a ogni forma di sopraffazione in cui un soggetto esercita potere sull’altro.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "I soggetti di Iezzi e Mancini danno vita ad un immaginario costituito per sovrapposizioni tenui e\nvelature impalpabili, le artiste travalicano costantemente il proprio lembo emotivo trasformandolo\nin entità visibile e…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "materia",
+      "label": "materia",
+      "cat": "processo",
+      "freq": 23,
+      "size": 1.122,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "L’utilizzo dell’elemento sonoro, del riciclo, della sovraesposizione e del\nsegno risultano primari nel processo e nella sperimentazione di materiali e supporti.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Francesca Chiola intreccia gesto e materia in una pittura che vibra di silenzi, sospensioni, desideri\ncompressi.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Ciò che spetta all’artista è prendere\ncoscienza di tale sbilanciamento e dare luce al proprio desiderio, manipolando la materia e giocando\ncon i concetti di ciclicità e metamorfosi.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto",
+          "title": "Comunicato E poi quando tutto è a posto",
+          "excerpt": "Le parole che compongono l’opera si fanno tangibili, dando forma ai contenuti che hanno\nattraversato l’area espositiva dell’associazione; materiale impalpabile ed al contempo in grado di\nprodurre memorie e narrazioni…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_%C3%A8_a_posto.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Essa non viene rappresentata unicamente come la traccia visibile di una violenza\nsubita, ma piuttosto come elemento attivo, capace di innescare processi di trasformazione e\nrisignificazione.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Ciò avviene mediante il proficuo dialogo tra gli artisti Vincenzo Damiano Cristallo e Manuela\nValloscuro che tramite tessere, scampoli e campiture offrono una personale lettura della realtà che li\ncirconda e del ruolo…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        }
+      ]
+    },
+    {
+      "id": "memoria",
+      "label": "memoria",
+      "cat": "memoria",
+      "freq": 22,
+      "size": 1.103,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "La compenetrazione tra luoghi, corpi e memorie avviene attraverso una costanza fragile ed un\nprofondo senso di cura.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
+          "title": "SPAZIOGENESI Ciò che conosco",
+          "excerpt": "Il loro è un climax che, fluttuando come in un sogno onirico tra memoria e trasposizione futura,\nraggiunge il proprio acme nel quesito identitario posto in essere.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIOGENESI_Ci%C3%B2_che_conosco.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Dodici intermezzi performativi e una festa, a cura di Maurizio Coccia in\ncollaborazione con Celeste, LAVAPIU, Teramo (TE)\n2023 - Ultramoderne, VII edizione di Straperetana, a cura di Paola Capata e Delfo Durante, Pereto…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Le artiste Elena Mussi e Francesca Rinella, rendendo il proprio agire uno strumento di memoria,\nnon accettano passivamente una narrazione imposta dall’esterno ma si ergono a trasformatrici della\nrealtà circostante.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto",
+          "title": "Comunicato E poi quando tutto è a posto",
+          "excerpt": "Le parole che compongono l’opera si fanno tangibili, dando forma ai contenuti che hanno\nattraversato l’area espositiva dell’associazione; materiale impalpabile ed al contempo in grado di\nprodurre memorie e narrazioni…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_%C3%A8_a_posto.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Il progetto intende analizzare il tema della violenza – in particolare quella di genere – indagandone\nla persistenza nei luoghi dell’abitare e nelle stratificazioni, spesso invisibili, della memoria.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Ciò avviene mediante il proficuo dialogo tra gli artisti Vincenzo Damiano Cristallo e Manuela\nValloscuro che tramite tessere, scampoli e campiture offrono una personale lettura della realtà che li\ncirconda e del ruolo…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "Nella costante stratificazione della memoria, uno spazio centrale è destinato alle reminiscenze del\npassato familiare che con emotività temperata vengono riportate alla luce mediante la pratica del\nnarrare storie.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "narrazione",
+      "label": "narrazione",
+      "cat": "memoria",
+      "freq": 29,
+      "size": 1.232,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "Egli, manipolato e sovraesposto, diviene mezzo\nmediante cui narrare un’infinità di storie possibili; che si tratti di narrazioni d’epica utopia, ipotesi\nper la ricostruzione di mondi passati o di scenari in cui abolire…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
+          "title": "SPAZIOGENESI Ciò che conosco",
+          "excerpt": "L’onnipresente tema del convivio è innestato all’interno di una narrazione indomita che procede\nnelle opere da sinistra verso destra.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIOGENESI_Ci%C3%B2_che_conosco.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Si tratta di una doppia narrazione che accompagna il fruitore in un percorso volto ad evidenziare da\nun lato la crudezza della realtà corporea e dall’altro la barriera difensiva che si è soliti elevare…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Una narrazione fra impeto ed equilibrio.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto",
+          "title": "Comunicato E poi quando tutto è a posto",
+          "excerpt": "Il progetto espositivo ideato, costituito da due video proiezioni, raccoglie delle tracce verbo-visive\ncapaci di narrare il percorso che ha portato l’associazione e gli operatori culturali coinvolti verso un\nprogressivo…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_%C3%A8_a_posto.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Le artiste Maira Alejandra Cialone e Annalisa Conte, attraverso la stampa serigrafica, intendono\nrestituire al femminile il diritto alla propria auto-narrazione e dimostrare come il sistema patriarcale\nnon agisca solo…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Gemma Maria la Cecilia (Pescara, 1982)\nIn corso - Diploma accademico di secondo livello in Decorazione presso l’Accademia di Belle Arti di L’Aquila\n(AQ)\n2016 – Laurea triennale in Storia e pratiche delle arti, della…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Ne nasce una narrazione composta da dettagli, superfici e vibrazioni minime, che guida\nl’osservazione verso gli equilibri delicati che sostengono la vita di ogni giorno.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "Le opere proposte, sviluppandosi in luoghi come le officine meccaniche, rifiutano una narrazione\npreconfezionata del rapporto tra i generi e danno vita a scenari alternativi in cui ciascuna donna è\ndetentrice attiva…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "Nella costante stratificazione della memoria, uno spazio centrale è destinato alle reminiscenze del\npassato familiare che con emotività temperata vengono riportate alla luce mediante la pratica del\nnarrare storie.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "opera",
+      "label": "opera",
+      "cat": "processo",
+      "freq": 40,
+      "size": 1.433,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "Tale principio, originariamente riferito all’equilibrio e all’importanza del mantenimento di un limite\ninvalicabile, diviene nelle opere esposte uno stimolo che fa dell’eccedenza, del posticcio e della\nsaturazione…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
+          "title": "SPAZIOGENESI Ciò che conosco",
+          "excerpt": "L’opera diviene, in tal senso, testimonianza di un passato prossimo lentamente in via di sparizione,\nciò mediante la rappresentazione di realtà ormai desuete che resistono e persistono in alcune aree o\ndi situazioni più…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIOGENESI_Ci%C3%B2_che_conosco.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Il presente appuntamento intende porre in dialogo le opere di Francesca Chiola e Lisa Rastelli;\nartiste che, partendo dal dispositivo pittorico, espandono la loro ricerca artistica destreggiandosi\nabilmente tra…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Sul significare\nUn progetto di ricerca in grado di mediare tra volontà e rimodulazione, necessità e possibilità.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto",
+          "title": "Comunicato E poi quando tutto è a posto",
+          "excerpt": "A circa un anno dal primo progetto ufficiale, l’associazione Spazio Genesi sceglie di proporre\nun’installazione site specific che sia in grado di rendere visibile quanto emerso nel corso degli studi\neffettuati…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_%C3%A8_a_posto.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Le opere mostrano come il patriarcato non agisca solo attraverso leggi o strutture sociali, ma anche\ntramite parole, slogan, modelli normalizzati ed interiorizzati passivamente.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "377/A21 del 16/01/2025) , nello specifico al progetto\nSHARED a cura del maestro e compositore Michelangelo Lupone con l’Accademia di Belle Arti di L’Aquila sotto\nla super visione del docente di Decorazione Franco…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Le opere proposte, nel continuo modellarsi, mantengono intatta un’originaria forma, un arcaico fuoco\nprofondamente legato ad un primordiale bisogno di rapporto con l’altro, ad un contante esigere.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "Le opere proposte, sviluppandosi in luoghi come le officine meccaniche, rifiutano una narrazione\npreconfezionata del rapporto tra i generi e danno vita a scenari alternativi in cui ciascuna donna è\ndetentrice attiva…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "Nei loro lavori, la massa corporea diviene nascondiglio, spazio sicuro e legittimato, esso assurge a\ndispositivo tramite cui varcare una soglia.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "processo",
+      "label": "processo",
+      "cat": "processo",
+      "freq": 60,
+      "size": 1.8,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "L’utilizzo dell’elemento sonoro, del riciclo, della sovraesposizione e del\nsegno risultano primari nel processo e nella sperimentazione di materiali e supporti.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
+          "title": "SPAZIOGENESI Ciò che conosco",
+          "excerpt": "Alessia Donatelli (Vasto, 2000)\nIn corso – Diploma accademico di secondo livello in Pittura presso l’Accademia di Belle Arti di L’Aquila\n2021 – Diploma accademico di primo livello in Pittura presso l’Accademia di Belle…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIOGENESI_Ci%C3%B2_che_conosco.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Il presente appuntamento intende porre in dialogo le opere di Francesca Chiola e Lisa Rastelli;\nartiste che, partendo dal dispositivo pittorico, espandono la loro ricerca artistica destreggiandosi\nabilmente tra…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Il processo delle artiste, spaziando dalla sartoria alla pittura fino ad arrivare all’installazione,\npermette di indagare le dinamiche insite nella dispersione dell’emotività e gli spazi in cui essa ha\nmodo di…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto",
+          "title": "Comunicato E poi quando tutto è a posto",
+          "excerpt": "A circa un anno dal primo progetto ufficiale, l’associazione Spazio Genesi sceglie di proporre\nun’installazione site specific che sia in grado di rendere visibile quanto emerso nel corso degli studi\neffettuati…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_%C3%A8_a_posto.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Fierce and Graceful\nLa pratica artistica come gesto politico e atto di riscrittura del reale.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Gemma Maria la Cecilia (Pescara, 1982)\nIn corso - Diploma accademico di secondo livello in Decorazione presso l’Accademia di Belle Arti di L’Aquila\n(AQ)\n2016 – Laurea triennale in Storia e pratiche delle arti, della…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Tale concetto non viene espresso in modo didascalico mediante l’ausilio di specifici materiali o\ntecniche artigianali ma al contrario attraverso una riflessione più ampia circa le piccole ossessioni che\ncostituiscono il…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "Gli artisti Milena Ignatova e Sebastiano Bacci attraverso fotografia e installazione danno vita ad una\npossente riflessione circa il desiderio, un’energia rivoluzionaria che, insinuandosi tra le pieghe\ndell’agire umano,…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "Nella costante stratificazione della memoria, uno spazio centrale è destinato alle reminiscenze del\npassato familiare che con emotività temperata vengono riportate alla luce mediante la pratica del\nnarrare storie.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "quotidiano",
+      "label": "quotidiano",
+      "cat": "processo",
+      "freq": 22,
+      "size": 1.103,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "Graffiare, scalfire con forza, incidere nella memoria del materiale, servirsi della preponderanza del\nsegno per dar vita a forme di identità negoziabili.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
+          "title": "SPAZIOGENESI Ciò che conosco",
+          "excerpt": "L’affievolimento del ricordo viene prepotentemente\ncontrastato attraverso la riproposizione di frammenti di vita quotidiana “traditi” ed al contempo\nsalvati.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIOGENESI_Ci%C3%B2_che_conosco.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "L’opera d’arte risulta un mezzo tramite cui garantire libertà d’espressione, permettendo una\ncomunicazione tempestiva e dando vita ad un linguaggio capace di mediare fra il particolare e\nl’universale.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Non si tratta solo di denunciare gli stereotipi radicati nel nostro immaginario quotidiano, ma di\nplasmare un rinnovato orizzonte semantico in grado di esplorare dall’interno l’esperienza\nfemminile.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "In tal senso, l’atto creativo risulta uno strumento fondamentale per dar vita ad uno spazio liminale,\nad una soglia necessaria tramite cui transitare affinché le lacerazioni dell’esperienza possano\nemergere, essere…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Il delicato atto di cura nella complessità del quotidiano.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "Gli artisti Milena Ignatova e Sebastiano Bacci attraverso fotografia e installazione danno vita ad una\npossente riflessione circa il desiderio, un’energia rivoluzionaria che, insinuandosi tra le pieghe\ndell’agire umano,…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "La figura femminile diviene verbo, fonema autonomo che cerca di porsi in dialogo con l'altro,\nraccontando il mondo intorno a sé, la propria vita ed i propri tentativi di sublimazione.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "relazione",
+      "label": "relazione",
+      "cat": "relazione",
+      "freq": 58,
+      "size": 1.763,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "Romario Bardhoshi ( Lezhë, 1998)\nIn corso - Diploma Accademico di primo livello in Grafica d’arte presso l’Accademia di Belle Arti di L’Aquila\n2018/2021 – Percorso di studi di primo livello in Grafica d’arte presso…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
+          "title": "SPAZIOGENESI Ciò che conosco",
+          "excerpt": "Alessia Donatelli (Vasto, 2000)\nIn corso – Diploma accademico di secondo livello in Pittura presso l’Accademia di Belle Arti di L’Aquila\n2021 – Diploma accademico di primo livello in Pittura presso l’Accademia di Belle…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIOGENESI_Ci%C3%B2_che_conosco.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Dodici intermezzi performativi e una festa, a cura di Maurizio Coccia in\ncollaborazione con Celeste, LAVAPIU, Teramo (TE)\n2023 - Ultramoderne, VII edizione di Straperetana, a cura di Paola Capata e Delfo Durante, Pereto…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Elena Mussi (Alessandria, 1965)\nIn corso – Diploma accademico di primo livello in Pittura presso l’Accademia di Belle Arti di L’Aquila (AQ)\nPrecedentemente - Laurea in Geologia presso l’Università degli Studi di Genova…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto",
+          "title": "Comunicato E poi quando tutto è a posto",
+          "excerpt": "Genere: mostra d’arte contemporanea\nData: 29 ottobre 2025, ore 18.00\nSede: Galleria Commerciale via Roma, Via Roma, 215, L'Aquila, primo piano Cc via Vicentini\nDa un’idea di Spazio Genesi\nA cura di Francesca Chiola e…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_%C3%A8_a_posto.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Il passaggio tra contemplazione ed azione,Galleria Atelier, Roma (RM)\n2017 - Signa manent, Atelier Contrasegno, Pozzuoli (NA)\n2017 - Zooart XII edizione De/Light, associazione culturale Zooart, Ortona (CH)\n2016 -…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Interrogare sé stessi e gli altri in merito alle tracce che la violenza iscrive nei luoghi, nei corpi e\nnelle relazioni.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Il paesaggio tra contemplazione ed azione, Galleria Atelier, Roma (RM)\n2024 - LIBRI D’ARTE, Seminiamo Arte MuBAq, Museo dei Bambini, Fossa (AQ)\n2023 - L’OLTREFESTA, Festival Performative 03, a cura di John Cascone e…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "Il concetto dell’apparire presuppone già di per sé la necessità di un corpo tramite cui essere\nregistrati dai sensi di qualcun altro, ciò significa che in ogni forma d’apparizione avviene uno\nscambio di informazioni.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "Si tratta di un lasciare\nandare ed al tempo stesso trattenere, un vegliare con cura ad una solerte distanza, un tangere in\nmaniere quasi impercettibili.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "soglia",
+      "label": "soglia",
+      "cat": "spazio",
+      "freq": 10,
+      "size": 0.883,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "Qui, la libertà ottenuta e garantita dal superamento del confine non assume valenze romantiche o\neroiche ma piuttosto diviene parametro quotidiano tramite cui mettere in discussione la realtà che ci\ncirconda, il proprio…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Il segno, la traccia, l’impronta divengono indizi fondamentali d’un passaggio che, per quanto\nfievole, permette all’umano di perdurare e riconoscersi nell’altro da sé.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Il passaggio tra contemplazione ed azione,Galleria Atelier, Roma (RM)\n2017 - Signa manent, Atelier Contrasegno, Pozzuoli (NA)\n2017 - Zooart XII edizione De/Light, associazione culturale Zooart, Ortona (CH)\n2016 -…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "L’opera diviene così fenditura e varco, un luogo di passaggio obbligato in cui la ferita si manifesta\nnella sua ambivalenza, ossia come segno di un trauma ma anche come potenziale occasione\nrigenerativa.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "Nei loro lavori, la massa corporea diviene nascondiglio, spazio sicuro e legittimato, esso assurge a\ndispositivo tramite cui varcare una soglia.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "spazio",
+      "label": "spazio",
+      "cat": "spazio",
+      "freq": 18,
+      "size": 1.03,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "Romario Bardhoshi ( Lezhë, 1998)\nIn corso - Diploma Accademico di primo livello in Grafica d’arte presso l’Accademia di Belle Arti di L’Aquila\n2018/2021 – Percorso di studi di primo livello in Grafica d’arte presso…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
+          "title": "SPAZIOGENESI Ciò che conosco",
+          "excerpt": "Alessia Donatelli (Vasto, 2000)\nIn corso – Diploma accademico di secondo livello in Pittura presso l’Accademia di Belle Arti di L’Aquila\n2021 – Diploma accademico di primo livello in Pittura presso l’Accademia di Belle…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIOGENESI_Ci%C3%B2_che_conosco.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "La comune esigenza di rispondere\nGenere: mostra d’arte contemporanea\nData: 28 maggio 2025, ore 18.00\nSede: Galleria Commerciale via Roma, Via Roma, 215, L'Aquila, primo piano Cc via Vicentini\nDa un’idea di Spazio…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto",
+          "title": "Comunicato E poi quando tutto è a posto",
+          "excerpt": "Un’indagine tra il\nrichiesto e il necessario in luoghi sottratti e sospesi, installazione d'arte contemporanea ideata da\nSpazio Genesi, associazione culturale che nasce come interfaccia tra gli studenti dell’Accademia…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_%C3%A8_a_posto.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Il passaggio tra contemplazione ed azione,Galleria Atelier, Roma (RM)\n2017 - Signa manent, Atelier Contrasegno, Pozzuoli (NA)\n2017 - Zooart XII edizione De/Light, associazione culturale Zooart, Ortona (CH)\n2016 -…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "In particolare, l’installazione ADHUC si concentra sui luoghi primari in cui la violenza si insinua e\nsi consuma, ossia gli spazi domestici, i luoghi del privato.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "Un colloquio tra flussi desideranti\nGenere: mostra d’arte contemporanea\nData: 28 gennaio 2026, ore 18.00\nSede: Galleria Commerciale via Roma, Via Roma, 215, L'Aquila, primo piano Cc via Vicentini\nDa un’idea di Spazio…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        }
+      ]
+    },
+    {
+      "id": "tempo",
+      "label": "tempo",
+      "cat": "memoria",
+      "freq": 17,
+      "size": 1.012,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
+          "title": "SPAZIOGENESI Ciò che conosco",
+          "excerpt": "Nei lavori presentati affiora in modo\npreponderante il legame col territorio abruzzese, la cui rappresentazione oscilla continuamente tra\ncrudezza illusoria ed al tempo stesso romanticismo pragmatico.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIOGENESI_Ci%C3%B2_che_conosco.pdf"
+        },
+        {
+          "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
+          "title": "La comune esigenza di rispondere",
+          "excerpt": "Entrambe aprono crepe, varchi in cui il corpo è al tempo stesso luogo di\naffermazione e zona di rischio.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Il segno, la traccia, l’impronta divengono indizi fondamentali d’un passaggio che, per quanto\nfievole, permette all’umano di perdurare e riconoscersi nell’altro da sé.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Esse costringono a confrontarsi con le\ncontraddizioni del presente e con la persistenza di discriminazioni che, sebbene mutate nelle forme,\ncontinuano a permeare la struttura sociale.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Il termine non indica soltanto una continuità temporale, bensì una persistenza ostinata che si protrae\nnel presente.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Un\npercorso che apre un tempo diverso, più disteso, capace di invitare a una presenza\nattenta e disponibile.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "L’incontro tra corpi non è sempre un’esperienza felice, si tratta al tempo stesso di un limite e di\nun’adiacenza.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        },
+        {
+          "name": "trattienimi_pure_2024",
+          "title": "trattienimi pure 2024",
+          "excerpt": "Ferme, ieratiche, soggiogate ed al contempo\ncullate dall'attesa, l'attesa di un ritorno, di un'utopica ricostruzione.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Spaziogenesi_comunicato_trattienimipure.pdf"
+        }
+      ]
+    },
+    {
+      "id": "traccia",
+      "label": "traccia",
+      "cat": "corpo",
+      "freq": 16,
+      "size": 0.993,
+      "docs": [
+        {
+          "name": "Comunicato_stampa_Mēdèn_ágan",
+          "title": "Mēdèn ágan",
+          "excerpt": "L’utilizzo dell’elemento sonoro, del riciclo, della sovraesposizione e del\nsegno risultano primari nel processo e nella sperimentazione di materiali e supporti.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/Comunicato_stampa_M%C4%93d%C3%A8n_%C3%A1gan.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
+          "title": "Aureum Sul significare COMUNICATO",
+          "excerpt": "Il segno, la traccia, l’impronta divengono indizi fondamentali d’un passaggio che, per quanto\nfievole, permette all’umano di perdurare e riconoscersi nell’altro da sé.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Aureum_Sul%20significare_COMUNICATO.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto",
+          "title": "Comunicato E poi quando tutto è a posto",
+          "excerpt": "Il progetto espositivo ideato, costituito da due video proiezioni, raccoglie delle tracce verbo-visive\ncapaci di narrare il percorso che ha portato l’associazione e gli operatori culturali coinvolti verso un\nprogressivo…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_%C3%A8_a_posto.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful",
+          "title": "Fierce and Graceful",
+          "excerpt": "Ogni immagine tende a conservare solo ciò che è davvero indispensabile, tutto si riduce a segno,\nparola e messaggio.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
+          "title": "comunicato ADHUC. Una persistenza ostinata",
+          "excerpt": "Interrogare sé stessi e gli altri in merito alle tracce che la violenza iscrive nei luoghi, nei corpi e\nnelle relazioni.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_Tessere",
+          "title": "comunicato Tessere",
+          "excerpt": "Essa dispiega le proprie possibilità narrative attraverso una ricomposizione lenta delle tracce e degli\nindizi trasmessi da tessere, scampoli o campiture di colore.",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "SPAZIO_GENESI_comunicato_amore_e_odio",
+          "title": "comunicato amore e odio",
+          "excerpt": "di Marzo, STORIES UNTOLD MAGAZINE\n2024 - ART & FASHION - nel segno dello stile, a cura dell’indirizzo di Moda e Costume dell’Accademia di Belle\nArti, Palazzo Burri Gatti, L’Aquila (AQ)\nSebastiano Bacci (Asti, 2004)\nIn…",
+          "pdf_url": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "identità",
+      "target": "narrazione",
+      "weight": 1.0
+    },
+    {
+      "source": "dolore",
+      "target": "traccia",
+      "weight": 0.973
+    },
+    {
+      "source": "comunità",
+      "target": "femminile",
+      "weight": 0.912
+    },
+    {
+      "source": "dolore",
+      "target": "spazio",
+      "weight": 0.907
+    },
+    {
+      "source": "emotività",
+      "target": "identità",
+      "weight": 0.897
+    },
+    {
+      "source": "dolore",
+      "target": "tempo",
+      "weight": 0.839
+    },
+    {
+      "source": "figura",
+      "target": "identità",
+      "weight": 0.836
+    },
+    {
+      "source": "femminile",
+      "target": "narrazione",
+      "weight": 0.816
+    },
+    {
+      "source": "emotività",
+      "target": "memoria",
+      "weight": 0.735
+    },
+    {
+      "source": "comunità",
+      "target": "processo",
+      "weight": 0.734
+    },
+    {
+      "source": "emotività",
+      "target": "spazio",
+      "weight": 0.702
+    },
+    {
+      "source": "comunità",
+      "target": "materia",
+      "weight": 0.696
+    },
+    {
+      "source": "materia",
+      "target": "quotidiano",
+      "weight": 0.678
+    },
+    {
+      "source": "emotività",
+      "target": "figura",
+      "weight": 0.677
+    },
+    {
+      "source": "spazio",
+      "target": "tempo",
+      "weight": 0.665
+    },
+    {
+      "source": "soglia",
+      "target": "traccia",
+      "weight": 0.659
+    },
+    {
+      "source": "emotività",
+      "target": "equilibrio",
+      "weight": 0.65
+    },
+    {
+      "source": "corpo",
+      "target": "femminile",
+      "weight": 0.637
+    },
+    {
+      "source": "memoria",
+      "target": "quotidiano",
+      "weight": 0.635
+    },
+    {
+      "source": "figura",
+      "target": "traccia",
+      "weight": 0.617
+    },
+    {
+      "source": "soglia",
+      "target": "spazio",
+      "weight": 0.613
+    },
+    {
+      "source": "corpo",
+      "target": "soglia",
+      "weight": 0.606
+    },
+    {
+      "source": "dolore",
+      "target": "soglia",
+      "weight": 0.606
+    },
+    {
+      "source": "femminile",
+      "target": "figura",
+      "weight": 0.6
+    },
+    {
+      "source": "corpo",
+      "target": "figura",
+      "weight": 0.584
+    },
+    {
+      "source": "comunità",
+      "target": "corpo",
+      "weight": 0.583
+    },
+    {
+      "source": "corpo",
+      "target": "identità",
+      "weight": 0.576
+    },
+    {
+      "source": "femminile",
+      "target": "quotidiano",
+      "weight": 0.569
+    },
+    {
+      "source": "opera",
+      "target": "tempo",
+      "weight": 0.555
+    },
+    {
+      "source": "tempo",
+      "target": "traccia",
+      "weight": 0.546
+    },
+    {
+      "source": "identità",
+      "target": "tempo",
+      "weight": 0.528
+    },
+    {
+      "source": "equilibrio",
+      "target": "processo",
+      "weight": 0.504
+    },
+    {
+      "source": "dolore",
+      "target": "opera",
+      "weight": 0.502
+    },
+    {
+      "source": "memoria",
+      "target": "opera",
+      "weight": 0.499
+    },
+    {
+      "source": "opera",
+      "target": "spazio",
+      "weight": 0.498
+    },
+    {
+      "source": "narrazione",
+      "target": "opera",
+      "weight": 0.479
+    },
+    {
+      "source": "materia",
+      "target": "memoria",
+      "weight": 0.477
+    },
+    {
+      "source": "materia",
+      "target": "traccia",
+      "weight": 0.475
+    },
+    {
+      "source": "equilibrio",
+      "target": "relazione",
+      "weight": 0.474
+    },
+    {
+      "source": "quotidiano",
+      "target": "soglia",
+      "weight": 0.473
+    },
+    {
+      "source": "materia",
+      "target": "relazione",
+      "weight": 0.443
+    },
+    {
+      "source": "comunità",
+      "target": "quotidiano",
+      "weight": 0.433
+    },
+    {
+      "source": "narrazione",
+      "target": "processo",
+      "weight": 0.43
+    },
+    {
+      "source": "memoria",
+      "target": "narrazione",
+      "weight": 0.413
+    },
+    {
+      "source": "processo",
+      "target": "relazione",
+      "weight": 0.396
+    }
+  ]
+}
