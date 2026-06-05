@@ -1,15 +1,15 @@
 [
   {
-    "id": "carezze-sotto-la-pioggia",
-    "titolo": "Carezze sotto la pioggia",
-    "data": "19 Giugno 2026",
+    "id": "adhuc-una-persistenza-ostinata",
+    "titolo": "ADHUC, una persistenza ostinata",
+    "data": "13 Maggio 2026",
     "anno": 2026,
     "tipo": "Mostra",
-    "artiste": ["Francesca Chiola", "Stefania Delli Compagni"],
+    "artiste": ["Gemma Maria La Cecilia"],
     "curatrice": "Sara Dias",
-    "tags": ["Performance", "Installazione"],
-    "descrizione": "Il gesto artistico tra separazione e bisogno identitario.",
-    "comunicato": "/assets/media/SPAZIO_GENESI_Comunicato_Carezze.pdf"
+    "tags": ["Personale", "Arte Contemporanea"],
+    "descrizione": "La persistenza della ferita: indagine sul corpo e sulla violenza invisibile attraverso la materia e il gesto.",
+    "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
   },
   {
     "id": "amore-e-odio",
