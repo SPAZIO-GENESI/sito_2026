@@ -84,6 +84,31 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </section>
 </BaseLayout>
 
+<!-- Guard: revert overflow:hidden that PayPal SDK may inject on html/body -->
+<script is:inline>
+  (function() {
+    var targets = [document.documentElement, document.body];
+    function restoreOverflow(el) {
+      if (el && getComputedStyle(el).overflow === 'hidden') {
+        el.style.overflow = '';
+      }
+      if (el && el.style && el.style.overflow === 'hidden') {
+        el.style.overflow = '';
+      }
+    }
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(m) {
+        if (m.type === 'attributes' && m.attributeName === 'style') {
+          restoreOverflow(m.target);
+        }
+      });
+    });
+    targets.forEach(function(t) {
+      observer.observe(t, { attributes: true, attributeFilter: ['style', 'class'] });
+    });
+  })();
+</script>
+
 <!-- PayPal SDK — un solo SDK per evitare conflitti che rompono il layout -->
 <script
   src="https://www.paypal.com/sdk/js?client-id=BAAWaqUltEyNiREyqCFGtH46W-x7TOP9Rc26ILViUvyJWFNw4U91zwyPWw8lUimPNBBOXc9fH9mUocMFxA&components=hosted-buttons&disable-funding=venmo&currency=EUR"
