@@ -1,9 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import data from '../../data/artisti.json'
+import archivio_data from '../../data/archivio.json'
 import { flattenImmagini, extractAbstract } from '../../types'
 import type { Artista } from '../../types'
 import { u } from '../../utils/url'
+
+type EventoArchivio = { id: string; titolo: string; data?: string; anno: number; artiste: string[]; curatrice?: string }
 
 export function getStaticPaths() {
   return (data.artisti as Artista[]).map(artista => ({
@@ -20,6 +23,12 @@ const immagini = flattenImmagini(artista.img)
 const tutteImg = immagini.filter(i => i.img)
 const primaImg = tutteImg.length > 0 ? tutteImg[0] : undefined
 const abstract = extractAbstract(artista.bio, 300)
+
+const mioNome = nomeDecoded.toLowerCase()
+const mostrePartecipate = (archivio_data as EventoArchivio[]).filter(ev =>
+  ev.artiste.some(a => a.toLowerCase() === mioNome) ||
+  (ev.curatrice != null && ev.curatrice.toLowerCase() === mioNome)
+)
 
 const ogImageUrl = primaImg
   ? `https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v4/${encodeURIComponent('Biografia ' + nomeDecoded)}/${encodeURIComponent('Artista Spazio Genesi')}/${encodeURIComponent('https://spaziogenesi.org/biografie/' + artista.cartella + '/' + primaImg.img)}/og.png`
@@ -84,9 +93,30 @@ const personSchema = JSON.stringify({
         <div class="lg:col-span-2 flex flex-col justify-start">
           <h1 class="text-foreground mb-4">{nomeDecoded}</h1>
 
-          <p class="text-muted-foreground text-base leading-relaxed mb-8">
+          <p class="text-muted-foreground text-base leading-relaxed mb-6">
             {abstract}
           </p>
+
+          {mostrePartecipate.length > 0 && (
+            <div class="mb-8">
+              <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Mostre a Spazio Genesi</p>
+              <ul class="space-y-1">
+                {mostrePartecipate.map(ev => {
+                  const comeCuratrice = ev.curatrice != null && ev.curatrice.toLowerCase() === mioNome
+                  return (
+                    <li class="flex items-baseline gap-2 text-sm">
+                      <a href={u(`/archivio/#${ev.id}`)} class="text-accent hover:opacity-80 transition-opacity font-medium">
+                        {ev.titolo}
+                      </a>
+                      <span class="text-muted-foreground text-xs shrink-0">
+                        {ev.data ?? ev.anno}{comeCuratrice && ' — cura'}
+                      </span>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          )}
 
           <div class="space-y-2 text-sm">
             {artista.IG && (

@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import eventi from '../data/archivio.json'
+import artisti_data from '../data/artisti.json'
 import { u } from '../utils/url'
 const grafoUrl = u('/grafo/')
+
+const bioMap = new Map(artisti_data.artisti.map(a => [decodeURIComponent(a.nome).toLowerCase(), a.cartella]))
 
 const anni = [...new Set(eventi.map(e => e.anno))].sort((a, b) => b - a)
 const tipi = [...new Set(eventi.map(e => e.tipo))]
@@ -83,6 +86,7 @@ const tags = [...new Set(eventi.flatMap(e => e.tags))].sort()
       <div id="archivio-list" class="space-y-4">
         {eventi.map(ev => (
           <div
+            id={ev.id}
             class="archivio-item border border-border rounded-lg p-6 hover:shadow-md transition-shadow"
             data-anno={String(ev.anno)}
             data-tipo={ev.tipo}
@@ -132,10 +136,29 @@ const tags = [...new Set(eventi.flatMap(e => e.tags))].sort()
                     <span class="font-medium">{ev.tipo}</span>
                   </div>
                   {ev.artiste.length > 0 && (
-                    <span class="text-muted-foreground">{ev.artiste.join(', ')}</span>
+                    <span class="text-muted-foreground">
+                      {ev.artiste.map((nome, i) => {
+                        const cartella = bioMap.get(nome.toLowerCase())
+                        return (
+                          <span>
+                            {i > 0 && <span>, </span>}
+                            {cartella
+                              ? <a href={u(`/biografie/${cartella}/`)} class="hover:text-accent transition-colors">{nome}</a>
+                              : nome
+                            }
+                          </span>
+                        )
+                      })}
+                    </span>
                   )}
                   {ev.curatrice && (
-                    <span class="italic text-muted-foreground">cura: {ev.curatrice}</span>
+                    <span class="italic text-muted-foreground">
+                      cura:{' '}
+                      {bioMap.get(ev.curatrice.toLowerCase())
+                        ? <a href={u(`/biografie/${bioMap.get(ev.curatrice.toLowerCase())}/`)} class="hover:text-accent transition-colors">{ev.curatrice}</a>
+                        : ev.curatrice
+                      }
+                    </span>
                   )}
                 </div>
 
