@@ -7,7 +7,7 @@
     "tipo": "Mostra",
     "artiste": ["Gemma Maria La Cecilia"],
     "curatrice": "Sara Dias",
-    "tags": ["Personale", "Arte Contemporanea"],
+    "tags": ["Personale", "Arte Contemporanea", "Installazione", "Arti visive"],
     "descrizione": "La persistenza della ferita: indagine sul corpo e sulla violenza invisibile attraverso la materia e il gesto.",
     "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf",
     "href": "/archivio/adhuc-una-persistenza-ostinata/"
@@ -20,7 +20,7 @@
     "tipo": "Mostra",
     "artiste": ["Milena Sofkova Ignatova", "Sebastiano Bacci"],
     "curatrice": "Sara Dias",
-    "tags": ["Fotografia", "Pittura"],
+    "tags": ["Fotografia", "Moda", "Arte Contemporanea"],
     "descrizione": "Un colloquio tra flussi desideranti.",
     "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_amore_e_odio.pdf",
     "href": "/archivio/amore-e-odio/"
@@ -33,7 +33,7 @@
     "tipo": "Mostra",
     "artiste": ["Maira Alejandra Cialone", "Annalisa Conte"],
     "curatrice": "Sara Dias",
-    "tags": ["Arte Contemporanea"],
+    "tags": ["Arte Contemporanea", "Serigrafia", "Arti visive"],
     "descrizione": "La pratica artistica come gesto politico e atto di riscrittura del reale.",
     "comunicato": "/assets/media/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf",
     "href": "/archivio/fierce-and-graceful/"
@@ -46,7 +46,7 @@
     "tipo": "Mostra",
     "artiste": ["Manuela Valloscuro", "Vincenzo Damiano Cristallo"],
     "curatrice": "Sara Dias",
-    "tags": ["Pittura", "Scultura"],
+    "tags": ["Pittura", "Scultura", "Installazione", "Decorazione"],
     "descrizione": "Un perenne necessitare che assume corpo tra conservazione e assestamento.",
     "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_Tessere.pdf",
     "href": "/archivio/tessere/"
@@ -70,7 +70,7 @@
     "anno": 2025,
     "tipo": "Mostra",
     "artiste": ["Francesca Chiola", "Lisa Rastelli"],
-    "tags": ["Performance", "Installazione", "Pittura"],
+    "tags": ["Performance", "Installazione", "Scultura"],
     "descrizione": "Sessualizzazione del corpo femminile e performatività: un dialogo tra pittura e installazione.",
     "comunicato": "/assets/media/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf",
     "href": "/archivio/comune-esigenza/"
@@ -95,7 +95,7 @@
     "anno": 2025,
     "tipo": "Mostra",
     "artiste": ["Elena Mussi", "Francesca Rinella"],
-    "tags": ["Fotografia", "Moda"],
+    "tags": ["Pittura", "Moda"],
     "descrizione": "Sul ruolo del corpo e della figurazione nella sperimentazione artistica. Tensione tra impeto ed equilibrio.",
     "comunicato": "/assets/media/SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO.pdf",
     "href": "/archivio/aureum/"
@@ -119,7 +119,7 @@
     "anno": 2024,
     "tipo": "Mostra",
     "artiste": ["Sabrina Iezzi", "Marianna Mancini"],
-    "tags": ["Arte Contemporanea"],
+    "tags": ["Arte Contemporanea", "installazione", "Fotografia"],
     "descrizione": "La massa corporea come nascondiglio e spazio sicuro: dispositivo tramite cui varcare una soglia.",
     "comunicato": "/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf",
     "href": "/archivio/trattienimi-pure/"
@@ -131,7 +131,7 @@
     "anno": 2024,
     "tipo": "Mostra",
     "artiste": ["Debora Panaccione", "Davide Mariani"],
-    "tags": ["Fotografia", "Pittura"],
+    "tags": ["Fotografia", "Disegno"],
     "descrizione": "Fotografia e pittura come strumenti di indagine su ciò che rimane irraggiungibile.",
     "comunicato": "/assets/media/Comunicato stampa Che non si potrà mai avere.pdf",
     "href": "/archivio/che-non-si-potra-mai-avere/"
