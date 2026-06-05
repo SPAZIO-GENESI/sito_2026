@@ -1,5 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import { u } from '../utils/url'
+
+const attivitaFiles = import.meta.glob('../data/attivita/*.json', { eager: true }) as Record<string, any>
+const eventi = Object.values(attivitaFiles)
+  .map((d: any) => d.default ?? d)
+  .sort((a: any, b: any) => (b.anno ?? 0) - (a.anno ?? 0))
 ---
 <BaseLayout
   title="Attività, Talk e Workshop — Spazio Genesi ETS L'Aquila"
@@ -62,6 +68,68 @@ import BaseLayout from '../layouts/BaseLayout.astro'
       </div>
     </div>
   </section>
+
+  <!-- Feste ed eventi -->
+  {eventi.length > 0 && (
+    <section class="py-16 bg-background border-b border-border">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <h2 class="text-foreground mb-8">Feste ed eventi</h2>
+        <div class="space-y-4">
+          {eventi.map((ev: any) => (
+            <div class="border border-border rounded-lg p-6 hover:shadow-md transition-shadow">
+              <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                {ev.locandina && (
+                  <div class="shrink-0">
+                    <a href={u(`/attivita/${ev.id}/`)}>
+                      <img src={u(ev.locandina)} alt={ev.locandina_alt ?? ev.titolo}
+                        class="w-24 h-32 object-cover rounded border border-border" loading="lazy" />
+                    </a>
+                  </div>
+                )}
+                <div class="flex-1">
+                  <div class="flex items-start gap-3 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="text-accent shrink-0 mt-0.5" aria-hidden="true">
+                      <path d="M8 2v4"/><path d="M16 2v4"/>
+                      <rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
+                    </svg>
+                    <div>
+                      <a href={u(`/attivita/${ev.id}/`)} class="hover:text-accent transition-colors">
+                        <h3 class="text-foreground font-semibold">{ev.titolo}</h3>
+                      </a>
+                      {ev.descrizione && <p class="text-muted-foreground text-sm">{ev.descrizione}</p>}
+                    </div>
+                  </div>
+                  <div class="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mt-3">
+                    <div class="flex items-center gap-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M8 2v4"/><path d="M16 2v4"/>
+                        <rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>
+                      </svg>
+                      <span>{ev.data ?? ev.anno}</span>
+                    </div>
+                    {ev.tags && ev.tags.length > 0 && ev.tags.map((tag: string) => (
+                      <span class="text-xs px-2 py-0.5 bg-muted text-muted-foreground rounded-full">{tag}</span>
+                    ))}
+                  </div>
+                  <a href={u(`/attivita/${ev.id}/`)}
+                    class="inline-flex items-center gap-1 mt-4 text-sm font-medium text-accent hover:opacity-80 transition-opacity">
+                    Scopri di più
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   <section class="py-12 bg-secondary">
     <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">

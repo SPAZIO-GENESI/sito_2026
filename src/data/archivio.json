@@ -52,18 +52,6 @@
     "href": "/archivio/tessere/"
   },
   {
-    "id": "festa-matricole-2025",
-    "titolo": "Festa delle matricole ABAQ 2025",
-    "data": "7 Novembre 2025",
-    "anno": 2025,
-    "tipo": "Evento",
-    "artiste": [],
-    "tags": ["Comunità"],
-    "descrizione": "Potluck Party di benvenuto alle nuove iscritte e ai nuovi iscritti.",
-    "comunicato": null,
-    "href": "/archivio/festa-matricole-2025/"
-  },
-  {
     "id": "e-poi-quando-tutto-e-a-posto",
     "titolo": "E POI QUANDO TUTTO È A POSTO",
     "data": "29 Ottobre 2025",
@@ -147,18 +135,6 @@
     "descrizione": "Fotografia e pittura come strumenti di indagine su ciò che rimane irraggiungibile.",
     "comunicato": "/assets/media/Comunicato stampa Che non si potrà mai avere.pdf",
     "href": "/archivio/che-non-si-potra-mai-avere/"
-  },
-  {
-    "id": "festa-matricole-2024",
-    "titolo": "Festa delle matricole ABAQ 2024",
-    "data": "7 Novembre 2024",
-    "anno": 2024,
-    "tipo": "Evento",
-    "artiste": [],
-    "tags": ["Comunità"],
-    "descrizione": "Potluck party di benvenuto.",
-    "comunicato": null,
-    "href": "/archivio/festa-matricole-2024/"
   },
   {
     "id": "possibile-da-scrivere",
