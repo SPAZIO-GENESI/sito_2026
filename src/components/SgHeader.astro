@@ -15,7 +15,7 @@ const navLinks = [
   { href: u('/chisiamo/'), label: 'Chi siamo', key: 'chisiamo' },
 ]
 ---
-<header class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+<header class="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border" data-pagefind-ignore>
   <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
     <a href={u('/')} class="flex items-center gap-3 text-xl lg:text-2xl font-semibold text-foreground hover:text-accent transition-colors">
       <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -56,6 +56,18 @@ const navLinks = [
         </li>
       ))}
     </ul>
+
+    <!-- Search icon -->
+    <a href={u('/cerca/')}
+      aria-label="Cerca nel sito"
+      class={`hidden md:flex items-center justify-center p-1 rounded transition-colors ${activePage === 'cerca' ? 'text-accent' : 'text-foreground hover:text-accent'}`}
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+        aria-hidden="true">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+      </svg>
+    </a>
 
     <!-- Hamburger button (mobile only) -->
     <button
@@ -99,6 +111,18 @@ const navLinks = [
           </a>
         </li>
       ))}
+      <li>
+        <a
+          href={u('/cerca/')}
+          class={`block py-3 text-base font-medium transition-colors ${
+            activePage === 'cerca'
+              ? 'text-accent'
+              : 'text-foreground hover:text-accent'
+          }`}
+        >
+          Cerca
+        </a>
+      </li>
     </ul>
   </div>
 </header>

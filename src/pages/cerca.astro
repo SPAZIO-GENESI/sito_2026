@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+<BaseLayout
+  title="Cerca — Spazio Genesi ETS"
+  description="Cerca artisti, mostre, attività e contenuti nel sito di Spazio Genesi ETS L'Aquila."
+  activePage="cerca"
+>
+  <section class="py-16 lg:py-20 bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h1 class="text-foreground mb-4">Cerca</h1>
+      <p class="text-lg text-muted-foreground max-w-2xl">
+        Cerca artisti, mostre, attività e contenuti nel sito.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-background min-h-[50vh]">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div id="search"></div>
+      <noscript>
+        <p class="text-muted-foreground">Attiva JavaScript per usare la ricerca.</p>
+      </noscript>
+    </div>
+  </section>
+</BaseLayout>
+
+<style is:global>
+  :root {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: oklch(60% .2 30);
+    --pagefind-ui-text: oklch(12% .02 250);
+    --pagefind-ui-background: oklch(98% .01 60);
+    --pagefind-ui-border: oklch(90% .01 60);
+    --pagefind-ui-tag: oklch(93% .008 60);
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 0.5rem;
+    --pagefind-ui-font: ui-sans-serif, system-ui, sans-serif;
+  }
+  .pagefind-ui__search-input {
+    font-size: 1rem !important;
+  }
+  .pagefind-ui__result-title {
+    font-family: "Cormorant Garamond", serif !important;
+    font-weight: 300 !important;
+  }
+</style>
+
+<script>
+  const link = document.createElement('link')
+  link.rel = 'stylesheet'
+  link.href = '/pagefind/pagefind-ui.css'
+  document.head.appendChild(link)
+
+  const script = document.createElement('script')
+  script.src = '/pagefind/pagefind-ui.js'
+  script.onload = () => {
+    new (window as any).PagefindUI({
+      element: '#search',
+      showImages: false,
+      translations: {
+        placeholder: 'Cerca nel sito…',
+        zero_results: 'Nessun risultato per "[SEARCH_TERM]"',
+        many_results: '[COUNT] risultati per "[SEARCH_TERM]"',
+        one_result: '1 risultato per "[SEARCH_TERM]"',
+        alt_search: 'Nessun risultato per "[SEARCH_TERM]". Mostrando risultati per "[DIFFERENT_TERM]"',
+        search_suggestion: 'Nessun risultato per "[SEARCH_TERM]". Prova con una di queste ricerche:',
+        searching: 'Ricerca in corso…',
+      }
+    })
+  }
+  document.body.appendChild(script)
+</script>
