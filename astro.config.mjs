@@ -12,7 +12,7 @@ export default defineConfig({
       // Escludi pagine non indicizzabili
       filter: (page) =>
         !page.includes('/mostre/') &&
-        !page.includes('/MLsottoscrizione/'),
+        !page.includes('/newsletter/'),
 
       // Priorità e changefreq per tipo di pagina
       serialize(item) {

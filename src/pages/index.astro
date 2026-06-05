@@ -14,11 +14,36 @@ type Persona = { nome: string; href?: string }
 function renderPersone(persone: Persona[]) {
   return persone
 }
+
+const eventSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ExhibitionEvent',
+  name: mostra.titolo,
+  description: mostra.tipo,
+  startDate: mostra.startDateISO,
+  location: {
+    '@type': 'Place',
+    name: mostra.luogo,
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 42.3561053,
+      longitude: 13.3884423,
+    },
+  },
+  organizer: {
+    '@type': 'Organization',
+    name: 'Spazio Genesi ETS',
+    url: 'https://spaziogenesi.org',
+  },
+  image: mostra.immagine,
+  url: 'https://spaziogenesi.org/',
+})
 ---
 <BaseLayout
   title="Spazio Genesi — Arte Contemporanea, L'Aquila"
   description={`Spazio Genesi ETS: ${mostra.tipo}. ${mostra.titolo}, ${mostra.vernissage}. Laboratorio permanente, Accademia di Belle Arti L'Aquila.`}
   ogImage={mostra.immagine}
+  schemaLD={eventSchema}
 >
 
   <!-- ① MOSTRA CORRENTE: testo sinistra, immagine destra -->
@@ -343,7 +368,7 @@ function renderPersone(persone: Persona[]) {
                 class="text-accent hover:opacity-80 transition-opacity underline">Candidatura mostra personale</a>
             </li>
             <li>
-              <a href={u('/MLsottoscrizione/')}
+              <a href={u('/newsletter/')}
                 class="text-accent hover:opacity-80 transition-opacity underline">Iscrizione mailing list</a>
             </li>
           </ul>

@@ -24,12 +24,27 @@ const abstract = extractAbstract(artista.bio, 300)
 const ogImageUrl = primaImg
   ? `https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v4/${encodeURIComponent('Biografia ' + nomeDecoded)}/${encodeURIComponent('Artista Spazio Genesi')}/${encodeURIComponent('https://spaziogenesi.org/biografie/' + artista.cartella + '/' + primaImg.img)}/og.png`
   : undefined
+
+const personSchema = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: nomeDecoded,
+  description: abstract,
+  ...(primaImg ? { image: `https://spaziogenesi.org/biografie/${artista.cartella}/${primaImg.img}` } : {}),
+  url: `https://spaziogenesi.org/biografie/${artista.cartella}/`,
+  affiliation: {
+    '@type': 'Organization',
+    name: 'Spazio Genesi ETS',
+    url: 'https://spaziogenesi.org',
+  },
+})
 ---
 <BaseLayout
   title={`${nomeDecoded} — Spazio Genesi`}
   description={abstract}
   ogImage={ogImageUrl}
   canonical={`https://spaziogenesi.org/biografie/${artista.cartella}/`}
+  schemaLD={personSchema}
   activePage="biografie"
 >
   <!-- Back navigation -->

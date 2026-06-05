@@ -3,7 +3,7 @@ Allow: /
 
 # Pagine interne — non indicizzare
 Disallow: /mostre/
-Disallow: /MLsottoscrizione/
+Disallow: /newsletter/
 
 # Asset e file di build — non utili all'indice
 Disallow: /_astro/

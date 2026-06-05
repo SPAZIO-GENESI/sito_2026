@@ -12,6 +12,8 @@ interface Props {
   ogImage?: string
   canonical?: string
   activePage?: string
+  noindex?: boolean
+  schemaLD?: string
 }
 
 const {
@@ -20,16 +22,60 @@ const {
   ogImage = 'https://spaziogenesi.org/img/spazio_genesi_logo.png',
   canonical,
   activePage = '',
+  noindex = false,
+  schemaLD,
 } = Astro.props
 
 const canonicalUrl = canonical ?? Astro.url.href
+
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ArtGallery',
+  name: 'Spazio Genesi ETS',
+  description: "Laboratorio permanente di interazione e arte contemporanea, Accademia di Belle Arti di L'Aquila.",
+  url: 'https://spaziogenesi.org',
+  email: 'info@spaziogenesi.org',
+  taxID: '96602450585',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Galleria Commerciale Via Roma, 215, primo piano',
+    addressLocality: "L'Aquila",
+    addressRegion: 'AQ',
+    postalCode: '67100',
+    addressCountry: 'IT',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 42.3561053,
+    longitude: 13.3884423,
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+      opens: '17:30',
+      closes: '19:30',
+    },
+  ],
+  sameAs: [
+    'https://www.instagram.com/spaziogenesi/',
+    'https://www.facebook.com/spaziogenesi',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: 'info@spaziogenesi.org',
+    contactType: 'customer service',
+    availableLanguage: 'Italian',
+    description: 'Si consiglia di contattarci per garantirsi la visita — le aperture non sono sempre regolari.',
+  },
+}
 ---
 <!doctype html>
 <html lang="it">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
     <link rel="icon" type="image/svg+xml" href={u('/assets/favicon.svg')} />
     <meta name="generator" content={Astro.generator} />
 
@@ -37,11 +83,23 @@ const canonicalUrl = canonical ?? Astro.url.href
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalUrl} />
 
+    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Schema.org: ArtGallery/Organization (globale su tutte le pagine) -->
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+    <!-- Schema.org: schema specifico della pagina (Event, Person, ecc.) -->
+    {schemaLD && <script type="application/ld+json" set:html={schemaLD} />}
 
     <Matomo />
     <Tawk />
