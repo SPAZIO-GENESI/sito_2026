@@ -146,7 +146,7 @@ try {
                       {libro.thumbUrl ? (
                         <button
                           class="cdid-thumb"
-                          data-img={libro.coverUrl || libro.thumbUrl}
+                          data-img={libro.thumbUrl ? libro.thumbUrl.split('?')[0] : ''}
                           data-title={libro.autore ? `${libro.titolo} — ${libro.autore}` : libro.titolo}
                           data-desc={libro.estratto3 || libro.estratto1 || libro.estratto2}
                           aria-label={`Copertina: ${libro.titolo}`}
