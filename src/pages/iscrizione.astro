@@ -38,7 +38,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
           <div>
             <h2 class="text-lg font-semibold text-foreground mb-2">Quota Socia</h2>
             <p class="text-sm text-muted-foreground leading-relaxed">
-              Iscrizione trimestrale come <strong class="text-foreground">SOCIA</strong>.
+              Iscrizione mensile libera come <strong class="text-foreground">SOCIA</strong>.
               Partecipazione alle attività e agli eventi di Spazio Genesi.
             </p>
           </div>
@@ -59,9 +59,9 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
       </div>
 
-      <!-- Abbonamento mensile (riga intera) -->
+      <!-- Abbonamento mensile per un anno -->
       <div class="mt-10 border border-border rounded-xl p-7 bg-background">
-        <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+        <div class="flex flex-col md:flex-row md:items-start gap-6">
           <div class="flex-1">
             <h2 class="text-lg font-semibold text-foreground mb-2">Abbonamento mensile per un anno</h2>
             <p class="text-sm text-muted-foreground leading-relaxed max-w-xl">
@@ -71,11 +71,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
               eleggibilità a ruoli operativi e CDA.
             </p>
           </div>
-          <div class="shrink-0">
-            <a href="mailto:info@spaziogenesi.org?subject=Abbonamento mensile Spazio Genesi"
-              class="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
-              Contattaci per iscriverti
-            </a>
+          <div class="shrink-0 w-full md:w-64">
+            <div id="paypal-button-container-P-7ML05505JA818620MNG6B4LA"></div>
           </div>
         </div>
       </div>
@@ -84,14 +81,11 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </section>
 </BaseLayout>
 
-<!-- Guard: revert overflow:hidden that PayPal SDK may inject on html/body -->
+<!-- Guard: revert overflow:hidden that PayPal SDKs may inject on html/body (breaks sticky header) -->
 <script is:inline>
   (function() {
     var targets = [document.documentElement, document.body];
     function restoreOverflow(el) {
-      if (el && getComputedStyle(el).overflow === 'hidden') {
-        el.style.overflow = '';
-      }
       if (el && el.style && el.style.overflow === 'hidden') {
         el.style.overflow = '';
       }
@@ -109,13 +103,30 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   })();
 </script>
 
-<!-- PayPal SDK — un solo SDK per evitare conflitti che rompono il layout -->
+<!-- PayPal SDK 1: hosted-buttons (Volontario, Socia, Donazione) -->
 <script
   src="https://www.paypal.com/sdk/js?client-id=BAAWaqUltEyNiREyqCFGtH46W-x7TOP9Rc26ILViUvyJWFNw4U91zwyPWw8lUimPNBBOXc9fH9mUocMFxA&components=hosted-buttons&disable-funding=venmo&currency=EUR"
   data-sdk-integration-source="button-factory"
 ></script>
 <script is:inline>
-paypal.HostedButtons({ hostedButtonId: 'V7NLWNW8BK6D2' }).render('#paypal-container-V7NLWNW8BK6D2');
-paypal.HostedButtons({ hostedButtonId: '5EVEGBYTDSAJG' }).render('#paypal-container-5EVEGBYTDSAJG');
-paypal.HostedButtons({ hostedButtonId: '2MY36H66BSN4W' }).render('#paypal-container-2MY36H66BSN4W');
+  paypal.HostedButtons({ hostedButtonId: 'V7NLWNW8BK6D2' }).render('#paypal-container-V7NLWNW8BK6D2');
+  paypal.HostedButtons({ hostedButtonId: '5EVEGBYTDSAJG' }).render('#paypal-container-5EVEGBYTDSAJG');
+  paypal.HostedButtons({ hostedButtonId: '2MY36H66BSN4W' }).render('#paypal-container-2MY36H66BSN4W');
+</script>
+
+<!-- PayPal SDK 2: subscription (Abbonamento mensile) — caricato dopo che i bottoni hosted sono già renderizzati -->
+<script
+  src="https://www.paypal.com/sdk/js?client-id=Ab6joAWjiJDrrrqzYb0gzg5uDBCtCI0Td5NXZealzworAbewh__9rgxpuKHzRCRo9xSiKhME-hOIAFRg&vault=true&intent=subscription"
+  data-sdk-integration-source="button-factory"
+></script>
+<script is:inline>
+  paypal.Buttons({
+    style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'subscribe' },
+    createSubscription: function(data, actions) {
+      return actions.subscription.create({ plan_id: 'P-7ML05505JA818620MNG6B4LA' });
+    },
+    onApprove: function(data) {
+      window.location.href = window.location.pathname + '?abbonamento=ok';
+    }
+  }).render('#paypal-button-container-P-7ML05505JA818620MNG6B4LA');
 </script>
