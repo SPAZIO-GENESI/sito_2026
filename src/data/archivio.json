@@ -9,7 +9,8 @@
     "curatrice": "Sara Dias",
     "tags": ["Personale", "Arte Contemporanea"],
     "descrizione": "La persistenza della ferita: indagine sul corpo e sulla violenza invisibile attraverso la materia e il gesto.",
-    "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+    "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf",
+    "href": "/archivio/adhuc-una-persistenza-ostinata/"
   },
   {
     "id": "amore-e-odio",
@@ -18,9 +19,11 @@
     "anno": 2026,
     "tipo": "Mostra",
     "artiste": ["Milena Sofkova Ignatova", "Sebastiano Bacci"],
+    "curatrice": "Sara Dias",
     "tags": ["Fotografia", "Pittura"],
     "descrizione": "Un colloquio tra flussi desideranti.",
-    "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+    "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_amore_e_odio.pdf",
+    "href": "/archivio/amore-e-odio/"
   },
   {
     "id": "fierce-and-graceful",
@@ -29,9 +32,11 @@
     "anno": 2026,
     "tipo": "Mostra",
     "artiste": ["Maira Alejandra Cialone", "Annalisa Conte"],
+    "curatrice": "Sara Dias",
     "tags": ["Arte Contemporanea"],
     "descrizione": "La pratica artistica come gesto politico e atto di riscrittura del reale.",
-    "comunicato": "/assets/media/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+    "comunicato": "/assets/media/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf",
+    "href": "/archivio/fierce-and-graceful/"
   },
   {
     "id": "tessere",
@@ -40,9 +45,11 @@
     "anno": 2025,
     "tipo": "Mostra",
     "artiste": ["Manuela Valloscuro", "Vincenzo Damiano Cristallo"],
+    "curatrice": "Sara Dias",
     "tags": ["Pittura", "Scultura"],
     "descrizione": "Un perenne necessitare che assume corpo tra conservazione e assestamento.",
-    "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_Tessere.pdf"
+    "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_Tessere.pdf",
+    "href": "/archivio/tessere/"
   },
   {
     "id": "festa-matricole-2025",
@@ -53,7 +60,8 @@
     "artiste": [],
     "tags": ["Comunità"],
     "descrizione": "Potluck Party di benvenuto alle nuove iscritte e ai nuovi iscritti.",
-    "comunicato": null
+    "comunicato": null,
+    "href": "/archivio/festa-matricole-2025/"
   },
   {
     "id": "e-poi-quando-tutto-e-a-posto",
@@ -64,7 +72,8 @@
     "artiste": ["Sara Dias", "Francesca Chiola"],
     "tags": ["Fotografia", "Performance"],
     "descrizione": "Indagine su un anno di attività: tracce verbo-visive che narrano un percorso collettivo.",
-    "comunicato": "/assets/media/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto.pdf"
+    "comunicato": "/assets/media/SPAZIO_GENESI_Comunicato_E_poi_quando_tutto_è_a_posto.pdf",
+    "href": "/archivio/e-poi-quando-tutto-e-a-posto/"
   },
   {
     "id": "comune-esigenza",
@@ -75,7 +84,8 @@
     "artiste": ["Francesca Chiola", "Lisa Rastelli"],
     "tags": ["Performance", "Installazione", "Pittura"],
     "descrizione": "Sessualizzazione del corpo femminile e performatività: un dialogo tra pittura e installazione.",
-    "comunicato": "/assets/media/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+    "comunicato": "/assets/media/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf",
+    "href": "/archivio/comune-esigenza/"
   },
   {
     "id": "cio-che-conosco",
@@ -147,7 +157,8 @@
     "artiste": [],
     "tags": ["Comunità"],
     "descrizione": "Potluck party di benvenuto.",
-    "comunicato": null
+    "comunicato": null,
+    "href": "/archivio/festa-matricole-2024/"
   },
   {
     "id": "possibile-da-scrivere",

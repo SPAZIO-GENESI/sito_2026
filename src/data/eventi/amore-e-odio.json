@@ -1,0 +1,20 @@
+{
+  "id": "amore-e-odio",
+  "locandina": "/assets/eventi/amore-e-odio/locandina_amore-e-odio.jpeg",
+  "locandina_alt": "Locandina L'Amore e l'Odio — Spazio Genesi, 28 gennaio 2026",
+  "credits": {
+    "cura": [{ "nome": "Sara Dias", "href": "/biografie/saradias/" }],
+    "coordinamento": [{ "nome": "Massimo Camplone", "href": null }],
+    "allestimento": [{ "nome": "Giulia Bartolomei", "href": null }],
+    "grafiche": [{ "nome": "Daniela Tracanna", "href": null }]
+  },
+  "reportage": null,
+  "foglio_di_sala": [],
+  "comunicati_stampa": [
+    {
+      "fonte": "Spazio Genesi",
+      "titolo": "Comunicato stampa — L'Amore e l'Odio",
+      "url": "/assets/media/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "tessere",
+  "locandina": "/assets/eventi/tessere/locandina_tessere.jpg",
+  "locandina_alt": "Locandina Tessere — Spazio Genesi, 3 dicembre 2025",
+  "credits": {
+    "cura": [
+      { "nome": "Sara Dias", "href": "/biografie/saradias/" },
+      { "nome": "Gaia Monopoli", "href": null }
+    ],
+    "coordinamento": [{ "nome": "Massimo Camplone", "href": null }],
+    "allestimento": [{ "nome": "Giulia Bartolomei", "href": null }],
+    "grafiche": [{ "nome": "Daniela Tracanna", "href": null }]
+  },
+  "reportage": null,
+  "foglio_di_sala": [],
+  "foglio_di_sala_pdf": "/assets/media/Foglio di sala Tessere. Il delicato atto di cura nella complessità del quotidiano.pdf",
+  "comunicati_stampa": [
+    {
+      "fonte": "Spazio Genesi",
+      "titolo": "Comunicato stampa — Tessere",
+      "url": "/assets/media/SPAZIO_GENESI_comunicato_Tessere.pdf"
+    }
+  ]
+}

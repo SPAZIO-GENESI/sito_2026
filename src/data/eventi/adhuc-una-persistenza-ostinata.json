@@ -1,0 +1,26 @@
+{
+  "id": "adhuc-una-persistenza-ostinata",
+  "locandina": "/assets/eventi/adhuc-una-persistenza-ostinata/locandina.webp",
+  "locandina_alt": "Locandina ADHUC, una persistenza ostinata — Spazio Genesi, 13 maggio 2026",
+  "credits": {
+    "cura": [{ "nome": "Sara Dias", "href": "/biografie/saradias/" }],
+    "coordinamento": [{ "nome": "Massimo Camplone", "href": null }],
+    "grafiche": [{ "nome": "Daniela Tracanna", "href": null }]
+  },
+  "reportage": {
+    "fotografa": null,
+    "foto": [
+      { "file": "SPAZIO_GENESI_adhuc_1.jpeg", "didascalia": null },
+      { "file": "SPAZIO_GENESI_adhuc_2.jpeg", "didascalia": null },
+      { "file": "SPAZIO_GENESI_adhuc_3.jpeg", "didascalia": null }
+    ]
+  },
+  "foglio_di_sala": [],
+  "comunicati_stampa": [
+    {
+      "fonte": "Spazio Genesi",
+      "titolo": "Comunicato stampa — ADHUC, una persistenza ostinata",
+      "url": "/assets/media/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf"
+    }
+  ]
+}

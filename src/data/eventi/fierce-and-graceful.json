@@ -1,0 +1,24 @@
+{
+  "id": "fierce-and-graceful",
+  "locandina": "/assets/eventi/fierce-and-graceful/locandina_fierce-and-graceful.jpeg",
+  "locandina_alt": "Locandina Fierce and Graceful — Spazio Genesi, 25 marzo 2026",
+  "credits": {
+    "cura": [{ "nome": "Sara Dias", "href": "/biografie/saradias/" }],
+    "coordinamento": [{ "nome": "Massimo Camplone", "href": null }],
+    "allestimento": [
+      { "nome": "Giulia Bartolomei", "href": null },
+      { "nome": "Manuela Valloscuro", "href": null }
+    ],
+    "grafiche": [{ "nome": "Daniela Tracanna", "href": null }]
+  },
+  "reportage": null,
+  "foglio_di_sala": [],
+  "foglio_di_sala_pdf": "/assets/media/Foglio di sala Fierce and Graceful.pdf",
+  "comunicati_stampa": [
+    {
+      "fonte": "Spazio Genesi",
+      "titolo": "Comunicato stampa — Fierce and Graceful",
+      "url": "/assets/media/SPAZIO_GENESI_Comunicato_stampa_Fierce_and_Graceful.pdf"
+    }
+  ]
+}
