@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Reindirizzamento — Spazio Genesi</title>
+  <script>
+    (function () {
+      var artista = new URLSearchParams(window.location.search).get('artista');
+      window.location.replace(artista ? '/biografie/' + artista + '/' : '/biografie/');
+    })();
+  </script>
+  <noscript>
+    <meta http-equiv="refresh" content="2; url=/biografie/">
+  </noscript>
+</head>
+<body>
+  <p style="font-family:sans-serif;padding:2rem">Reindirizzamento in corso…</p>
+</body>
+</html>
