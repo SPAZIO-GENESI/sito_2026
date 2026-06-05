@@ -76,7 +76,7 @@ const eventSchema = JSON.stringify({
               </dd>
             </div>
             <div class="flex gap-2 flex-wrap">
-              <dt class="font-semibold text-foreground shrink-0">Artiste</dt>
+              <dt class="font-semibold text-foreground shrink-0">{mostra.artiste.length === 1 ? 'Artista' : 'Artiste'}</dt>
               <dd class="text-muted-foreground">
                 {(mostra.artiste as Persona[]).map((p, i) => (
                   <Fragment>
