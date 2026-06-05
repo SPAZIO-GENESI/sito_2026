@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { u } from '../../utils/url'
 import archivio from '../../data/archivio.json'
+import artisti_data from '../../data/artisti.json'
 
 export function getStaticPaths() {
   const eventiFiles = import.meta.glob('../../data/eventi/*.json', { eager: true }) as Record<string, any>
@@ -13,6 +14,7 @@ export function getStaticPaths() {
 
 const { evento } = Astro.props
 const info = archivio.find(e => e.id === evento.id)
+const bioMap = new Map(artisti_data.artisti.map((a: any) => [decodeURIComponent(a.nome).toLowerCase(), a.cartella]))
 
 const creditLabels: Record<string, string> = {
   cura: 'A cura di',
@@ -67,7 +69,18 @@ const fotoBase = `/assets/eventi/${evento.id}/`
 
           {info?.artiste && info.artiste.length > 0 && (
             <p class="text-lg text-muted-foreground mb-6">
-              {info.artiste.join(' — ')}
+              {info.artiste.map((nome: string, i: number) => {
+                const cartella = bioMap.get(nome.toLowerCase())
+                return (
+                  <>
+                    {i > 0 && <span> — </span>}
+                    {cartella
+                      ? <a href={u(`/biografie/${cartella}/`)} class="hover:text-accent transition-colors">{nome}</a>
+                      : <span>{nome}</span>
+                    }
+                  </>
+                )
+              })}
             </p>
           )}
 
