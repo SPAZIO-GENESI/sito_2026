@@ -17,8 +17,8 @@ const { artista } = Astro.props
 
 const nomeDecoded = decodeURIComponent(artista.nome)
 const immagini = flattenImmagini(artista.img)
-const primaImg = immagini.find(i => i.img)
-const altreImg = immagini.filter(i => i.img && i !== primaImg)
+const tutteImg = immagini.filter(i => i.img)
+const primaImg = tutteImg.length > 0 ? tutteImg[tutteImg.length - 1] : undefined
 const abstract = extractAbstract(artista.bio, 300)
 
 const ogImageUrl = primaImg
@@ -125,13 +125,13 @@ const ogImageUrl = primaImg
     </div>
   </section>
 
-  <!-- ③ OPERE -->
-  {altreImg.length > 0 && (
+  <!-- ③ OPERE (tutte le immagini, incluso il ritratto) -->
+  {tutteImg.length > 0 && (
     <section class="py-16 lg:py-24 bg-background">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <h2 class="text-foreground mb-12">Opere</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {altreImg.map(img => (
+          {tutteImg.map(img => (
             <figure class="rounded-lg overflow-hidden shadow-lg">
               <img
                 src={u(`/biografie/${artista.cartella}/${img.img}`)}
