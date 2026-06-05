@@ -1,0 +1,42 @@
+{
+  "id": "possibile-da-scrivere",
+  "locandina": "/assets/eventi/possibile-da-scrivere/locandina.jpeg",
+  "locandina_alt": "Locandina mostra Possibile da scrivere, Spazio Genesi, 4 ottobre 2024",
+  "credits": {
+    "cura": [
+      { "nome": "Francesca Chiola", "href": "/biografie/francescachiola/" },
+      { "nome": "Sara Dias", "href": "/biografie/saradias/" }
+    ],
+    "coordinamento": [
+      { "nome": "Massimo Camplone (Névoa-Na-Rua)", "href": "/biografie/nevoanarua/" }
+    ],
+    "grafiche": [
+      { "nome": "Federico Battisti", "href": "/biografie/federicobattisti/" }
+    ],
+    "grazie": [
+      { "nome": "Arianna Ricci", "href": "https://www.instagram.com/divinoregno/", "external": true }
+    ]
+  },
+  "extra": {
+    "gdc20": {
+      "label": "Giornata del Contemporaneo 2024 (GDC20)",
+      "url": "https://www.amaci.org/events/66fd241cf01c41ed371319e0"
+    }
+  },
+  "reportage": null,
+  "foglio_di_sala": [
+    "Nel primo episodio pilota non vi saranno opere realizzate da singoli artisti quanto piuttosto un'unica installazione collettiva volta a riflettere su cosa, come e in quali termini il gruppo di lavoro intende procedere al fine di sviluppare il progetto.",
+    "Possibile da scrivere nasce a partire da una serie di estratti provenienti da conversazioni tra i membri dell'associazione; al centro del lavoro vi è la concretezza della parola scritta posta fisicamente in dialogo con il freddo spazio che la accoglie. La scelta curatoriale ed artistica, povera di inclinazioni romantiche, nasce da constatazioni relative alla fase di costruzione dell'associazione stessa.",
+    "Riproporre tautologicamente estratti di conversazioni nel corso della prima mostra rappresenta la volontà corale di Spazio Genesi di creare e alimentare un dialogo con il territorio aquilano attraverso l'arte contemporanea, accettando ed inglobando le contraddizioni che una tale scelta comporta.",
+    "Durante l'opening, si terrà inoltre la presentazione del libro Ossa dell'artista Arianna Ricci, opera introspettiva in cui nostalgia, paura del cambiamento e vulnerabilità si intrecciano dando vita ad un immaginario vivido ed al tempo stesso sfuggevole.",
+    "L'incontro mira a costruire relazioni tra giovani artisti del territorio e a favorire la creazione di un contesto ibrido e multidisciplinare."
+  ],
+  "comunicati_stampa": [
+    { "fonte": "AMACI — Giornata del Contemporaneo 2024", "titolo": "Possibile da Scrivere presso gli Eventi AMACI", "url": "https://www.amaci.org/events/66fd241cf01c41ed371319e0" },
+    { "fonte": "ABAQ.it", "titolo": "Possibile da Scrivere", "url": "https://www.abaq.it/notizie/possibile-da-scrivere/" },
+    { "fonte": "AbruzzoSera.it", "titolo": "L'Aquila, arriva la prima mostra d'arte contemporanea di Spazio Genesi", "url": "https://abruzzosera.it/cultura-e-societa/laquila-arriva-la-prima-mostra-darte-contemporanea-di-spazio-genesi/" },
+    { "fonte": "Exibart.com", "titolo": "Possibile da Scrivere", "url": "https://www.exibart.com/evento-arte/possibile-da-scrivere/" },
+    { "fonte": "Abruzzoweb.it", "titolo": "Possibile da scrivere prima mostra di Spazio Genesi alla galleria commerciale via Roma a L'Aquila", "url": "https://abruzzoweb.it/possibile-da-scrivere-prima-mostra-di-spazio-genesi-alla-galleria-commerciale-via-roma-a-laquila/" },
+    { "fonte": "Bagolinoweb.it", "titolo": "L'Aquila ospita \"Possibile da scrivere\", la prima mostra d'arte contemporanea di Spazio Genesi", "url": "https://www.bagolinoweb.it/laquila-ospita-possibile-da-scrivere-la-prima-mostra-darte-contemporanea-di-spazio-genesi/" }
+  ]
+}

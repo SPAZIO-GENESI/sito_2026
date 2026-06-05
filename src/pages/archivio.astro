@@ -7,6 +7,13 @@ const grafoUrl = u('/grafo/')
 
 const bioMap = new Map(artisti_data.artisti.map(a => [decodeURIComponent(a.nome).toLowerCase(), a.cartella]))
 
+const eventiFiles = import.meta.glob('../data/eventi/*.json', { eager: true }) as Record<string, any>
+const locandinaMap = new Map<string, string>()
+for (const data of Object.values(eventiFiles)) {
+  const ev = (data as any).default ?? data
+  if (ev.id && ev.locandina) locandinaMap.set(ev.id, ev.locandina)
+}
+
 const anni = [...new Set(eventi.map(e => e.anno))].sort((a, b) => b - a)
 const tipi = [...new Set(eventi.map(e => e.tipo))]
 const tags = [...new Set(eventi.flatMap(e => e.tags))].sort()
@@ -93,6 +100,19 @@ const tags = [...new Set(eventi.flatMap(e => e.tags))].sort()
             data-tags={ev.tags.join(' ')}
           >
             <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+              <!-- Locandina thumbnail -->
+              {locandinaMap.has(ev.id) && (
+                <div class="shrink-0">
+                  {ev.href
+                    ? <a href={u(ev.href)}>
+                        <img src={u(locandinaMap.get(ev.id)!)} alt={`Locandina ${ev.titolo}`}
+                          class="w-24 h-32 object-cover rounded border border-border" loading="lazy" />
+                      </a>
+                    : <img src={u(locandinaMap.get(ev.id)!)} alt={`Locandina ${ev.titolo}`}
+                        class="w-24 h-32 object-cover rounded border border-border" loading="lazy" />
+                  }
+                </div>
+              )}
               <!-- Contenuto -->
               <div class="flex-1">
                 <div class="flex items-start gap-3 mb-2">
@@ -112,7 +132,12 @@ const tags = [...new Set(eventi.flatMap(e => e.tags))].sort()
                     </svg>
                   )}
                   <div>
-                    <h3 class="text-foreground font-semibold">{ev.titolo}</h3>
+                    {ev.href
+                      ? <a href={u(ev.href)} class="hover:text-accent transition-colors">
+                          <h3 class="text-foreground font-semibold">{ev.titolo}</h3>
+                        </a>
+                      : <h3 class="text-foreground font-semibold">{ev.titolo}</h3>
+                    }
                     <p class="text-muted-foreground text-sm">{ev.descrizione}</p>
                   </div>
                 </div>
@@ -169,6 +194,18 @@ const tags = [...new Set(eventi.flatMap(e => e.tags))].sort()
                       <span class="text-xs px-2 py-0.5 bg-muted text-muted-foreground rounded-full">{tag}</span>
                     ))}
                   </div>
+                )}
+
+                <!-- Link pagina dettaglio -->
+                {ev.href && (
+                  <a href={u(ev.href)}
+                    class="inline-flex items-center gap-1 mt-4 text-sm font-medium text-accent hover:opacity-80 transition-opacity">
+                    Scopri di più
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                      <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                    </svg>
+                  </a>
                 )}
               </div>
 

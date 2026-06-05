@@ -1,0 +1,85 @@
+{
+  "id": "meden-agan",
+  "locandina": "/assets/eventi/meden-agan/locandina.png",
+  "locandina_alt": "Locandina mostra Mēdèn Ágan, Spazio Genesi, 30 gennaio 2025",
+  "credits": {
+    "cura": [
+      { "nome": "Sara Dias", "href": "/biografie/saradias/" }
+    ],
+    "coordinamento": [
+      { "nome": "Massimo Camplone (Névoa-Na-Rua)", "href": "/biografie/nevoanarua/" }
+    ],
+    "grafiche": [
+      { "nome": "Daniela Tracanna", "href": "https://www.instagram.com/_sunflower_dt/", "external": true }
+    ],
+    "allestimento": [
+      { "nome": "Giulia Bartolomei", "href": "https://www.instagram.com/giuli_acreator/", "external": true }
+    ]
+  },
+  "reportage": {
+    "fotografa": { "nome": "Monica Toscani", "href": "https://www.instagram.com/mirtilo_azul/", "external": true },
+    "foto": [
+      { "file": "monica_toscani_03_300125_meden_agan_0_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_1_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_9_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_10_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_11_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_12_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_13_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_14_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_16_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_17_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_19_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_21_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_24_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_25_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_26_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_31_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_32_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_33_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_34_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_35_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_36_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_37_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_39_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_41_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_44_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_50_web.jpg", "didascalia": "con la Prof.a Martina Sconci (Museologia e Storia delle Arti)" },
+      { "file": "monica_toscani_03_300125_meden_agan_52_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_55_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_56_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_57_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_60_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_65_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_66_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_67_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_68_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_69_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_71_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_76_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_77_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_84_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_88_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_89_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_90_web.jpg" },
+      { "file": "monica_toscani_03_300125_meden_agan_91_web.jpg" }
+    ]
+  },
+  "foglio_di_sala": [
+    "Il troppo come modo per arrivare al poco, al minimo, al necessario.",
+    "La mostra, ponendo in dialogo gli artisti Romario Bardhoshi e Stefania Delli Compagni, intende riflettere sul rapporto tra scenario antropizzato e paesaggio naturale; esplorando le modalità operative dell'artista, figura costantemente in bilico fra automatismo e consapevolezza.",
+    "Nel corso di tale appuntamento verranno presentate le ricerche artistiche di Romario Bardhoshi e Stefania Delli Compagni; giovani artisti provenienti dall'accademia in grado di fondere nel proprio lavoro automatismo e consapevolezza, mediante un approccio intimista e soggettivo nei confronti della realtà esterna.",
+    "Fondamentale è il rimando ai territori d'esperienza in cui l'artista ha modo di muovere i propri passi e di riedificare man mano narrazioni preesistenti. La compenetrazione tra luoghi, corpi e memorie avviene attraverso una costanza fragile ed un profondo senso di cura. L'utilizzo dell'elemento sonoro, del riciclo, della sovraesposizione e del segno risultano primari nel processo e nella sperimentazione di materiali e supporti. La gestualità diviene una sorta di valvola di sfogo tramite cui esternare pulsioni tacite riguardanti il rapporto col corpo e con il contesto in cui esso è immerso.",
+    "Graffiare, scalfire con forza, incidere nella memoria del materiale, servirsi della preponderanza del segno per dar vita a forme di identità negoziabili. Il corpo umano si trasforma in campo di battaglia e di contrattazione. L'individuo non prevale sull'elemento naturale o viceversa, vi è piuttosto un rapporto di proficua interdipendenza. Nella rappresentazione, il soggetto cede deliberatamente i propri attributi fisiognomici specifici in favore di una corporeità universale e trasferibile. Egli, manipolato e sovraesposto, diviene mezzo mediante cui narrare un'infinità di storie possibili; che si tratti di narrazioni d'epica utopia, ipotesi per la ricostruzione di mondi passati o di scenari in cui abolire l'icona ed i suoi significati. Per raggiungere tali scopi, il paesaggio antropizzato e quello naturale stringono un sottile patto di alleanza al fine di rievocare memorie e suggestioni in via di estinzione.",
+    "Il tema dell'abbandono, della dispersione ed i tentativi di cristallizzazione da parte dell'artista vengono proposti evidenziando costantemente il rapporto precario tra costrizione, messa in sicurezza e perdita del controllo.",
+    "Inoltre, il fascino per la \"rovina\" ed un certo tipo di immaginario classico vengono stemperati grazie all'utilizzo di un taglio prettamente fotografico, garantendo di conseguenza autonomia all'immagine; quest'ultima avrà così modo di svincolasi dalla subordinazione della memoria ed assumere una dimensione tattile, palpabile.",
+    "Il titolo della mostra fa riferimento al concetto greco di mēdèn ágan, ossia nulla di troppo. Tale principio, originariamente riferito all'equilibrio e all'importanza del mantenimento di un limite invalicabile, diviene nelle opere esposte uno stimolo che fa dell'eccedenza, del posticcio e della saturazione elementi fondamentali per analizzare il proprio lavoro e la propria struttura identitaria.",
+    "Qui, la libertà ottenuta e garantita dal superamento del confine non assume valenze romantiche o eroiche ma piuttosto diviene parametro quotidiano tramite cui mettere in discussione la realtà che ci circonda, il proprio operato e le proprie chiavi di lettura.",
+    "Il troppo come modo per arrivare al poco, al minimo, al necessario.",
+    "L'esposizione è stata fruibile fino a sabato 22 febbraio su appuntamento."
+  ],
+  "comunicati_stampa": [
+    { "fonte": "Exibart.com", "titolo": "MĒDÈN ÁGAN", "url": "https://www.exibart.com/evento-arte/meden-agan/" },
+    { "fonte": "Laquilablog.it", "titolo": "A L'Aquila la mostra d'arte contemporanea organizzata da Spazio Genesi", "url": "https://www.laquilablog.it/a-laquila-la-mostra-darte-contemporanea-organizzata-da-spazio-genesi/" }
+  ]
+}

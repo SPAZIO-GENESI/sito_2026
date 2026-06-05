@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { u } from '../../utils/url'
+import archivio from '../../data/archivio.json'
+
+export function getStaticPaths() {
+  const eventiFiles = import.meta.glob('../../data/eventi/*.json', { eager: true }) as Record<string, any>
+  return Object.entries(eventiFiles).map(([path, data]) => {
+    const id = path.match(/([^/]+)\.json$/)?.[1] ?? ''
+    return { params: { id }, props: { evento: data.default ?? data } }
+  })
+}
+
+const { evento } = Astro.props
+const info = archivio.find(e => e.id === evento.id)
+
+const creditLabels: Record<string, string> = {
+  cura: 'A cura di',
+  coordinamento: 'Coordinamento',
+  grafiche: 'Grafiche',
+  allestimento: 'Allestimento',
+  grazie: 'Si ringrazia',
+}
+
+const creditOrder = ['cura', 'coordinamento', 'grafiche', 'allestimento', 'grazie']
+
+const fotoBase = `/assets/eventi/${evento.id}/`
+---
+
+<BaseLayout
+  title={`${info?.titolo ?? evento.id} — Spazio Genesi ETS`}
+  description={info?.descrizione ?? ''}
+  ogImage={`https://spaziogenesi.org${fotoBase}locandina.jpg`}
+  activePage="archivio"
+>
+
+  <!-- Hero: locandina -->
+  <section class="bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-10 items-start">
+
+        <!-- Locandina -->
+        <div class="w-full max-w-xs mx-auto lg:mx-0 shrink-0">
+          <img
+            src={u(evento.locandina)}
+            alt={evento.locandina_alt}
+            class="w-full rounded-lg shadow-lg object-contain"
+            loading="eager"
+          />
+        </div>
+
+        <!-- Info -->
+        <div>
+          <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+            {info?.tipo ?? 'Mostra'} — {info?.data ?? info?.anno}
+          </p>
+          <h1 class="text-foreground mb-4">{info?.titolo ?? evento.id}</h1>
+
+          {info?.artiste && info.artiste.length > 0 && (
+            <p class="text-lg text-muted-foreground mb-6">
+              {info.artiste.join(' — ')}
+            </p>
+          )}
+
+          {info?.tags && info.tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-6">
+              {info.tags.map((tag: string) => (
+                <span class="px-2.5 py-1 text-xs bg-muted text-muted-foreground rounded-full border border-border">{tag}</span>
+              ))}
+            </div>
+          )}
+
+          <!-- Credits -->
+          <dl class="space-y-1.5 text-sm">
+            {creditOrder.map(key => {
+              const items = (evento.credits as any)?.[key]
+              if (!items || items.length === 0) return null
+              return (
+                <div class="flex flex-wrap gap-x-2">
+                  <dt class="text-muted-foreground shrink-0">{creditLabels[key]}:</dt>
+                  <dd class="text-foreground">
+                    {items.map((p: any, i: number) => (
+                      <>
+                        {p.href
+                          ? <a href={p.external ? p.href : u(p.href)} target={p.external ? '_blank' : undefined} rel={p.external ? 'noopener noreferrer' : undefined} class="hover:text-accent transition-colors">{p.nome}</a>
+                          : <span>{p.nome}</span>
+                        }
+                        {i < items.length - 1 && <span>, </span>}
+                      </>
+                    ))}
+                  </dd>
+                </div>
+              )
+            })}
+          </dl>
+
+          <!-- GDC20 badge -->
+          {evento.extra?.gdc20 && (
+            <div class="mt-5">
+              <a href={evento.extra.gdc20.url} target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-3 py-1.5 text-xs border border-border rounded-lg text-muted-foreground hover:text-accent hover:border-accent transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                {evento.extra.gdc20.label}
+              </a>
+            </div>
+          )}
+
+          <!-- Comunicato stampa PDF -->
+          {info?.comunicato && (
+            <div class="mt-5">
+              <a href={u(info.comunicato)} target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-border rounded-lg text-muted-foreground hover:text-foreground transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+                Comunicato stampa (PDF)
+              </a>
+            </div>
+          )}
+
+          <div class="mt-6">
+            <a href={u('/archivio/')} class="text-sm text-muted-foreground hover:text-accent transition-colors">
+              ← Archivio mostre
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Photo gallery -->
+  {evento.reportage && evento.reportage.foto && evento.reportage.foto.length > 0 && (
+    <section class="py-14 bg-background border-b border-border">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-baseline justify-between mb-6">
+          <h2 class="text-foreground">Reportage fotografico</h2>
+          {evento.reportage.fotografa && (
+            <p class="text-sm text-muted-foreground">
+              Foto di{' '}
+              {evento.reportage.fotografa.href
+                ? <a href={evento.reportage.fotografa.external ? evento.reportage.fotografa.href : u(evento.reportage.fotografa.href)} target={evento.reportage.fotografa.external ? '_blank' : undefined} rel={evento.reportage.fotografa.external ? 'noopener noreferrer' : undefined} class="hover:text-accent transition-colors">{evento.reportage.fotografa.nome}</a>
+                : <span>{evento.reportage.fotografa.nome}</span>
+              }
+            </p>
+          )}
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3" id="gallery-grid">
+          {evento.reportage.foto.map((foto: { file: string; didascalia?: string }, i: number) => (
+            <button
+              class="gallery-thumb group relative overflow-hidden rounded-md aspect-[4/3] bg-muted focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              data-src={u(`${fotoBase}${foto.file}`)}
+              data-caption={foto.didascalia ?? ''}
+              data-index={i}
+              aria-label={`Foto ${i + 1}${foto.didascalia ? ': ' + foto.didascalia : ''}`}
+            >
+              <img
+                src={u(`${fotoBase}${foto.file}`)}
+                alt={foto.didascalia ?? `Foto vernissage ${i + 1}`}
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+              {foto.didascalia && (
+                <div class="absolute inset-x-0 bottom-0 bg-black/60 text-white text-xs px-2 py-1 leading-tight opacity-0 group-hover:opacity-100 transition-opacity">
+                  {foto.didascalia}
+                </div>
+              )}
+            </button>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Lightbox dialog -->
+  <dialog id="lightbox" class="fixed inset-0 z-50 w-screen h-screen max-w-none max-h-none m-0 p-0 bg-transparent backdrop:bg-black/85 border-0 outline-none">
+    <div class="flex flex-col items-center justify-center w-full h-full px-4 py-8" id="lightbox-inner">
+      <button id="lb-close" aria-label="Chiudi" class="absolute top-4 right-4 text-white hover:opacity-70 z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <button id="lb-prev" aria-label="Foto precedente" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-white hover:opacity-70 z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
+      </button>
+      <button id="lb-next" aria-label="Foto successiva" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 text-white hover:opacity-70 z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+      <img id="lb-img" src="" alt="" class="max-h-[80vh] max-w-[90vw] object-contain rounded shadow-2xl" />
+      <p id="lb-caption" class="mt-3 text-white/80 text-sm text-center max-w-lg"></p>
+      <p id="lb-counter" class="mt-1 text-white/50 text-xs"></p>
+    </div>
+  </dialog>
+
+  <!-- Foglio di sala -->
+  {evento.foglio_di_sala && evento.foglio_di_sala.length > 0 && (
+    <section class="py-14 bg-secondary border-b border-border">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8">
+        <h2 class="text-foreground mb-8">Foglio di sala</h2>
+        <div class="space-y-5 text-sm text-muted-foreground leading-relaxed">
+          {evento.foglio_di_sala.map((para: string) => <p>{para}</p>)}
+        </div>
+
+        <!-- PDF foglio di sala (disabled) -->
+        <div class="mt-8">
+          <button disabled
+            class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-border rounded-lg text-muted-foreground/40 cursor-not-allowed"
+            title="Disponibile prossimamente">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+            Foglio di sala (PDF)
+          </button>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Comunicati stampa -->
+  {evento.comunicati_stampa && evento.comunicati_stampa.length > 0 && (
+    <section class="py-14 bg-background">
+      <div class="max-w-3xl mx-auto px-6 lg:px-8">
+        <h2 class="text-foreground mb-6">Rassegna stampa</h2>
+        <ul class="space-y-3">
+          {evento.comunicati_stampa.map((cs: { fonte: string; titolo: string; url: string }) => (
+            <li class="flex items-start gap-3">
+              <svg class="mt-0.5 shrink-0 text-muted-foreground" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              <div>
+                <span class="text-xs text-muted-foreground">{cs.fonte}</span>
+                <br />
+                <a href={cs.url} target="_blank" rel="noopener noreferrer"
+                  class="text-sm text-accent hover:opacity-80 transition-opacity">
+                  {cs.titolo}
+                </a>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+</BaseLayout>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement | null
+  const lbImg = document.getElementById('lb-img') as HTMLImageElement | null
+  const lbCaption = document.getElementById('lb-caption') as HTMLElement | null
+  const lbCounter = document.getElementById('lb-counter') as HTMLElement | null
+  const thumbs = Array.from(document.querySelectorAll<HTMLButtonElement>('.gallery-thumb'))
+
+  let current = 0
+
+  function openAt(idx: number) {
+    current = idx
+    const btn = thumbs[idx]
+    if (!btn || !lbImg || !lbCaption || !lbCounter || !dialog) return
+    lbImg.src = btn.dataset.src ?? ''
+    lbCaption.textContent = btn.dataset.caption ?? ''
+    lbCounter.textContent = `${idx + 1} / ${thumbs.length}`
+    dialog.showModal()
+  }
+
+  function go(dir: number) {
+    openAt((current + dir + thumbs.length) % thumbs.length)
+  }
+
+  thumbs.forEach((btn, i) => btn.addEventListener('click', () => openAt(i)))
+
+  document.getElementById('lb-close')?.addEventListener('click', () => dialog?.close())
+  document.getElementById('lb-prev')?.addEventListener('click', () => go(-1))
+  document.getElementById('lb-next')?.addEventListener('click', () => go(1))
+
+  dialog?.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close()
+  })
+
+  document.addEventListener('keydown', (e) => {
+    if (!dialog?.open) return
+    if (e.key === 'ArrowLeft') go(-1)
+    if (e.key === 'ArrowRight') go(1)
+    if (e.key === 'Escape') dialog.close()
+  })
+</script>

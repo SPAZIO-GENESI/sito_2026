@@ -1,0 +1,66 @@
+{
+  "id": "trattienimi-pure",
+  "locandina": "/assets/eventi/trattienimi-pure/locandina.jpeg",
+  "locandina_alt": "Locandina mostra Trattienimi pure, Spazio Genesi, 19 dicembre 2024",
+  "credits": {
+    "cura": [
+      { "nome": "Francesca Chiola", "href": "/biografie/francescachiola/" },
+      { "nome": "Sara Dias", "href": "/biografie/saradias/" }
+    ],
+    "coordinamento": [
+      { "nome": "Massimo Camplone (Névoa-Na-Rua)", "href": "/biografie/nevoanarua/" }
+    ],
+    "grafiche": [
+      { "nome": "Daniela Tracanna", "href": "https://www.instagram.com/_sunflower_dt/", "external": true }
+    ],
+    "allestimento": [
+      { "nome": "Giulia Bartolomei", "href": "https://www.instagram.com/giuli_acreator/", "external": true }
+    ]
+  },
+  "reportage": {
+    "fotografa": { "nome": "Monica Toscani", "href": "https://www.instagram.com/mirtilo_azul/", "external": true },
+    "foto": [
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_1.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_2.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_bstage.jpeg", "didascalia": "con il Prof. Giuseppe Armogida (Estetica)" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_3.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_5.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_6.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_7.jpg", "didascalia": "con il Prof. Giancarlo Buzzanca (Informatica per beni culturali)" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_8.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_13.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_10.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_11.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_12.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_18.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_17.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_15.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_16.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_19.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_24.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_21.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_23.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_25.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_26.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_27.jpg", "didascalia": "con il Prof. Matteo Ludovico (Scultura)" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_29.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_30.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_31.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_32.jpg" },
+      { "file": "Monica_Toscani_Spazio_Genesi_191224_33.jpg" }
+    ]
+  },
+  "foglio_di_sala": [
+    "Seconda mostra d'arte contemporanea organizzata da Spazio Genesi, associazione culturale che nasce come interfaccia tra gli studenti dell'Accademia di Belle Arti di L'Aquila ed il contesto cittadino che li ospita. L'appuntamento vede la presentazione delle ricerche artistiche di Sabrina Iezzi e Marianna Mancini, artiste il cui fil rouge si basa sul continuo contrasto tra tentativi di distacco da una determinata condizione e il successivo mantenimento dello stato di fatto. Si tratta di un lasciare andare ed al tempo stesso trattenere, un vegliare con cura ad una solerte distanza, un tangere in maniere quasi impercettibili.",
+    "Nei loro lavori, la massa corporea diviene nascondiglio, spazio sicuro e legittimato, esso assurge a dispositivo tramite cui varcare una soglia. In tale tentativo di attraversamento si palesa però una latente fenditura che eccede la superficie tangibile. Il corpo, sfidando se stesso e la propria immagine, diviene molteplice, in grado di fendersi e di lasciarsi attraversare.",
+    "La figura femminile diviene verbo, fonema autonomo che cerca di porsi in dialogo con l'altro, raccontando il mondo intorno a sé, la propria vita ed i propri tentativi di sublimazione. Nella costante stratificazione della memoria, uno spazio centrale è destinato alle reminiscenze del passato familiare che con emotività temperata vengono riportate alla luce mediante la pratica del narrare storie.",
+    "I soggetti di Iezzi e Mancini danno vita ad un immaginario costituito per sovrapposizioni tenui e velature impalpabili, le artiste travalicano costantemente il proprio lembo emotivo trasformandolo in entità visibile e quantificabile. Il loro è un lavoro di delimitazione, circoscrizione, capovolgimento, nella ricerca dell'esatta misura. Le artiste scelgono, predispongono e poi sostano. Ferme, ieratiche, soggiogate ed al contempo cullate dall'attesa, l'attesa di un ritorno, di un'utopica ricostruzione.",
+    "Nella sospensione del movimento i loro corpi ipotizzano nuovi modi per dissolversi e al contempo sperimentano un altro linguaggio per non morire."
+  ],
+  "comunicati_stampa": [
+    { "fonte": "Abruzzoweb.it", "titolo": "A Spazio Genesi l'arte contemporanea di Iezzi e Mancini", "url": "https://abruzzoweb.it/trattienimi-pure-a-spazio-genesi-fino-all11-gennaio-larte-contemporanea-di-iezzi-e-mancini/" },
+    { "fonte": "NewsTown.it", "titolo": "Spazio Genesi presenta la mostra \"Trattienimi pure\" di Sabrina Iezzi e Marianna Mancini", "url": "https://news-town.it/2024/12/14/eventi/spazio-genesi-presenta-la-mostra-trattienimi-pure-di-sabrina-iezzi-e-marianna-mancini/" },
+    { "fonte": "Exibart.com", "titolo": "Trattienimi pure", "url": "https://www.exibart.com/evento-arte/trattienimi-pure/" },
+    { "fonte": "Laquilablog.it", "titolo": "Trattienimi pure. Le artiste Sabrina Iezzi e Marianna Mancini in dialogo a Spazio Genesi", "url": "https://www.laquilablog.it/trattienimi-pure-le-artiste-sabrina-iezzi-e-marianna-mancini-in-dialogo-a-spazio-genesi/" }
+  ]
+}

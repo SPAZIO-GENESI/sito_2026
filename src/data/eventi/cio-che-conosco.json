@@ -1,0 +1,35 @@
+{
+  "id": "cio-che-conosco",
+  "locandina": "/assets/eventi/cio-che-conosco/locandina.jpeg",
+  "locandina_alt": "Locandina mostra Ciò che conosco, Spazio Genesi, 15 aprile 2025",
+  "credits": {
+    "cura": [
+      { "nome": "Sara Dias", "href": "/biografie/saradias/" }
+    ],
+    "coordinamento": [
+      { "nome": "Massimo Camplone (Névoa-Na-Rua)", "href": "/biografie/nevoanarua/" }
+    ],
+    "grafiche": [
+      { "nome": "Daniela Tracanna", "href": "https://www.instagram.com/_sunflower_dt/", "external": true }
+    ],
+    "allestimento": [
+      { "nome": "Giulia Bartolomei", "href": "https://www.instagram.com/giuli_acreator/", "external": true }
+    ]
+  },
+  "reportage": null,
+  "foglio_di_sala": [
+    "Il presente appuntamento intende proporre le ricerche di Alessia Donatelli e Davide Meola, giovani artisti che, partendo dalla dimensione pittorica, si muovono verso un'indagine minuziosa e capillare dell'umano e della fitta rete di relazioni in cui egli è immerso.",
+    "La tecnica pittorica diviene un potente strumento per evadere dalla concretezza della quotidianità ed abbracciare mondi altri possibili, trasformandosi lungo il percorso in dispositivo di conoscenza che coinvolge se stessi e gli altri.",
+    "L'opera diviene, in tal senso, testimonianza di un passato prossimo lentamente in via di sparizione, ciò mediante la rappresentazione di realtà ormai desuete che resistono e persistono in alcune aree o di situazioni più intime circoscritte alla vulnerabile sfera degli affetti.",
+    "Al fine di raggiungere tali obiettivi, accorre in aiuto dell'artista la tecnica, considerata non unicamente in quanto mera strategia di riproduzione ma come fonte primaria d'ispirazione. La componente figurativa resta sempre centrale nell'operato di Donatelli e Meola; essa permette di dar forma al progetto narrativo degli autori, accogliendo però l'ibridazione di differenti stili e variegate dinamiche ed impiegando, in un'ottica di circolarità, il \"riciclo\" di elementi e supporti. Vi è un piacere nella riproduzione, un sublime impulso eroico stemperato da elementi quali la goliardia ed il gioco.",
+    "L'onnipresente tema del convivio è innestato all'interno di una narrazione indomita che procede nelle opere da sinistra verso destra.",
+    "Inoltre, la predilezione per il ritratto e l'autoritratto non fa che rendere manifesta ancor più la forte componente introspettiva insita negli artisti, intenti ad indagare ciò che si è e potenzialmente ciò che si potrebbe diventare. Il loro è un climax che, fluttuando come in un sogno onirico tra memoria e trasposizione futura, raggiunge il proprio acme nel quesito identitario posto in essere. In tale processo, i concetti di spazio e territorio divengono fondamentali in quanto agenti di crescita e maturazione, sia dal punto di vista professionale che umano. Nei lavori presentati affiora in modo preponderante il legame col territorio abruzzese, la cui rappresentazione oscilla continuamente tra crudezza illusoria ed al tempo stesso romanticismo pragmatico.",
+    "La pittura è veloce al pari del vissuto individuale e della memoria che progressivamente, sfilacciandosi, allentano la propria morsa. L'affievolimento del ricordo viene prepotentemente contrastato attraverso la riproposizione di frammenti di vita quotidiana \"traditi\" ed al contempo salvati. Il vissuto viene rielaborato ed in tal modo protetto.",
+    "L'artista garantisce a se stesso e alla propria opera una durata attraverso la rielaborazione e la negoziazione.",
+    "Ciò che conosco. Un metodo di conservazione fra ciò che accade e ciò che si vorrebbe vivere."
+  ],
+  "comunicati_stampa": [
+    { "fonte": "Exibart.com", "titolo": "Alessia Donatelli / Davide Meola – Ciò che conosco", "url": "https://www.exibart.com/evento-arte/alessia-donatelli-davide-meola-cio-che-conosco/" },
+    { "fonte": "Laquilablog.it", "titolo": "\"Ciò che conosco\" a Spazio Genesi: il dialogo pittorico tra Donatelli e Meola", "url": "https://www.laquilablog.it/cio-che-conosco-a-spazio-genesi-il-dialogo-pittorico-tra-donatelli-e-meola/" }
+  ]
+}

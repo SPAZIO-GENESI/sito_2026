@@ -1,0 +1,48 @@
+{
+  "id": "aureum",
+  "locandina": "/assets/eventi/aureum/locandina.jpg",
+  "locandina_alt": "Locandina mostra Aureum. Sul significare, Spazio Genesi, 13 marzo 2025",
+  "credits": {
+    "cura": [
+      { "nome": "Sara Dias", "href": "/biografie/saradias/" }
+    ],
+    "coordinamento": [
+      { "nome": "Massimo Camplone (Névoa-Na-Rua)", "href": "/biografie/nevoanarua/" }
+    ],
+    "grafiche": [
+      { "nome": "Daniela Tracanna", "href": "https://www.instagram.com/_sunflower_dt/", "external": true }
+    ],
+    "allestimento": [
+      { "nome": "Giulia Bartolomei", "href": "https://www.instagram.com/giuli_acreator/", "external": true }
+    ]
+  },
+  "reportage": {
+    "fotografa": { "nome": "Francesca Chiola", "href": "/biografie/francescachiola/" },
+    "foto": [
+      { "file": "Francesca_Chiola_Elena_Mussi_Rinella_0788.jpg" },
+      { "file": "Francesca_Chiola_Elena_Mussi_Rinella_0797.jpg" },
+      { "file": "Francesca_Chiola_Elena_Mussi_Rinella_0810.jpg" },
+      { "file": "Francesca_Chiola_Elena_Mussi_Rinella_0827.jpg" },
+      { "file": "Francesca_Chiola_Elena_Mussi_Rinella_0838.jpg" },
+      { "file": "Francesca_Chiola_Elena_Mussi_Rinella_0839.jpg" },
+      { "file": "Francesca_Chiola_Elena_Mussi_Rinella_0840.jpg" },
+      { "file": "Francesca_Chiola_Elena_Mussi_Rinella_0843.jpg" }
+    ]
+  },
+  "foglio_di_sala": [
+    "Un progetto di ricerca in grado di mediare tra volontà e rimodulazione, necessità e possibilità. Una narrazione fra impeto ed equilibrio.",
+    "Il presente appuntamento intende porre una riflessione sul ruolo della figurazione all'interno del panorama artistico ed al contempo restituire valore al corpo mediante le tracce che esso è in grado di depositare nello spazio che lo circonda.",
+    "Il segno, la traccia, l'impronta divengono indizi fondamentali d'un passaggio che, per quanto fievole, permette all'umano di perdurare e riconoscersi nell'altro da sé.",
+    "Le artiste Elena Mussi e Francesca Rinella, rendendo il proprio agire uno strumento di memoria, non accettano passivamente una narrazione imposta dall'esterno ma si ergono a trasformatrici della realtà circostante. Il loro è un processo che, spaziando dalla sartoria alla pittura fino ad arrivare all'installazione, pone al centro un'esplorazione dell'emotività e di conseguenza dello spazio in cui essa ha modo di generarsi e propagarsi.",
+    "L'opera d'arte risulta un mezzo tramite cui garantire libertà d'espressione, permettendo una comunicazione tempestiva e dando vita ad un linguaggio capace di mediare fra il particolare e l'universale.",
+    "Vi è una costante negoziazione tra l'artista e l'oggetto della propria indagine; quest'ultimo, sempre indomito, sfugge ad ogni forma di controllo ed organizzazione. Ciò che spetta all'artista è prendere coscienza di tale sbilanciamento e dare luce al proprio desiderio, manipolando la materia e giocando con i concetti di ciclicità e metamorfosi.",
+    "In tal senso, la qualità e la tecnica diventano fondamentali per imparare a gestire l'imprevisto, o meglio per accoglierlo e renderlo parte del processo produttivo. L'impiego della tecnica non risulta in questo caso un elemento scisso dalla sperimentazione, ma al contrario il modo in cui mediare tra volontà e rimodulazione, tra necessità e possibilità. Solo attraverso una conoscenza capillare delle note e della metrica, le artiste hanno modo di alterare ed agire la solenne partitura che è l'opera d'arte.",
+    "Inoltre, l'attenzione riservata al dettaglio e la cura destinata al particolare si configurano come componenti cardine per procedere abilmente dall'intuizione alla formalizzazione. Aureum. Sul significare, minuziosi progetti di ricerca che rendono visibile un altrove a pochi passi dalla figurazione, una tensione tra impeto ed equilibrio.",
+    "La mostra è stata fruibile fino a sabato 5 aprile su appuntamento."
+  ],
+  "comunicati_stampa": [
+    { "fonte": "Artribune.com", "titolo": "Elena Mussi / Francesca Rinella – Aureum. Sul significare.", "url": "https://www.artribune.com/mostre-evento-arte/elena-mussi-francesca-rinella-aureum-sul-significare/" },
+    { "fonte": "Exibart.com", "titolo": "Aureum. Sul significare.", "url": "https://service.exibart.com/comunicati-stampa/aureum-sul-significare/" },
+    { "fonte": "Laquilablog.it", "titolo": "\"Aureum. Sul significare\": Mussi e Rinella in mostra a Spazio Genesi", "url": "https://www.laquilablog.it/aureum-sul-significare-mussi-e-rinella-in-mostra-a-spazio-genesi/?pdf=383603" }
+  ]
+}

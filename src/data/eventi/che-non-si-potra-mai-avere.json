@@ -1,0 +1,50 @@
+{
+  "id": "che-non-si-potra-mai-avere",
+  "locandina": "/assets/eventi/che-non-si-potra-mai-avere/locandina.jpg",
+  "locandina_alt": "Locandina mostra Che non si potrà mai avere, Spazio Genesi, 30 novembre 2024",
+  "credits": {
+    "cura": [
+      { "nome": "Francesca Chiola", "href": "/biografie/francescachiola/" },
+      { "nome": "Sara Dias", "href": "/biografie/saradias/" }
+    ],
+    "coordinamento": [
+      { "nome": "Massimo Camplone (Névoa-Na-Rua)", "href": "/biografie/nevoanarua/" }
+    ],
+    "grafiche": [
+      { "nome": "Federico Battisti", "href": "/biografie/federicobattisti/" }
+    ],
+    "allestimento": [
+      { "nome": "Giulia Bartolomei", "href": "https://www.instagram.com/giuli_acreator/", "external": true }
+    ]
+  },
+  "reportage": {
+    "fotografa": null,
+    "foto": [
+      { "file": "chenonsipotramaiavere3.jpeg" },
+      { "file": "chenonsipotramaiavere4.jpeg", "didascalia": "con il Prof. Silvano Manganaro (Storia dell'Arte)" },
+      { "file": "chenonsipotramaiavere5.jpeg", "didascalia": "con la Prof.a Cecilia Canziani (Fenomenologia delle Arti Contemporanee)" },
+      { "file": "chenonsipotramaiavere6.jpeg" },
+      { "file": "chenonsipotramaiavere1.jpeg" },
+      { "file": "chenonsipotramaiavere2.jpeg" }
+    ]
+  },
+  "foglio_di_sala": [
+    "In dialogo due artisti che seppur provenienti da discipline ed ambiti differenti mantengono all'interno della loro pratica un filo comune strettamente legato alla città e alle memorie che ad essa si legano.",
+    "La traccia, intenzionale e casuale, diviene nelle opere di Davide Mariani e Debora Panaccione uno strumento per indagare le forme dell'abitare a partire da una continua oscillazione tra passato e presente.",
+    "Non vi è alla base semplicemente il tentativo di cristallizzare le proprie memorie o rappresentarne graficamente i punti cardine, quanto piuttosto l'intenzione di portare alla luce nuove narrazioni che si sviluppano a partire da un bisogno identitario e dal costante rapporto con il tema del radicamento.",
+    "Attraverso l'alterazione, la produzione e la riproduzione delle immagini emerge il desiderio di evadere dal tecnicismo accademico o da qualsivoglia forma di contenimento.",
+    "Che non si potrà mai avere, un colloquio tra tentativi di appropriazione ed impossibilità di significati univoci.",
+    "1. Davide Mariani — Waiting times, inchiostro su carta, 2023/2024 — Fino a nuove disposizioni, fotolibro, 2024\nLa serie di disegni intitolata Waiting Times racconta di una condizione di smarrimento e sradicamento dell'abitare partendo da una forte componente autobiografica. Il luogo in questione, la casa dello studente, è dove il protagonista ritratto si sente smarrito perché non è lo spazio che sente di chiamare casa. Egli non l'ha scelto, si è dovuto adattare a quell'ambiente, sterile e minimale, come una backroom — spazio liminale dove si avverte un forte senso di smarrimento e disagio.",
+    "Davide Mariani, scegliendo di ritrarre se stesso in gesti della sua sfera privata nello studentato, ritrae la condizione di smarrimento di un soggetto che cerca di trovare in quello spazio il proprio abitare ma si trova solo alienato e perduto. La casa dello studente torna protagonista nel fotolibro Fino a nuove disposizioni, che racchiude un racconto fotografico di percorsi a piedi di notte. Il fotolibro si presenta non rilegato per scelta dell'artista, esattamente come se si trattasse di una pellicola fotografica.",
+    "2. Debora Panaccione — La camera di Antonio, diapositive con carta riciclata, 2024\nL'opera esplora la connessione tra memoria, tempo e percezione, utilizzando le diapositive fotografiche di un padre come medium. Le immagini, catturate durante i suoi viaggi giovanili, sono reimpiegate per evocare un dialogo tra il passato e il presente. Alcune di queste fotografie, irrimediabilmente corrose dal tempo, si dissolvono nell'indistinto, rendendo irriconoscibile la scena originale e trasmettendo l'effimera natura della memoria stessa. Le diapositive sono inserite in cornici irregolari, realizzate con carta riciclata, un materiale che allude alla fragilità e al processo di recupero del ricordo.",
+    "Le texture della carta, che richiamano le superfici stuccate di una casa, rimandano a un senso di intimità e di abitabilità. Il titolo La camera di Antonio suggerisce sia lo spazio fisico di una stanza che la macchina fotografica — il \"luogo\" dove il padre Antonio ha fissato l'istante. Un'opera che, attraverso il segno e la traccia, invita a riflettere sul ruolo della fotografia come custode della memoria e sull'effetto del tempo sulle testimonianze del nostro passato."
+  ],
+  "comunicati_stampa": [
+    { "fonte": "Artribune", "titolo": "Che non si potrà mai avere", "url": "https://www.artribune.com/mostre-evento-arte/che-non-si-potra-mai-avere/" },
+    { "fonte": "Exibart", "titolo": "Debora Panaccione / Davide Mariani – Che non si potrà mai avere", "url": "https://www.exibart.com/evento-arte/debora-panaccione-davide-mariani-che-non-si-potra-mai-avere/" },
+    { "fonte": "NewsTown", "titolo": "\"Che non si potrà mai avere\": Spazio Genesi presenta la sua prima mostra di arte contemporanea", "url": "https://news-town.it/2024/11/14/eventi/chi-non-si-potra-mai-avere-spazio-genesi-presenta-la-sua-prima-mostra-di-arte-contemporanea/" },
+    { "fonte": "Laquilablog", "titolo": "\"Che non si potrà mai avere\". A L'Aquila la prima mostra d'arte contemporanea di Spazio Genesi", "url": "https://www.laquilablog.it/che-non-si-potra-mai-avere-a-laquila-la-prima-mostra-darte-contemporanea-di-spazio-genesi/" },
+    { "fonte": "Abruzzolive", "titolo": "\"Spazio genesi\", prima mostra d'arte contemporanea", "url": "https://abruzzolive.it/spazio-genesi-prima-mostra-darte-contemporanea/" },
+    { "fonte": "Abruzzoweb", "titolo": "\"Che non si potrà mai avere\" mostra d'arte di Panaccione e Mariani a Spazio Genesi dell'Aquila", "url": "https://abruzzoweb.it/che-non-si-potra-mai-avere-mostra-darte-di-panaccione-e-mariani-a-spazio-genesi-dellaquila/" }
+  ]
+}
