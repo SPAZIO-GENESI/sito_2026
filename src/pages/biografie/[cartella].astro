@@ -18,7 +18,7 @@ const { artista } = Astro.props
 const nomeDecoded = decodeURIComponent(artista.nome)
 const immagini = flattenImmagini(artista.img)
 const tutteImg = immagini.filter(i => i.img)
-const primaImg = tutteImg.length > 0 ? tutteImg[tutteImg.length - 1] : undefined
+const primaImg = tutteImg.length > 0 ? tutteImg[0] : undefined
 const abstract = extractAbstract(artista.bio, 300)
 
 const ogImageUrl = primaImg
