@@ -59,6 +59,14 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
       </div>
 
+      <!-- Placeholder mostrato se l'utente non ha ancora dato consenso ai cookie PayPal -->
+      <div id="paypal-consent-placeholder" style="display:none"
+        class="mt-4 p-4 rounded-lg border border-border bg-secondary text-sm text-muted-foreground text-center">
+        Per visualizzare i pulsanti di pagamento è necessario accettare i cookie di terze parti (PayPal).
+        <button onclick="document.getElementById('cookie-accept')?.click()"
+          class="ml-2 text-accent underline hover:opacity-80">Accetta ora</button>
+      </div>
+
       <!-- Abbonamento mensile per un anno -->
       <div class="mt-10 border border-border rounded-xl p-7 bg-background">
         <div class="flex flex-col md:flex-row md:items-start gap-6">
@@ -86,47 +94,68 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   (function() {
     var targets = [document.documentElement, document.body];
     function restoreOverflow(el) {
-      if (el && el.style && el.style.overflow === 'hidden') {
-        el.style.overflow = '';
-      }
+      if (el && el.style && el.style.overflow === 'hidden') el.style.overflow = '';
     }
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(m) {
-        if (m.type === 'attributes' && m.attributeName === 'style') {
-          restoreOverflow(m.target);
-        }
+        if (m.type === 'attributes' && m.attributeName === 'style') restoreOverflow(m.target);
       });
     });
-    targets.forEach(function(t) {
-      observer.observe(t, { attributes: true, attributeFilter: ['style', 'class'] });
-    });
+    targets.forEach(function(t) { observer.observe(t, { attributes: true, attributeFilter: ['style', 'class'] }); });
   })();
 </script>
 
-<!-- PayPal SDK 1: hosted-buttons (Volontario, Socia, Donazione) -->
-<script
-  src="https://www.paypal.com/sdk/js?client-id=BAAWaqUltEyNiREyqCFGtH46W-x7TOP9Rc26ILViUvyJWFNw4U91zwyPWw8lUimPNBBOXc9fH9mUocMFxA&components=hosted-buttons&disable-funding=venmo&currency=EUR"
-  data-sdk-integration-source="button-factory"
-></script>
-<script is:inline>
-  paypal.HostedButtons({ hostedButtonId: 'V7NLWNW8BK6D2' }).render('#paypal-container-V7NLWNW8BK6D2');
-  paypal.HostedButtons({ hostedButtonId: '5EVEGBYTDSAJG' }).render('#paypal-container-5EVEGBYTDSAJG');
-  paypal.HostedButtons({ hostedButtonId: '2MY36H66BSN4W' }).render('#paypal-container-2MY36H66BSN4W');
-</script>
+<!-- PayPal: caricato solo dopo consenso cookie -->
+<script>
+  const KEY = 'sg_cookie_consent'
 
-<!-- PayPal SDK 2: subscription (Abbonamento mensile) — caricato dopo che i bottoni hosted sono già renderizzati -->
-<script
-  src="https://www.paypal.com/sdk/js?client-id=Ab6joAWjiJDrrrqzYb0gzg5uDBCtCI0Td5NXZealzworAbewh__9rgxpuKHzRCRo9xSiKhME-hOIAFRg&vault=true&intent=subscription"
-  data-sdk-integration-source="button-factory"
-></script>
-<script is:inline>
-  paypal.Buttons({
-    style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'subscribe' },
-    createSubscription: function(data, actions) {
-      return actions.subscription.create({ plan_id: 'P-7ML05505JA818620MNG6B4LA' });
-    },
-    onApprove: function(data) {
-      window.location.href = window.location.pathname + '?abbonamento=ok';
+  function loadPayPal() {
+    // SDK 1: hosted-buttons
+    const s1 = document.createElement('script')
+    s1.src = 'https://www.paypal.com/sdk/js?client-id=BAAWaqUltEyNiREyqCFGtH46W-x7TOP9Rc26ILViUvyJWFNw4U91zwyPWw8lUimPNBBOXc9fH9mUocMFxA&components=hosted-buttons&disable-funding=venmo&currency=EUR'
+    s1.setAttribute('data-sdk-integration-source', 'button-factory')
+    s1.onload = function() {
+      // @ts-ignore
+      paypal.HostedButtons({ hostedButtonId: 'V7NLWNW8BK6D2' }).render('#paypal-container-V7NLWNW8BK6D2')
+      // @ts-ignore
+      paypal.HostedButtons({ hostedButtonId: '5EVEGBYTDSAJG' }).render('#paypal-container-5EVEGBYTDSAJG')
+      // @ts-ignore
+      paypal.HostedButtons({ hostedButtonId: '2MY36H66BSN4W' }).render('#paypal-container-2MY36H66BSN4W')
+
+      // SDK 2: subscription — caricato dopo SDK1
+      const s2 = document.createElement('script')
+      s2.src = 'https://www.paypal.com/sdk/js?client-id=Ab6joAWjiJDrrrqzYb0gzg5uDBCtCI0Td5NXZealzworAbewh__9rgxpuKHzRCRo9xSiKhME-hOIAFRg&vault=true&intent=subscription'
+      s2.setAttribute('data-sdk-integration-source', 'button-factory')
+      s2.onload = function() {
+        // @ts-ignore
+        paypal.Buttons({
+          style: { shape: 'rect', color: 'gold', layout: 'vertical', label: 'subscribe' },
+          createSubscription: function(data: any, actions: any) {
+            return actions.subscription.create({ plan_id: 'P-7ML05505JA818620MNG6B4LA' })
+          },
+          onApprove: function() {
+            window.location.href = window.location.pathname + '?abbonamento=ok'
+          }
+        }).render('#paypal-button-container-P-7ML05505JA818620MNG6B4LA')
+      }
+      document.head.appendChild(s2)
     }
-  }).render('#paypal-button-container-P-7ML05505JA818620MNG6B4LA');
+    document.head.appendChild(s1)
+
+    // Rimuovi il placeholder
+    const ph = document.getElementById('paypal-consent-placeholder')
+    if (ph) ph.remove()
+  }
+
+  if (localStorage.getItem(KEY) === 'all') {
+    loadPayPal()
+  } else {
+    // Mostra placeholder finché non c'è consenso
+    const ph = document.getElementById('paypal-consent-placeholder')
+    if (ph) ph.style.display = 'block'
+    // Ascolta l'evento emesso dal banner
+    document.addEventListener('sg:consent', function(e: Event) {
+      if ((e as CustomEvent).detail === 'all') loadPayPal()
+    })
+  }
 </script>

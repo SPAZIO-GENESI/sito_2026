@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+<BaseLayout
+  title="Cookie Policy — Spazio Genesi ETS"
+  description="Informativa sui cookie di Spazio Genesi ETS: tipologia, finalità e modalità di gestione del consenso."
+  noindex={true}
+>
+  <section class="py-16 lg:py-20 bg-secondary border-b border-border">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <h1 class="text-foreground mb-4">Cookie Policy</h1>
+      <p class="text-muted-foreground">
+        Informativa ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR) e del Provvedimento del Garante
+        della Privacy dell'8 maggio 2014 e successive modifiche.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-background">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 space-y-10 text-sm text-muted-foreground leading-relaxed">
+
+      <div>
+        <h2 class="text-foreground mb-4">Cosa sono i cookie</h2>
+        <p>
+          I cookie sono piccoli file di testo salvati sul dispositivo dell'utente durante la navigazione.
+          Possono essere tecnici (necessari al funzionamento del sito) o di profilazione/terze parti
+          (richiedono consenso esplicito).
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-foreground mb-4">Cookie tecnici (nessun consenso richiesto)</h2>
+        <p class="mb-3">
+          Questo sito utilizza <strong class="text-foreground">localStorage</strong> — non un cookie —
+          esclusivamente per memorizzare la tua scelta in merito al consenso cookie. Non viene trasmesso
+          a nessun server esterno.
+        </p>
+        <p>
+          I font tipografici (Cormorant Garamond) sono serviti localmente dal nostro server GitHub Pages:
+          nessuna richiesta viene inviata a Google o ad altri CDN di font.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="text-foreground mb-4">Cookie di terze parti (consenso richiesto)</h2>
+
+        <div class="space-y-6">
+          <div class="border border-border rounded-lg p-5">
+            <h3 class="text-foreground font-semibold mb-2">PayPal</h3>
+            <p class="mb-2">
+              Presente esclusivamente nella pagina <strong class="text-foreground">/iscrizione/</strong>.
+              PayPal carica script e cookie propri per la gestione dei pagamenti e la prevenzione delle frodi.
+            </p>
+            <p>
+              Titolare: PayPal Holdings, Inc. — Privacy policy:
+              <a href="https://www.paypal.com/it/webapps/mpp/ua/privacy-full" target="_blank" rel="noopener noreferrer"
+                class="text-accent hover:opacity-80 underline">paypal.com/it/webapps/mpp/ua/privacy-full</a>
+            </p>
+          </div>
+
+          <div class="border border-border rounded-lg p-5">
+            <h3 class="text-foreground font-semibold mb-2">Cloudflare Turnstile</h3>
+            <p class="mb-2">
+              Presente esclusivamente nella pagina <strong class="text-foreground">/newsletter/</strong>.
+              Utilizzato per la verifica anti-spam del modulo di iscrizione. Può impostare cookie tecnici
+              di sicurezza.
+            </p>
+            <p>
+              Titolare: Cloudflare, Inc. — Privacy policy:
+              <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer"
+                class="text-accent hover:opacity-80 underline">cloudflare.com/privacypolicy/</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-foreground mb-4">Come gestire il consenso</h2>
+        <p class="mb-3">
+          Al primo accesso al sito viene mostrato un banner in fondo alla pagina. Puoi scegliere:
+        </p>
+        <ul class="list-disc list-inside space-y-1 mb-3">
+          <li><strong class="text-foreground">Accetta</strong>: consente il caricamento di PayPal e Cloudflare Turnstile.</li>
+          <li><strong class="text-foreground">Solo necessari</strong>: blocca i cookie di terze parti; i pulsanti PayPal non verranno caricati.</li>
+        </ul>
+        <p>
+          Puoi revocare il consenso in qualsiasi momento cancellando i dati di navigazione del browser
+          (localStorage) oppure cliccando il pulsante qui sotto.
+        </p>
+        <div class="mt-4">
+          <button id="reset-consent"
+            class="px-5 py-2 text-sm font-medium border border-border rounded-lg text-foreground hover:bg-muted transition-colors">
+            Reimposta preferenze cookie
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-foreground mb-4">Titolare del trattamento</h2>
+        <p>
+          Spazio Genesi ETS — Galleria Commerciale Via Roma 215, L'Aquila (AQ) 67100<br>
+          Codice fiscale: 96602450585<br>
+          Email: <a href="mailto:info@spaziogenesi.org" class="text-accent hover:opacity-80 underline">info@spaziogenesi.org</a>
+        </p>
+      </div>
+
+      <p class="text-xs text-muted-foreground">Ultimo aggiornamento: Giugno 2026</p>
+
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  document.getElementById('reset-consent')?.addEventListener('click', () => {
+    localStorage.removeItem('sg_cookie_consent')
+    window.location.reload()
+  })
+</script>

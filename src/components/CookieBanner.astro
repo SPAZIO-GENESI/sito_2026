@@ -1,0 +1,41 @@
+---
+import { u } from '../utils/url'
+---
+
+<div id="cookie-banner" role="dialog" aria-label="Gestione cookie" aria-modal="false"
+  class="fixed bottom-0 inset-x-0 z-50 bg-foreground text-accent-foreground shadow-xl hidden">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col sm:flex-row sm:items-center gap-4">
+    <p class="text-sm leading-relaxed flex-1">
+      Questo sito utilizza cookie tecnici propri e cookie di terze parti (PayPal, Cloudflare) solo nelle pagine di iscrizione e newsletter.
+      <a href={u('/cookie-policy/')} class="underline hover:opacity-80 ml-1">Cookie policy</a>
+    </p>
+    <div class="flex gap-3 shrink-0">
+      <button id="cookie-reject"
+        class="px-4 py-2 text-sm font-medium border border-accent-foreground/40 rounded-lg hover:bg-white/10 transition-colors">
+        Solo necessari
+      </button>
+      <button id="cookie-accept"
+        class="px-4 py-2 text-sm font-medium bg-accent text-accent-foreground rounded-lg hover:opacity-90 transition-opacity">
+        Accetta
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const KEY = 'sg_cookie_consent'
+  const banner = document.getElementById('cookie-banner')!
+
+  function applyConsent(choice: string) {
+    localStorage.setItem(KEY, choice)
+    banner.classList.add('hidden')
+    document.dispatchEvent(new CustomEvent('sg:consent', { detail: choice }))
+  }
+
+  if (!localStorage.getItem(KEY)) {
+    banner.classList.remove('hidden')
+  }
+
+  document.getElementById('cookie-accept')!.addEventListener('click', () => applyConsent('all'))
+  document.getElementById('cookie-reject')!.addEventListener('click', () => applyConsent('necessary'))
+</script>

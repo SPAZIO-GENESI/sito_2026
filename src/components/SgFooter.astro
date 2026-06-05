@@ -1,4 +1,5 @@
 ---
+import { u } from '../utils/url'
 ---
 <footer class="bg-muted text-foreground py-16 border-t border-border mt-24">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -82,10 +83,16 @@
           Tangram
         </a>.
       </p>
-      <a href="https://spaziogenesi.org/sg_privacy.html" target="_blank" rel="noopener noreferrer"
-        class="text-xs text-muted-foreground hover:text-accent transition-colors">
-        Privacy Policy
-      </a>
+      <div class="flex gap-4">
+        <a href="https://spaziogenesi.org/sg_privacy.html" target="_blank" rel="noopener noreferrer"
+          class="text-xs text-muted-foreground hover:text-accent transition-colors">
+          Privacy Policy
+        </a>
+        <a href={u('/cookie-policy/')}
+          class="text-xs text-muted-foreground hover:text-accent transition-colors">
+          Cookie Policy
+        </a>
+      </div>
     </div>
   </div>
 </footer>
