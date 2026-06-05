@@ -53,9 +53,6 @@ try {
   console.error('Centrodoc fetch error:', e)
 }
 
-function esc(s: string) {
-  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
-}
 ---
 <BaseLayout
   title="Centro Documentazione Ivan Donatelli — Spazio Genesi"
@@ -149,8 +146,9 @@ function esc(s: string) {
                       {libro.thumbUrl ? (
                         <button
                           class="cdid-thumb"
-                          data-full={esc(libro.coverUrl)}
-                          data-desc={esc(libro.estratto3)}
+                          data-img={libro.coverUrl || libro.thumbUrl}
+                          data-title={libro.autore ? `${libro.titolo} — ${libro.autore}` : libro.titolo}
+                          data-desc={libro.estratto3 || libro.estratto1 || libro.estratto2}
                           aria-label={`Copertina: ${libro.titolo}`}
                         >
                           <img
@@ -213,12 +211,14 @@ function esc(s: string) {
   // Lightbox
   const modal = document.getElementById('cdid-modal')!
   const modalImg = document.getElementById('cdid-modal-img') as HTMLImageElement
+  const modalTitle = document.getElementById('cdid-modal-title')!
   const modalDesc = document.getElementById('cdid-modal-desc')!
   const modalClose = document.getElementById('cdid-modal-close')!
 
   document.querySelectorAll<HTMLButtonElement>('.cdid-thumb').forEach(btn => {
     btn.addEventListener('click', () => {
-      modalImg.src = btn.dataset.full ?? ''
+      modalImg.src = btn.dataset.img ?? ''
+      modalTitle.textContent = btn.dataset.title ?? 'Copertina'
       modalDesc.textContent = btn.dataset.desc ?? ''
       modal.classList.remove('hidden')
       modal.classList.add('flex')
