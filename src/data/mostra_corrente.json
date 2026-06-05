@@ -1,21 +1,19 @@
 {
-  "titolo": "Carezze sotto la pioggia",
+  "titolo": "ADHUC, una persistenza ostinata",
   "tipo": "Mostra di arte contemporanea",
-  "vernissage": "Venerdì 19 Giugno 2026 ore 18.00",
-  "startDateISO": "2026-06-19T18:00:00+02:00",
+  "vernissage": "Mercoledì 13 Maggio 2026 ore 18.00",
+  "startDateISO": "2026-05-13T18:00:00+02:00",
   "luogo": "Galleria Commerciale Via Roma, 215 — primo piano, L'Aquila",
   "mappa": "https://maps.app.goo.gl/3JEsBLW5Xx8aE2mj9",
   "immagine": "https://spaziogenesi.org/img/SPAZIO_GENESI_Carezze_sotto_la_pioggia.png",
   "galleria": [
-    "/assets/media/SPAZIO_GENESI_Carezze_1.jpeg",
-    "/assets/media/SPAZIO_GENESI_Carezze_2.jpeg",
-    "/assets/media/SPAZIO_GENESI_Carezze_3.jpeg",
-    "/assets/media/SPAZIO_GENESI_Carezze_4.jpeg"
+    "/assets/media/SPAZIO_GENESI_adhuc_1.jpeg",
+    "/assets/media/SPAZIO_GENESI_adhuc_2.jpeg",
+    "/assets/media/SPAZIO_GENESI_adhuc_3.jpeg"
   ],
   "curata_da": { "nome": "Sara Dias", "href": "/biografie/saradias/" },
   "artiste": [
-    { "nome": "Francesca Chiola", "href": "/biografie/francescachiola/" },
-    { "nome": "Stefania Delli Compagni" }
+    { "nome": "Gemma Maria La Cecilia", "href": "/biografie/gemmamarialacecilia/" }
   ],
   "coordinamento": [
     { "nome": "Massimo Camplone", "href": "/biografie/nevoanarua/" }
@@ -24,14 +22,16 @@
     { "nome": "Daniela Tracanna", "href": "https://www.instagram.com/_sunflower_dt/" }
   ],
   "allestimento": [
-    { "nome": "Giulia Bartolomei" , "href": "https://www.instagram.com/giuli_acreator/" },
+    { "nome": "Giulia Bartolomei", "href": "https://www.instagram.com/giuli_acreator/" },
     { "nome": "Manuela Valloscuro", "href": "/biografie/manuelavalloscuro/" },
     { "nome": "Esmeralda Shefiti" }
   ],
-  "comunicato": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_Comunicato_Carezze.pdf",
+  "comunicato": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf",
   "rassegna_stampa": [
-    { "testata": "ARTSUPP.COM", "titolo": "Carezze sotto la pioggia. Francesca Chiola e Stefania Delli Compagni", "url": "https://artsupp.com/it/l-aquila/mostre/carezze-sotto-la-pioggia-francesca-chiola-e-stefania-delli-compagni" },
-    { "testata": "EXIBART.COM", "titolo": "Francesca Chiola / Stefania Delli Compagni – Carezze sotto la pioggia", "url": "https://www.exibart.com/evento-arte/francesca-chiola-stefania-delli-compagni-carezze-sotto-la-pioggia/" }
+    { "testata": "ABRUZZOWEB.IT", "titolo": "Spazio Genesi L'Aquila: il 13 maggio al via mostra \"Adhuc, una presenza ostinata\"", "url": "https://www.abruzzoweb.it/spazio-genesi-laquila-il-13-maggio-al-via-mostra-adhuc-una-presenza-ostinata/" },
+    { "testata": "EXIBART.COM", "titolo": "Gemma Maria la Cecilia - Adhuc, una persistenza ostinata", "url": "https://www.exibart.com/evento-arte/gemma-maria-la-cecilia-adhuc-una-persistenza-ostinata/" },
+    { "testata": "LAQUILABLOG.IT", "titolo": "Adhuc, la ferita che resta: a L'Aquila l'arte racconta la violenza invisibile", "url": "https://www.laquilablog.it/adhuc-la-ferita-che-resta-a-laquila-larte-racconta-la-violenza-invisibile/" },
+    { "testata": "ARTSUPP.COM", "titolo": "Adhuc, una persistenza ostinata, mostra personale di Gemma Maria la Cecilia", "url": "https://artsupp.com/it/l-aquila/mostre/adhuc-una-persistenza-ostinata-mostra-personale-di-gemma-maria-la-cecilia" }
   ],
   "riconoscimenti": [
     {
