@@ -9,16 +9,17 @@ const tipi = [...new Set(eventi.map(e => e.tipo))]
 const tags = [...new Set(eventi.flatMap(e => e.tags))].sort()
 ---
 <BaseLayout
-  title="Archivio — Spazio Genesi"
-  description="Archivio delle mostre e degli eventi di Spazio Genesi ETS, Accademia di Belle Arti dell'Aquila."
+  title="Archivio Mostre ed Eventi — Spazio Genesi ETS L'Aquila"
+  description="Archivio completo delle mostre e degli eventi di Spazio Genesi ETS dal 2024: arte contemporanea, installazioni, performance e talk all'Accademia di Belle Arti dell'Aquila."
   activePage="archivio"
 >
   <!-- Header -->
   <section class="py-16 lg:py-20 bg-secondary border-b border-border">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <h1 class="text-foreground mb-4">Archivio</h1>
+      <h1 class="text-foreground mb-4">Archivio Mostre ed Eventi</h1>
       <p class="text-lg text-muted-foreground max-w-2xl mb-8">
-        Mostre ed eventi di Spazio Genesi ETS dal 2024 ad oggi.
+        Mostre collettive e personali, performance, talk e installazioni di Spazio Genesi ETS
+        dal 2024 ad oggi. Filtra per anno, tipo o tema per esplorare il programma.
       </p>
 
       <!-- Filtri -->
