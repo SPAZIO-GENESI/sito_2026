@@ -1,0 +1,193 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { u } from '../utils/url'
+---
+<BaseLayout
+  title="Informativa sulla Privacy — Spazio Genesi ETS"
+  description="Informativa sul trattamento dei dati personali di Spazio Genesi ETS ai sensi del Regolamento UE 2016/679 (GDPR)."
+  noindex={true}
+>
+  <section class="py-16 lg:py-20 bg-secondary border-b border-border">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <h1 class="text-foreground mb-4">Informativa sulla Privacy</h1>
+      <p class="text-muted-foreground">
+        Ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR) e del D.Lgs. 196/2003 come modificato
+        dal D.Lgs. 101/2018. Ultimo aggiornamento: <strong class="text-foreground">Giugno 2026</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-background">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 space-y-12 text-sm text-muted-foreground leading-relaxed">
+
+      <!-- 1. Titolare -->
+      <div>
+        <h2 class="text-foreground mb-4">1. Titolare del trattamento</h2>
+        <p>
+          <strong class="text-foreground">Spazio Genesi ETS</strong><br>
+          Sede legale: Via Francesco Caracciolo 14, 00167 Roma (RM)<br>
+          Sede operativa ed espositiva: Galleria Commerciale Via Roma 215, primo piano — L'Aquila (AQ) 67100<br>
+          Codice fiscale: 96602450585<br>
+          Email: <a href="mailto:info@spaziogenesi.org" class="text-accent hover:opacity-80 underline">info@spaziogenesi.org</a><br>
+          PEC: <a href="mailto:spaziogenesi@pec.it" class="text-accent hover:opacity-80 underline">spaziogenesi@pec.it</a>
+        </p>
+      </div>
+
+      <!-- 2. Dati raccolti e finalità -->
+      <div>
+        <h2 class="text-foreground mb-4">2. Dati raccolti e finalità del trattamento</h2>
+
+        <div class="space-y-6">
+
+          <div class="border border-border rounded-lg p-5">
+            <h3 class="text-foreground font-semibold mb-2">2.1 Navigazione del sito (dati tecnici)</h3>
+            <p class="mb-2">
+              I sistemi informatici e le procedure software preposti al funzionamento del sito acquisiscono,
+              nel corso del loro normale esercizio, alcuni dati la cui trasmissione è implicita nell'uso dei
+              protocolli di comunicazione di Internet: indirizzo IP, tipo di browser, sistema operativo,
+              pagine visitate, data e ora della visita.
+            </p>
+            <p><strong class="text-foreground">Base giuridica:</strong> legittimo interesse (art. 6.1.f GDPR) — sicurezza e corretto funzionamento del sito.<br>
+            <strong class="text-foreground">Conservazione:</strong> dati di log conservati per un massimo di 30 giorni.</p>
+          </div>
+
+          <div class="border border-border rounded-lg p-5">
+            <h3 class="text-foreground font-semibold mb-2">2.2 Analisi delle visite (Matomo)</h3>
+            <p class="mb-2">
+              Questo sito utilizza <strong class="text-foreground">Matomo</strong>, strumento di analisi
+              statistica auto-ospitato su server Azure (matomodocker.azurewebsites.net). Matomo raccoglie
+              dati aggregati sulle visite (pagine visualizzate, durata, provenienza geografica anonimizzata)
+              senza condividere informazioni con terze parti commerciali. L'indirizzo IP viene anonimizzato
+              prima della memorizzazione.
+            </p>
+            <p><strong class="text-foreground">Base giuridica:</strong> legittimo interesse (art. 6.1.f GDPR) — miglioramento del servizio.<br>
+            <strong class="text-foreground">Conservazione:</strong> 13 mesi dalla raccolta.</p>
+          </div>
+
+          <div class="border border-border rounded-lg p-5">
+            <h3 class="text-foreground font-semibold mb-2">2.3 Iscrizioni e pagamenti (PayPal)</h3>
+            <p class="mb-2">
+              La pagina <strong class="text-foreground">/iscrizione/</strong> integra i pulsanti di pagamento
+              di <strong class="text-foreground">PayPal</strong> (PayPal Holdings, Inc.) per la riscossione
+              delle quote associative e delle donazioni. Il caricamento di PayPal è condizionato al consenso
+              espresso attraverso il banner cookie. PayPal tratta i dati di pagamento come titolare autonomo.
+            </p>
+            <p class="mb-2">
+              I dati immessi nella procedura di pagamento (nome, cognome, indirizzo e-mail, dati della carta)
+              sono trasmessi direttamente a PayPal e non transitano né vengono conservati da Spazio Genesi ETS.
+            </p>
+            <p><strong class="text-foreground">Base giuridica:</strong> esecuzione di un contratto (art. 6.1.b GDPR) e consenso (art. 6.1.a GDPR) per i cookie PayPal.<br>
+            Privacy policy PayPal: <a href="https://www.paypal.com/it/webapps/mpp/ua/privacy-full" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 underline">paypal.com/it/webapps/mpp/ua/privacy-full</a></p>
+          </div>
+
+          <div class="border border-border rounded-lg p-5">
+            <h3 class="text-foreground font-semibold mb-2">2.4 Iscrizione alla mailing list (newsletter)</h3>
+            <p class="mb-2">
+              La pagina <strong class="text-foreground">/newsletter/</strong> raccoglie nome e indirizzo
+              e-mail per l'invio di aggiornamenti su assemblee ed eventi di Spazio Genesi ETS.
+              Il modulo è protetto da <strong class="text-foreground">Cloudflare Turnstile</strong>
+              (Cloudflare, Inc.) per la prevenzione dello spam.
+            </p>
+            <p class="mb-2">
+              L'iscrizione è volontaria. Puoi cancellarti in qualsiasi momento scrivendo a
+              <a href="mailto:info@spaziogenesi.org" class="text-accent hover:opacity-80 underline">info@spaziogenesi.org</a>
+              o tramite il link di disiscrizione presente in ogni comunicazione.
+            </p>
+            <p><strong class="text-foreground">Base giuridica:</strong> consenso (art. 6.1.a GDPR).<br>
+            <strong class="text-foreground">Conservazione:</strong> fino alla revoca del consenso.<br>
+            Privacy policy Cloudflare: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 underline">cloudflare.com/privacypolicy/</a></p>
+          </div>
+
+          <div class="border border-border rounded-lg p-5">
+            <h3 class="text-foreground font-semibold mb-2">2.5 Comunicazioni via e-mail</h3>
+            <p class="mb-2">
+              Se ci contatti all'indirizzo <a href="mailto:info@spaziogenesi.org" class="text-accent hover:opacity-80 underline">info@spaziogenesi.org</a>
+              o <a href="mailto:spaziogenesi@pec.it" class="text-accent hover:opacity-80 underline">spaziogenesi@pec.it</a>,
+              tratteremo i dati contenuti nella comunicazione (indirizzo e-mail e ogni informazione
+              personale inclusa nel testo) esclusivamente per rispondere alla tua richiesta.
+            </p>
+            <p><strong class="text-foreground">Base giuridica:</strong> legittimo interesse (art. 6.1.f GDPR).<br>
+            <strong class="text-foreground">Conservazione:</strong> per il tempo necessario a evadere la richiesta, salvo obblighi di legge.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 3. Soggetti autorizzati -->
+      <div>
+        <h2 class="text-foreground mb-4">3. Destinatari dei dati</h2>
+        <p class="mb-3">
+          I dati personali non sono ceduti né venduti a terzi. Possono essere comunicati esclusivamente a:
+        </p>
+        <ul class="list-disc list-inside space-y-1">
+          <li>Fornitori di servizi tecnici che agiscono come <strong class="text-foreground">responsabili del trattamento</strong> (hosting GitHub Pages, Matomo su Azure, PayPal, Cloudflare).</li>
+          <li>Autorità pubbliche, nei soli casi previsti dalla legge.</li>
+        </ul>
+        <p class="mt-3">
+          Il sito è ospitato su <strong class="text-foreground">GitHub Pages</strong> (GitHub, Inc. — Microsoft).
+          I font tipografici sono serviti localmente dal medesimo server e non comportano trasmissioni a Google o ad altri CDN.
+        </p>
+      </div>
+
+      <!-- 4. Trasferimento extra-UE -->
+      <div>
+        <h2 class="text-foreground mb-4">4. Trasferimento dei dati fuori dall'UE</h2>
+        <p>
+          PayPal, Cloudflare e GitHub hanno sede negli Stati Uniti. Il trasferimento avviene nel rispetto
+          delle garanzie previste dal GDPR (clausole contrattuali standard o decisioni di adeguatezza
+          della Commissione europea). Per maggiori informazioni consultare le rispettive privacy policy.
+        </p>
+      </div>
+
+      <!-- 5. Diritti -->
+      <div>
+        <h2 class="text-foreground mb-4">5. I tuoi diritti (artt. 15–22 GDPR)</h2>
+        <p class="mb-3">Hai il diritto di:</p>
+        <ul class="list-disc list-inside space-y-1 mb-3">
+          <li><strong class="text-foreground">Accesso</strong> — ottenere conferma del trattamento e una copia dei dati (art. 15).</li>
+          <li><strong class="text-foreground">Rettifica</strong> — correggere dati inesatti o incompleti (art. 16).</li>
+          <li><strong class="text-foreground">Cancellazione</strong> — chiedere la cancellazione dei dati ("diritto all'oblio", art. 17).</li>
+          <li><strong class="text-foreground">Limitazione</strong> — limitare il trattamento in determinati casi (art. 18).</li>
+          <li><strong class="text-foreground">Portabilità</strong> — ricevere i dati in formato strutturato e leggibile (art. 20).</li>
+          <li><strong class="text-foreground">Opposizione</strong> — opporti al trattamento basato sul legittimo interesse (art. 21).</li>
+          <li><strong class="text-foreground">Revoca del consenso</strong> — in qualsiasi momento, senza pregiudizio per la liceità del trattamento precedente.</li>
+        </ul>
+        <p>
+          Per esercitare i tuoi diritti scrivi a
+          <a href="mailto:info@spaziogenesi.org" class="text-accent hover:opacity-80 underline">info@spaziogenesi.org</a>.
+          Hai inoltre il diritto di proporre reclamo al
+          <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 underline">Garante per la protezione dei dati personali</a>.
+        </p>
+      </div>
+
+      <!-- 6. Cookie -->
+      <div>
+        <h2 class="text-foreground mb-4">6. Cookie e tecnologie di tracciamento</h2>
+        <p>
+          Per l'informativa dettagliata sui cookie consulta la nostra
+          <a href={u('/cookie-policy/')} class="text-accent hover:opacity-80 underline">Cookie Policy</a>.
+        </p>
+      </div>
+
+      <!-- 7. Minori -->
+      <div>
+        <h2 class="text-foreground mb-4">7. Minori</h2>
+        <p>
+          Il sito non è diretto a minori di 14 anni e non raccoglie consapevolmente dati personali di minori.
+          Se ritieni che un minore abbia fornito dati personali, contattaci a
+          <a href="mailto:info@spaziogenesi.org" class="text-accent hover:opacity-80 underline">info@spaziogenesi.org</a>.
+        </p>
+      </div>
+
+      <!-- 8. Modifiche -->
+      <div>
+        <h2 class="text-foreground mb-4">8. Modifiche alla presente informativa</h2>
+        <p>
+          La presente informativa può essere aggiornata. Le modifiche sostanziali saranno comunicate
+          attraverso il sito. La data di "Ultimo aggiornamento" in cima alla pagina indica la versione vigente.
+        </p>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
