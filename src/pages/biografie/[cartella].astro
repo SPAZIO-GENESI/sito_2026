@@ -57,7 +57,7 @@ const personSchema = JSON.stringify({
   activePage="biografie"
 >
   <!-- Back navigation -->
-  <div class="bg-background border-b border-border">
+  <div class="bg-background border-b border-border" data-no-print>
     <div class="max-w-7xl mx-auto px-6 lg:px-8 py-4">
       <a href={u('/biografie/')} class="inline-flex items-center gap-2 text-accent font-semibold hover:opacity-80 transition-opacity">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
@@ -118,6 +118,11 @@ const personSchema = JSON.stringify({
             </div>
           )}
 
+          <!-- Header visibile solo in stampa -->
+          <div class="print-only-header">
+            <p class="print-sg-label">Spazio Genesi ETS — spaziogenesi.org</p>
+          </div>
+
           <div class="space-y-2 text-sm">
             {artista.IG && (
               <a href={`https://www.instagram.com/${artista.IG}`} target="_blank" rel="noopener noreferrer"
@@ -153,6 +158,22 @@ const personSchema = JSON.stringify({
                 Portfolio PDF
               </a>
             )}
+          </div>
+
+          <!-- Pulsante portfolio -->
+          <div class="mt-6 pt-4 border-t border-border" data-no-print>
+            <button
+              onclick="window.print()"
+              class="inline-flex items-center gap-2 text-sm font-medium text-foreground border border-border rounded px-4 py-2 hover:bg-muted transition-colors cursor-pointer"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Scarica come Portfolio
+            </button>
           </div>
         </div>
 
@@ -202,7 +223,7 @@ const personSchema = JSON.stringify({
   )}
 
   <!-- Ticker -->
-  <div class="bg-background border-t border-border py-2">
+  <div class="bg-background border-t border-border py-2" data-no-print>
     <div class="max-w-7xl mx-auto flex items-center">
       <span class="shrink-0 bg-red-600 text-white text-xs font-semibold px-3 py-2 mr-3">News</span>
       <div class="overflow-hidden text-sm text-muted-foreground">
@@ -215,3 +236,53 @@ const personSchema = JSON.stringify({
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  .print-only-header { display: none; }
+
+  @media print {
+    @page { margin: 1.8cm 2cm; size: A4 portrait; }
+
+    /* Nascondi navigazione, header, footer, widget */
+    header, footer,
+    [data-no-print],
+    #tawk-bubble-container,
+    #tawkIframe,
+    .cookie-banner { display: none !important; }
+
+    /* Rimuovi sfondi e bordi per la stampa */
+    body, section { background: white !important; }
+    .border-t, .border-b, .border-border { border-color: #e5e5e5 !important; }
+
+    /* Layout griglia: mantieni affiancamento foto/scheda */
+    .grid { display: grid !important; }
+
+    /* Immagini */
+    img { max-width: 100% !important; break-inside: avoid; }
+
+    /* Sezioni su pagine separate se troppo lunghe */
+    section { break-inside: avoid; }
+
+    /* Opere: una sola colonna in stampa per leggibilità */
+    .grid.grid-cols-1.md\:grid-cols-2 { grid-template-columns: 1fr 1fr !important; }
+
+    /* Header branding visibile solo in stampa */
+    .print-only-header { display: block !important; margin-bottom: 0.8rem; }
+    .print-sg-label {
+      font-size: 9pt;
+      color: #888;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+      margin-bottom: 0;
+    }
+
+    /* Link: non mostrare URL dopo il testo */
+    a::after { content: none !important; }
+
+    /* Riduci padding verticali per risparmiare spazio */
+    .py-12, .py-16, .py-20, .py-24,
+    .lg\:py-20, .lg\:py-24 { padding-top: 1.2rem !important; padding-bottom: 1.2rem !important; }
+  }
+</style>
