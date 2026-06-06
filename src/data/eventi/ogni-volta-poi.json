@@ -13,9 +13,24 @@
   "foglio_di_sala_pdf": "/assets/ogni-volta-poi/sg_maggio.pdf",
   "comunicati_stampa": [
     {
-      "fonte": "Spazio Genesi",
-      "titolo": "Comunicato stampa — Ogni volta poi. La comune esigenza di rispondere",
-      "url": "/assets/media/Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere.pdf"
+      "fonte": "Exibart.com",
+      "titolo": "Ogni volta, poi. La comune esigenza di rispondere",
+      "url": "https://www.exibart.com/evento-arte/ogni-volta-poi-la-comune-esigenza-di-rispondere/"
+    },
+    {
+      "fonte": "Abruzzoweb.it",
+      "titolo": "Spazio Genesi L'Aquila: dal 28 maggio la mostra \"Ogni volta poi. La comune esigenza di rispondere\"",
+      "url": "https://abruzzoweb.it/spazio-genesi-laquila-dal-28-maggio-la-mostra-ogni-volta-poi-la-comune-esigenza-di-rispondere/"
+    },
+    {
+      "fonte": "TheItalianArtGuide.com",
+      "titolo": "Ogni volta, poi. La comune esigenza di rispondere",
+      "url": "https://theitalianartguide.com/ogni-volta-poi-la-comune-esigenza-di-rispondere/"
+    },
+    {
+      "fonte": "Laquilablog.it",
+      "titolo": "A L'Aquila la mostra \"Ogni volta, poi\": corpo e identità",
+      "url": "https://www.laquilablog.it/a-laquila-la-mostra-ogni-volta-poi-corpo-e-identita/"
     }
   ]
 }
