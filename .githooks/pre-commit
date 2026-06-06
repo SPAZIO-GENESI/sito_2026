@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Auto-regenerate graph_data.json when a new comunicato PDF is staged
+
+STAGED=$(git diff --cached --name-only --diff-filter=AC | grep "^public/assets/media/.*\.pdf$")
+
+if [ -n "$STAGED" ]; then
+  echo "Nuovo PDF in public/assets/media/ — rigenero graph_data.json..."
+  REPO_ROOT=$(git rev-parse --show-toplevel)
+  SCRIPT="$REPO_ROOT/../sg_grafo_3d/build_graph.py"
+
+  if [ ! -f "$SCRIPT" ]; then
+    echo "WARN: script non trovato: $SCRIPT" >&2
+    exit 0
+  fi
+
+  python "$SCRIPT"
+  if [ $? -ne 0 ]; then
+    echo "ERRORE nella generazione del grafo — commit bloccato" >&2
+    exit 1
+  fi
+
+  git add "$REPO_ROOT/public/graph_data.json"
+  echo "graph_data.json aggiornato e aggiunto al commit"
+fi
+
+exit 0
