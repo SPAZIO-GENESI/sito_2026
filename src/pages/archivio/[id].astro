@@ -6,13 +6,20 @@ import artisti_data from '../../data/artisti.json'
 
 export function getStaticPaths() {
   const eventiFiles = import.meta.glob('../../data/eventi/*.json', { eager: true }) as Record<string, any>
+  const archivioIds = (archivio as any[]).map(e => e.id)
+
   return Object.entries(eventiFiles).map(([path, data]) => {
     const id = path.match(/([^/]+)\.json$/)?.[1] ?? ''
-    return { params: { id }, props: { evento: data.default ?? data } }
+    const idx = archivioIds.indexOf(id)
+    const prevId = idx > 0 ? archivioIds[idx - 1] : null
+    const nextId = idx !== -1 && idx < archivioIds.length - 1 ? archivioIds[idx + 1] : null
+    const prevInfo = prevId ? (archivio as any[]).find(e => e.id === prevId) ?? null : null
+    const nextInfo = nextId ? (archivio as any[]).find(e => e.id === nextId) ?? null : null
+    return { params: { id }, props: { evento: data.default ?? data, prevInfo, nextInfo } }
   })
 }
 
-const { evento } = Astro.props
+const { evento, prevInfo, nextInfo } = Astro.props
 const info = archivio.find(e => e.id === evento.id)
 const bioMap = new Map(artisti_data.artisti.map((a: any) => [decodeURIComponent(a.nome).toLowerCase(), a.cartella]))
 
@@ -37,7 +44,40 @@ const fotoBase = `/assets/eventi/${evento.id}/`
 >
 
   <!-- Hero: locandina -->
-  <section class="bg-secondary border-b border-border">
+  <section class="bg-secondary border-b border-border relative">
+
+    <!-- Freccia sinistra (evento precedente in archivio) -->
+    {prevInfo && (
+      <a
+        href={u(`/archivio/${prevInfo.id}/`)}
+        class="event-nav-arrow hidden lg:flex left-0"
+        aria-label={`Mostra precedente: ${prevInfo.titolo}`}
+        title={prevInfo.titolo}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        <span class="event-nav-label">{prevInfo.titolo}</span>
+      </a>
+    )}
+
+    <!-- Freccia destra (evento successivo in archivio) -->
+    {nextInfo && (
+      <a
+        href={u(`/archivio/${nextInfo.id}/`)}
+        class="event-nav-arrow hidden lg:flex right-0"
+        aria-label={`Mostra successiva: ${nextInfo.titolo}`}
+        title={nextInfo.titolo}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+          fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m9 18 6-6-6-6"/>
+        </svg>
+        <span class="event-nav-label">{nextInfo.titolo}</span>
+      </a>
+    )}
+
     <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
       <div class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-10 items-start">
 
@@ -268,6 +308,52 @@ const fotoBase = `/assets/eventi/${evento.id}/`
 
 </BaseLayout>
 
+<style>
+  .event-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-muted-foreground);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 9999px;
+    transition: color 0.15s, background 0.15s, box-shadow 0.15s;
+    text-decoration: none;
+  }
+  .event-nav-arrow:hover {
+    color: var(--color-foreground);
+    background: var(--color-muted);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .event-nav-label {
+    display: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 0.4rem;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    max-width: 14rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    color: var(--color-foreground);
+    line-height: 1.4;
+  }
+  .event-nav-arrow.left-0 .event-nav-label  { left: 3rem; }
+  .event-nav-arrow.right-0 .event-nav-label { right: 3rem; }
+  .event-nav-arrow:hover .event-nav-label { display: block; }
+</style>
+
 <script>
   const dialog = document.getElementById('lightbox') as HTMLDialogElement | null
   const lbImg = document.getElementById('lb-img') as HTMLImageElement | null
@@ -302,9 +388,15 @@ const fotoBase = `/assets/eventi/${evento.id}/`
   })
 
   document.addEventListener('keydown', (e) => {
-    if (!dialog?.open) return
-    if (e.key === 'ArrowLeft') go(-1)
-    if (e.key === 'ArrowRight') go(1)
-    if (e.key === 'Escape') dialog.close()
+    if (dialog?.open) {
+      if (e.key === 'ArrowLeft') go(-1)
+      if (e.key === 'ArrowRight') go(1)
+      if (e.key === 'Escape') dialog.close()
+    } else {
+      const prevArrow = document.querySelector<HTMLAnchorElement>('.event-nav-arrow.left-0')
+      const nextArrow = document.querySelector<HTMLAnchorElement>('.event-nav-arrow.right-0')
+      if (e.key === 'ArrowLeft' && prevArrow) window.location.href = prevArrow.href
+      if (e.key === 'ArrowRight' && nextArrow) window.location.href = nextArrow.href
+    }
   })
 </script>
