@@ -55,7 +55,7 @@ const fotoBase = `/assets/attivita/${evento.id}/`
           <h1 class="text-foreground mb-4">{evento.titolo ?? evento.id}</h1>
 
           {evento.descrizione && (
-            <p class="text-lg text-muted-foreground mb-6">{evento.descrizione}</p>
+            <p class="text-lg text-muted-foreground mb-6" set:html={evento.descrizione} />
           )}
 
           {evento.tags && evento.tags.length > 0 && (
