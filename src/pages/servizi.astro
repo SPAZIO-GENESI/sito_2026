@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+<BaseLayout
+  title="Servizi — Spazio Genesi ETS, Arte Contemporanea L'Aquila"
+  description="I servizi di Spazio Genesi ETS per artiste e artisti: attestazione crittografica SHA-256 di qualsiasi tipo di file, per certificare l'esistenza e l'originalità di un'opera digitale in un dato momento."
+  activePage="servizi"
+>
+
+  <!-- Header -->
+  <section class="py-16 lg:py-20 bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h1 class="text-foreground mb-4">Servizi</h1>
+      <p class="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+        Strumenti che Spazio Genesi mette a disposizione di artiste, artisti e della comunità
+        per accompagnare la produzione e la tutela delle opere.
+      </p>
+    </div>
+  </section>
+
+  <!-- Servizio: Attestazione SHA-256 -->
+  <section class="py-16 bg-background border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+
+        <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+          Servizio gratuito
+        </p>
+        <h2 class="text-foreground mb-6">Attestazione crittografica delle opere (SHA-256)</h2>
+
+        <div class="space-y-5 text-muted-foreground leading-relaxed">
+          <p>
+            <strong class="text-foreground">Cos'è.</strong>
+            Un servizio web che genera l'<em>impronta digitale</em> (hash <strong class="text-foreground">SHA-256</strong>)
+            di un file, associandola a una marca temporale in UTC. Funziona con
+            <strong class="text-foreground">qualsiasi tipo di file</strong> di dimensione
+            <strong class="text-foreground">inferiore a 100&nbsp;MB</strong> — immagini, video, audio, PDF, documenti,
+            archivi, modelli 3D e altro. L'impronta è una sequenza di caratteri univoca: basta modificare
+            un solo byte del file perché cambi completamente.
+          </p>
+          <p>
+            <strong class="text-foreground">A cosa serve.</strong>
+            Permette di certificare l'<strong class="text-foreground">esistenza</strong> e l'<strong class="text-foreground">originalità</strong>
+            di un'opera digitale nel momento esatto del calcolo, dimostrando che <strong class="text-foreground">non ha subìto manomissioni</strong>.
+            Conservando l'attestazione, in futuro si potrà provare che quel preciso file esisteva, immutato, a quella data —
+            utile a tutela del proprio lavoro prima di pubblicarlo, inviarlo a un bando o condividerlo online.
+          </p>
+          <p>
+            Qualche esempio: una <strong class="text-foreground">sceneggiatura</strong> prima di presentarla a un produttore,
+            una <strong class="text-foreground">video sigla</strong> realizzata per un committente,
+            un <strong class="text-foreground">jingle audio</strong>, il file ad alta risoluzione di un'opera grafica
+            o la bozza di un progetto. In caso di contestazione si può mostrare l'attestazione e dimostrare che il file
+            è esattamente quello depositato in quella data, senza alcuna modifica successiva.
+          </p>
+          <p>
+            <strong class="text-foreground">Come si usa.</strong>
+          </p>
+          <ol class="list-decimal pl-5 space-y-2">
+            <li>
+              Apri il servizio e <strong class="text-foreground">trascina il file</strong> nella pagina
+              (oppure cliccalo per selezionarlo). È possibile certificare qualsiasi tipo di file
+              fino a <strong class="text-foreground">100&nbsp;MB</strong>.
+            </li>
+            <li>
+              Il sistema calcola l'hash SHA-256 con data, ora e metadati del file. Puoi
+              <strong class="text-foreground">scaricare l'attestazione</strong> in formato .txt o PDF e conservarla.
+            </li>
+            <li>
+              In qualsiasi momento puoi <strong class="text-foreground">verificare</strong> un file: lo ricarichi,
+              inserisci l'hash dichiarato in precedenza e il servizio conferma se corrispondono.
+            </li>
+          </ol>
+          <p class="text-sm">
+            <strong class="text-foreground">Firma.</strong> Allo stato attuale il file viene firmato da
+            <strong class="text-foreground">Spazio Genesi ETS</strong> con un certificato valido ma
+            <strong class="text-foreground">autonomo</strong> (emesso dall'associazione). Prossimamente il servizio
+            evolverà con un <strong class="text-foreground">certificato riconosciuto</strong> da un'autorità terza,
+            per un valore probatorio ancora più solido.
+          </p>
+          <p class="text-sm">
+            <strong class="text-foreground">Nota.</strong> Il servizio fornisce un'attestazione crittografica,
+            <em>non</em> una registrazione di copyright né una prova legale di proprietà.
+          </p>
+        </div>
+
+        <a
+          href="https://imgauthweb.spaziogenesi.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl bg-accent text-background font-semibold hover:opacity-90 transition-opacity"
+        >
+          Vai al servizio di attestazione
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M7 17 17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </a>
+        <p class="mt-3 text-sm text-muted-foreground">
+          imgauthweb.spaziogenesi.org
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
