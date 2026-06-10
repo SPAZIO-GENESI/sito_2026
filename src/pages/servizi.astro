@@ -121,4 +121,56 @@ import BaseLayout from '../layouts/BaseLayout.astro'
     </div>
   </section>
 
+  <!-- Servizio: Generatore QR Code -->
+  <section class="py-16 bg-background border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+
+        <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+          Servizio gratuito
+        </p>
+        <h2 class="text-foreground mb-6">Generatore di codici QR</h2>
+
+        <div class="space-y-5 text-muted-foreground leading-relaxed">
+          <p>
+            <strong class="text-foreground">Cos'è.</strong>
+            Uno strumento web che converte un <strong class="text-foreground">testo o un indirizzo URL</strong>
+            in un codice QR, scaricabile in formato <strong class="text-foreground">SVG</strong> (vettoriale,
+            ideale per la stampa a qualsiasi dimensione) o <strong class="text-foreground">PNG</strong>.
+            Senza registrazione, senza filigrane e senza scadenza dei codici generati.
+          </p>
+          <p>
+            <strong class="text-foreground">A cosa serve.</strong>
+            Per collegare materiali stampati al web: locandine e inviti di mostre, etichette e
+            didascalie d'opera che rimandano a portfolio o schede online, cataloghi, biglietti da
+            visita. È lo stesso strumento che usiamo per i QR dei nostri materiali.
+          </p>
+          <p class="text-sm">
+            <strong class="text-foreground">Nota.</strong> Il servizio è ospitato su un cloud gratuito
+            che si "parcheggia" quando non viene usato: al primo utilizzo dopo un'ora di inattività
+            la generazione può richiedere 20–30 secondi. Le richieste successive sono immediate.
+          </p>
+        </div>
+
+        <a
+          href="https://qrcoder.spaziogenesi.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl bg-accent text-background font-semibold hover:opacity-90 transition-opacity"
+        >
+          Vai al generatore QR
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M7 17 17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </a>
+        <p class="mt-3 text-sm text-muted-foreground">
+          qrcoder.spaziogenesi.org
+        </p>
+
+      </div>
+    </div>
+  </section>
+
 </BaseLayout>
