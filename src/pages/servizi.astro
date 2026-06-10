@@ -70,6 +70,23 @@ import BaseLayout from '../layouts/BaseLayout.astro'
               inserisci l'hash dichiarato in precedenza e il servizio conferma se corrispondono.
             </li>
           </ol>
+          <p>
+            <strong class="text-foreground">Video guida.</strong>
+            Una dimostrazione completa del servizio in meno di due minuti — caricamento,
+            attestazione, certificato PDF e verifica — con voce narrante e sottotitoli.
+          </p>
+          <video
+            controls
+            preload="none"
+            playsinline
+            poster="/assets/video/guida-attestazione-poster.jpg"
+            class="w-full rounded-xl border border-border"
+            aria-label="Video guida al servizio di attestazione"
+          >
+            <source src="/assets/video/guida-attestazione.mp4" type="video/mp4" />
+            Il tuo browser non supporta la riproduzione video:
+            <a href="/assets/video/guida-attestazione.mp4">scarica il video</a>.
+          </video>
           <p class="text-sm">
             <strong class="text-foreground">Firma.</strong> Allo stato attuale il file viene firmato da
             <strong class="text-foreground">Spazio Genesi ETS</strong> con un certificato valido ma
