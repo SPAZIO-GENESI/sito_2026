@@ -22,6 +22,44 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
       <div class="space-y-12">
 
+        <!-- Versione 1.7 -->
+        <div class="border-l-4 border-accent pl-6">
+          <div class="flex items-baseline gap-3 mb-2">
+            <h3 class="text-foreground font-semibold">Versione 1.7 — Ancoraggio blockchain e data certificata</h3>
+            <span class="text-xs text-muted-foreground">Giugno 2026</span>
+          </div>
+          <ul class="space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              <strong class="text-foreground">La tua opera è ancorata in Bitcoin.</strong>
+              Quando generi il certificato PDF, l'impronta dell'opera viene registrata anche
+              nella blockchain di Bitcoin tramite il protocollo aperto
+              <a href="https://opentimestamps.org" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">OpenTimestamps</a>.
+              Nessuno — nemmeno noi — può retrodatare o cancellare quella registrazione:
+              la prova non dipende più solo dai nostri server.
+            </li>
+            <li>
+              <strong class="text-foreground">Come si verifica.</strong>
+              Insieme al PDF scarichi un piccolo file di prova (<code>.ots</code>).
+              Vai su <a href="https://opentimestamps.org" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">opentimestamps.org</a>,
+              trascina nel riquadro di verifica il file <code>.ots</code> e l'opera originale:
+              il sito risponde "Bitcoin attests data existed as of …" con la data garantita
+              dalla blockchain. La conferma definitiva matura entro poche ore dall'emissione.
+            </li>
+            <li>
+              <strong class="text-foreground">Data certificata da terza parte nel PDF.</strong>
+              La firma del certificato PDF ora include una marca temporale emessa da
+              un'autorità riconosciuta da Adobe (DigiCert): aprendo il PDF in Adobe Acrobat,
+              la data di emissione risulta attestata da una terza parte indipendente.
+            </li>
+            <li>
+              <strong class="text-foreground">Tre garanzie indipendenti.</strong>
+              Ogni certificato è ora protetto da tre àncore separate: la firma di sicurezza
+              del nostro server, la marca temporale dell'autorità riconosciuta e la
+              registrazione in Bitcoin. Per falsificare una data bisognerebbe comprometterle tutte e tre.
+            </li>
+          </ul>
+        </div>
+
         <!-- Versione 1.6 -->
         <div class="border-l-4 border-accent pl-6">
           <div class="flex items-baseline gap-3 mb-2">

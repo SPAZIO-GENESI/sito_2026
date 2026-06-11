@@ -114,11 +114,27 @@ import BaseLayout from '../layouts/BaseLayout.astro'
             <a href="/assets/video/guida-attestazione.mp4">scarica il video</a>.
           </video>
           <p class="text-sm">
-            <strong class="text-foreground">Firma.</strong> Allo stato attuale il file viene firmato da
+            <strong class="text-foreground">Firma e marca temporale.</strong> Il certificato PDF è firmato da
             <strong class="text-foreground">Spazio Genesi ETS</strong> con un certificato valido ma
-            <strong class="text-foreground">autonomo</strong> (emesso dall'associazione). Prossimamente il servizio
-            evolverà con un <strong class="text-foreground">certificato riconosciuto</strong> da un'autorità terza,
-            per un valore probatorio ancora più solido.
+            <strong class="text-foreground">autonomo</strong> (emesso dall'associazione), e include una
+            <strong class="text-foreground">marca temporale</strong> emessa da un'autorità riconosciuta da Adobe
+            (DigiCert): la data di emissione è quindi attestata da una terza parte indipendente, verificabile
+            aprendo il PDF in Adobe Acrobat. Prossimamente il servizio potrà evolvere con un
+            <strong class="text-foreground">sigillo elettronico riconosciuto</strong> anche per l'identità dell'emittente.
+          </p>
+          <p class="text-sm">
+            <strong class="text-foreground">Ancoraggio blockchain.</strong> Dalla versione 1.7, quando generi il
+            certificato PDF l'impronta dell'opera viene anche <strong class="text-foreground">registrata nella
+            blockchain di Bitcoin</strong> tramite il protocollo aperto
+            <a href="https://opentimestamps.org" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">OpenTimestamps</a>:
+            una prova di esistenza che non dipende dai nostri server e che nessuno può retrodatare.
+            <strong class="text-foreground">Come si verifica:</strong> dopo aver scaricato il PDF, scarica anche il
+            file di prova <code>.ots</code> (il link compare sotto i pulsanti, e l'indirizzo è stampato nel
+            certificato stesso). Poi vai su
+            <a href="https://opentimestamps.org" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">opentimestamps.org</a>,
+            sezione <em>Stamp&nbsp;&amp;&nbsp;verify</em>, e trascina nel riquadro il file <code>.ots</code> insieme
+            all'opera originale: otterrai <em>"Bitcoin attests data existed as of …"</em> con la data garantita
+            dalla blockchain. La conferma definitiva matura entro poche ore dall'emissione del certificato.
           </p>
           <p class="text-sm">
             <strong class="text-foreground">Nota.</strong> Il servizio fornisce un'attestazione crittografica,
