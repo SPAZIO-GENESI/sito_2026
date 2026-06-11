@@ -22,6 +22,35 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
       <div class="space-y-12">
 
+        <!-- Versione 1.6 -->
+        <div class="border-l-4 border-accent pl-6">
+          <div class="flex items-baseline gap-3 mb-2">
+            <h3 class="text-foreground font-semibold">Versione 1.6 — Titolo, autore e dati dell'opera</h3>
+            <span class="text-xs text-muted-foreground">Giugno 2026</span>
+          </div>
+          <ul class="space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              <strong class="text-foreground">Dati dell'opera sul certificato.</strong>
+              Ora puoi indicare titolo dell'opera, autore o pseudonimo, anno (o versione) e
+              una breve nota. Questi dati compaiono sul certificato accanto all'impronta digitale —
+              utile quando il nome del file non dice nulla dell'opera (es. <em>IMG_4032.jpg</em>).
+              Sono facoltativi: chi vuole solo l'impronta non deve compilare niente.
+            </li>
+            <li>
+              <strong class="text-foreground">Protetti contro le modifiche.</strong>
+              I dati che dichiari vengono "sigillati" nella firma di sicurezza del certificato:
+              dopo l'emissione nessuno può cambiarli — nemmeno tu. Se qualcuno alterasse il titolo
+              o l'autore su una copia del certificato, la verifica lo smaschererebbe.
+            </li>
+            <li>
+              <strong class="text-foreground">Certificato PDF più completo.</strong>
+              In fondo al certificato c'è ora una sezione "Dettagli tecnici" con la firma di
+              sicurezza e la versione del servizio: prima queste informazioni non erano visibili
+              per un difetto di impaginazione, ora ci sono per ogni futura verifica.
+            </li>
+          </ul>
+        </div>
+
         <!-- Versione 1.5 -->
         <div class="border-l-4 border-accent pl-6">
           <div class="flex items-baseline gap-3 mb-2">
