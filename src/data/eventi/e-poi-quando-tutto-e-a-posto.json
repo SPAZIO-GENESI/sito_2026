@@ -2,7 +2,12 @@
   "id": "e-poi-quando-tutto-e-a-posto",
   "locandina": "/assets/eventi/e-poi-quando-tutto-e-a-posto/SPAZIO_GENESI_e_poi_quando_tutto_e_a_posto.jpg",
   "locandina_alt": "Locandina e poi quando tutto è a posto",
-  "credits": {},
+  "credits": {
+    "cura": [{ "nome": "Sara Dias", "href": "/biografie/saradias/" }],
+    "coordinamento": [{ "nome": "Massimo Camplone", "href": "/biografie/nevoanarua/" }],
+    "allestimento": [{ "nome": "Giulia Bartolomei", "href": "https://www.instagram.com/giuli_acreator/", "external": true }],
+    "grafiche": [{ "nome": "Daniela Tracanna", "href": "https://www.instagram.com/_sunflower_dt/", "external": true }]
+  },
   "reportage": null,
   "foglio_di_sala": [
     "A circa un anno dal primo progetto ufficiale, Spazio Genesi propone un'installazione site specific in grado di rendere visibile quanto emerso nel corso degli studi effettuati collettivamente in merito al tema della formazione. Non si tratta di una mera riproposizione del primo anno di attività, ossia un'esposizione sterile di documentazione video-fotografica relativa alle mostre e agli eventi promossi, ma piuttosto un assemblaggio linguistico, una necessaria catalogazione mnemonica, una riproposizione visiva di quanto esperito.",

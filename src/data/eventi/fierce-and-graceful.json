@@ -4,12 +4,12 @@
   "locandina_alt": "Locandina Fierce and Graceful — Spazio Genesi, 25 marzo 2026",
   "credits": {
     "cura": [{ "nome": "Sara Dias", "href": "/biografie/saradias/" }],
-    "coordinamento": [{ "nome": "Massimo Camplone", "href": null }],
+    "coordinamento": [{ "nome": "Massimo Camplone", "href": "/biografie/nevoanarua/" }],
     "allestimento": [
-      { "nome": "Giulia Bartolomei", "href": null },
-      { "nome": "Manuela Valloscuro", "href": null }
+      { "nome": "Giulia Bartolomei", "href": "https://www.instagram.com/giuli_acreator/", "external": true },
+      { "nome": "Manuela Valloscuro", "href": "/biografie/manuelavalloscuro/" }
     ],
-    "grafiche": [{ "nome": "Daniela Tracanna", "href": null }]
+    "grafiche": [{ "nome": "Daniela Tracanna", "href": "https://www.instagram.com/_sunflower_dt/", "external": true }]
   },
   "reportage": null,
   "foglio_di_sala": [

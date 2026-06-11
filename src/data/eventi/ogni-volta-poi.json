@@ -2,7 +2,12 @@
   "id": "ogni-volta-poi",
   "locandina": "/assets/eventi/ogni-volta-poi/locandina_ogni-volta-poi.png",
   "locandina_alt": "Locandina Ogni volta poi. La comune esigenza di rispondere — Spazio Genesi, maggio 2025",
-  "credits": {},
+  "credits": {
+    "cura": [{ "nome": "Sara Dias", "href": "/biografie/saradias/" }],
+    "coordinamento": [{ "nome": "Massimo Camplone", "href": "/biografie/nevoanarua/" }],
+    "allestimento": [{ "nome": "Giulia Bartolomei", "href": "https://www.instagram.com/giuli_acreator/", "external": true }],
+    "grafiche": [{ "nome": "Daniela Tracanna", "href": "https://www.instagram.com/_sunflower_dt/", "external": true }]
+  },
   "reportage": null,
   "foglio_di_sala": [
     "Il dialogo tra le artiste Francesca Chiola e Lisa Rastelli si rivela fondamentale per analizzare temi quali la sessualizzazione del corpo femminile e la performatività costantemente richiesta ad esso. Si tratta di una doppia narrazione che accompagna il fruitore in un percorso volto ad evidenziare da un lato la crudezza della realtà corporea e dall'altro la barriera difensiva che si è soliti elevare grazie all'ausilio di supporti esterni quali la fotografia e il video.",
