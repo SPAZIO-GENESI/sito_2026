@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+<BaseLayout
+  title="Cronologia dei miglioramenti — Attestazione SHA-256"
+  description="Cronologia dei miglioramenti e delle correzioni del servizio di attestazione crittografica delle opere digitali."
+  activePage="servizi"
+>
+
+  <section class="py-16 lg:py-20 bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h1 class="text-foreground mb-4">Cronologia dei miglioramenti</h1>
+      <p class="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+        Come evolve il servizio di attestazione. Ogni aggiornamento aggiunge protezioni,
+        corregge problemi o rende l'uso più facile.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 bg-background border-b border-border">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+
+      <div class="space-y-12">
+
+        <!-- Versione 1.5 -->
+        <div class="border-l-4 border-accent pl-6">
+          <div class="flex items-baseline gap-3 mb-2">
+            <h3 class="text-foreground font-semibold">Versione 1.5 — Verifica più semplice</h3>
+            <span class="text-xs text-muted-foreground">Giugno 2026</span>
+          </div>
+          <ul class="space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              <strong class="text-foreground">Link di verifica nel certificato.</strong>
+              Il certificato PDF ora contiene il link diretto alla verifica con l'impronta
+              già compilata. Non devi più digitare a mano l'hash di 64 caratteri — basta cliccare
+              il link o scansionare il QR.
+            </li>
+            <li>
+              <strong class="text-foreground">Protezione anti-bot rafforzata.</strong>
+              La verifica che tu sia una persona reale (non un programma automatico) viene
+              fatta prima di creare l'attestazione. Così nessuno può usare il servizio con script.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Versione 1.4 -->
+        <div class="border-l-4 border-accent pl-6">
+          <div class="flex items-baseline gap-3 mb-2">
+            <h3 class="text-foreground font-semibold">Versione 1.4 — Protezione anti-bot</h3>
+            <span class="text-xs text-muted-foreground">Giugno 2026</span>
+          </div>
+          <ul class="space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              <strong class="text-foreground">Controllo automatico che tu sia umano.</strong>
+              Un piccolo controllo prima di scaricare il certificato PDF garantisce che
+              il servizio non sia usato da programmi automatici per generare migliaia di attestazioni false.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Versione 1.3 -->
+        <div class="border-l-4 border-accent pl-6">
+          <div class="flex items-baseline gap-3 mb-2">
+            <h3 class="text-foreground font-semibold">Versione 1.3 — Protezione contro abusi</h3>
+            <span class="text-xs text-muted-foreground">Giugno 2026</span>
+          </div>
+          <ul class="space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              <strong class="text-foreground">Limite di velocità per IP.</strong>
+              Il servizio limita automaticamente il numero di certificati che la stessa
+              persona (dallo stesso indirizzo IP) può generare in un minuto. Questo protegge
+              il servizio da chi cerchasse di usarlo per attacchi automatici.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Versione 1.2 -->
+        <div class="border-l-4 border-accent pl-6">
+          <div class="flex items-baseline gap-3 mb-2">
+            <h3 class="text-foreground font-semibold">Versione 1.2 — Firma di sicurezza</h3>
+            <span class="text-xs text-muted-foreground">Giugno 2026</span>
+          </div>
+          <ul class="space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              <strong class="text-foreground">Impossibile falsificare il certificato.</strong>
+              Ogni attestazione è firmata crittograficamente dal server. Se qualcuno cercasse
+              di modificare l'hash, la data o altri dati nel certificato per barare, la firma
+              diventerebbe invalida e il tentativo fallirebbe.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Versione 1.1 -->
+        <div class="border-l-4 border-accent pl-6">
+          <div class="flex items-baseline gap-3 mb-2">
+            <h3 class="text-foreground font-semibold">Versione 1.1 — Versioni visibili e file di qualsiasi tipo</h3>
+            <span class="text-xs text-muted-foreground">Giugno 2026</span>
+          </div>
+          <ul class="space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              <strong class="text-foreground">Versioni sempre visibili.</strong>
+              Nel certificato puoi leggere quale versione dell'interfaccia e del motore
+              di attestazione è stata usata. Utile se un giorno volessi verificare se era attiva
+              una determinata protezione.
+            </li>
+            <li>
+              <strong class="text-foreground">File di qualsiasi formato.</strong>
+              Non solo immagini: ora puoi attestare video, audio, documenti, archivi, modelli 3D
+              e qualsiasi altro tipo di file fino a 100 MB.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Versione 1.0 -->
+        <div class="border-l-4 border-accent pl-6">
+          <div class="flex items-baseline gap-3 mb-2">
+            <h3 class="text-foreground font-semibold">Versione 1.0 — Lancio in produzione</h3>
+            <span class="text-xs text-muted-foreground">Giugno 2026</span>
+          </div>
+          <ul class="space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              <strong class="text-foreground">Calcolo dell'impronta digitale SHA-256.</strong>
+              Carichi un file, il servizio calcola l'hash univoco e lo associa a una marca
+              temporale (data e ora UTC). L'impronta certifica che quel file esisteva in quel momento.
+            </li>
+            <li>
+              <strong class="text-foreground">Certificato PDF e verifica.</strong>
+              Puoi scaricare l'attestazione in formato testo o PDF firmato. In qualsiasi momento,
+              puoi ricaricare il file e verificare che l'hash corrisponda — nessuna modifica dal momento
+              in cui l'hai attestato.
+            </li>
+            <li>
+              <strong class="text-foreground">QR code nel certificato.</strong>
+              Il certificato PDF contiene un codice QR che rimanda direttamente alla pagina
+              di verifica. Chiunque riceva il certificato può scansionarlo per verificare l'autenticità.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-16 pt-8 border-t border-border">
+        <p class="text-sm text-muted-foreground">
+          <strong class="text-foreground">Come leggi questo changelog?</strong>
+          In alto i miglioramenti più recenti, in basso gli elementi di base. Ogni versione
+          mantiene le funzionalità delle versioni precedenti, aggiungendo novità o protezioni.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
