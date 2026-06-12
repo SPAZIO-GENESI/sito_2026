@@ -113,48 +113,181 @@ import BaseLayout from '../layouts/BaseLayout.astro'
             Il tuo browser non supporta la riproduzione video:
             <a href="/assets/video/guida-attestazione.mp4">scarica il video</a>.
           </video>
-          <p class="text-sm">
-            <strong class="text-foreground">Firma e marca temporale.</strong> Il certificato PDF è firmato da
-            <strong class="text-foreground">Spazio Genesi ETS</strong> con un certificato valido ma
-            <strong class="text-foreground">autonomo</strong> (emesso dall'associazione), e include una
-            <strong class="text-foreground">marca temporale</strong> emessa da un'autorità riconosciuta da Adobe
-            (DigiCert): la data di emissione è quindi attestata da una terza parte indipendente, verificabile
-            aprendo il PDF in Adobe Acrobat. Prossimamente il servizio potrà evolvere con un
-            <strong class="text-foreground">sigillo elettronico riconosciuto</strong> anche per l'identità dell'emittente.
-          </p>
-          <p class="text-sm">
-            <strong class="text-foreground">Ancoraggio blockchain.</strong> Dalla versione 1.7, quando generi il
-            certificato PDF l'impronta dell'opera viene anche <strong class="text-foreground">registrata nella
-            blockchain di Bitcoin</strong> tramite il protocollo aperto
-            <a href="https://opentimestamps.org" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">OpenTimestamps</a>:
-            una prova di esistenza che non dipende dai nostri server e che nessuno può retrodatare.
-            <strong class="text-foreground">Come si verifica:</strong> dopo aver scaricato il PDF, scarica anche il
-            file di prova <code>.ots</code> (il link compare sotto i pulsanti, e l'indirizzo è stampato nel
-            certificato stesso). Poi vai su
-            <a href="https://opentimestamps.org" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">opentimestamps.org</a>,
-            sezione <em>Stamp&nbsp;&amp;&nbsp;verify</em>, e trascina nel riquadro il file <code>.ots</code> insieme
-            all'opera originale: otterrai <em>"Bitcoin attests data existed as of …"</em> con la data garantita
-            dalla blockchain. La conferma definitiva matura entro poche ore dall'emissione del certificato.
-          </p>
-          <p class="text-sm">
-            <strong class="text-foreground">La tua opera non viene conservata.</strong>
-            Il file che carichi serve <em>solo</em> a calcolarne l'impronta digitale: viene elaborato
-            in memoria e <strong class="text-foreground">non viene memorizzato, né ceduto a terzi</strong>,
-            né usato per alcun altro scopo. Nei nostri archivi resta soltanto il certificato PDF
-            (che contiene l'impronta, non l'opera) e la prova blockchain.
-          </p>
-          <p class="text-sm">
-            <strong class="text-foreground">Codice aperto (open source).</strong>
-            Tutto il codice del servizio è pubblicato su GitHub con licenze riconosciute
-            (<a href="https://github.com/SPAZIO-GENESI/imgauth" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">motore</a>,
-            <a href="https://github.com/SPAZIO-GENESI/imgauthweb" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">interfaccia</a>,
-            <a href="https://github.com/SPAZIO-GENESI/autart-signer" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">firma</a>).
-            In parole semplici: chiunque — anche un esperto di tua fiducia — può leggere il codice e
-            <strong class="text-foreground">verificare in autonomia</strong> che il servizio faccia esattamente
-            ciò che dichiara, comprese le promesse qui sopra sulla non conservazione dei file.
-            La fiducia non te la chiediamo: te la dimostriamo.
-          </p>
-          <p class="text-sm">
+        </div>
+
+        <!-- Le garanzie: riga di vantaggio sempre visibile, spiegazione a tendina.
+             Badge delle terze parti in fondo a ogni tendina dove sono menzionate
+             (loghi reali solo dove l'uso è libero: Bitcoin, GitHub; per gli altri
+             badge tipografici neutri). -->
+        <div class="mt-10">
+          <h3 class="text-foreground mb-1">Le garanzie, in breve</h3>
+          <p class="text-sm text-muted-foreground mb-3">Ogni riga è un vantaggio: aprila per leggere come funziona e come si verifica.</p>
+          <div class="border-t border-border">
+
+            <details class="group border-b border-border">
+              <summary class="flex items-baseline gap-3 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span class="text-accent font-semibold w-4 shrink-0 text-center transition-transform group-open:rotate-45">+</span>
+                <span>
+                  <span class="font-semibold text-foreground group-hover:text-accent transition-colors">Impronta digitale unica</span><br>
+                  <span class="text-sm text-muted-foreground">Un codice di 64 caratteri identifica il tuo file in modo univoco e irripetibile.</span>
+                </span>
+              </summary>
+              <div class="pb-4 pl-7 text-sm text-muted-foreground space-y-2">
+                <p>L'impronta (hash <strong class="text-foreground">SHA-256</strong>) è calcolata dai nostri server
+                sui byte esatti del file: basta che cambi un solo pixel — o una virgola — e l'impronta diventa
+                completamente diversa. Per questo dimostra che il file non è stato modificato.</p>
+                <p>Funziona con qualsiasi formato: immagini, video, audio, documenti, modelli 3D, archivi.</p>
+              </div>
+            </details>
+
+            <details class="group border-b border-border">
+              <summary class="flex items-baseline gap-3 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span class="text-accent font-semibold w-4 shrink-0 text-center transition-transform group-open:rotate-45">+</span>
+                <span>
+                  <span class="font-semibold text-foreground group-hover:text-accent transition-colors">Data certa, garantita da terzi</span><br>
+                  <span class="text-sm text-muted-foreground">La data di emissione è certificata da un'autorità indipendente riconosciuta da Adobe.</span>
+                </span>
+              </summary>
+              <div class="pb-4 pl-7 text-sm text-muted-foreground space-y-2">
+                <p>Il certificato PDF include una <strong class="text-foreground">marca temporale</strong> emessa da
+                DigiCert, autorità presente nella lista di fiducia di Adobe: la data non la dichiariamo noi,
+                la attesta una terza parte.</p>
+                <p><strong class="text-foreground">Come si verifica:</strong> apri il PDF in Adobe Acrobat →
+                pannello Firme → "La firma include una marca temporale incorporata".</p>
+                <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-border">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border bg-secondary text-xs text-foreground">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-8 8.5-4.5-1-8-3.5-8-8.5V6l8-3 8 3z"/><path d="m9 12 2 2 4-4"/></svg>
+                    DigiCert · Timestamp Authority
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border bg-secondary text-xs text-foreground">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                    Adobe Approved Trust List
+                  </span>
+                </div>
+              </div>
+            </details>
+
+            <details class="group border-b border-border">
+              <summary class="flex items-baseline gap-3 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span class="text-accent font-semibold w-4 shrink-0 text-center transition-transform group-open:rotate-45">+</span>
+                <span>
+                  <span class="font-semibold text-foreground group-hover:text-accent transition-colors">Ancorata nella blockchain di Bitcoin</span><br>
+                  <span class="text-sm text-muted-foreground">L'impronta viene registrata anche su Bitcoin: nessuno può retrodatarla, nemmeno noi.</span>
+                </span>
+              </summary>
+              <div class="pb-4 pl-7 text-sm text-muted-foreground space-y-2">
+                <p>Quando generi il certificato, l'impronta viene registrata nella blockchain di Bitcoin tramite
+                il protocollo aperto <a href="https://opentimestamps.org" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">OpenTimestamps</a>:
+                una prova di esistenza che non dipende dai nostri server.</p>
+                <p><strong class="text-foreground">Come si verifica:</strong></p>
+                <ol class="list-decimal pl-5 space-y-1">
+                  <li>Scarica il file di prova <code>.ots</code> (il link compare dopo "Scarica PDF"; l'indirizzo è stampato anche nel certificato).</li>
+                  <li>Vai su <a href="https://opentimestamps.org" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">opentimestamps.org</a>, riquadro <em>Stamp&nbsp;&amp;&nbsp;verify</em>.</li>
+                  <li>Trascina il file <code>.ots</code> e l'opera originale: otterrai <em>"Bitcoin attests data existed as of…"</em>.</li>
+                </ol>
+                <p>La conferma definitiva matura in poche ore dall'emissione.</p>
+                <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-border">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border bg-secondary text-xs text-foreground">
+                    <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#F7931A"/><text x="12" y="16.6" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff" font-family="Arial, sans-serif" transform="rotate(14 12 12)">&#8383;</text></svg>
+                    Bitcoin
+                  </span>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border bg-secondary text-xs text-foreground">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    OpenTimestamps
+                  </span>
+                </div>
+              </div>
+            </details>
+
+            <details class="group border-b border-border">
+              <summary class="flex items-baseline gap-3 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span class="text-accent font-semibold w-4 shrink-0 text-center transition-transform group-open:rotate-45">+</span>
+                <span>
+                  <span class="font-semibold text-foreground group-hover:text-accent transition-colors">La tua opera non viene conservata</span><br>
+                  <span class="text-sm text-muted-foreground">Il file serve solo a calcolare l'impronta: non viene memorizzato né ceduto a nessuno.</span>
+                </span>
+              </summary>
+              <div class="pb-4 pl-7 text-sm text-muted-foreground space-y-2">
+                <p>Il file viene elaborato in memoria il tempo di calcolarne l'impronta e poi scartato:
+                <strong class="text-foreground">non viene salvato, né ceduto a terzi</strong>, né usato per
+                altri scopi. Nei nostri archivi resta soltanto il certificato PDF — che contiene l'impronta,
+                non l'opera — e la prova blockchain.</p>
+              </div>
+            </details>
+
+            <details class="group border-b border-border">
+              <summary class="flex items-baseline gap-3 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span class="text-accent font-semibold w-4 shrink-0 text-center transition-transform group-open:rotate-45">+</span>
+                <span>
+                  <span class="font-semibold text-foreground group-hover:text-accent transition-colors">Codice aperto, verificabile da chiunque</span><br>
+                  <span class="text-sm text-muted-foreground">Tutto il codice del servizio è pubblico: non devi crederci sulla parola.</span>
+                </span>
+              </summary>
+              <div class="pb-4 pl-7 text-sm text-muted-foreground space-y-2">
+                <p>"Open source" significa che il codice che fa funzionare il servizio è pubblicato
+                integralmente: chiunque — anche un esperto di tua fiducia — può leggerlo e verificare che
+                faccia esattamente ciò che dichiara, comprese le promesse sulla non conservazione dei file.
+                La fiducia non te la chiediamo: te la dimostriamo.</p>
+                <p>Le chiavi crittografiche non sono nel codice: pubblicarlo non indebolisce nulla.</p>
+                <div class="flex flex-wrap items-center gap-2 pt-2 border-t border-border">
+                  <a href="https://github.com/SPAZIO-GENESI/imgauth" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border bg-secondary text-xs text-foreground hover:border-accent hover:text-accent transition-colors">
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    Motore su GitHub
+                  </a>
+                  <a href="https://github.com/SPAZIO-GENESI/imgauthweb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border bg-secondary text-xs text-foreground hover:border-accent hover:text-accent transition-colors">
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    Interfaccia su GitHub
+                  </a>
+                  <a href="https://github.com/SPAZIO-GENESI/autart-signer" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border bg-secondary text-xs text-foreground hover:border-accent hover:text-accent transition-colors">
+                    <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    Firma su GitHub
+                  </a>
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-border bg-secondary text-xs text-foreground">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    Licenze GNU AGPL-3.0 · MIT
+                  </span>
+                </div>
+              </div>
+            </details>
+
+            <details class="group border-b border-border">
+              <summary class="flex items-baseline gap-3 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span class="text-accent font-semibold w-4 shrink-0 text-center transition-transform group-open:rotate-45">+</span>
+                <span>
+                  <span class="font-semibold text-foreground group-hover:text-accent transition-colors">Verifica gratuita, per sempre, per chiunque</span><br>
+                  <span class="text-sm text-muted-foreground">Chi riceve il tuo certificato può controllarlo in un click, senza registrarsi né pagare.</span>
+                </span>
+              </summary>
+              <div class="pb-4 pl-7 text-sm text-muted-foreground space-y-2">
+                <p>Ogni certificato contiene un <strong class="text-foreground">QR code</strong> e un link che
+                aprono la pagina di verifica con l'impronta già compilata: chi lo riceve carica il file e
+                ottiene subito l'esito. La verifica resterà sempre gratuita e aperta a tutti — è ciò che dà
+                valore al certificato.</p>
+              </div>
+            </details>
+
+            <details class="group border-b border-border">
+              <summary class="flex items-baseline gap-3 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span class="text-accent font-semibold w-4 shrink-0 text-center transition-transform group-open:rotate-45">+</span>
+                <span>
+                  <span class="font-semibold text-foreground group-hover:text-accent transition-colors">Certificato PDF firmato</span><br>
+                  <span class="text-sm text-muted-foreground">Ogni attestazione produce un certificato firmato digitalmente, con QR di verifica.</span>
+                </span>
+              </summary>
+              <div class="pb-4 pl-7 text-sm text-muted-foreground space-y-2">
+                <p>Il certificato è firmato digitalmente da <strong class="text-foreground">Spazio Genesi ETS</strong>
+                con un certificato valido ma autonomo (emesso dall'associazione): la data è già garantita dalla
+                marca temporale di terza parte e dalla blockchain. Prossimamente il servizio potrà evolvere con
+                un <strong class="text-foreground">sigillo elettronico riconosciuto</strong> anche per l'identità
+                dell'emittente.</p>
+                <p>Se hai dichiarato titolo, autore, anno o note, questi dati sono "sigillati" nella firma di
+                sicurezza: dopo l'emissione nessuno può modificarli.</p>
+              </div>
+            </details>
+
+          </div>
+
+          <p class="text-sm text-muted-foreground mt-6 px-4 py-3 bg-secondary border border-border rounded-lg">
             <strong class="text-foreground">Nota.</strong> Il servizio fornisce un'attestazione crittografica,
             <em>non</em> una registrazione di copyright né una prova legale di proprietà.
           </p>
