@@ -22,6 +22,38 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
       <div class="space-y-12">
 
+        <!-- Open source -->
+        <div class="border-l-4 border-accent pl-6">
+          <div class="flex items-baseline gap-3 mb-2">
+            <h3 class="text-foreground font-semibold">Codice aperto — il servizio diventa open source</h3>
+            <span class="text-xs text-muted-foreground">Giugno 2026</span>
+          </div>
+          <ul class="space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              <strong class="text-foreground">Cosa significa "open source".</strong>
+              Il codice che fa funzionare il servizio — l'interfaccia, il motore che calcola
+              le impronte e il firmatario dei PDF — è ora pubblicato integralmente e chiunque
+              può leggerlo, studiarlo e verificarlo. Non devi fidarti di quello che
+              <em>diciamo</em>: un esperto di tua fiducia (o chiunque, nel mondo) può
+              controllare che il servizio faccia esattamente ciò che dichiara, riga per riga.
+            </li>
+            <li>
+              <strong class="text-foreground">Dove si trova.</strong>
+              I tre componenti sono su GitHub con licenze riconosciute:
+              <a href="https://github.com/SPAZIO-GENESI/imgauth" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">imgauth</a> (motore, AGPL-3.0),
+              <a href="https://github.com/SPAZIO-GENESI/imgauthweb" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">imgauthweb</a> (interfaccia, MIT),
+              <a href="https://github.com/SPAZIO-GENESI/autart-signer" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">autart-signer</a> (firma, AGPL-3.0).
+            </li>
+            <li>
+              <strong class="text-foreground">La sicurezza non dipende dal segreto del codice.</strong>
+              Le chiavi crittografiche che autenticano i certificati non sono nel codice
+              pubblicato: vivono solo sui nostri server. Per questo pubblicare il codice non
+              indebolisce nulla — nessuno può "copiare" il servizio ed emettere certificati
+              che superino la nostra verifica.
+            </li>
+          </ul>
+        </div>
+
         <!-- Versione 1.7 -->
         <div class="border-l-4 border-accent pl-6">
           <div class="flex items-baseline gap-3 mb-2">
