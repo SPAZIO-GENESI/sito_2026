@@ -22,6 +22,45 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
       <div class="space-y-12">
 
+        <!-- Versione 1.9 -->
+        <div class="border-l-4 border-accent pl-6">
+          <div class="flex items-baseline gap-3 mb-2">
+            <h3 class="text-foreground font-semibold">Versione 1.9 — Verifica in un gesto, recupero e badge</h3>
+            <span class="text-xs text-muted-foreground">Giugno 2026</span>
+          </div>
+          <ul class="space-y-2 text-muted-foreground leading-relaxed">
+            <li>
+              <strong class="text-foreground">Verifica trascinando il certificato.</strong>
+              Chi riceve un certificato ora può controllarlo in pochi secondi: trascina il file
+              dell'opera e il certificato PDF, e il servizio legge da solo impronta, firma e dati
+              dichiarati, restituendo un esito chiaro a semaforo — l'opera corrisponde al
+              certificato? il certificato è autentico (emesso davvero da noi)? la data è ancorata
+              in Bitcoin? Non serve più ricopiare a mano codici di 64 caratteri. Il certificato PDF
+              viene letto direttamente nel tuo browser.
+            </li>
+            <li>
+              <strong class="text-foreground">Smaschera i certificati falsi.</strong>
+              Prima era facile controllare che un file corrispondesse a un'impronta, ma non che il
+              certificato fosse autentico. Ora la verifica controlla anche la firma di sicurezza e
+              la data: un certificato contraffatto o con una data inventata viene riconosciuto come
+              non valido.
+            </li>
+            <li>
+              <strong class="text-foreground">Recupero del certificato smarrito.</strong>
+              Hai perso il PDF? Carica di nuovo il file dell'opera (l'impronta si calcola nel tuo
+              browser) oppure inserisci l'impronta, e riscarica dal nostro archivio il certificato
+              firmato, identico all'originale.
+            </li>
+            <li>
+              <strong class="text-foreground">Badge "Opera attestata" per il tuo sito.</strong>
+              Dopo l'attestazione puoi copiare un piccolo distintivo da incorporare nel tuo sito o
+              profilo (in HTML o Markdown): mostra che l'opera è attestata e, con un click, porta
+              chiunque alla pagina di verifica. Il badge resta verde solo finché l'opera risulta
+              davvero nei nostri archivi: non è falsificabile.
+            </li>
+          </ul>
+        </div>
+
         <!-- Open source -->
         <div class="border-l-4 border-accent pl-6">
           <div class="flex items-baseline gap-3 mb-2">
