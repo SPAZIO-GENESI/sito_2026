@@ -219,6 +219,22 @@ import BaseLayout from '../layouts/BaseLayout.astro'
               <summary class="flex items-baseline gap-3 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                 <span class="text-accent font-semibold w-4 shrink-0 text-center transition-transform group-open:rotate-45">+</span>
                 <span>
+                  <span class="font-semibold text-foreground group-hover:text-accent transition-colors">Dati archiviati in Europa (UE)</span><br>
+                  <span class="text-sm text-muted-foreground">Il certificato e la prova restano su infrastruttura con residenza dei dati nell'Unione Europea.</span>
+                </span>
+              </summary>
+              <div class="pb-4 pl-7 text-sm text-muted-foreground space-y-2">
+                <p>Il certificato PDF e la prova di esistenza vengono conservati su storage
+                <strong class="text-foreground">Cloudflare R2 in giurisdizione Unione Europea</strong>:
+                i dati restano fisicamente nell'UE, in linea con il GDPR. L'opera in sé, come detto,
+                non viene comunque conservata.</p>
+              </div>
+            </details>
+
+            <details class="group border-b border-border">
+              <summary class="flex items-baseline gap-3 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span class="text-accent font-semibold w-4 shrink-0 text-center transition-transform group-open:rotate-45">+</span>
+                <span>
                   <span class="font-semibold text-foreground group-hover:text-accent transition-colors">Codice aperto, verificabile da chiunque</span><br>
                   <span class="text-sm text-muted-foreground">Tutto il codice del servizio è pubblico: non devi crederci sulla parola.</span>
                 </span>
