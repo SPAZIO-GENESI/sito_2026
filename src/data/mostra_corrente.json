@@ -26,7 +26,7 @@
     { "nome": "Manuela Valloscuro", "href": "/biografie/manuelavalloscuro/" },
     { "nome": "Esmeralda Shefiti" }
   ],
-  "comunicato": "https://spaziogenesi.org/archivio/comunicatistampa/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf",
+  "comunicato": "/assets/media/SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata.pdf",
   "rassegna_stampa": [
     { "testata": "ABRUZZOWEB.IT", "titolo": "Spazio Genesi L'Aquila: il 13 maggio al via mostra \"Adhuc, una presenza ostinata\"", "url": "https://www.abruzzoweb.it/spazio-genesi-laquila-il-13-maggio-al-via-mostra-adhuc-una-presenza-ostinata/" },
     { "testata": "EXIBART.COM", "titolo": "Gemma Maria la Cecilia - Adhuc, una persistenza ostinata", "url": "https://www.exibart.com/evento-arte/gemma-maria-la-cecilia-adhuc-una-persistenza-ostinata/" },
