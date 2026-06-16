@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 import { getCollection } from 'astro:content'
 import { u } from '../../utils/url'
+import DiarioTabs from '../../components/DiarioTabs.astro'
 
 const posts = (await getCollection('news', ({ data }) => (import.meta.env.PROD ? !data.draft : true)))
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
@@ -11,14 +12,15 @@ const fmt = (d) => d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long'
 <BaseLayout
   title="News — Spazio Genesi ETS, Arte Contemporanea L'Aquila"
   description="Notizie e tappe del progetto Spazio Genesi ETS: riconoscimenti, servizi, vita associativa."
-  activePage="news"
+  activePage="attivita"
 >
   <section class="py-16 lg:py-20 bg-secondary border-b border-border">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <h1 class="text-foreground mb-4">News</h1>
-      <p class="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+      <h1 class="text-foreground mb-4">Diario</h1>
+      <p class="text-lg text-muted-foreground max-w-2xl mb-8 leading-relaxed">
         Le tappe e gli annunci di Spazio Genesi ETS: riconoscimenti, servizi e vita associativa.
       </p>
+      <DiarioTabs active="news" />
     </div>
   </section>
 
