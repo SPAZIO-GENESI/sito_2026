@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { u } from '../utils/url'
+
+const vincoli = [
+  ['Un solo colore', 'Monocromatico, nessuna gradazione.'],
+  ['Formato vettoriale', 'SVG, PDF, AI o EPS.'],
+  ['Riproducibile con qualsiasi tecnica', 'Stampa, serigrafia, incisione, timbro, ricamo.'],
+  ['Riducibile a icona', 'Intelligibile anche a piccolissime dimensioni.'],
+  ['Minimalista, ispirazione Bauhaus', 'Geometria, essenzialità, funzione.'],
+  ['In continuità con il brand', "Coerente con l'identità di Spazio Genesi."],
+]
+
+const premi = [
+  'Credito ufficiale dell’autore in ogni documento di progetto.',
+  'Nome e firma sul sito del servizio.',
+  'Citazione dell’autore del logo in ogni certificato emesso.',
+  'Riconoscimento pubblico di Spazio Genesi ETS, per portfolio e CV.',
+]
+
+const regolamento = [
+  ['Chi può partecipare', 'Studenti regolarmente iscritti all’Accademia di Belle Arti dell’Aquila (ABAQ).'],
+  ['Originalità', 'L’elaborato deve essere originale, inedito e realizzato personalmente. Sono escluse opere che utilizzino marchi, font a licenza non idonea, immagini o elementi di terzi protetti da copyright.'],
+  ['Numero di proposte', 'Ogni partecipante può inviare fino a 2 proposte.'],
+  ['Requisiti tecnici', 'Pena l’esclusione, l’elaborato deve rispettare i vincoli del brief: monocromatico, vettoriale, riproducibile con qualsiasi tecnica, riducibile a icona, minimalista.'],
+  ['Scadenza', 'Fa fede la data di invio della mail, entro il 15 luglio 2026.'],
+  ['Giuria e giudizio', 'La selezione è affidata alle associate di Spazio Genesi ETS; il giudizio è insindacabile. Ci si riserva di richiedere lievi adattamenti tecnici al logo vincitore in collaborazione con l’autore.'],
+  ['Premio', 'Il riconoscimento consiste nel credito autoriale permanente (documenti di progetto, sito e ogni certificato emesso). Non è previsto compenso in denaro.'],
+  ['Facoltà di non assegnazione', 'Qualora nessuna proposta risultasse idonea, Spazio Genesi ETS si riserva di non assegnare il contest.'],
+  ['Trattamento dati', 'I dati dei partecipanti sono usati esclusivamente per la gestione del contest, nel rispetto del GDPR (titolare: Spazio Genesi ETS, it@spaziogenesi.org).'],
+  ['Accettazione', 'La partecipazione implica l’accettazione integrale del regolamento e della clausola di licenza.'],
+]
+
+const mailto = 'mailto:it@spaziogenesi.org?subject=' +
+  encodeURIComponent('Contest logo ATTESTAZIONI — Nome Cognome')
+---
+<BaseLayout
+  title="Contest logo ATTESTAZIONI — per studenti ABAQ | Spazio Genesi ETS"
+  description="Contest di logo design riservato agli studenti dell'Accademia di Belle Arti dell'Aquila (ABAQ): disegna il logo del progetto ATTESTAZIONI di Spazio Genesi. Consegna entro il 15 luglio 2026."
+  ogImage="https://spaziogenesi.org/assets/og-contest-attestazioni.png"
+  activePage=""
+>
+
+  <!-- Hero -->
+  <section class="py-16 lg:py-24 bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-xs font-semibold text-accent uppercase tracking-[0.3em] mb-4">
+        Open call · Contest di logo
+      </p>
+      <h1 class="text-foreground mb-5">Disegna il segno del progetto <em>ATTESTAZIONI</em></h1>
+      <p class="text-lg text-muted-foreground max-w-2xl leading-relaxed">
+        Spazio Genesi ETS cerca il logo di <strong class="text-foreground">ATTESTAZIONI</strong>, il servizio gratuito
+        che certifica la paternità e l'esistenza di un'opera digitale con firma, marca temporale e ancoraggio
+        su blockchain. Un contest <strong class="text-foreground">riservato agli studenti dell'Accademia di Belle
+        Arti dell'Aquila (ABAQ)</strong>.
+      </p>
+
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <a href={mailto}
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground text-sm font-semibold hover:opacity-90 transition-opacity">
+          Invia la tua proposta
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+        <a href={u('/assets/bando-contest-logo-attestazioni.pdf')} target="_blank" rel="noopener"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-background text-sm font-semibold text-foreground hover:border-accent hover:text-accent transition-colors">
+          Scarica il bando (PDF)
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/>
+          </svg>
+        </a>
+        <span class="text-sm text-muted-foreground">
+          Consegna entro il <strong class="text-foreground">15 luglio 2026</strong>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vincoli del segno -->
+  <section class="py-16 bg-background border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Il brief</p>
+      <h2 class="text-foreground mb-8">Vincoli del segno</h2>
+      <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {vincoli.map(([t, d]) => (
+          <div class="p-6 rounded-lg border border-border bg-card">
+            <h3 class="text-lg font-semibold text-foreground mb-2" style="font-family:var(--font-sans)">{t}</h3>
+            <p class="text-sm text-muted-foreground leading-relaxed">{d}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 max-w-3xl space-y-3 text-muted-foreground leading-relaxed">
+        <p>
+          <strong class="text-foreground">Libertà creativa.</strong>
+          Puoi lavorare con lettere, combinazioni, deformazioni tipografiche oppure con un'icona originale che
+          sintetizzi il concetto.
+        </p>
+        <p class="text-sm">
+          <strong class="text-foreground">Parole chiave:</strong>
+          auth art · attestazione · certificato · notarizzazione · blockchain · firma · sigillo · impronta digitale ·
+          autenticità · paternità dell'opera · marca temporale · prova di esistenza · fiducia.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Premio -->
+  <section class="py-16 bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h2 class="text-foreground mb-3">Cosa vince l'autore selezionato</h2>
+      <p class="text-muted-foreground max-w-2xl leading-relaxed mb-8">
+        Non un premio una tantum: il tuo nome entra nel progetto e ci resta. Il logo accompagnerà
+        <strong class="text-foreground">ogni opera attestata</strong>.
+      </p>
+      <ul class="grid gap-4 sm:grid-cols-2 max-w-4xl">
+        {premi.map((p) => (
+          <li class="flex items-start gap-3 text-foreground">
+            <svg class="shrink-0 mt-1 text-accent" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <span class="leading-relaxed">{p}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Tempi + Come partecipare -->
+  <section class="py-16 bg-background border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 grid gap-12 lg:grid-cols-2">
+      <div>
+        <h2 class="text-foreground mb-6">Tempi</h2>
+        <dl class="space-y-5">
+          <div>
+            <dt class="text-xs font-semibold text-accent uppercase tracking-wider">Consegna elaborati entro</dt>
+            <dd class="text-2xl font-semibold text-foreground" style="font-family:var(--font-sans)">15 luglio 2026</dd>
+            <dd class="text-sm text-muted-foreground">Fa fede la data di invio della mail.</dd>
+          </div>
+          <div>
+            <dt class="text-xs font-semibold text-accent uppercase tracking-wider">Votazione della giuria</dt>
+            <dd class="text-lg font-semibold text-foreground" style="font-family:var(--font-sans)">Seconda metà di luglio 2026</dd>
+            <dd class="text-sm text-muted-foreground">A cura delle associate di Spazio Genesi ETS.</dd>
+          </div>
+        </dl>
+      </div>
+      <div>
+        <h2 class="text-foreground mb-6">Come partecipare</h2>
+        <p class="text-muted-foreground leading-relaxed mb-4">
+          Invia a <a href={mailto} class="text-accent underline">it@spaziogenesi.org</a>, oggetto
+          <em>«Contest logo ATTESTAZIONI — Nome Cognome»</em>, entro la scadenza:
+        </p>
+        <ol class="space-y-3 list-decimal list-inside text-muted-foreground leading-relaxed">
+          <li>Il logo in formato vettoriale (SVG / PDF / AI / EPS).</li>
+          <li>Un'anteprima PNG (inclusa una prova di riduzione a icona).</li>
+          <li>3–4 righe che spiegano l'idea.</li>
+          <li>Nome, cognome e conferma di iscrizione ABAQ.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regolamento -->
+  <section class="py-16 bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
+        <h2 class="text-foreground">Regolamento</h2>
+        <a href={u('/assets/bando-contest-logo-attestazioni.pdf')} target="_blank" rel="noopener"
+          class="text-sm font-semibold text-accent underline">Versione PDF completa</a>
+      </div>
+      <ol class="max-w-4xl space-y-5 list-decimal list-inside marker:text-muted-foreground marker:font-semibold">
+        {regolamento.map(([t, d]) => (
+          <li class="text-foreground leading-relaxed">
+            <strong>{t}.</strong> <span class="text-muted-foreground">{d}</span>
+          </li>
+        ))}
+      </ol>
+
+      <div class="mt-10 max-w-4xl p-6 rounded-lg border border-border bg-card">
+        <h3 class="text-lg font-semibold text-foreground mb-3" style="font-family:var(--font-sans)">Licenza e cessione dei diritti</h3>
+        <div class="space-y-3 text-sm text-muted-foreground leading-relaxed">
+          <p>
+            Con l'invio dell'elaborato vincitore, l'autore <strong class="text-foreground">cede a titolo gratuito a
+            Spazio Genesi ETS i diritti di utilizzo economico</strong> del logo (riproduzione, pubblicazione,
+            adattamento, declinazione e uso su qualsiasi supporto e canale, senza limiti di tempo né di territorio),
+            per l'identità del progetto ATTESTAZIONI e di Spazio Genesi ETS.
+          </p>
+          <p>
+            Restano in capo all'autore i <strong class="text-foreground">diritti morali</strong> — in particolare il
+            diritto a essere sempre riconosciuto come autore del logo — onorati dal credito permanente previsto dal premio.
+          </p>
+          <p>Gli autori delle proposte non selezionate conservano ogni diritto sui propri elaborati, che non verranno utilizzati.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA finale -->
+  <section class="py-16 bg-background">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <p class="text-xl text-foreground max-w-2xl mx-auto leading-relaxed mb-8" style="font-family:var(--font-display)">
+        «ATTESTAZIONI custodisce le opere degli altri. Diamo a questo progetto un'opera che lo rappresenti — la tua.»
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href={mailto}
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-accent text-accent-foreground text-sm font-semibold hover:opacity-90 transition-opacity">
+          Invia la tua proposta
+        </a>
+        <a href="https://attestazione.spaziogenesi.org" target="_blank" rel="noopener"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-background text-sm font-semibold text-foreground hover:border-accent hover:text-accent transition-colors">
+          Scopri il servizio
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
