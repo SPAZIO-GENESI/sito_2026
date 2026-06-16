@@ -1,12 +1,12 @@
 ---
 title: "Avvicendamento alla presidenza di Spazio Genesi ETS"
-description: "Nel marzo 2026 Spazio Genesi ETS rinnova la propria presidenza: a Federico Battisti il testimone dal presidente uscente Prof. Andrea Aquilanti."
-pubDate: 2026-03-15
+description: "Il 23 febbraio 2026 Spazio Genesi ETS rinnova la propria presidenza: a Federico Battisti il testimone dal presidente uscente Prof. Andrea Aquilanti."
+pubDate: 2026-02-23
 draft: false
 tags: ["associazione", "governance"]
 ---
 
-Nel **marzo 2026** Spazio Genesi ETS ha rinnovato la propria presidenza.
+Il **23 febbraio 2026** Spazio Genesi ETS ha rinnovato la propria presidenza.
 
 L'associazione esprime profonda gratitudine al **Prof. Andrea Aquilanti**, presidente uscente, per la guida, la visione e il contributo offerti alla crescita del progetto.
 
