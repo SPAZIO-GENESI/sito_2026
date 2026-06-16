@@ -12,6 +12,4 @@ Metasophia nasce dal **recupero dell'archivio delle esercitazioni calcografiche 
 
 L'obiettivo è un sistema capace di **riconoscere automaticamente le tecniche di stampa** di un'opera — incisione, acquaforte, litografia, xilografia e altre — e di arricchire le immagini digitalizzate con metadati strutturati, a supporto della **catalogazione, dell'archiviazione e del restauro** delle collezioni grafiche.
 
-Nei primi mesi sono stati sviluppati il **prototipo** e una **demo pubblica su Hugging Face**; il progetto ha inoltre ricevuto **supporto mediatico** e l'**adesione a un programma di accesso a risorse di calcolo AWS**.
-
-<!-- TODO redazione: valutare se citare il partner tecnologico (RadixIA srl) e il nome esatto del programma AWS. -->
+Nei primi mesi sono stati sviluppati il **prototipo** e una **demo pubblica su Hugging Face**. Il progetto è realizzato con il **supporto tecnologico e mediatico** della startup milanese **RadixIA srl** e ha ottenuto l'**adesione a un programma di accesso a risorse di calcolo AWS**.
