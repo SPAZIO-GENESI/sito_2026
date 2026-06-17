@@ -15,7 +15,7 @@
  * Dopo: committa public/data/libri-embeddings.json — la ricerca userà quel file.
  * Rilancia questo script quando cambi le descrizioni.
  */
-import { mkdirSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 
 const SHEET_ID = '1Ef7n23TnmRFfpdzp4D24v0kKDrBxGQnhUPI6CNOASU4'
 const WORKER_SHEET = `https://cfg_googledata.it-e3f.workers.dev/?sheet=${SHEET_ID}&f=A3SD21`
@@ -41,6 +41,19 @@ async function embed(text) {
   }
 }
 
+// Se presente descrizioni.tsv, usa le descrizioni ricche da lì (così l'embedding
+// riflette il testo nuovo anche prima di averlo reincollato nel foglio).
+const descRicche = new Map()
+const TSV = new URL('./descrizioni.tsv', import.meta.url)
+if (existsSync(TSV)) {
+  for (const line of readFileSync(TSV, 'utf8').split('\n')) {
+    const i = line.indexOf('\t'); if (i < 0) continue
+    const id = line.slice(0, i).trim()
+    if (id && id !== 'row_id') descRicche.set(id, line.slice(i + 1).replace(/\s+/g, ' ').trim())
+  }
+  console.log(`[descrizioni.tsv] uso ${descRicche.size} descrizioni ricche`)
+}
+
 const { values } = await (await fetch(WORKER_SHEET)).json()
 const h = values[0]
 const I = h.indexOf('row_id'), VIS = h.indexOf('visibile'), AUT = h.indexOf('autore'),
@@ -51,7 +64,8 @@ const vectors = {}
 let n = 0, errori = 0
 for (const r of rows) {
   const id = (r[I] ?? '') + ''
-  const text = [clean(r[TIT]), clean(r[AUT]), clean(r[ED]), clean(r[AB])].filter(Boolean).join('. ')
+  const abstract = descRicche.get(id) ?? clean(r[AB])
+  const text = [clean(r[TIT]), clean(r[AUT]), clean(r[ED]), abstract].filter(Boolean).join('. ')
   n++
   process.stdout.write(`(${n}/${rows.length}) #${id} `)
   try {
