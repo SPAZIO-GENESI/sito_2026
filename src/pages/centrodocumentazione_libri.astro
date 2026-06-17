@@ -265,9 +265,18 @@ try {
         else row.style.display = 'none'
       })
       scored.sort((a, b) => b[1] - a[1])
-      const TOP = 40
-      scored.forEach(([row], i) => { tbody?.appendChild(row); row.style.display = i < TOP ? '' : 'none' })
-      statusEl.innerHTML = `Per concetto «${q}»: ${Math.min(TOP, scored.length)} testi più pertinenti. <a href="#" id="cdid-reset" class="text-accent underline">azzera</a>`
+      // Soglia dinamica: mostra i testi vicini al migliore (min 6, max 30),
+      // così la lista resta pulita e non si "sporca" con affinità deboli.
+      const topScore = scored[0]?.[1] ?? 0
+      const soglia = Math.max(0.38, topScore - 0.12)
+      let mostrati = 0
+      scored.forEach(([row, score]) => {
+        tbody?.appendChild(row)
+        const ok = mostrati < 6 || (score >= soglia && mostrati < 30)
+        row.style.display = ok ? '' : 'none'
+        if (ok) mostrati++
+      })
+      statusEl.innerHTML = `Per concetto «${q}»: ${mostrati} testi pertinenti, dal più affine. <a href="#" id="cdid-reset" class="text-accent underline">azzera</a>`
       document.getElementById('cdid-reset')?.addEventListener('click', (e) => { e.preventDefault(); resetView() })
     } catch (e) {
       statusEl.textContent = 'Ricerca per concetto non disponibile al momento.'
