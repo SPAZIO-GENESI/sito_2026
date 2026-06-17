@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 <BaseLayout
   title="Servizi — Spazio Genesi ETS, Arte Contemporanea L'Aquila"
-  description="I servizi di Spazio Genesi ETS per artiste e artisti: attestazione crittografica SHA-256 di qualsiasi tipo di file, per certificare l'esistenza e l'originalità di un'opera digitale in un dato momento."
+  description="I servizi di Spazio Genesi ETS per artiste e artisti: attestazione crittografica SHA-256 delle opere digitali, generatore di codici QR, il Centro Documentazione Ivan Donatelli (biblioteca d'arte) e DUTY FREE, l'edicola delle autoproduzioni studentesche."
   activePage="servizi"
 >
 
@@ -34,6 +34,28 @@ import BaseLayout from '../layouts/BaseLayout.astro'
           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border bg-background text-sm font-semibold text-foreground hover:border-accent hover:text-accent transition-colors"
         >
           Generatore QR code
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>
+          </svg>
+        </a>
+        <a
+          href="#centrodocumentazione"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border bg-background text-sm font-semibold text-foreground hover:border-accent hover:text-accent transition-colors"
+        >
+          Centro Documentazione
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>
+          </svg>
+        </a>
+        <a
+          href="#dutyfree"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border bg-background text-sm font-semibold text-foreground hover:border-accent hover:text-accent transition-colors"
+        >
+          DUTY FREE
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             aria-hidden="true">
@@ -388,6 +410,99 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         </a>
         <p class="mt-3 text-sm text-muted-foreground">
           qrcoder.spaziogenesi.org
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Servizio: Centro Documentazione Ivan Donatelli -->
+  <section id="centrodocumentazione" class="py-16 bg-secondary border-b border-border scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+
+        <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+          Consultazione e ricerca
+        </p>
+        <h2 class="text-foreground mb-6">Centro Documentazione Ivan Donatelli</h2>
+
+        <div class="space-y-5 text-muted-foreground leading-relaxed">
+          <p>
+            <strong class="text-foreground">Cos'è.</strong>
+            Un <strong class="text-foreground">fondo privato di testi, cataloghi d'arte ed emeroteca</strong>,
+            trasferito presso Spazio Genesi nel gennaio 2025 e qui ospitato per essere salvato e reso
+            disponibile alla comunità. Una biblioteca specializzata d'arte, aperta a chi cerca fonti
+            e materiali non sempre reperibili altrove.
+          </p>
+          <p>
+            <strong class="text-foreground">A cosa serve.</strong>
+            È uno strumento di <strong class="text-foreground">studio e ricerca</strong> per studentesse,
+            studenti e ricercatori: i volumi e i periodici si consultano <strong class="text-foreground">in loco</strong>,
+            negli spazi dell'associazione. Il <strong class="text-foreground">catalogo dei libri</strong> è
+            consultabile online, per cercare un titolo prima di venire.
+          </p>
+        </div>
+
+        <a
+          href="https://spaziogenesi.org/centrodocumentazione_libri/"
+          class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl bg-accent text-background font-semibold hover:opacity-90 transition-opacity"
+        >
+          Sfoglia il catalogo libri
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+        <p class="mt-3 text-sm text-muted-foreground">
+          spaziogenesi.org/centrodocumentazione_libri
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Servizio: DUTY FREE -->
+  <section id="dutyfree" class="py-16 bg-background border-b border-border scroll-mt-24">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+
+        <p class="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+          Editoria indipendente
+        </p>
+        <h2 class="text-foreground mb-6">DUTY FREE — edicola delle autoproduzioni</h2>
+
+        <div class="space-y-5 text-muted-foreground leading-relaxed">
+          <p>
+            <strong class="text-foreground">Cos'è.</strong>
+            Un'<strong class="text-foreground">edicola digitale autogestita</strong> che raccoglie e dà
+            visibilità alle <strong class="text-foreground">edizioni cartacee autoprodotte</strong> dagli
+            studenti del corso di Fumetto dell'Accademia di Belle Arti dell'Aquila: zine, fanzine, fumetti
+            e pubblicazioni indipendenti.
+          </p>
+          <p>
+            <strong class="text-foreground">A cosa serve.</strong>
+            Porta fuori dallo scaffale le autoproduzioni studentesche, facendole conoscere a un pubblico
+            più ampio. È curata direttamente da studentesse e studenti, nello spirito autogestito di
+            Spazio Genesi.
+          </p>
+        </div>
+
+        <a
+          href="https://dutyfree.spaziogenesi.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl bg-accent text-background font-semibold hover:opacity-90 transition-opacity"
+        >
+          Visita DUTY FREE
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M7 17 17 7"/><path d="M7 7h10v10"/>
+          </svg>
+        </a>
+        <p class="mt-3 text-sm text-muted-foreground">
+          dutyfree.spaziogenesi.org
         </p>
 
       </div>
