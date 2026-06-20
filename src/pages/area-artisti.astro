@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+<BaseLayout
+  title="Area artisti — Spazio Genesi"
+  description="Accesso riservato agli artisti per aggiornare la propria biografia."
+  noindex={true}
+  activePage=""
+>
+  <section class="py-16 lg:py-24 bg-secondary border-b border-border">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <p class="text-xs font-semibold text-accent uppercase tracking-[0.3em] mb-4">Area artisti</p>
+      <h1 class="text-foreground mb-4">La tua biografia</h1>
+      <p class="text-muted-foreground leading-relaxed mb-8">
+        Accedi con l'indirizzo email associato alla tua scheda per aggiornare la tua biografia.
+        Le modifiche sono pubblicate subito.
+      </p>
+
+      <!-- Login -->
+      <div id="login-box">
+        <div id="gbtn"></div>
+        <p id="login-hint" class="text-sm text-muted-foreground mt-4"></p>
+      </div>
+
+      <!-- Editor (nascosto finché non si accede) -->
+      <form id="editor" class="hidden mt-2 space-y-6">
+        <div class="flex items-center justify-between gap-4 flex-wrap">
+          <p class="text-sm text-muted-foreground">Accesso come <b id="acct" class="text-foreground"></b></p>
+          <button type="button" id="logout" class="text-sm text-accent hover:opacity-80 underline">Esci</button>
+        </div>
+
+        <label class="block">
+          <span class="text-sm font-semibold text-foreground">Nome</span>
+          <input id="f-nome" type="text" maxlength="120"
+            class="mt-1 w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground" />
+        </label>
+
+        <label class="block">
+          <span class="text-sm font-semibold text-foreground">Biografia</span>
+          <span class="block text-xs text-muted-foreground mb-1">Tag consentiti: &lt;br&gt; &lt;hr&gt; &lt;b&gt; &lt;i&gt; &lt;p&gt; &lt;a href="…"&gt;. Il resto viene mostrato come testo.</span>
+          <textarea id="f-bio" rows="10"
+            class="mt-1 w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground font-mono text-sm"></textarea>
+        </label>
+
+        <div class="grid sm:grid-cols-3 gap-4">
+          <label class="block">
+            <span class="text-sm font-semibold text-foreground">Instagram (handle)</span>
+            <input id="f-ig" type="text" maxlength="80" placeholder="nomeutente"
+              class="mt-1 w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground" />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-foreground">Altro social (URL)</span>
+            <input id="f-social" type="url" maxlength="500" placeholder="https://…"
+              class="mt-1 w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground" />
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold text-foreground">Portfolio</span>
+            <input id="f-portfolio" type="text" maxlength="200" placeholder="link o nome file PDF"
+              class="mt-1 w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground" />
+          </label>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <button type="submit" id="save"
+            class="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+            Salva e pubblica
+          </button>
+          <p id="status" class="text-sm" aria-live="polite"></p>
+        </div>
+        <p class="text-xs text-muted-foreground">
+          Anteprima pubblica: <a id="preview-link" class="text-accent underline" target="_blank" rel="noopener">la tua scheda</a>
+        </p>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<script is:inline src="https://accounts.google.com/gsi/client" async></script>
+<script is:inline>
+  // ⚙️ DA CONFIGURARE dopo aver creato il Client ID Google e deployato il Worker:
+  const GOOGLE_CLIENT_ID = '987898157658-msrb2ugonpnbnc8gp9dlri00br9ceinh.apps.googleusercontent.com';
+  const WORKER_URL = 'https://artisti-api.it-e3f.workers.dev';
+
+  let idToken = null;
+  const $ = (id) => document.getElementById(id);
+  const setStatus = (msg, ok) => { const s = $('status'); s.textContent = msg; s.style.color = ok ? '#1e7e34' : '#c0392b'; };
+
+  async function api(path, opts = {}) {
+    const r = await fetch(WORKER_URL + path, {
+      ...opts,
+      headers: { 'Content-Type': 'application/json', ...(idToken ? { Authorization: 'Bearer ' + idToken } : {}), ...(opts.headers || {}) },
+    });
+    return { ok: r.ok, status: r.status, data: await r.json().catch(() => ({})) };
+  }
+
+  function fillForm(a) {
+    $('f-nome').value = a.nome ? decodeURIComponent(a.nome) : '';
+    $('f-bio').value = a.bio || '';
+    $('f-ig').value = a.ig || '';
+    $('f-social').value = a.social || '';
+    $('f-portfolio').value = a.portfolio || '';
+    $('preview-link').href = '/biografie/' + a.cartella + '/';
+  }
+
+  async function onCredential(resp) {
+    idToken = resp.credential;
+    const me = await api('/api/me');
+    if (me.status === 403) { $('login-hint').textContent = 'Questa email (' + (me.data.email || '') + ') non è associata a nessuna scheda artista. Scrivici per essere aggiunto.'; idToken = null; return; }
+    if (!me.ok) { $('login-hint').textContent = 'Accesso non riuscito, riprova.'; idToken = null; return; }
+    $('acct').textContent = me.data.account.email;
+    fillForm(me.data.artista);
+    $('login-box').classList.add('hidden');
+    $('editor').classList.remove('hidden');
+  }
+
+  function initLogin() {
+    if (!window.google || !google.accounts) { setTimeout(initLogin, 200); return; }
+    google.accounts.id.initialize({ client_id: GOOGLE_CLIENT_ID, callback: onCredential });
+    google.accounts.id.renderButton($('gbtn'), { theme: 'outline', size: 'large', text: 'signin_with', locale: 'it' });
+  }
+  initLogin();
+
+  $('logout').addEventListener('click', () => { idToken = null; $('editor').classList.add('hidden'); $('login-box').classList.remove('hidden'); google.accounts.id.disableAutoSelect(); });
+
+  $('editor').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    setStatus('Salvataggio…', true);
+    const body = {
+      nome: $('f-nome').value, bio: $('f-bio').value, ig: $('f-ig').value,
+      social: $('f-social').value, portfolio: $('f-portfolio').value,
+    };
+    const r = await api('/api/bio', { method: 'POST', body: JSON.stringify(body) });
+    if (r.ok) setStatus('Salvato e pubblicato ✓', true);
+    else if (r.status === 401) { setStatus('Sessione scaduta, riaccedi.', false); $('logout').click(); }
+    else setStatus('Errore nel salvataggio.', false);
+  });
+</script>
