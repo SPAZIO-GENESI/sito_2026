@@ -9,176 +9,75 @@ import { u } from '../utils/url'
 const artisti = data.artisti as Artista[]
 const ultimeInserite = artisti.slice(-3).reverse()
 
-type Persona = { nome: string; href?: string }
-
-function renderPersone(persone: Persona[]) {
-  return persone
-}
-
-const eventSchema = JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'ExhibitionEvent',
-  name: mostra.titolo,
-  description: mostra.tipo,
-  startDate: mostra.startDateISO,
-  location: {
-    '@type': 'Place',
-    name: mostra.luogo,
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 42.3561053,
-      longitude: 13.3884423,
-    },
-  },
-  organizer: {
-    '@type': 'Organization',
-    name: 'Spazio Genesi ETS',
-    url: 'https://spaziogenesi.org',
-  },
-  image: mostra.immagine,
-  url: 'https://spaziogenesi.org/',
-})
+// Immagini del carosello hero della campagna 5×1000: grafica + scatti delle opere/spazio
+const campagna = [
+  { src: '/assets/og-5x1000.png', alt: 'Dona il tuo 5×1000 a Spazio Genesi ETS — codice fiscale 96602450585', fit: 'contain' },
+  { src: '/assets/media/SPAZIO_GENESI_adhuc_1.jpeg', alt: "Installazione in mostra a Spazio Genesi, L'Aquila", fit: 'cover' },
+  { src: '/assets/media/SPAZIO_GENESI_Carezze_2.jpeg', alt: 'Stampe e opere realizzate negli spazi di Spazio Genesi', fit: 'cover' },
+]
 ---
 <BaseLayout
   title="Spazio Genesi — Arte Contemporanea, L'Aquila"
-  description={`Spazio Genesi ETS: ${mostra.tipo}. ${mostra.titolo}, ${mostra.vernissage}. Laboratorio permanente, Accademia di Belle Arti L'Aquila.`}
-  ogImage={mostra.immagine}
-  schemaLD={eventSchema}
+  description="Spazio Genesi ETS, laboratorio permanente di arte contemporanea all'Accademia di Belle Arti dell'Aquila. Destina il tuo 5×1000 (CF 96602450585): non ti costa nulla."
+  ogImage="https://spaziogenesi.org/assets/og-5x1000.png"
 >
 
-  <!-- ① MOSTRA CORRENTE: testo sinistra, immagine destra -->
-  <section class="bg-background border-b border-border">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-10 lg:py-14">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+  <!-- ① CAMPAGNA 5×1000: immagine grande + CTA -->
+  <section class="bg-secondary border-b border-border">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-10 lg:py-14">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
 
-        <!-- Colonna sinistra: testo (stile B12) -->
-        <div class="order-2 lg:order-1">
-          <span class="text-accent font-semibold text-sm uppercase tracking-wider">Mostra in corso</span>
-          <h1 class="mt-3 mb-2 text-foreground">{mostra.titolo}</h1>
-          <p class="text-muted-foreground mb-5">{mostra.tipo}</p>
-
-          <p class="text-sm text-muted-foreground mb-6">
-            <strong class="text-foreground">{mostra.vernissage}</strong><br>
-            <a href={mostra.mappa} target="_blank" rel="noopener noreferrer"
-              class="text-accent hover:opacity-80 transition-opacity underline">
-              {mostra.luogo}
-            </a>
-          </p>
-
-          <!-- Scheda tecnica -->
-          <dl class="space-y-2 text-sm mb-6 border-l-2 border-border pl-4">
-            <div class="flex gap-2 flex-wrap">
-              <dt class="font-semibold text-foreground shrink-0">A cura di</dt>
-              <dd class="text-muted-foreground">
-                {mostra.curata_da.href
-                  ? <a href={u(mostra.curata_da.href)} class="text-accent hover:opacity-80 underline">{mostra.curata_da.nome}</a>
-                  : mostra.curata_da.nome}
-              </dd>
-            </div>
-            <div class="flex gap-2 flex-wrap">
-              <dt class="font-semibold text-foreground shrink-0">{mostra.artiste.length === 1 ? 'Artista' : 'Artiste'}</dt>
-              <dd class="text-muted-foreground">
-                {(mostra.artiste as Persona[]).map((p, i) => (
-                  <Fragment>
-                    {p.href
-                      ? <a href={u(p.href)} class="text-accent hover:opacity-80 underline">{p.nome}</a>
-                      : p.nome}
-                    {i < mostra.artiste.length - 1 ? ', ' : ''}
-                  </Fragment>
-                ))}
-              </dd>
-            </div>
-            <div class="flex gap-2 flex-wrap">
-              <dt class="font-semibold text-foreground shrink-0">Coordinamento</dt>
-              <dd class="text-muted-foreground">
-                {(mostra.coordinamento as Persona[]).map((p, i) => (
-                  <Fragment>
-                    {p.href
-                      ? <a href={u(p.href)} class="text-accent hover:opacity-80 underline">{p.nome}</a>
-                      : p.nome}
-                    {i < mostra.coordinamento.length - 1 ? ', ' : ''}
-                  </Fragment>
-                ))}
-              </dd>
-            </div>
-            <div class="flex gap-2 flex-wrap">
-              <dt class="font-semibold text-foreground shrink-0">Grafica</dt>
-              <dd class="text-muted-foreground">
-                {(mostra.grafica as Persona[]).map((p, i) => (
-                  <Fragment>
-                    {p.href
-                      ? <a href={p.href} target="_blank" rel="noopener noreferrer" class="text-accent hover:opacity-80 underline">{p.nome}</a>
-                      : p.nome}
-                    {i < mostra.grafica.length - 1 ? ', ' : ''}
-                  </Fragment>
-                ))}
-              </dd>
-            </div>
-            <div class="flex gap-2 flex-wrap">
-              <dt class="font-semibold text-foreground shrink-0">Allestimento</dt>
-              <dd class="text-muted-foreground">
-                {(mostra.allestimento as Persona[]).map((p, i) => (
-                  <Fragment>
-                    {p.href
-                      ? <a href={u(p.href)} class="text-accent hover:opacity-80 underline">{p.nome}</a>
-                      : p.nome}
-                    {i < mostra.allestimento.length - 1 ? ', ' : ''}
-                  </Fragment>
-                ))}
-              </dd>
-            </div>
-          </dl>
-
-          <div class="flex flex-wrap gap-3 mb-6">
-            <a href={mostra.comunicato} target="_blank" rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-accent text-accent-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <path d="m7 10 5 5 5-5"/>
-              </svg>
-              Comunicato stampa
-            </a>
-          </div>
-
-          {mostra.rassegna_stampa.length > 0 && (
-            <div>
-              <p class="text-xs font-semibold text-foreground uppercase tracking-wider mb-2">Rassegna stampa</p>
-              <ul class="space-y-1.5">
-                {(mostra.rassegna_stampa as {testata:string;titolo:string;url:string}[]).map(art => (
-                  <li class="text-sm">
-                    <a href={art.url} target="_blank" rel="noopener noreferrer"
-                      class="text-accent hover:opacity-80 transition-opacity">
-                      <span class="font-semibold">{art.testata}</span> — {art.titolo}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-
-        <!-- Colonna destra: carosello 4 immagini -->
-        <div class="order-1 lg:order-2">
-          <div id="carousel" class="relative w-full h-64 lg:h-72 rounded-lg shadow-lg overflow-hidden">
-            {(mostra.galleria as string[]).map((src, i) => (
-              <img
-                src={u(src)}
-                alt={`${mostra.titolo} — foto ${i + 1}`}
-                class={`carousel-slide absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
-                loading={i === 0 ? 'eager' : 'lazy'}
-              />
-            ))}
-            <!-- Indicatori -->
-            <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
-              {(mostra.galleria as string[]).map((_, i) => (
-                <button
-                  class={`carousel-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-white' : 'bg-white/40'}`}
-                  data-index={i}
-                  aria-label={`Foto ${i + 1}`}
+        <!-- Carosello immagini campagna -->
+        <div class="min-w-0 lg:col-span-3 order-1">
+          <a href={u('/5x1000/')} class="group block">
+            <div id="carousel" class="relative w-full h-72 lg:h-96 rounded-xl shadow-lg border border-border overflow-hidden" style="background:#faf9f6">
+              {campagna.map((im, i) => (
+                <img
+                  src={u(im.src)}
+                  alt={im.alt}
+                  class={`carousel-slide absolute inset-0 w-full h-full ${im.fit === 'contain' ? 'object-contain' : 'object-cover'} transition-opacity duration-700 ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                  loading={i === 0 ? 'eager' : 'lazy'}
                 />
               ))}
+              <!-- Indicatori -->
+              <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                {campagna.map((_, i) => (
+                  <button
+                    type="button"
+                    class={`carousel-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-white' : 'bg-white/40'}`}
+                    data-index={i}
+                    aria-label={`Immagine ${i + 1}`}
+                  />
+                ))}
+              </div>
             </div>
+          </a>
+        </div>
+
+        <!-- Testo + CTA -->
+        <div class="min-w-0 lg:col-span-2 order-2">
+          <span class="text-accent font-semibold text-sm uppercase tracking-wider">Sostienici · 5×1000</span>
+          <h1 class="mt-3 mb-4 text-foreground">Il tuo 5×1000 non ti costa nulla.</h1>
+          <p class="text-muted-foreground leading-relaxed mb-6">
+            Con una firma destini a <strong class="text-foreground">Spazio Genesi ETS</strong> una quota
+            dell'IRPEF che lo Stato comunque trattiene. Ci aiuti a tenere <strong class="text-foreground">gratuito</strong>
+            il servizio di attestazione delle opere digitali e a dotarlo del sigillo elettronico qualificato.
+          </p>
+
+          <div class="inline-flex flex-col gap-1 p-4 rounded-xl border border-border bg-background mb-6">
+            <span class="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Codice fiscale da indicare</span>
+            <span class="text-2xl font-semibold text-foreground tracking-wider" style="font-family:var(--font-mono)">96602450585</span>
+          </div>
+
+          <div>
+            <a href={u('/5x1000/')}
+              class="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+              Scopri come destinarlo
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
           </div>
         </div>
 
@@ -411,6 +310,7 @@ const eventSchema = JSON.stringify({
   let timer: ReturnType<typeof setInterval>
 
   function goTo(n: number) {
+    if (slides.length === 0) return
     slides[current].classList.replace('opacity-100', 'opacity-0')
     dots[current].classList.replace('bg-white', 'bg-white/40')
     current = (n + slides.length) % slides.length
@@ -419,18 +319,18 @@ const eventSchema = JSON.stringify({
   }
 
   function startAuto() {
-    timer = setInterval(() => goTo(current + 1), 3500)
+    if (slides.length > 1) timer = setInterval(() => goTo(current + 1), 4000)
   }
 
   dots.forEach(dot => {
-    dot.addEventListener('click', () => {
+    dot.addEventListener('click', (e) => {
+      e.preventDefault()
       clearInterval(timer)
       goTo(Number(dot.dataset.index))
       startAuto()
     })
   })
 
-  // Pausa al hover
   const carousel = document.getElementById('carousel')
   carousel?.addEventListener('mouseenter', () => clearInterval(timer))
   carousel?.addEventListener('mouseleave', startAuto)
