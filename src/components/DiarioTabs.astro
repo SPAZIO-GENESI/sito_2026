@@ -2,13 +2,14 @@
 import { u } from '../utils/url'
 
 interface Props {
-  active: 'attivita' | 'news'
+  active: 'attivita' | 'news' | 'comunicazioni'
 }
 const { active } = Astro.props
 
 const tabs = [
   { key: 'attivita', label: 'Attività', href: u('/attivita/') },
   { key: 'news', label: 'News', href: u('/news/') },
+  { key: 'comunicazioni', label: 'Vita associativa', href: u('/vita-associativa/') },
 ]
 ---
 <nav aria-label="Sezioni del Diario" class="flex flex-wrap gap-2">

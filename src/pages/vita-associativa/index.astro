@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+import { getCollection } from 'astro:content'
+import { u } from '../../utils/url'
+import DiarioTabs from '../../components/DiarioTabs.astro'
+
+const voci = (await getCollection('comunicazioni', ({ data }) => (import.meta.env.PROD ? !data.draft : true)))
+  .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
+
+const fmt = (d) => d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })
+const MODALITA = {
+  presenza: 'In presenza',
+  online: 'Call online',
+  mista: 'Ibrida',
+  comunicazione: 'Comunicazione',
+}
+---
+<BaseLayout
+  title="Vita associativa — Spazio Genesi ETS L'Aquila"
+  description="Il registro pubblico delle comunicazioni istituzionali di Spazio Genesi ETS: assemblee in presenza, call online e avvisi. Aperto alla partecipazione e alla pluralità delle voci."
+  activePage="attivita"
+>
+  <section class="py-16 lg:py-20 bg-secondary border-b border-border">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h1 class="text-foreground mb-4">Diario</h1>
+      <p class="text-lg text-muted-foreground max-w-2xl mb-8 leading-relaxed">
+        Il registro delle comunicazioni istituzionali dell'associazione: assemblee in presenza,
+        call online e avvisi.
+      </p>
+      <DiarioTabs active="comunicazioni" />
+    </div>
+  </section>
+
+  <section class="py-12 lg:py-16 bg-background">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+
+      <p class="text-muted-foreground leading-relaxed mb-10">
+        Pubblichiamo qui le convocazioni e le comunicazioni delle nostre assemblee — sia quelle in
+        presenza sia le call online, comprese le assemblee ordinarie. Lo facciamo per tenere il
+        confronto <strong class="text-foreground">aperto alla partecipazione</strong> e fedele al
+        nostro interesse per la <strong class="text-foreground">pluralità delle voci</strong>: tutte
+        e tutti possono seguire e intervenire, anche se il voto resta riservato ai soci.
+      </p>
+
+      {voci.length === 0 ? (
+        <p class="text-muted-foreground">Nessuna comunicazione pubblicata al momento.</p>
+      ) : (
+        <ul class="divide-y divide-border">
+          {voci.map((v) => (
+            <li class="py-8 first:pt-0">
+              <article>
+                <div class="flex items-center gap-3 flex-wrap">
+                  <time datetime={v.data.pubDate.toISOString()} class="text-xs font-semibold text-accent uppercase tracking-wider">
+                    {fmt(v.data.pubDate)}
+                  </time>
+                  <span class="text-xs px-2 py-0.5 bg-muted text-muted-foreground rounded-full">
+                    {MODALITA[v.data.modalita] ?? v.data.modalita}
+                  </span>
+                </div>
+                <h2 class="mt-2 mb-3 text-foreground">
+                  <a href={u(`/vita-associativa/${v.id}/`)} class="hover:text-accent transition-colors">{v.data.title}</a>
+                </h2>
+                {v.data.description && (
+                  <p class="text-muted-foreground leading-relaxed">{v.data.description}</p>
+                )}
+                <a href={u(`/vita-associativa/${v.id}/`)}
+                  class="inline-flex items-center gap-1 mt-4 text-sm font-medium text-accent hover:opacity-80 transition-opacity">
+                  Leggi
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+                  </svg>
+                </a>
+              </article>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  </section>
+</BaseLayout>

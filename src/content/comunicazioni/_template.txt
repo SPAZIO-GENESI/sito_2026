@@ -1,0 +1,16 @@
+Template per una voce di "Vita associativa".
+Copia questo blocco in un nuovo file .md in questa cartella (es. assemblea-2026-02-15.md).
+NB: i file .txt NON vengono pubblicati; solo i .md di questa cartella diventano voci.
+
+---
+title: "Assemblea ordinaria — 15 febbraio 2026"
+description: "Convocazione e ordine del giorno dell'assemblea ordinaria dei soci."
+pubDate: 2026-02-15
+# modalita: presenza | online | mista | comunicazione
+modalita: presenza
+draft: false
+tags: ["assemblea"]
+---
+
+Corpo in Markdown: ordine del giorno, luogo/link della call, esiti o verbale.
+Usa **grassetto**, elenchi e [link](https://...) liberamente.
