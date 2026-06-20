@@ -34,6 +34,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
                 <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-foreground">Nome</th>
                 <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-foreground">Email</th>
                 <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-foreground">Aggiornata</th>
+                <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-foreground">Stato</th>
                 <th class="px-3 py-2"></th>
               </tr>
             </thead>
@@ -102,6 +103,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
         <td class="px-3 py-2">${esc(a.nome ? decodeURIComponent(a.nome) : '')}</td>
         <td class="px-3 py-2 text-muted-foreground">${esc(a.email)}</td>
         <td class="px-3 py-2 text-muted-foreground text-xs">${esc((a.updated_at || '').slice(0, 10))}</td>
+        <td class="px-3 py-2">
+          <button data-toggle="${esc(a.cartella)}" data-pub="${a.published ? 1 : 0}"
+            class="px-3 py-1 rounded-full text-xs font-semibold ${a.published ? 'bg-green-100 text-green-800' : 'bg-gray-200 text-gray-600'}">
+            ${a.published ? 'Pubblicato' : 'Nascosto'}
+          </button>
+        </td>
         <td class="px-3 py-2 text-right whitespace-nowrap">
           <button data-edit="${esc(a.cartella)}" class="text-accent underline mr-3">Modifica</button>
           <button data-del="${esc(a.cartella)}" class="text-red-600 underline">Elimina</button>
@@ -127,6 +134,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
   }
 
   function bindRowButtons() {
+    document.querySelectorAll('[data-toggle]').forEach((b) => b.onclick = async () => {
+      const cartella = b.getAttribute('data-toggle');
+      const next = b.getAttribute('data-pub') === '1' ? 0 : 1;
+      const r = await api('/api/admin/visibility', { method: 'POST', body: JSON.stringify({ cartella, published: next }) });
+      if (r.ok) {
+        b.setAttribute('data-pub', String(next));
+        b.textContent = next ? 'Pubblicato' : 'Nascosto';
+        b.className = 'px-3 py-1 rounded-full text-xs font-semibold ' + (next ? 'bg-green-100 text-green-800' : 'bg-gray-200 text-gray-600');
+      } else $('status').textContent = 'Errore aggiornamento stato.';
+    });
     document.querySelectorAll('[data-edit]').forEach((b) => b.onclick = async () => {
       const cartella = b.getAttribute('data-edit');
       const r = await api('/api/bio?cartella=' + encodeURIComponent(cartella)); // include bio
