@@ -108,7 +108,7 @@ try {
             <input
               id="cdid-search"
               type="search"
-              placeholder="Cerca autore/titolo, o un concetto (es. «percezione e forma»)…"
+              placeholder="Cerca autore, titolo, editore…"
               class="w-full sm:w-96 px-4 py-2 border border-border rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50"
             />
             <button
@@ -123,6 +123,19 @@ try {
               </svg>
             </button>
           </div>
+          <!-- Spiegazione dei due modi di ricerca (sempre visibile, non solo nel placeholder) -->
+          <p class="text-xs text-muted-foreground leading-relaxed max-w-2xl mb-1">
+            <strong class="text-foreground">Due modi per cercare.</strong>
+            <span class="block sm:inline">
+              <strong class="text-foreground">Per parola:</strong> scrivi e la lista si filtra all'istante
+              su autore, titolo, editore e ISBN.
+            </span>
+            <span class="block sm:inline">
+              <strong class="text-foreground">Per concetto:</strong> premi «Cerca per concetto» (o Invio) per
+              trovare i testi più affini a un'idea o a un tema, anche quando le parole esatte non compaiono nel
+              titolo — es. «percezione e forma», «terremoto dell'Aquila».
+            </span>
+          </p>
           <p id="cdid-status" class="text-xs text-muted-foreground mb-6 min-h-[1rem]" aria-live="polite"></p>
 
           <!-- Tabella libri -->
