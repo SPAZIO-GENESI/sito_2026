@@ -2,7 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 
 const SHEET_ID = '1Ef7n23TnmRFfpdzp4D24v0kKDrBxGQnhUPI6CNOASU4'
-const WORKER_URL = `https://cfg_googledata.it-e3f.workers.dev/?sheet=${SHEET_ID}&f=A3SD21`
+// Token d'accesso al worker: NON nel sorgente — iniettato a build da un GitHub Actions secret
+const CDID_KEY = process.env.CDID_KEY || ''
+const WORKER_URL = `https://cfg_googledata.it-e3f.workers.dev/?sheet=${SHEET_ID}&f=${CDID_KEY}`
 
 interface LibroRow {
   id: string
