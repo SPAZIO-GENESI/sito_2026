@@ -23,6 +23,13 @@
         return;
       }
       if (tag === 'P') { const i = walk(n); out += i ? '<p>' + i + '</p>' : ''; return; }
+      if (tag === 'UL' || tag === 'OL') {
+        let items = '';
+        n.childNodes.forEach(function (c) { if (c.nodeType === 1 && c.tagName === 'LI') items += '<li>' + walk(c) + '</li>'; });
+        out += items ? '<ul>' + items + '</ul>' : '';
+        return;
+      }
+      if (tag === 'LI') { out += '<li>' + walk(n) + '</li>'; return; }
       if (tag === 'DIV') {
         const i = walk(n);
         if (out && !/(<br>|<\/p>|<hr>)\s*$/.test(out)) out += '<br>';

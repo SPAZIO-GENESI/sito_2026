@@ -42,6 +42,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
             <div id="f-bio-tb" class="flex flex-wrap gap-1 p-2 border-b border-border bg-secondary text-sm">
               <button type="button" data-cmd="bold" class="px-2.5 py-1 rounded hover:bg-muted font-bold" title="Grassetto">G</button>
               <button type="button" data-cmd="italic" class="px-2.5 py-1 rounded hover:bg-muted italic" title="Corsivo">C</button>
+              <button type="button" data-cmd="insertUnorderedList" class="px-2.5 py-1 rounded hover:bg-muted" title="Elenco puntato">• elenco</button>
               <button type="button" data-cmd="createLink" class="px-2.5 py-1 rounded hover:bg-muted" title="Inserisci link">🔗 link</button>
               <button type="button" data-cmd="unlink" class="px-2.5 py-1 rounded hover:bg-muted" title="Togli link">✕ link</button>
               <button type="button" data-cmd="insertHorizontalRule" class="px-2.5 py-1 rounded hover:bg-muted" title="Linea separatrice">— linea</button>
@@ -85,9 +86,31 @@ import BaseLayout from '../layouts/BaseLayout.astro'
           <div id="foto-grid" class="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-4"></div>
           <div class="flex flex-wrap items-center gap-3">
             <input id="foto-file" type="file" accept="image/*" class="text-sm" />
-            <input id="foto-des" type="text" placeholder="didascalia (opzionale)" class="px-3 py-2 border border-border rounded-lg bg-background text-foreground text-sm flex-1 min-w-[180px]" />
+            <input id="foto-des" type="text" placeholder="didascalia breve (opzionale)" class="px-3 py-2 border border-border rounded-lg bg-background text-foreground text-sm flex-1 min-w-[180px]" />
             <button type="button" id="foto-up" class="bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-semibold">Carica</button>
             <span id="foto-status" class="text-xs"></span>
+          </div>
+
+          <div id="fcap" class="hidden mt-4 p-4 border border-border rounded-lg bg-secondary">
+            <p class="text-sm font-semibold text-foreground mb-2">Descrizione della foto</p>
+            <input id="fcap-des" type="text" placeholder="didascalia breve" class="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground text-sm mb-3" />
+            <span class="block text-xs text-muted-foreground mb-1">Descrizione estesa (con formattazione):</span>
+            <div class="border border-border rounded-lg overflow-hidden bg-background">
+              <div id="fcap-tb" class="flex flex-wrap gap-1 p-2 border-b border-border bg-secondary text-sm">
+                <button type="button" data-cmd="bold" class="px-2.5 py-1 rounded hover:bg-muted font-bold">G</button>
+                <button type="button" data-cmd="italic" class="px-2.5 py-1 rounded hover:bg-muted italic">C</button>
+                <button type="button" data-cmd="insertUnorderedList" class="px-2.5 py-1 rounded hover:bg-muted">• elenco</button>
+                <button type="button" data-cmd="createLink" class="px-2.5 py-1 rounded hover:bg-muted">🔗 link</button>
+                <button type="button" data-cmd="unlink" class="px-2.5 py-1 rounded hover:bg-muted">✕ link</button>
+                <button type="button" data-cmd="insertHorizontalRule" class="px-2.5 py-1 rounded hover:bg-muted">— linea</button>
+              </div>
+              <div id="fcap-long" contenteditable="true" class="px-4 py-3 min-h-[120px] text-foreground leading-relaxed focus:outline-none"></div>
+            </div>
+            <div class="flex items-center gap-3 mt-3">
+              <button type="button" id="fcap-save" class="bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-semibold">Salva descrizione</button>
+              <button type="button" id="fcap-cancel" class="text-sm text-accent underline">Annulla</button>
+              <span id="fcap-status" class="text-xs"></span>
+            </div>
           </div>
         </div>
       </form>
@@ -115,6 +138,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   }
 
   let CARTELLA = '';
+  let FOTO_LIST = [];
+  let CAP_IMG = '';
   const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   const escAttr = (s) => esc(s).replace(/"/g, '&quot;');
 
@@ -129,13 +154,15 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
   function renderFoto(raw) {
     const flat = flattenImg(raw);
+    FOTO_LIST = flat;
     $('foto-grid').innerHTML = flat.map((e, i) =>
       '<figure class="border border-border rounded-lg overflow-hidden">' +
       '<img src="' + fotoSrc(e.img) + '" class="w-full aspect-square object-cover" />' +
-      '<figcaption class="p-2 text-xs">' +
-      (i === 0 ? '<span class="text-accent font-semibold">★ ritratto</span>' : '<button type="button" data-front="' + escAttr(e.img) + '" class="text-accent underline">★ ritratto</button>') +
-      '<button type="button" data-del="' + escAttr(e.img) + '" class="text-red-600 underline ml-2">elimina</button>' +
-      (e.des ? '<div class="text-muted-foreground mt-1">' + esc(e.des) + '</div>' : '') +
+      '<figcaption class="p-2 text-xs space-y-1">' +
+      '<div>' + (i === 0 ? '<span class="text-accent font-semibold">★ ritratto</span>' : '<button type="button" data-front="' + escAttr(e.img) + '" class="text-accent underline">★ ritratto</button>') +
+      '<button type="button" data-del="' + escAttr(e.img) + '" class="text-red-600 underline ml-2">elimina</button></div>' +
+      '<button type="button" data-capidx="' + i + '" class="text-accent underline">✎ descrizione</button>' +
+      (e.des ? '<div class="text-muted-foreground">' + esc(e.des) + '</div>' : '') +
       '</figcaption></figure>'
     ).join('');
     $('foto-grid').querySelectorAll('[data-del]').forEach((b) => b.onclick = async () => {
@@ -147,6 +174,17 @@ import BaseLayout from '../layouts/BaseLayout.astro'
       const r = await api('/api/photo/front', { method: 'POST', body: JSON.stringify({ img: b.getAttribute('data-front') }) });
       if (r.ok) renderFoto(r.data.foto);
     });
+    $('foto-grid').querySelectorAll('[data-capidx]').forEach((b) => b.onclick = () => openCap(FOTO_LIST[+b.getAttribute('data-capidx')]));
+  }
+
+  function openCap(e) {
+    if (!e) return;
+    CAP_IMG = e.img;
+    $('fcap-des').value = e.des || '';
+    window.VisualEditor.setHTML($('fcap-long'), e.deslunga || '');
+    $('fcap-status').textContent = '';
+    $('fcap').classList.remove('hidden');
+    $('fcap').scrollIntoView({ behavior: 'smooth' });
   }
 
   function fillForm(a) {
@@ -190,6 +228,16 @@ import BaseLayout from '../layouts/BaseLayout.astro'
     if (r.ok) { $('foto-status').textContent = 'Caricata ✓'; $('foto-file').value = ''; $('foto-des').value = ''; renderFoto(r.data.foto); }
     else $('foto-status').textContent = 'Errore: ' + (r.data.error || r.status);
   });
+
+  window.VisualEditor.attach($('fcap-long'), $('fcap-tb'));
+  $('fcap-cancel').onclick = () => $('fcap').classList.add('hidden');
+  $('fcap-save').onclick = async () => {
+    if (!CAP_IMG) return;
+    $('fcap-status').textContent = 'Salvataggio…';
+    const r = await api('/api/photo/caption', { method: 'POST', body: JSON.stringify({ img: CAP_IMG, des: $('fcap-des').value, deslunga: window.VisualEditor.serialize($('fcap-long')) }) });
+    if (r.ok) { $('fcap-status').textContent = 'Salvata ✓'; renderFoto(r.data.foto); $('fcap').classList.add('hidden'); }
+    else $('fcap-status').textContent = 'Errore: ' + (r.data.error || r.status);
+  };
 
   $('editor').addEventListener('submit', async (e) => {
     e.preventDefault();

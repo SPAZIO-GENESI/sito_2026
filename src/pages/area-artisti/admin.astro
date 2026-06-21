@@ -64,6 +64,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
             <div id="a-bio-tb" class="flex flex-wrap gap-1 p-2 border-b border-border bg-secondary text-sm">
               <button type="button" data-cmd="bold" class="px-2.5 py-1 rounded hover:bg-muted font-bold" title="Grassetto">G</button>
               <button type="button" data-cmd="italic" class="px-2.5 py-1 rounded hover:bg-muted italic" title="Corsivo">C</button>
+              <button type="button" data-cmd="insertUnorderedList" class="px-2.5 py-1 rounded hover:bg-muted" title="Elenco puntato">• elenco</button>
               <button type="button" data-cmd="createLink" class="px-2.5 py-1 rounded hover:bg-muted" title="Inserisci link">🔗 link</button>
               <button type="button" data-cmd="unlink" class="px-2.5 py-1 rounded hover:bg-muted" title="Togli link">✕ link</button>
               <button type="button" data-cmd="insertHorizontalRule" class="px-2.5 py-1 rounded hover:bg-muted" title="Linea separatrice">— linea</button>
@@ -95,6 +96,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
           <input id="afoto-des" type="text" placeholder="didascalia" class="px-3 py-2 border border-border rounded-lg bg-background text-foreground text-sm flex-1 min-w-[160px]" />
           <button type="button" id="afoto-up" class="bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-semibold">Carica</button>
           <span id="afoto-status" class="text-xs"></span>
+        </div>
+
+        <div id="acap" class="hidden mt-4 p-4 border border-border rounded-lg bg-secondary">
+          <p class="text-sm font-semibold text-foreground mb-2">Descrizione della foto</p>
+          <input id="acap-des" type="text" placeholder="didascalia breve" class="w-full px-3 py-2 border border-border rounded-lg bg-background text-foreground text-sm mb-3" />
+          <span class="block text-xs text-muted-foreground mb-1">Descrizione estesa (con formattazione):</span>
+          <div class="border border-border rounded-lg overflow-hidden bg-background">
+            <div id="acap-tb" class="flex flex-wrap gap-1 p-2 border-b border-border bg-secondary text-sm">
+              <button type="button" data-cmd="bold" class="px-2.5 py-1 rounded hover:bg-muted font-bold">G</button>
+              <button type="button" data-cmd="italic" class="px-2.5 py-1 rounded hover:bg-muted italic">C</button>
+              <button type="button" data-cmd="insertUnorderedList" class="px-2.5 py-1 rounded hover:bg-muted">• elenco</button>
+              <button type="button" data-cmd="createLink" class="px-2.5 py-1 rounded hover:bg-muted">🔗 link</button>
+              <button type="button" data-cmd="unlink" class="px-2.5 py-1 rounded hover:bg-muted">✕ link</button>
+              <button type="button" data-cmd="insertHorizontalRule" class="px-2.5 py-1 rounded hover:bg-muted">— linea</button>
+            </div>
+            <div id="acap-long" contenteditable="true" class="px-4 py-3 min-h-[120px] text-foreground leading-relaxed focus:outline-none"></div>
+          </div>
+          <div class="flex items-center gap-3 mt-3">
+            <button type="button" id="acap-save" class="bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-semibold">Salva descrizione</button>
+            <button type="button" id="acap-cancel" class="text-sm text-accent underline">Annulla</button>
+            <span id="acap-status" class="text-xs"></span>
+          </div>
         </div>
       </div>
     </div>
@@ -142,6 +165,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
   }
 
   let EDIT_CARTELLA = '';
+  let AFOTO_LIST = [];
+  let ACAP_IMG = '';
   function flattenImg(raw) {
     if (!raw) return [];
     if (Array.isArray(raw) && raw.length && raw[0] && raw[0].img) return raw.filter((e) => e && e.img);
@@ -151,26 +176,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
   }
   const fotoSrc = (v) => (/^https?:\/\//.test(v) ? v : '/biografie/' + EDIT_CARTELLA + '/' + v);
 
+  const photoEp = (m, body) => api('/api/admin/photo' + (m === 'front' ? '/front' : m === 'caption' ? '/caption' : '') + '?cartella=' + encodeURIComponent(EDIT_CARTELLA), body);
+
   function renderAfoto(raw) {
     const flat = flattenImg(raw);
+    AFOTO_LIST = flat;
     $('afoto-grid').innerHTML = flat.map((e, i) =>
       '<figure class="border border-border rounded-lg overflow-hidden">' +
       '<img src="' + fotoSrc(e.img) + '" class="w-full aspect-square object-cover" />' +
-      '<figcaption class="p-1.5 text-xs">' +
-      (i === 0 ? '<span class="text-accent font-semibold">★</span>' : '<button type="button" data-front="' + esc(e.img) + '" class="text-accent underline">★</button>') +
-      '<button type="button" data-del="' + esc(e.img) + '" class="text-red-600 underline ml-2">elim</button>' +
+      '<figcaption class="p-1.5 text-xs space-y-1">' +
+      '<div>' + (i === 0 ? '<span class="text-accent font-semibold">★</span>' : '<button type="button" data-front="' + esc(e.img) + '" class="text-accent underline">★</button>') +
+      '<button type="button" data-del="' + esc(e.img) + '" class="text-red-600 underline ml-2">elim</button></div>' +
+      '<button type="button" data-capidx="' + i + '" class="text-accent underline">✎ descr.</button>' +
       '</figcaption></figure>'
     ).join('');
-    const ep = (m, body) => api('/api/admin/photo' + (m === 'front' ? '/front' : '') + '?cartella=' + encodeURIComponent(EDIT_CARTELLA), body);
     $('afoto-grid').querySelectorAll('[data-del]').forEach((b) => b.onclick = async () => {
       if (!confirm('Eliminare questa foto?')) return;
-      const r = await ep('del', { method: 'DELETE', body: JSON.stringify({ img: b.getAttribute('data-del') }) });
+      const r = await photoEp('del', { method: 'DELETE', body: JSON.stringify({ img: b.getAttribute('data-del') }) });
       if (r.ok) renderAfoto(r.data.foto);
     });
     $('afoto-grid').querySelectorAll('[data-front]').forEach((b) => b.onclick = async () => {
-      const r = await ep('front', { method: 'POST', body: JSON.stringify({ img: b.getAttribute('data-front') }) });
+      const r = await photoEp('front', { method: 'POST', body: JSON.stringify({ img: b.getAttribute('data-front') }) });
       if (r.ok) renderAfoto(r.data.foto);
     });
+    $('afoto-grid').querySelectorAll('[data-capidx]').forEach((b) => b.onclick = () => openAcap(AFOTO_LIST[+b.getAttribute('data-capidx')]));
+  }
+
+  function openAcap(e) {
+    if (!e) return;
+    ACAP_IMG = e.img;
+    $('acap-des').value = e.des || '';
+    window.VisualEditor.setHTML($('acap-long'), e.deslunga || '');
+    $('acap-status').textContent = '';
+    $('acap').classList.remove('hidden');
+    $('acap').scrollIntoView({ behavior: 'smooth' });
   }
 
   function openForm(a, isNew) {
@@ -244,6 +283,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
     const r = await api('/api/admin/photo?cartella=' + encodeURIComponent(EDIT_CARTELLA) + '&des=' + encodeURIComponent($('afoto-des').value || ''), { method: 'POST', headers: { 'Content-Type': f.type }, body: f });
     if (r.ok) { $('afoto-status').textContent = 'Caricata ✓'; $('afoto-file').value = ''; $('afoto-des').value = ''; renderAfoto(r.data.foto); }
     else $('afoto-status').textContent = 'Errore: ' + (r.data.error || r.status);
+  };
+
+  window.VisualEditor.attach($('acap-long'), $('acap-tb'));
+  $('acap-cancel').onclick = () => $('acap').classList.add('hidden');
+  $('acap-save').onclick = async () => {
+    if (!ACAP_IMG) return;
+    $('acap-status').textContent = 'Salvataggio…';
+    const r = await photoEp('caption', { method: 'POST', body: JSON.stringify({ img: ACAP_IMG, des: $('acap-des').value, deslunga: window.VisualEditor.serialize($('acap-long')) }) });
+    if (r.ok) { $('acap-status').textContent = 'Salvata ✓'; renderAfoto(r.data.foto); $('acap').classList.add('hidden'); }
+    else $('acap-status').textContent = 'Errore: ' + (r.data.error || r.status);
   };
   $('logout').onclick = () => { idToken = null; $('panel').classList.add('hidden'); $('form-sec').classList.add('hidden'); $('login-box').classList.remove('hidden'); google.accounts.id.disableAutoSelect(); };
 
