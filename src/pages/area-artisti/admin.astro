@@ -75,6 +75,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
           <p id="form-status" class="text-sm" aria-live="polite"></p>
         </div>
       </form>
+
+      <div id="admin-foto" class="hidden pt-6 mt-6 border-t border-border">
+        <h3 class="text-foreground font-semibold mb-1">Foto</h3>
+        <p class="text-xs text-muted-foreground mb-4">La <b>prima</b> foto è il ritratto. JPG/PNG/WebP, max 8 MB.</p>
+        <div id="afoto-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4"></div>
+        <div class="flex flex-wrap items-center gap-3">
+          <input id="afoto-file" type="file" accept="image/*" class="text-sm" />
+          <input id="afoto-des" type="text" placeholder="didascalia" class="px-3 py-2 border border-border rounded-lg bg-background text-foreground text-sm flex-1 min-w-[160px]" />
+          <button type="button" id="afoto-up" class="bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-semibold">Carica</button>
+          <span id="afoto-status" class="text-xs"></span>
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -118,6 +130,38 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
     return true;
   }
 
+  let EDIT_CARTELLA = '';
+  function flattenImg(raw) {
+    if (!raw) return [];
+    if (Array.isArray(raw) && raw.length && raw[0] && raw[0].img) return raw.filter((e) => e && e.img);
+    const out = [];
+    if (Array.isArray(raw)) for (const g of raw) if (g && typeof g === 'object') for (const v of Object.values(g)) if (Array.isArray(v)) for (const e of v) if (e && e.img) out.push(e);
+    return out;
+  }
+  const fotoSrc = (v) => (/^https?:\/\//.test(v) ? v : '/biografie/' + EDIT_CARTELLA + '/' + v);
+
+  function renderAfoto(raw) {
+    const flat = flattenImg(raw);
+    $('afoto-grid').innerHTML = flat.map((e, i) =>
+      '<figure class="border border-border rounded-lg overflow-hidden">' +
+      '<img src="' + fotoSrc(e.img) + '" class="w-full aspect-square object-cover" />' +
+      '<figcaption class="p-1.5 text-xs">' +
+      (i === 0 ? '<span class="text-accent font-semibold">★</span>' : '<button type="button" data-front="' + esc(e.img) + '" class="text-accent underline">★</button>') +
+      '<button type="button" data-del="' + esc(e.img) + '" class="text-red-600 underline ml-2">elim</button>' +
+      '</figcaption></figure>'
+    ).join('');
+    const ep = (m, body) => api('/api/admin/photo' + (m === 'front' ? '/front' : '') + '?cartella=' + encodeURIComponent(EDIT_CARTELLA), body);
+    $('afoto-grid').querySelectorAll('[data-del]').forEach((b) => b.onclick = async () => {
+      if (!confirm('Eliminare questa foto?')) return;
+      const r = await ep('del', { method: 'DELETE', body: JSON.stringify({ img: b.getAttribute('data-del') }) });
+      if (r.ok) renderAfoto(r.data.foto);
+    });
+    $('afoto-grid').querySelectorAll('[data-front]').forEach((b) => b.onclick = async () => {
+      const r = await ep('front', { method: 'POST', body: JSON.stringify({ img: b.getAttribute('data-front') }) });
+      if (r.ok) renderAfoto(r.data.foto);
+    });
+  }
+
   function openForm(a, isNew) {
     $('form-title').textContent = isNew ? 'Nuova scheda' : 'Modifica: ' + a.cartella;
     $('a-cartella').value = a.cartella || '';
@@ -129,6 +173,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
     $('a-social').value = a.social || '';
     $('a-portfolio').value = a.portfolio || '';
     $('form-status').textContent = '';
+    if (isNew) { EDIT_CARTELLA = ''; $('admin-foto').classList.add('hidden'); }
+    else { EDIT_CARTELLA = a.cartella; $('admin-foto').classList.remove('hidden'); renderAfoto(a.img); }
     $('form-sec').classList.remove('hidden');
     $('form-sec').scrollIntoView({ behavior: 'smooth' });
   }
@@ -177,6 +223,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 
   $('new').onclick = () => openForm({}, true);
   $('cancel').onclick = () => $('form-sec').classList.add('hidden');
+  $('afoto-up').onclick = async () => {
+    if (!EDIT_CARTELLA) { $('afoto-status').textContent = 'Salva prima la scheda.'; return; }
+    const f = $('afoto-file').files[0];
+    if (!f) { $('afoto-status').textContent = 'Scegli un file.'; return; }
+    if (f.size > 8 * 1024 * 1024) { $('afoto-status').textContent = 'Troppo grande (max 8 MB).'; return; }
+    $('afoto-status').textContent = 'Caricamento…';
+    const r = await api('/api/admin/photo?cartella=' + encodeURIComponent(EDIT_CARTELLA) + '&des=' + encodeURIComponent($('afoto-des').value || ''), { method: 'POST', headers: { 'Content-Type': f.type }, body: f });
+    if (r.ok) { $('afoto-status').textContent = 'Caricata ✓'; $('afoto-file').value = ''; $('afoto-des').value = ''; renderAfoto(r.data.foto); }
+    else $('afoto-status').textContent = 'Errore: ' + (r.data.error || r.status);
+  };
   $('logout').onclick = () => { idToken = null; $('panel').classList.add('hidden'); $('form-sec').classList.add('hidden'); $('login-box').classList.remove('hidden'); google.accounts.id.disableAutoSelect(); };
 
   $('form').addEventListener('submit', async (e) => {

@@ -24,6 +24,9 @@ const tutteImg = immagini.filter(i => i.img)
 const primaImg = tutteImg.length > 0 ? tutteImg[0] : undefined
 const abstract = extractAbstract(artista.bio, 300)
 
+// URL immagine: assoluta (R2) usata così com'è, altrimenti file locale in /public
+const imgSrc = (v: string) => (/^https?:\/\//.test(v) ? v : u(`/biografie/${artista.cartella}/${v}`))
+
 const mioNome = nomeDecoded.toLowerCase()
 const mostrePartecipate = (archivio_data as EventoArchivio[]).filter(ev =>
   ev.artiste.some(a => a.toLowerCase() === mioNome) ||
@@ -78,12 +81,13 @@ const personSchema = JSON.stringify({
         <div class="lg:col-span-1">
           {primaImg ? (
             <img
-              src={u(`/biografie/${artista.cartella}/${primaImg.img}`)}
+              id="portrait"
+              src={imgSrc(primaImg.img)}
               alt={nomeDecoded}
               class="w-full rounded-lg shadow-lg object-cover aspect-square"
             />
           ) : (
-            <div class="w-full aspect-square rounded-lg bg-muted flex items-center justify-center text-6xl font-display text-muted-foreground">
+            <div id="portrait" class="w-full aspect-square rounded-lg bg-muted flex items-center justify-center text-6xl font-display text-muted-foreground">
               {nomeDecoded.charAt(0)}
             </div>
           )}
@@ -192,35 +196,33 @@ const personSchema = JSON.stringify({
   </section>
 
   <!-- ③ OPERE (tutte le immagini, incluso il ritratto) -->
-  {tutteImg.length > 0 && (
-    <section class="py-16 lg:py-24 bg-background">
-      <div class="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 class="text-foreground mb-12">Opere</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {tutteImg.map(img => (
-            <figure class="rounded-lg overflow-hidden shadow-lg">
-              <img
-                src={u(`/biografie/${artista.cartella}/${img.img}`)}
-                alt={img.des || nomeDecoded}
-                class="w-full object-cover"
-                loading="lazy"
-              />
-              {(img.des || img.deslunga) && (
-                <figcaption class="p-4 bg-card">
-                  {img.des && <p class="text-sm font-medium text-foreground mb-1">{img.des}</p>}
-                  {img.deslunga && (
-                    <div class="regdiv text-xs text-muted-foreground">
-                      <Fragment set:html={img.deslunga} />
-                    </div>
-                  )}
-                </figcaption>
-              )}
-            </figure>
-          ))}
-        </div>
+  <section id="opere-sec" class={`py-16 lg:py-24 bg-background ${tutteImg.length > 0 ? '' : 'hidden'}`}>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h2 class="text-foreground mb-12">Opere</h2>
+      <div id="opere-grid" class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        {tutteImg.map(img => (
+          <figure class="rounded-lg overflow-hidden shadow-lg">
+            <img
+              src={imgSrc(img.img)}
+              alt={img.des || nomeDecoded}
+              class="w-full object-cover"
+              loading="lazy"
+            />
+            {(img.des || img.deslunga) && (
+              <figcaption class="p-4 bg-card">
+                {img.des && <p class="text-sm font-medium text-foreground mb-1">{img.des}</p>}
+                {img.deslunga && (
+                  <div class="regdiv text-xs text-muted-foreground">
+                    <Fragment set:html={img.deslunga} />
+                  </div>
+                )}
+              </figcaption>
+            )}
+          </figure>
+        ))}
       </div>
-    </section>
-  )}
+    </div>
+  </section>
 
   <!-- Ticker -->
   <div class="bg-background border-t border-border py-2" data-no-print>
@@ -261,6 +263,30 @@ const personSchema = JSON.stringify({
       if (soc && a.social) { soc.href = a.social; const t = soc.querySelector('[data-soctext]'); if (t) t.textContent = a.social; }
       const pf = document.getElementById('lnk-portfolio');
       if (pf && a.portfolio) { pf.href = /^https?:\/\//i.test(a.portfolio) ? a.portfolio : '/biografie/' + cartella + '/' + a.portfolio; }
+
+      // Foto: appiattisci la struttura img e ricostruisci ritratto + galleria
+      const eh = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      const resolve = (v) => /^https?:\/\//.test(v) ? v : '/biografie/' + cartella + '/' + v;
+      const imgs = [];
+      if (Array.isArray(a.img)) for (const g of a.img) if (g && typeof g === 'object') for (const vv of Object.values(g)) if (Array.isArray(vv)) for (const e of vv) if (e && e.img) imgs.push(e);
+      const portrait = document.getElementById('portrait');
+      if (portrait && imgs.length) {
+        if (portrait.tagName === 'IMG') { portrait.src = resolve(imgs[0].img); }
+        else { const im = document.createElement('img'); im.id = 'portrait'; im.src = resolve(imgs[0].img); im.alt = ''; im.className = 'w-full rounded-lg shadow-lg object-cover aspect-square'; portrait.replaceWith(im); }
+      }
+      const grid = document.getElementById('opere-grid');
+      const sec = document.getElementById('opere-sec');
+      if (grid) {
+        if (imgs.length) {
+          grid.innerHTML = imgs.map((e) => {
+            const cap = (e.des || e.deslunga)
+              ? '<figcaption class="p-4 bg-card">' + (e.des ? '<p class="text-sm font-medium text-foreground mb-1">' + eh(e.des) + '</p>' : '') + (e.deslunga ? '<div class="regdiv text-xs text-muted-foreground">' + e.deslunga + '</div>' : '') + '</figcaption>'
+              : '';
+            return '<figure class="rounded-lg overflow-hidden shadow-lg"><img src="' + resolve(e.img) + '" alt="' + eh(e.des || '') + '" class="w-full object-cover" loading="lazy" />' + cap + '</figure>';
+          }).join('');
+          if (sec) sec.classList.remove('hidden');
+        } else if (sec) sec.classList.add('hidden');
+      }
     } catch (e) {}
   })();
 </script>
