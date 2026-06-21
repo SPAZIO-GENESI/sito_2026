@@ -59,8 +59,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
         </div>
         <label class="block"><span class="text-sm font-semibold text-foreground">Nome</span>
           <input id="a-nome" type="text" class="mt-1 w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground" /></label>
-        <label class="block"><span class="text-sm font-semibold text-foreground">Biografia</span>
-          <textarea id="a-bio" rows="8" class="mt-1 w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground font-mono text-sm"></textarea></label>
+        <div><span class="text-sm font-semibold text-foreground">Biografia</span>
+          <div class="mt-1 border border-border rounded-lg overflow-hidden bg-background">
+            <div id="a-bio-tb" class="flex flex-wrap gap-1 p-2 border-b border-border bg-secondary text-sm">
+              <button type="button" data-cmd="bold" class="px-2.5 py-1 rounded hover:bg-muted font-bold" title="Grassetto">G</button>
+              <button type="button" data-cmd="italic" class="px-2.5 py-1 rounded hover:bg-muted italic" title="Corsivo">C</button>
+              <button type="button" data-cmd="createLink" class="px-2.5 py-1 rounded hover:bg-muted" title="Inserisci link">🔗 link</button>
+              <button type="button" data-cmd="unlink" class="px-2.5 py-1 rounded hover:bg-muted" title="Togli link">✕ link</button>
+              <button type="button" data-cmd="insertHorizontalRule" class="px-2.5 py-1 rounded hover:bg-muted" title="Linea separatrice">— linea</button>
+            </div>
+            <div id="a-bio" contenteditable="true" class="px-4 py-3 min-h-[160px] text-foreground leading-relaxed focus:outline-none"></div>
+          </div>
+        </div>
         <div class="grid sm:grid-cols-3 gap-4">
           <label class="block"><span class="text-sm font-semibold text-foreground">Instagram</span>
             <input id="a-ig" type="text" class="mt-1 w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground" /></label>
@@ -91,6 +101,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
   </section>
 </BaseLayout>
 
+<script is:inline src="/visual-editor.js"></script>
 <script is:inline src="https://accounts.google.com/gsi/client" async></script>
 <script is:inline>
   const GOOGLE_CLIENT_ID = '987898157658-msrb2ugonpnbnc8gp9dlri00br9ceinh.apps.googleusercontent.com';
@@ -168,7 +179,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
     $('a-cartella').disabled = !isNew;
     $('a-email').value = a.email || '';
     $('a-nome').value = a.nome ? decodeURIComponent(a.nome) : '';
-    $('a-bio').value = a.bio || '';
+    window.VisualEditor.setHTML($('a-bio'), a.bio || '');
     $('a-ig').value = a.ig || '';
     $('a-social').value = a.social || '';
     $('a-portfolio').value = a.portfolio || '';
@@ -220,6 +231,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
     google.accounts.id.renderButton($('gbtn'), { theme: 'outline', size: 'large', text: 'signin_with', locale: 'it' });
   }
   initLogin();
+  window.VisualEditor.attach($('a-bio'), $('a-bio-tb'));
 
   $('new').onclick = () => openForm({}, true);
   $('cancel').onclick = () => $('form-sec').classList.add('hidden');
@@ -240,7 +252,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
     $('form-status').textContent = 'Salvataggio…';
     const body = {
       cartella: $('a-cartella').value, email: $('a-email').value, nome: $('a-nome').value,
-      bio: $('a-bio').value, ig: $('a-ig').value, social: $('a-social').value, portfolio: $('a-portfolio').value,
+      bio: window.VisualEditor.serialize($('a-bio')), ig: $('a-ig').value, social: $('a-social').value, portfolio: $('a-portfolio').value,
     };
     const r = await api('/api/admin/artista', { method: 'POST', body: JSON.stringify(body) });
     if (r.ok) { $('form-status').textContent = 'Salvato ✓'; loadList(); }

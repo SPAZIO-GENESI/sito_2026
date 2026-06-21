@@ -35,12 +35,20 @@ import BaseLayout from '../layouts/BaseLayout.astro'
             class="mt-1 w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground" />
         </label>
 
-        <label class="block">
+        <div>
           <span class="text-sm font-semibold text-foreground">Biografia</span>
-          <span class="block text-xs text-muted-foreground mb-1">Tag consentiti: &lt;br&gt; &lt;hr&gt; &lt;b&gt; &lt;i&gt; &lt;p&gt; &lt;a href="…"&gt;. Il resto viene mostrato come testo.</span>
-          <textarea id="f-bio" rows="10"
-            class="mt-1 w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground font-mono text-sm"></textarea>
-        </label>
+          <span class="block text-xs text-muted-foreground mb-1">Usa i pulsanti per grassetto, corsivo, link e linea. A capo = Invio.</span>
+          <div class="mt-1 border border-border rounded-lg overflow-hidden bg-background">
+            <div id="f-bio-tb" class="flex flex-wrap gap-1 p-2 border-b border-border bg-secondary text-sm">
+              <button type="button" data-cmd="bold" class="px-2.5 py-1 rounded hover:bg-muted font-bold" title="Grassetto">G</button>
+              <button type="button" data-cmd="italic" class="px-2.5 py-1 rounded hover:bg-muted italic" title="Corsivo">C</button>
+              <button type="button" data-cmd="createLink" class="px-2.5 py-1 rounded hover:bg-muted" title="Inserisci link">🔗 link</button>
+              <button type="button" data-cmd="unlink" class="px-2.5 py-1 rounded hover:bg-muted" title="Togli link">✕ link</button>
+              <button type="button" data-cmd="insertHorizontalRule" class="px-2.5 py-1 rounded hover:bg-muted" title="Linea separatrice">— linea</button>
+            </div>
+            <div id="f-bio" contenteditable="true" class="px-4 py-3 min-h-[200px] text-foreground leading-relaxed focus:outline-none"></div>
+          </div>
+        </div>
 
         <div class="grid sm:grid-cols-3 gap-4">
           <label class="block">
@@ -87,6 +95,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </section>
 </BaseLayout>
 
+<script is:inline src="/visual-editor.js"></script>
 <script is:inline src="https://accounts.google.com/gsi/client" async></script>
 <script is:inline>
   // ⚙️ DA CONFIGURARE dopo aver creato il Client ID Google e deployato il Worker:
@@ -143,7 +152,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   function fillForm(a) {
     CARTELLA = a.cartella;
     $('f-nome').value = a.nome ? decodeURIComponent(a.nome) : '';
-    $('f-bio').value = a.bio || '';
+    window.VisualEditor.setHTML($('f-bio'), a.bio || '');
     $('f-ig').value = a.ig || '';
     $('f-social').value = a.social || '';
     $('f-portfolio').value = a.portfolio || '';
@@ -168,6 +177,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
     google.accounts.id.renderButton($('gbtn'), { theme: 'outline', size: 'large', text: 'signin_with', locale: 'it' });
   }
   initLogin();
+  window.VisualEditor.attach($('f-bio'), $('f-bio-tb'));
 
   $('logout').addEventListener('click', () => { idToken = null; $('editor').classList.add('hidden'); $('login-box').classList.remove('hidden'); google.accounts.id.disableAutoSelect(); });
 
@@ -185,7 +195,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
     e.preventDefault();
     setStatus('Salvataggio…', true);
     const body = {
-      nome: $('f-nome').value, bio: $('f-bio').value, ig: $('f-ig').value,
+      nome: $('f-nome').value, bio: window.VisualEditor.serialize($('f-bio')), ig: $('f-ig').value,
       social: $('f-social').value, portfolio: $('f-portfolio').value,
     };
     const r = await api('/api/bio', { method: 'POST', body: JSON.stringify(body) });
