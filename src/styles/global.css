@@ -96,6 +96,12 @@ h4 {
   margin: 0.2em 0;
 }
 
+/* paragrafi (usati anche per l'allineamento) con un minimo di spaziatura */
+.regdiv p,
+[contenteditable] p {
+  margin: 0.5em 0;
+}
+
 /* link e linea visibili anche dentro l'editor visuale (contenteditable) */
 [contenteditable] a {
   color: var(--accent);

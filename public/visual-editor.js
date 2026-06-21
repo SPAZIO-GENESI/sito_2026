@@ -22,7 +22,13 @@
         out += /^(https?:|mailto:)/i.test(href) ? '<a href="' + href + '">' + i + '</a>' : i;
         return;
       }
-      if (tag === 'P') { const i = walk(n); out += i ? '<p>' + i + '</p>' : ''; return; }
+      if (tag === 'P') {
+        const i = walk(n);
+        const ta = (n.style && n.style.textAlign) || '';
+        const al = ta === 'center' || ta === 'right' ? ta : '';
+        out += i ? (al ? '<p style="text-align:' + al + '">' + i + '</p>' : '<p>' + i + '</p>') : '';
+        return;
+      }
       if (tag === 'UL' || tag === 'OL') {
         let items = '';
         n.childNodes.forEach(function (c) { if (c.nodeType === 1 && c.tagName === 'LI') items += '<li>' + walk(c) + '</li>'; });
@@ -32,6 +38,9 @@
       if (tag === 'LI') { out += '<li>' + walk(n) + '</li>'; return; }
       if (tag === 'DIV') {
         const i = walk(n);
+        const ta = (n.style && n.style.textAlign) || '';
+        const al = ta === 'center' || ta === 'right' ? ta : '';
+        if (al) { if (i) out += '<p style="text-align:' + al + '">' + i + '</p>'; return; }
         if (out && !/(<br>|<\/p>|<hr>)\s*$/.test(out)) out += '<br>';
         out += i;
         return;
@@ -62,6 +71,19 @@
           }
         });
       });
+      // pulsanti di allineamento paragrafo (aggiunti una volta per toolbar)
+      if (!toolbar.querySelector('[data-cmd="justifyCenter"]')) {
+        [['justifyLeft', 'Sx', 'Allinea a sinistra'], ['justifyCenter', 'Centro', 'Centra'], ['justifyRight', 'Dx', 'Allinea a destra']].forEach(function (a) {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.setAttribute('data-cmd', a[0]);
+          b.title = a[2];
+          b.className = 'px-2.5 py-1 rounded hover:bg-muted';
+          b.textContent = a[1];
+          b.addEventListener('mousedown', function (e) { e.preventDefault(); editable.focus(); document.execCommand(a[0], false, null); });
+          toolbar.appendChild(b);
+        });
+      }
     },
   };
 })();
