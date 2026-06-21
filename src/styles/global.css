@@ -95,3 +95,13 @@ h4 {
 [contenteditable] li {
   margin: 0.2em 0;
 }
+
+/* link e linea visibili anche dentro l'editor visuale (contenteditable) */
+[contenteditable] a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+[contenteditable] hr {
+  border-color: var(--border);
+  margin: 1rem 0;
+}
