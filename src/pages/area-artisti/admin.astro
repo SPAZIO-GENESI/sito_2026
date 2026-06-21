@@ -33,7 +33,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
                 <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-foreground">Cartella</th>
                 <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-foreground">Nome</th>
                 <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-foreground">Email</th>
-                <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-foreground">Aggiornata</th>
+                <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-foreground">Ultima modifica</th>
                 <th class="px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-foreground">Stato</th>
                 <th class="px-3 py-2"></th>
               </tr>
@@ -135,6 +135,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
   let idToken = null;
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const fmtDT = (s) => {
+    if (!s) return '—';
+    const d = new Date(s);
+    if (isNaN(d)) return '—';
+    return d.toLocaleString('it-IT', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Rome' });
+  };
 
   async function api(path, opts = {}) {
     const r = await fetch(WORKER_URL + path, { ...opts, headers: { 'Content-Type': 'application/json', ...(idToken ? { Authorization: 'Bearer ' + idToken } : {}), ...(opts.headers || {}) } });
@@ -151,7 +157,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
         <td class="px-3 py-2 font-mono text-xs">${esc(a.cartella)}</td>
         <td class="px-3 py-2">${esc(a.nome ? decodeURIComponent(a.nome) : '')}</td>
         <td class="px-3 py-2 text-muted-foreground">${esc(a.email)}</td>
-        <td class="px-3 py-2 text-muted-foreground text-xs">${esc((a.updated_at || '').slice(0, 10))}</td>
+        <td class="px-3 py-2 text-muted-foreground text-xs whitespace-nowrap">${esc(fmtDT(a.updated_at))}</td>
         <td class="px-3 py-2">
           <button data-toggle="${esc(a.cartella)}" data-pub="${a.published ? 1 : 0}"
             class="px-3 py-1 rounded-full text-xs font-semibold ${a.published ? 'bg-green-100 text-green-800' : 'bg-gray-200 text-gray-600'}">
