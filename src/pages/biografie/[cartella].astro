@@ -218,9 +218,12 @@ const personSchema = JSON.stringify({
               <figcaption class="p-4 bg-card">
                 {img.des && <p class="text-sm font-medium text-foreground mb-1">{img.des}</p>}
                 {img.deslunga && (
-                  <div class="regdiv text-xs text-muted-foreground">
-                    <Fragment set:html={img.deslunga} />
-                  </div>
+                  <>
+                    <div class="opera-desc regdiv text-xs text-muted-foreground">
+                      <Fragment set:html={img.deslunga} />
+                    </div>
+                    <button type="button" class="opera-toggle">Leggi tutto ▾</button>
+                  </>
                 )}
               </figcaption>
             )}
@@ -288,7 +291,7 @@ const personSchema = JSON.stringify({
         if (imgs.length) {
           grid.innerHTML = imgs.map((e) => {
             const cap = (e.des || e.deslunga)
-              ? '<figcaption class="p-4 bg-card">' + (e.des ? '<p class="text-sm font-medium text-foreground mb-1">' + eh(e.des) + '</p>' : '') + (e.deslunga ? '<div class="regdiv text-xs text-muted-foreground">' + e.deslunga + '</div>' : '') + '</figcaption>'
+              ? '<figcaption class="p-4 bg-card">' + (e.des ? '<p class="text-sm font-medium text-foreground mb-1">' + eh(e.des) + '</p>' : '') + (e.deslunga ? '<div class="opera-desc regdiv text-xs text-muted-foreground">' + e.deslunga + '</div><button type="button" class="opera-toggle">Leggi tutto &#9662;</button>' : '') + '</figcaption>'
               : '';
             const media = isVid(e.img)
               ? '<video src="' + resolve(e.img) + '" controls preload="metadata" class="w-full bg-black"></video>'
@@ -300,6 +303,19 @@ const personSchema = JSON.stringify({
       }
     } catch (e) {}
   })();
+</script>
+
+<script is:inline>
+  // Accordion descrizione opere (solo smartphone, via CSS): toggle espandi/riduci.
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest ? e.target.closest('.opera-toggle') : null;
+    if (!btn) return;
+    const cap = btn.closest('figcaption');
+    const d = cap && cap.querySelector('.opera-desc');
+    if (!d) return;
+    const open = d.classList.toggle('expanded');
+    btn.innerHTML = open ? 'Riduci &#9652;' : 'Leggi tutto &#9662;';
+  });
 </script>
 
 <style>

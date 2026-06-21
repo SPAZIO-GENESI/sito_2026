@@ -102,6 +102,42 @@ h4 {
   margin: 0.5em 0;
 }
 
+/* schede opere: descrizione lunga collassabile SOLO su smartphone */
+.opera-toggle {
+  display: none;
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .opera-desc {
+    max-height: 7.5em;
+    overflow: hidden;
+    position: relative;
+  }
+  .opera-desc.expanded {
+    max-height: none;
+  }
+  .opera-desc:not(.expanded)::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2.4em;
+    background: linear-gradient(transparent, var(--card));
+    pointer-events: none;
+  }
+  .opera-toggle {
+    display: inline-block;
+  }
+}
+
 /* link e linea visibili anche dentro l'editor visuale (contenteditable) */
 [contenteditable] a {
   color: var(--accent);
