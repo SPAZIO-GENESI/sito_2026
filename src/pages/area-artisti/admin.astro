@@ -89,10 +89,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 
       <div id="admin-foto" class="hidden pt-6 mt-6 border-t border-border">
         <h3 class="text-foreground font-semibold mb-1">Foto</h3>
-        <p class="text-xs text-muted-foreground mb-4">La <b>prima</b> foto è il ritratto. JPG/PNG/WebP, max 8 MB.</p>
+        <p class="text-xs text-muted-foreground mb-4">La <b>prima</b> immagine è il ritratto. Foto JPG/PNG/WebP (max 8 MB) o video MP4/WebM (max 64 MB).</p>
         <div id="afoto-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4"></div>
         <div class="flex flex-wrap items-center gap-3">
-          <input id="afoto-file" type="file" accept="image/*" class="text-sm" />
+          <input id="afoto-file" type="file" accept="image/*,video/mp4,video/webm" class="text-sm" />
           <input id="afoto-des" type="text" placeholder="didascalia" class="px-3 py-2 border border-border rounded-lg bg-background text-foreground text-sm flex-1 min-w-[160px]" />
           <button type="button" id="afoto-up" class="bg-accent text-accent-foreground px-4 py-2 rounded-lg text-sm font-semibold">Carica</button>
           <span id="afoto-status" class="text-xs"></span>
@@ -175,6 +175,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
     return out;
   }
   const fotoSrc = (v) => (/^https?:\/\//.test(v) ? v : '/biografie/' + EDIT_CARTELLA + '/' + v);
+  const isVid = (v) => /\.(mp4|webm|mov|m4v)$/i.test(v);
 
   const photoEp = (m, body) => api('/api/admin/photo' + (m === 'front' ? '/front' : m === 'caption' ? '/caption' : '') + '?cartella=' + encodeURIComponent(EDIT_CARTELLA), body);
 
@@ -183,7 +184,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
     AFOTO_LIST = flat;
     $('afoto-grid').innerHTML = flat.map((e, i) =>
       '<figure class="border border-border rounded-lg overflow-hidden">' +
-      '<img src="' + fotoSrc(e.img) + '" class="w-full aspect-square object-cover" />' +
+      (isVid(e.img) ? '<video src="' + fotoSrc(e.img) + '" muted preload="metadata" class="w-full aspect-square object-cover bg-black"></video>' : '<img src="' + fotoSrc(e.img) + '" class="w-full aspect-square object-cover" />') +
       '<figcaption class="p-1.5 text-xs space-y-1">' +
       '<div>' + (i === 0 ? '<span class="text-accent font-semibold">★</span>' : '<button type="button" data-front="' + esc(e.img) + '" class="text-accent underline">★</button>') +
       '<button type="button" data-del="' + esc(e.img) + '" class="text-red-600 underline ml-2">elim</button></div>' +
@@ -278,7 +279,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
     if (!EDIT_CARTELLA) { $('afoto-status').textContent = 'Salva prima la scheda.'; return; }
     const f = $('afoto-file').files[0];
     if (!f) { $('afoto-status').textContent = 'Scegli un file.'; return; }
-    if (f.size > 8 * 1024 * 1024) { $('afoto-status').textContent = 'Troppo grande (max 8 MB).'; return; }
+    const lim = f.type.startsWith('video/') ? 64 : 8;
+    if (f.size > lim * 1024 * 1024) { $('afoto-status').textContent = 'Troppo grande (max ' + lim + ' MB).'; return; }
     $('afoto-status').textContent = 'Caricamento…';
     const r = await api('/api/admin/photo?cartella=' + encodeURIComponent(EDIT_CARTELLA) + '&des=' + encodeURIComponent($('afoto-des').value || ''), { method: 'POST', headers: { 'Content-Type': f.type }, body: f });
     if (r.ok) { $('afoto-status').textContent = 'Caricata ✓'; $('afoto-file').value = ''; $('afoto-des').value = ''; renderAfoto(r.data.foto); }
