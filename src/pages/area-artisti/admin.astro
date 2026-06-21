@@ -89,7 +89,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 
       <div id="admin-foto" class="hidden pt-6 mt-6 border-t border-border">
         <h3 class="text-foreground font-semibold mb-1">Foto</h3>
-        <p class="text-xs text-muted-foreground mb-4">La <b>prima</b> immagine è il ritratto. Foto JPG/PNG/WebP (max 8 MB) o video MP4/WebM (max 64 MB).</p>
+        <p class="text-xs text-muted-foreground mb-4">
+          Puoi caricare <b>foto</b> (JPG, PNG, WebP — max <b>8 MB</b>) <b>e video</b> (MP4 o WebM — max <b>64 MB</b>; si vedono con play e audio).
+          La <b>prima</b> immagine è il ritratto. L'ultimo caricato compare per primo.
+        </p>
         <div id="afoto-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4"></div>
         <div class="flex flex-wrap items-center gap-3">
           <input id="afoto-file" type="file" accept="image/*,video/mp4,video/webm" class="text-sm" />
