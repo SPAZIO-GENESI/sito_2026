@@ -53,6 +53,7 @@ const artisti: Artista[] = data.artisti
               href={u(`/biografie/${artista.cartella}/`)}
               class="group block artista-card"
               data-nome={nomeDecoded.toLowerCase()}
+              data-cartella={artista.cartella}
               data-index={index}
             >
               <div class="mb-3 rounded-lg overflow-hidden aspect-square bg-muted" data-thumb={artista.cartella}>
@@ -126,18 +127,36 @@ const artisti: Artista[] = data.artisti
       if (!r.ok) return;
       const { portraits } = await r.json();
       for (const p of portraits || []) {
-        if (!p.portrait) continue;
-        const box = document.querySelector('[data-thumb="' + p.cartella + '"]');
-        if (!box) continue;
-        const src = /^https?:\/\//.test(p.portrait) ? p.portrait : '/biografie/' + p.cartella + '/' + p.portrait;
-        const cur = box.querySelector('img');
-        if (cur) { if (cur.getAttribute('src') !== src) cur.setAttribute('src', src); }
-        else {
-          const im = document.createElement('img');
-          im.src = src; im.alt = ''; im.loading = 'lazy';
-          im.className = 'w-full h-full object-cover group-hover:opacity-80 transition-opacity';
-          box.innerHTML = '';
-          box.appendChild(im);
+        const card = document.querySelector('[data-cartella="' + p.cartella + '"]');
+        if (!card) continue;
+        // nome
+        if (p.nome) {
+          let nm = p.nome;
+          try { nm = decodeURIComponent(p.nome); } catch (e) {}
+          const h3 = card.querySelector('h3');
+          if (h3 && h3.textContent !== nm) h3.textContent = nm;
+          card.dataset.nome = nm.toLowerCase();
+        }
+        // estratto bio
+        if (typeof p.abstract === 'string') {
+          const ab = card.querySelector('p');
+          if (ab && ab.textContent !== p.abstract) ab.textContent = p.abstract;
+        }
+        // ritratto
+        if (p.portrait) {
+          const box = card.querySelector('[data-thumb]');
+          if (box) {
+            const src = /^https?:\/\//.test(p.portrait) ? p.portrait : '/biografie/' + p.cartella + '/' + p.portrait;
+            const cur = box.querySelector('img');
+            if (cur) { if (cur.getAttribute('src') !== src) cur.setAttribute('src', src); }
+            else {
+              const im = document.createElement('img');
+              im.src = src; im.alt = ''; im.loading = 'lazy';
+              im.className = 'w-full h-full object-cover group-hover:opacity-80 transition-opacity';
+              box.innerHTML = '';
+              box.appendChild(im);
+            }
+          }
         }
       }
     } catch (e) {}
