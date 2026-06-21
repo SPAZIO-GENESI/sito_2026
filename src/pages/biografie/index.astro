@@ -55,7 +55,7 @@ const artisti: Artista[] = data.artisti
               data-nome={nomeDecoded.toLowerCase()}
               data-index={index}
             >
-              <div class="mb-3 rounded-lg overflow-hidden aspect-square bg-muted">
+              <div class="mb-3 rounded-lg overflow-hidden aspect-square bg-muted" data-thumb={artista.cartella}>
                 {primaImg ? (
                   <img
                     src={u(`/biografie/${artista.cartella}/${primaImg.img}`)}
@@ -115,4 +115,31 @@ const artisti: Artista[] = data.artisti
   })
 
   sortCards('alpha-asc')
+</script>
+
+<script is:inline>
+  // Aggiorna le miniature dell'elenco col ritratto corrente (D1), così riflette
+  // le modifiche fatte dagli artisti senza attendere un rebuild.
+  (async () => {
+    try {
+      const r = await fetch('https://artisti-api.it-e3f.workers.dev/api/portraits', { cache: 'no-store' });
+      if (!r.ok) return;
+      const { portraits } = await r.json();
+      for (const p of portraits || []) {
+        if (!p.portrait) continue;
+        const box = document.querySelector('[data-thumb="' + p.cartella + '"]');
+        if (!box) continue;
+        const src = /^https?:\/\//.test(p.portrait) ? p.portrait : '/biografie/' + p.cartella + '/' + p.portrait;
+        const cur = box.querySelector('img');
+        if (cur) { if (cur.getAttribute('src') !== src) cur.setAttribute('src', src); }
+        else {
+          const im = document.createElement('img');
+          im.src = src; im.alt = ''; im.loading = 'lazy';
+          im.className = 'w-full h-full object-cover group-hover:opacity-80 transition-opacity';
+          box.innerHTML = '';
+          box.appendChild(im);
+        }
+      }
+    } catch (e) {}
+  })();
 </script>
