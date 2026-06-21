@@ -71,15 +71,24 @@
           }
         });
       });
-      // pulsanti di allineamento paragrafo (aggiunti una volta per toolbar)
+      // pulsanti di allineamento paragrafo (icone standard, aggiunti una volta per toolbar)
       if (!toolbar.querySelector('[data-cmd="justifyCenter"]')) {
-        [['justifyLeft', 'Sx', 'Allinea a sinistra'], ['justifyCenter', 'Centro', 'Centra'], ['justifyRight', 'Dx', 'Allinea a destra']].forEach(function (a) {
+        const svg = function (lines) {
+          return '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + lines + '</svg>';
+        };
+        const icons = {
+          justifyLeft: svg('<line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/>'),
+          justifyCenter: svg('<line x1="21" y1="6" x2="3" y2="6"/><line x1="17" y1="12" x2="7" y2="12"/><line x1="19" y1="18" x2="5" y2="18"/>'),
+          justifyRight: svg('<line x1="21" y1="6" x2="3" y2="6"/><line x1="21" y1="12" x2="9" y2="12"/><line x1="21" y1="18" x2="7" y2="18"/>'),
+        };
+        [['justifyLeft', 'Allinea a sinistra'], ['justifyCenter', 'Centra'], ['justifyRight', 'Allinea a destra']].forEach(function (a) {
           const b = document.createElement('button');
           b.type = 'button';
           b.setAttribute('data-cmd', a[0]);
-          b.title = a[2];
-          b.className = 'px-2.5 py-1 rounded hover:bg-muted';
-          b.textContent = a[1];
+          b.title = a[1];
+          b.setAttribute('aria-label', a[1]);
+          b.className = 'px-2 py-1 rounded hover:bg-muted inline-flex items-center';
+          b.innerHTML = icons[a[0]];
           b.addEventListener('mousedown', function (e) { e.preventDefault(); editable.focus(); document.execCommand(a[0], false, null); });
           toolbar.appendChild(b);
         });
