@@ -29,7 +29,7 @@
 import { appendFileSync, existsSync, readFileSync, writeFileSync } from 'node:fs'
 
 const SHEET_ID = '1Ef7n23TnmRFfpdzp4D24v0kKDrBxGQnhUPI6CNOASU4'
-const WORKER_URL = `https://cfg_googledata.it-e3f.workers.dev/?sheet=${SHEET_ID}&f=A3SD21`
+const WORKER_URL = `https://cfg_googledata.it-e3f.workers.dev/?sheet=${SHEET_ID}&f=${process.env.CDID_KEY || ''}`
 const MODEL = process.env.MODEL || 'claude-sonnet-4-6'
 const API_KEY = process.env.ANTHROPIC_API_KEY
 

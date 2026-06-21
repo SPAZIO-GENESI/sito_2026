@@ -14,7 +14,7 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 
 const SHEET_ID = '1Ef7n23TnmRFfpdzp4D24v0kKDrBxGQnhUPI6CNOASU4'
-const WORKER_URL = `https://cfg_googledata.it-e3f.workers.dev/?sheet=${SHEET_ID}&f=A3SD21`
+const WORKER_URL = `https://cfg_googledata.it-e3f.workers.dev/?sheet=${SHEET_ID}&f=${process.env.CDID_KEY || ''}`
 const TSV = new URL('./descrizioni.tsv', import.meta.url)
 const OUT = new URL('./colonna-abstract.txt', import.meta.url)
 const oneLine = (s) => ((s ?? '') + '').replace(/[\r\n\t]+/g, ' ').replace(/\s+/g, ' ').trim()

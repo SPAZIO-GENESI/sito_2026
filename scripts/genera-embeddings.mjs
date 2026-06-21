@@ -18,7 +18,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 
 const SHEET_ID = '1Ef7n23TnmRFfpdzp4D24v0kKDrBxGQnhUPI6CNOASU4'
-const WORKER_SHEET = `https://cfg_googledata.it-e3f.workers.dev/?sheet=${SHEET_ID}&f=A3SD21`
+const WORKER_SHEET = `https://cfg_googledata.it-e3f.workers.dev/?sheet=${SHEET_ID}&f=${process.env.CDID_KEY || ''}`
 const WORKER_EMB = (process.env.EMB_WORKER || 'https://cfg_embeddings.it-e3f.workers.dev').replace(/\/$/, '')
 const OUT_DIR = new URL('../public/data/', import.meta.url)
 const OUT = new URL('../public/data/libri-embeddings.json', import.meta.url)
