@@ -80,9 +80,10 @@ import BaseLayout from '../layouts/BaseLayout.astro'
           <p>
             <strong class="text-foreground">Cos'è.</strong>
             Un servizio web che genera l'<em>impronta digitale</em> (hash <strong class="text-foreground">SHA-256</strong>)
-            di un file, associandola a una marca temporale in UTC. Funziona con
-            <strong class="text-foreground">qualsiasi tipo di file</strong> di dimensione
-            <strong class="text-foreground">inferiore a 100&nbsp;MB</strong> — immagini, video, audio, PDF, documenti,
+            di un file, associandola a una marca temporale in UTC. L'impronta si calcola
+            <strong class="text-foreground">direttamente nel tuo browser</strong>: il file non viene mai inviato.
+            Funziona con <strong class="text-foreground">qualsiasi tipo di file</strong> di dimensione
+            <strong class="text-foreground">fino a 1&nbsp;GB</strong> — immagini, video, audio, PDF, documenti,
             archivi, modelli 3D e altro. L'impronta è una sequenza di caratteri univoca: basta modificare
             un solo byte del file perché cambi completamente.
           </p>
@@ -107,10 +108,11 @@ import BaseLayout from '../layouts/BaseLayout.astro'
             <li>
               Apri il servizio e <strong class="text-foreground">trascina il file</strong> nella pagina
               (oppure cliccalo per selezionarlo). È possibile certificare qualsiasi tipo di file
-              fino a <strong class="text-foreground">100&nbsp;MB</strong>.
+              fino a <strong class="text-foreground">1&nbsp;GB</strong> — il file resta sul tuo dispositivo,
+              non viene caricato.
             </li>
             <li>
-              Il sistema calcola l'hash SHA-256 con data, ora e metadati del file. Puoi
+              Il tuo browser calcola l'hash SHA-256; il servizio genera data, ora e attestazione. Puoi
               <strong class="text-foreground">scaricare l'attestazione</strong> in formato .txt o PDF e conservarla.
             </li>
             <li>
@@ -155,8 +157,8 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                 </span>
               </summary>
               <div class="pb-4 pl-7 text-sm text-muted-foreground space-y-2">
-                <p>L'impronta (hash <strong class="text-foreground">SHA-256</strong>) è calcolata dai nostri server
-                sui byte esatti del file: basta che cambi un solo pixel — o una virgola — e l'impronta diventa
+                <p>L'impronta (hash <strong class="text-foreground">SHA-256</strong>) è calcolata sui byte esatti
+                del file: basta che cambi un solo pixel — o una virgola — e l'impronta diventa
                 completamente diversa. Per questo dimostra che il file non è stato modificato.</p>
                 <p>Funziona con qualsiasi formato: immagini, video, audio, documenti, modelli 3D, archivi.</p>
               </div>
@@ -225,15 +227,19 @@ import BaseLayout from '../layouts/BaseLayout.astro'
               <summary class="flex items-baseline gap-3 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
                 <span class="text-accent font-semibold w-4 shrink-0 text-center transition-transform group-open:rotate-45">+</span>
                 <span>
-                  <span class="font-semibold text-foreground group-hover:text-accent transition-colors">La tua opera non viene conservata</span><br>
-                  <span class="text-sm text-muted-foreground">Il file serve solo a calcolare l'impronta: non viene memorizzato né ceduto a nessuno.</span>
+                  <span class="font-semibold text-foreground group-hover:text-accent transition-colors">Full privacy: il file non lascia mai il tuo dispositivo</span><br>
+                  <span class="text-sm text-muted-foreground">L'impronta si calcola nel tuo browser: l'opera non viene mai caricata, né conservata, né ceduta a nessuno.</span>
                 </span>
               </summary>
               <div class="pb-4 pl-7 text-sm text-muted-foreground space-y-2">
-                <p>Il file viene elaborato in memoria il tempo di calcolarne l'impronta e poi scartato:
-                <strong class="text-foreground">non viene salvato, né ceduto a terzi</strong>, né usato per
-                altri scopi. Nei nostri archivi resta soltanto il certificato PDF — che contiene l'impronta,
-                non l'opera — e la prova blockchain.</p>
+                <p>Il calcolo dell'impronta avviene <strong class="text-foreground">direttamente nel tuo
+                browser</strong> (tecnologia WebCrypto, standard del web): il file non viene inviato ai
+                nostri server, né per l'attestazione né per la verifica. Nei nostri archivi resta soltanto
+                il certificato PDF — che contiene l'impronta, non l'opera — e la prova blockchain.</p>
+                <p><strong class="text-foreground">Come si verifica:</strong> il codice del servizio è
+                open source (vedi più sotto): puoi controllare tu stesso — o farlo controllare a un tuo
+                esperto di fiducia — che il file non venga trasmesso, per esempio osservando il traffico
+                di rete del browser durante l'attestazione.</p>
               </div>
             </details>
 
