@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import data from '../data/artisti.json'
 import mostra from '../data/mostra_corrente.json'
+import archivio from '../data/archivio.json'
 import { flattenImmagini, extractAbstract } from '../types'
 import type { Artista } from '../types'
 import { u } from '../utils/url'
@@ -24,12 +25,41 @@ const ultimeInserite = artisti.slice(-3).reverse()
 // NB: `mostra_corrente.json` resta importato perché la sezione ② (riconoscimenti
 //     + adesioni) lo usa a prescindere dall'hero.
 // ───────────────────────────────────────────────────────────────────────────
-// Immagini del carosello hero della campagna 5×1000: grafica + scatti delle opere/spazio
-const campagna = [
-  { src: '/assets/og-5x1000.png', alt: 'Dona il tuo 5×1000 a Spazio Genesi ETS — codice fiscale 96602450585', fit: 'contain' },
-  { src: '/assets/media/SPAZIO_GENESI_adhuc_1.jpeg', alt: "Installazione in mostra a Spazio Genesi, L'Aquila", fit: 'cover' },
-  { src: '/assets/media/SPAZIO_GENESI_Carezze_2.jpeg', alt: 'Stampe e opere realizzate negli spazi di Spazio Genesi', fit: 'cover' },
-]
+// Carosello hero: la grafica 5×1000 si alterna «uno sì e uno no» con scatti a
+// caso presi dai reportage degli eventi in archivio. Sequenza risultante:
+//   5×1000 · foto evento · 5×1000 · foto evento · …
+// La selezione delle foto è casuale ad ogni build (import.meta.glob + shuffle).
+const promo5x1000 = {
+  src: '/assets/og-5x1000.png',
+  alt: 'Dona il tuo 5×1000 a Spazio Genesi ETS — codice fiscale 96602450585',
+  fit: 'contain',
+}
+
+// Pool di tutte le foto reportage degli eventi (path: /assets/eventi/{id}/{file})
+const eventiFiles = import.meta.glob('../data/eventi/*.json', { eager: true }) as Record<string, any>
+const titoloById = new Map((archivio as any[]).map(e => [e.id, e.titolo]))
+const poolFoto: { src: string; alt: string; fit: string }[] = []
+for (const mod of Object.values(eventiFiles)) {
+  const ev = (mod as any).default ?? mod
+  for (const f of (ev.reportage?.foto ?? []) as { file: string; didascalia?: string }[]) {
+    poolFoto.push({
+      src: `/assets/eventi/${ev.id}/${f.file}`,
+      alt: f.didascalia || `${titoloById.get(ev.id) ?? 'Evento'} — Spazio Genesi, L'Aquila`,
+      fit: 'cover',
+    })
+  }
+}
+// Shuffle (Fisher–Yates) e prendi qualche scatto
+for (let i = poolFoto.length - 1; i > 0; i--) {
+  const j = Math.floor(Math.random() * (i + 1))
+  ;[poolFoto[i], poolFoto[j]] = [poolFoto[j], poolFoto[i]]
+}
+const scelteFoto = poolFoto.slice(0, 4)
+
+// Intreccia: grafica 5×1000 prima di ogni foto → esce uno sì e uno no
+const campagna = scelteFoto.length > 0
+  ? scelteFoto.flatMap(foto => [promo5x1000, foto])
+  : [promo5x1000]
 ---
 <BaseLayout
   title="Spazio Genesi — Arte Contemporanea, L'Aquila"
@@ -164,8 +194,8 @@ const campagna = [
     <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
       <h2 class="text-foreground mb-6">Chi siamo</h2>
       <p class="text-lg text-muted-foreground leading-relaxed mb-4">
-        Spazio Genesi è un'associazione autogestita nata dentro l'Accademia di Belle Arti dell'Aquila,
-        dove gestiamo uno spazio espositivo dedicato all'arte contemporanea.
+        Spazio Genesi è un'associazione autogestita nata dalla comunità dell'Accademia di Belle Arti
+        dell'Aquila, che gestisce un proprio spazio espositivo dedicato all'arte contemporanea.
       </p>
       <p class="text-muted-foreground leading-relaxed mb-4">
         Siamo un laboratorio per chi sta ancora studiando e, allo stesso tempo, un appoggio per chi dall'Accademia
