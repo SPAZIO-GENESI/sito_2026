@@ -134,13 +134,7 @@ import BaseLayout from '../layouts/BaseLayout.astro'
                 <div class="sib-captcha sib-form-block">
                   <div class="form__entry entry_block">
                     <div class="form__label-row">
-                      <script is:inline>
-                        function handleCaptchaResponse() {
-                          var event = new Event('captchaChange');
-                          document.getElementById('sib-captcha').dispatchEvent(event);
-                          window.grecaptcha = window.turnstile;
-                        }
-                      </script>
+                      <script src="/scripts/newsletter-captcha.js" is:inline></script>
                       <div class="cf-turnstile g-recaptcha"
                         data-sitekey="0x4AAAAAACobBW0ZJAaZjPLv"
                         id="sib-captcha"
@@ -205,14 +199,6 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </section>
 </BaseLayout>
 
-<script is:inline>
-  window.REQUIRED_CODE_ERROR_MESSAGE = 'Scegli un prefisso paese';
-  window.LOCALE = 'it';
-  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Controlla il formato del campo e riprova.";
-  window.REQUIRED_ERROR_MESSAGE = "Questo campo non può essere lasciato vuoto.";
-  window.GENERIC_INVALID_MESSAGE = "Le informazioni fornite non sono valide. Controlla il formato del campo e riprova.";
-  window.translation = { common: { selectedList: '{quantity} lista selezionata', selectedLists: '{quantity} liste selezionate', selectedOption: '{quantity} selezionato', selectedOptions: '{quantity} selezionati' } };
-  var AUTOHIDE = Boolean(0);
-</script>
+<script src="/scripts/newsletter-brevo-config.js" is:inline></script>
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

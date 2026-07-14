@@ -146,7 +146,7 @@ const campagna = scelteFoto.length > 0
       {(mostra.adesioni as {label:string;url:string;logo:string;logoAlt:string}[]).map(a => (
         <a href={a.url} target="_blank" rel="noopener noreferrer"
           class="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors group">
-          <img src={a.logo} alt={a.logoAlt} class="h-5 opacity-70 group-hover:opacity-100 transition-opacity" onError="this.style.display='none'" />
+          <img src={a.logo} alt={a.logoAlt} class="h-5 opacity-70 group-hover:opacity-100 transition-opacity" data-hide-on-error />
           <span class="text-xs">{a.label}</span>
         </a>
       ))}
@@ -339,7 +339,7 @@ const campagna = scelteFoto.length > 0
     <div class="max-w-7xl mx-auto flex items-center">
       <span class="shrink-0 bg-red-600 text-white text-xs font-semibold px-3 py-2 mr-3">News</span>
       <div class="overflow-hidden text-sm text-muted-foreground">
-        <marquee behavior="scroll" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+        <marquee behavior="scroll" direction="left">
           Laboratorio permanente di interazione, autogestito, aperto a chi si associa e condivide il progetto —
           rotazione espositiva — archivio donazioni — caffè letterario — assemblea aperta — spazio safe
         </marquee>
@@ -349,37 +349,4 @@ const campagna = scelteFoto.length > 0
 
 </BaseLayout>
 
-<script>
-  const slides = document.querySelectorAll<HTMLImageElement>('.carousel-slide')
-  const dots = document.querySelectorAll<HTMLButtonElement>('.carousel-dot')
-  let current = 0
-  let timer: ReturnType<typeof setInterval>
-
-  function goTo(n: number) {
-    if (slides.length === 0) return
-    slides[current].classList.replace('opacity-100', 'opacity-0')
-    dots[current].classList.replace('bg-white', 'bg-white/40')
-    current = (n + slides.length) % slides.length
-    slides[current].classList.replace('opacity-0', 'opacity-100')
-    dots[current].classList.replace('bg-white/40', 'bg-white')
-  }
-
-  function startAuto() {
-    if (slides.length > 1) timer = setInterval(() => goTo(current + 1), 4000)
-  }
-
-  dots.forEach(dot => {
-    dot.addEventListener('click', (e) => {
-      e.preventDefault()
-      clearInterval(timer)
-      goTo(Number(dot.dataset.index))
-      startAuto()
-    })
-  })
-
-  const carousel = document.getElementById('carousel')
-  carousel?.addEventListener('mouseenter', () => clearInterval(timer))
-  carousel?.addEventListener('mouseleave', startAuto)
-
-  startAuto()
-</script>
+<script type="module" src="/scripts/home-carousel.js" is:inline></script>

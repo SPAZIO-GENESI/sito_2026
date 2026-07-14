@@ -110,9 +110,4 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </section>
 </BaseLayout>
 
-<script>
-  document.getElementById('reset-consent')?.addEventListener('click', () => {
-    localStorage.removeItem('sg_cookie_consent')
-    window.location.reload()
-  })
-</script>
+<script type="module" src="/scripts/cookie-policy.js" is:inline></script>

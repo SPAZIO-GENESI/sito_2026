@@ -1,18 +1,3 @@
 ---
-interface Props {
-  siteId?: string
-  trackerUrl?: string
-}
-const { siteId = '7', trackerUrl = '//matomodocker.azurewebsites.net/' } = Astro.props
 ---
-<script define:vars={{ siteId, trackerUrl }}>
-  var _paq = window._paq = window._paq || []
-  _paq.push(['trackPageView'])
-  _paq.push(['enableLinkTracking'])
-  ;(function () {
-    _paq.push(['setTrackerUrl', trackerUrl + 'matomo.php'])
-    _paq.push(['setSiteId', siteId])
-    var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0]
-    g.async = true; g.src = trackerUrl + 'matomo.js'; s.parentNode.insertBefore(g, s)
-  })()
-</script>
+<script src="/scripts/matomo.js" is:inline></script>
