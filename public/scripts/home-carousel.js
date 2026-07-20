@@ -11,6 +11,7 @@ function scheduleNext(resetVideo = true) {
   const el = slides[current]
   if (el.tagName === 'VIDEO') {
     if (resetVideo) el.currentTime = 0
+    el.muted = true // richiesto da alcuni mobile browser per l'autoplay programmatico, oltre all'attributo HTML
     el.play().catch(() => {})
     el.onended = () => goTo(current + 1)
     const remaining = el.duration && !isNaN(el.duration) ? el.duration - el.currentTime : 20
