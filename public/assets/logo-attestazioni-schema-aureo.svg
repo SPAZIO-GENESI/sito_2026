@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1270" width="1400" height="1270">
+<title>Schema geometrico del logo — costruzione a rapporto aureo (revisione)</title>
+<desc>Modulo generatore: lato S del quadrato esterno. Spessore parete t = S/Phi^4, cavita C = S-2t, cerchio d = C/Phi, apertura a = d, asta r = a/Phi^2, vuoti g = C/2Phi^2. Sfondo trasparente. Unita di disegno: S = 700 px, origine forma a (170,190).</desc>
+
+<defs>
+<marker id="frecciaFine" markerWidth="9" markerHeight="9" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#4A8FA8"/></marker>
+<marker id="frecciaInizio" markerWidth="9" markerHeight="9" refX="0" refY="3" orient="auto"><path d="M8,0 L0,3 L8,6 Z" fill="#4A8FA8"/></marker>
+</defs>
+
+<g id="titolo">
+<text x="60" y="46" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="1.1" fill="#141414">SCHEMA GEOMETRICO DEL LOGO — COSTRUZIONE A RAPPORTO AUREO (REVISIONE)</text>
+<text x="60" y="70" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6A6A6A">Un solo modulo generatore: il lato S del quadrato esterno. Ogni quota deriva da S per potenze di &#934;. Nessuna proporzione e dichiarata due volte.</text>
+</g>
+
+<g id="scala-aurea-bordo-superiore" fill="none" stroke="#B8892B">
+<line x1="170" y1="150" x2="602.62" y2="150" stroke-width="1.5"/>
+<line x1="170" y1="144" x2="170" y2="190" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="272.13" y1="144" x2="272.13" y2="292" stroke-width="1" stroke-dasharray="6 4"/>
+<line x1="335.25" y1="144" x2="335.25" y2="156" stroke-width="1.5"/>
+<line x1="437.38" y1="144" x2="437.38" y2="156" stroke-width="1.5"/>
+<line x1="602.62" y1="144" x2="602.62" y2="156" stroke-width="1.5"/>
+</g>
+<g id="etichette-scala" font-family="Courier New, monospace" font-size="12.5" fill="#8A6414" stroke="none">
+<text x="266" y="136" text-anchor="middle">S/&#934;&#8308;</text>
+<text x="335" y="136" text-anchor="middle">S/&#934;&#179;</text>
+<text x="437" y="136" text-anchor="middle">S/&#934;&#178;</text>
+<text x="603" y="136" text-anchor="middle">S/&#934;</text>
+<text x="620" y="154" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5">&#8592; scala aurea reciproca: da qui nasce lo spessore parete t</text>
+</g>
+
+<g id="forma-logo" fill="none" stroke="#141414" stroke-width="2.6" stroke-linejoin="miter">
+<path id="parete-a-C" d="M170,190 L870,190 L870,386.81 L767.87,386.81 L767.87,292.13 L272.13,292.13 L272.13,787.87 L767.87,787.87 L767.87,693.19 L870,693.19 L870,890 L170,890 Z"/>
+<circle id="cerchio-centrale" cx="520" cy="540" r="153.19"/>
+<rect id="asta-di-connessione" x="673.19" y="481.49" width="196.81" height="117.03"/>
+</g>
+
+<g id="linee-di-costruzione" fill="none" stroke="#4A8FA8" stroke-width="0.8" stroke-dasharray="4 4" opacity="0.75">
+<line x1="366.81" y1="386.81" x2="880" y2="386.81"/>
+<line x1="366.81" y1="693.19" x2="880" y2="693.19"/>
+<line x1="272.13" y1="481.49" x2="880" y2="481.49"/>
+<line x1="272.13" y1="598.51" x2="880" y2="598.51"/>
+<line x1="520" y1="292.13" x2="520" y2="787.87"/>
+<line x1="160" y1="540" x2="880" y2="540"/>
+</g>
+
+<g id="cerchio-di-controllo-cavita">
+<circle cx="520" cy="540" r="247.87" fill="none" stroke="#B8892B" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="520" y="270" font-family="Courier New, monospace" font-size="12.5" fill="#8A6414" text-anchor="middle">C (cavit&#224;)</text>
+</g>
+
+<g id="quote" fill="none" stroke="#4A8FA8" stroke-width="1.1">
+<line x1="120" y1="190" x2="120" y2="890" marker-start="url(#frecciaInizio)" marker-end="url(#frecciaFine)"/>
+<line x1="170" y1="222" x2="272.13" y2="222" marker-start="url(#frecciaInizio)" marker-end="url(#frecciaFine)"/>
+<line x1="366.81" y1="540" x2="673.19" y2="540" marker-start="url(#frecciaInizio)" marker-end="url(#frecciaFine)"/>
+<line x1="272.13" y1="620" x2="366.81" y2="620" marker-start="url(#frecciaInizio)" marker-end="url(#frecciaFine)"/>
+<line x1="920" y1="386.81" x2="920" y2="693.19" marker-start="url(#frecciaInizio)" marker-end="url(#frecciaFine)"/>
+<line x1="985" y1="481.49" x2="985" y2="598.51" marker-start="url(#frecciaInizio)" marker-end="url(#frecciaFine)"/>
+<line x1="900" y1="386.81" x2="900" y2="481.49" marker-start="url(#frecciaInizio)" marker-end="url(#frecciaFine)"/>
+<line x1="900" y1="598.51" x2="900" y2="693.19" marker-start="url(#frecciaInizio)" marker-end="url(#frecciaFine)"/>
+</g>
+
+<g id="etichette-quote" font-family="Courier New, monospace" font-size="12.5" fill="#2F6E86" stroke="none">
+<text x="108" y="545" text-anchor="middle" font-weight="700" transform="rotate(-90,108,545)">S = 1</text>
+<text x="221" y="248" text-anchor="middle">t</text>
+<text x="520" y="530" text-anchor="middle" font-weight="700">d</text>
+<text x="319" y="645" text-anchor="middle">g</text>
+<text x="936" y="430">a  (apertura)</text>
+<text x="1000" y="546">r  (asta)</text>
+<text x="880" y="438" text-anchor="end">g</text>
+<text x="880" y="650" text-anchor="end">g</text>
+</g>
+
+<g id="catena-derivativa">
+<text x="1060" y="205" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.4" fill="#141414">CATENA DERIVATIVA</text>
+<line x1="1060" y1="216" x2="1360" y2="216" stroke="#B8892B" stroke-width="1.5"/>
+<g font-family="Courier New, monospace" font-size="12.5" fill="#141414">
+<text x="1060" y="242">1 &#183; S</text><text x="1180" y="242" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" fill="#6A6A6A">modulo generatore</text>
+<text x="1060" y="266">2 &#183; t = S/&#934;&#8308;</text><text x="1180" y="266">0.1459 S</text>
+<text x="1060" y="290">3 &#183; C = S &#8722; 2t</text><text x="1180" y="290">0.7082 S</text>
+<text x="1060" y="314">4 &#183; d = C/&#934;</text><text x="1180" y="314">0.4376 S</text>
+<text x="1060" y="338">5 &#183; a = d</text><text x="1180" y="338">0.4376 S</text>
+<text x="1060" y="362">6 &#183; r = a/&#934;&#178;</text><text x="1180" y="362">0.1671 S</text>
+<text x="1060" y="386">7 &#183; g = C/2&#934;&#178;</text><text x="1180" y="386">0.1353 S</text>
+</g>
+</g>
+
+<g id="verifiche">
+<text x="1060" y="440" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.4" fill="#141414">VERIFICHE (devono chiudere)</text>
+<line x1="1060" y1="451" x2="1360" y2="451" stroke="#B8892B" stroke-width="1.5"/>
+<g font-family="Courier New, monospace" font-size="12.5" fill="#141414">
+<text x="1060" y="477">d / g</text><text x="1180" y="477">= 2&#934; = 3.2361 &#10003;</text>
+<text x="1060" y="501">a / r</text><text x="1180" y="501">= &#934;&#178; = 2.6180 &#10003;</text>
+<text x="1060" y="525">(a&#8722;r)/2</text><text x="1180" y="525">= (C&#8722;d)/2 &#10003;</text>
+</g>
+<g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6A6A6A">
+<text x="1060" y="551">La terza e il risultato non banale:</text>
+<text x="1060" y="569">il vuoto attorno al cerchio e il vuoto</text>
+<text x="1060" y="587">attorno all&#8217;asta sono la stessa misura.</text>
+</g>
+</g>
+
+<g id="non-aureo-dichiarato">
+<text x="1060" y="640" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.4" fill="#141414">NON AUREO — E DICHIARATO</text>
+<line x1="1060" y1="651" x2="1360" y2="651" stroke="#B8892B" stroke-width="1.5"/>
+<g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6A6A6A">
+<text x="1060" y="677">S : S = 1 : 1 (quadrato)</text>
+<text x="1060" y="697">C : C = 1 : 1 (quadrato)</text>
+<text x="1060" y="723">Una cornice di spessore uniforme</text>
+<text x="1060" y="741">attorno a un rettangolo aureo non e</text>
+<text x="1060" y="759">mai aurea. Va scelto dove sta il &#934;:</text>
+<text x="1060" y="777">qui sta nelle suddivisioni interne.</text>
+</g>
+</g>
+
+<g id="scala-reciproca">
+<text x="60" y="985" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="0.4" fill="#141414">SCALA RECIPROCA — DERIVAZIONE DELLO SPESSORE PARETE</text>
+<line x1="60" y1="996" x2="1000" y2="996" stroke="#B8892B" stroke-width="1.5"/>
+<rect x="60" y="1015" width="700" height="26" fill="none" stroke="#B8892B" stroke-width="1.5"/>
+<rect x="60" y="1049" width="432.62" height="26" fill="none" stroke="#B8892B" stroke-width="1.5"/>
+<rect x="60" y="1083" width="267.38" height="26" fill="none" stroke="#B8892B" stroke-width="1.5"/>
+<rect x="60" y="1117" width="165.25" height="26" fill="none" stroke="#B8892B" stroke-width="1.5"/>
+<rect x="60" y="1151" width="102.13" height="26" fill="#B8892B" stroke="none"/>
+<g font-family="Courier New, monospace" font-size="12.5" fill="#141414">
+<text x="775" y="1033">S = 1.0000</text>
+<text x="775" y="1067">S/&#934; = 0.6180</text>
+<text x="775" y="1101">S/&#934;&#178; = 0.3820</text>
+<text x="775" y="1135">S/&#934;&#179; = 0.2361</text>
+<text x="775" y="1169" font-weight="700">S/&#934;&#8308; = 0.1459  =  t</text>
+</g>
+<text x="960" y="1169" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" fill="#6A6A6A">&#8592; lo spessore parete non e scelto: e il quarto termine della scala</text>
+</g>
+
+<g id="legenda">
+<line x1="1080" y1="1020" x2="1140" y2="1020" stroke="#141414" stroke-width="2.6"/>
+<line x1="1080" y1="1048" x2="1140" y2="1048" stroke="#B8892B" stroke-width="1.5"/>
+<line x1="1080" y1="1076" x2="1140" y2="1076" stroke="#4A8FA8" stroke-width="0.8" stroke-dasharray="4 4"/>
+<g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" fill="#141414">
+<text x="1152" y="1025">forma (unit&#224; S)</text>
+<text x="1152" y="1053">rapporto aureo &#934; = 1.6180</text>
+<text x="1152" y="1081">linee di costruzione</text>
+</g>
+</g>
+
+</svg>

@@ -5,6 +5,7 @@ import { u } from '../../utils/url'
 import DiarioTabs from '../../components/DiarioTabs.astro'
 
 const posts = (await getCollection('news', ({ data }) => (import.meta.env.PROD ? !data.draft : true)))
+  .filter((post) => !post.data.unlisted)
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
 
 const fmt = (d) => d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' })

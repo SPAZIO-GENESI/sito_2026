@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="700" height="700">
+<title>Logo — geometria pulita (costruzione aurea)</title>
+<desc>Solo forma, senza annotazioni. S = 700. t = S/Phi^4 = 102.13. d = C/Phi = 306.39. a = d. r = a/Phi^2 = 117.03. Sfondo trasparente. Le tre parti sono separate: unificarle con operazione booleana Unione prima dell'esportazione finale.</desc>
+
+<g id="logo" fill="#141414" fill-rule="evenodd" stroke="none">
+<path id="parete-a-C" d="M0,0 L700,0 L700,196.81 L597.87,196.81 L597.87,102.13 L102.13,102.13 L102.13,597.87 L597.87,597.87 L597.87,503.19 L700,503.19 L700,700 L0,700 Z"/>
+<circle id="cerchio-centrale" cx="350" cy="350" r="153.19"/>
+<rect id="asta-di-connessione" x="503.19" y="291.49" width="196.81" height="117.03"/>
+</g>
+
+</svg>

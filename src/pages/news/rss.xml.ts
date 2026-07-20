@@ -5,7 +5,7 @@ const esc = (s: string) =>
 
 export async function GET(context: { site?: URL }) {
   const site = (context.site?.href ?? 'https://spaziogenesi.org/').replace(/\/$/, '')
-  const posts = (await getCollection('news', ({ data }) => !data.draft)).sort(
+  const posts = (await getCollection('news', ({ data }) => !data.draft && !data.unlisted)).sort(
     (a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime(),
   )
 

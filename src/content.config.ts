@@ -9,6 +9,8 @@ const news = defineCollection({
     description: z.string(),
     pubDate: z.coerce.date(),
     draft: z.boolean().default(false),
+    // pubblicata (pagina raggiungibile) ma non elencata in /news/ né nel feed RSS
+    unlisted: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
   }),
 })
