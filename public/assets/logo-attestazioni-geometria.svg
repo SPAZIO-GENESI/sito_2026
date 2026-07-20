@@ -6,7 +6,7 @@
 <g id="logo" fill="#141414" fill-rule="evenodd" stroke="none">
 <path id="parete-a-C" d="M0,0 L700,0 L700,196.81 L597.87,196.81 L597.87,102.13 L102.13,102.13 L102.13,597.87 L597.87,597.87 L597.87,503.19 L700,503.19 L700,700 L0,700 Z"/>
 <circle id="cerchio-centrale" cx="350" cy="350" r="153.19"/>
-<rect id="asta-di-connessione" x="503.19" y="291.49" width="196.81" height="117.03"/>
+<rect id="asta-di-connessione" x="490.5323" y="291.49" width="209.4354" height="117.03"/>
 </g>
 
 </svg>

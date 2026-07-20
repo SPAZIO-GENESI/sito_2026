@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 350" width="350" height="350">
+<title>Logo — geometria pulita (costruzione aurea, 50%)</title>
+<desc>Versione ridotta del 50% del logo definitivo. Sfondo trasparente.</desc>
+
+<g id="logo" fill="#141414" fill-rule="evenodd" stroke="none">
+<path id="parete-a-C" d="M0,0 L350,0 L350,98.405 L298.935,98.405 L298.935,51.065 L51.065,51.065 L51.065,298.935 L298.935,298.935 L298.935,251.595 L350,251.595 L350,350 L0,350 Z"/>
+<circle id="cerchio-centrale" cx="175" cy="175" r="76.595"/>
+<rect id="asta-di-connessione" x="245.26615" y="145.745" width="104.7177" height="58.515"/>
+</g>
+
+</svg>
