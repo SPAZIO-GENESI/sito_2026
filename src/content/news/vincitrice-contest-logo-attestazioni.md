@@ -1,17 +1,17 @@
 ---
-title: "Manuela Valloscuro vince il contest per il logo di ATTESTAZIONI"
-description: "L'associata Manuela Valloscuro, studentessa dell'Accademia di Belle Arti dell'Aquila, è l'autrice del logo scelto per il servizio ATTESTAZIONI di Spazio Genesi ETS."
+title: "Manuela Valloscuro vince il contest per il logo di ATTESTAZIONE"
+description: "L'associata Manuela Valloscuro, studentessa dell'Accademia di Belle Arti dell'Aquila, è l'autrice del logo scelto per il servizio ATTESTAZIONE di Spazio Genesi ETS."
 pubDate: 2026-07-20
 draft: false
 tags: ["contest", "ABAQ", "attestazione", "logo"]
 ---
 
-Il [contest per il logo del progetto ATTESTAZIONI](/contest-logo/), riservato agli studenti dell'Accademia di Belle Arti dell'Aquila (ABAQ), ha una vincitrice: **Manuela Valloscuro**.
+Il [contest per il logo del progetto ATTESTAZIONE](/contest-logo/), riservato agli studenti dell'Accademia di Belle Arti dell'Aquila (ABAQ), ha una vincitrice: **Manuela Valloscuro**.
 
 Il suo logo diventerà il segno ufficiale del servizio gratuito di attestazione delle opere digitali, e comparirà d'ora in avanti in ogni certificato emesso, con il credito d'autore permanente previsto dal bando.
 
 <figure class="logo-figure">
-  <img src="/assets/logo-attestazioni-geometria.svg" alt="Logo del progetto ATTESTAZIONI disegnato da Manuela Valloscuro" />
+  <img src="/assets/logo-attestazioni-geometria.svg" alt="Logo del progetto ATTESTAZIONE disegnato da Manuela Valloscuro" />
 </figure>
 
 ## La costruzione geometrica
