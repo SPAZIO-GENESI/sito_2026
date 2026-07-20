@@ -11,7 +11,7 @@ Il [contest per il logo del progetto ATTESTAZIONI](/contest-logo/), riservato ag
 
 Il suo logo diventerà il segno ufficiale del servizio gratuito di attestazione delle opere digitali, e comparirà d'ora in avanti in ogni certificato emesso, con il credito d'autore permanente previsto dal bando.
 
-<figure>
+<figure class="logo-figure">
   <img src="/assets/logo-attestazioni-geometria.svg" alt="Logo del progetto ATTESTAZIONI disegnato da Manuela Valloscuro" />
 </figure>
 
