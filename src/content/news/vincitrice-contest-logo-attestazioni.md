@@ -38,8 +38,6 @@ La linea di innesto: attraversa le figure e rappresenta la marca temporale, l'el
 
 La composizione geometrica ricorda la lettera "G" decostruita e richiama la forma di una serratura stilizzata vista dall'alto, metafora di sicurezza, protezione e inviolabilità del dato.
 
-Resto a disposizione per un confronto sui dettagli dello sviluppo grafico.
-
 <p>— Manuela Valloscuro</p>
 </blockquote>
 
