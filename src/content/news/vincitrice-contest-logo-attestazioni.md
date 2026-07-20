@@ -3,7 +3,6 @@ title: "Manuela Valloscuro vince il contest per il logo di ATTESTAZIONI"
 description: "L'associata Manuela Valloscuro, studentessa dell'Accademia di Belle Arti dell'Aquila, è l'autrice del logo scelto per il servizio ATTESTAZIONI di Spazio Genesi ETS."
 pubDate: 2026-07-20
 draft: false
-unlisted: true
 tags: ["contest", "ABAQ", "attestazione", "logo"]
 ---
 
