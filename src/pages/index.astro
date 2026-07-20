@@ -10,12 +10,18 @@ const artisti = data.artisti as Artista[]
 const ultimeInserite = artisti.slice(-3).reverse()
 
 // ───────────────────────────────────────────────────────────────────────────
-// HERO (sezione ①). Stato attuale = annuncio vincitrice contest logo ATTESTAZIONE.
+// HERO (sezione ①). Stato attuale = annuncio vincitrice contest logo ATTESTAZIONE,
+// carosello con logo definitivo, schema geometrico e video di costruzione.
 // Prima era la campagna 5×1000 (con carosello foto eventi), prima ancora la
 // mostra in corso. Per il markup di quelle versioni vedi git history di questo
 // file. NB: `mostra_corrente.json` resta importato perché la sezione ②
 // (riconoscimenti + adesioni) lo usa a prescindere dall'hero.
 // ───────────────────────────────────────────────────────────────────────────
+const heroSlides = [
+  { type: 'image', src: '/assets/logo-attestazioni-geometria.svg', alt: 'Logo del progetto ATTESTAZIONE disegnato da Manuela Valloscuro' },
+  { type: 'image', src: '/assets/logo-attestazioni-schema-aureo.svg', alt: 'Schema geometrico della costruzione del logo a rapporto aureo' },
+  { type: 'video', src: '/assets/video/logo-rapporto-aureo-intro.mp4', alt: 'Animazione della costruzione geometrica del logo a rapporto aureo' },
+] as const
 ---
 <BaseLayout
   title="Spazio Genesi — Arte Contemporanea, L'Aquila"
@@ -27,16 +33,40 @@ const ultimeInserite = artisti.slice(-3).reverse()
     <div class="max-w-6xl mx-auto px-6 lg:px-8 py-10 lg:py-14">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
 
-        <!-- Logo vincitore -->
+        <!-- Logo vincitore: carosello logo / schema aureo / video -->
         <div class="min-w-0 lg:col-span-3 order-1">
           <a href={u('/news/vincitrice-contest-logo-attestazioni/')} class="group block">
-            <div class="relative w-full h-72 lg:h-96 rounded-xl shadow-lg border border-border overflow-hidden flex items-center justify-center p-10 lg:p-14" style="background:#faf9f6">
-              <img
-                src={u('/assets/logo-attestazioni-geometria.svg')}
-                alt="Logo del progetto ATTESTAZIONE disegnato da Manuela Valloscuro"
-                class="w-full h-full object-contain"
-                loading="eager"
-              />
+            <div id="carousel" class="relative w-full h-72 lg:h-96 rounded-xl shadow-lg border border-border overflow-hidden p-10 lg:p-14" style="background:#faf9f6">
+              {heroSlides.map((s, i) => (
+                s.type === 'video' ? (
+                  <video
+                    class={`carousel-slide absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                    src={u(s.src)}
+                    muted
+                    playsinline
+                    preload="auto"
+                    aria-label={s.alt}
+                  />
+                ) : (
+                  <img
+                    src={u(s.src)}
+                    alt={s.alt}
+                    class={`carousel-slide absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                    loading={i === 0 ? 'eager' : 'lazy'}
+                  />
+                )
+              ))}
+              <!-- Indicatori -->
+              <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                {heroSlides.map((_, i) => (
+                  <button
+                    type="button"
+                    class={`carousel-dot w-2 h-2 rounded-full transition-colors ${i === 0 ? 'bg-white' : 'bg-white/40'}`}
+                    data-index={i}
+                    aria-label={`Immagine ${i + 1}`}
+                  />
+                ))}
+              </div>
             </div>
           </a>
         </div>
