@@ -42,7 +42,7 @@ const heroSlides = [
                 <img
                   src={u(s.src)}
                   alt={s.alt}
-                  class={`carousel-slide absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
+                  class={`carousel-slide absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${i === 0 ? 'scale-50' : ''} ${i === 0 ? 'opacity-100' : 'opacity-0'}`}
                   loading={i === 0 ? 'eager' : 'lazy'}
                 />
               ))}
