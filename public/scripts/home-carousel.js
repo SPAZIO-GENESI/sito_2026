@@ -13,7 +13,7 @@ function goTo(n) {
 }
 
 function startAuto() {
-  if (slides.length > 1) timer = setInterval(() => goTo(current + 1), 4000)
+  if (slides.length > 1) timer = setInterval(() => goTo(current + 1), 7000)
 }
 
 dots.forEach(dot => {
