@@ -8,7 +8,7 @@ tags: ["contest", "ABAQ", "attestazione", "logo"]
 
 Il [contest per il logo del progetto ATTESTAZIONE](/contest-logo/), riservato agli studenti dell'Accademia di Belle Arti dell'Aquila (ABAQ), ha una vincitrice: **Manuela Valloscuro**.
 
-Il suo logo diventerà il segno ufficiale del servizio gratuito di attestazione delle opere digitali, e comparirà d'ora in avanti in ogni certificato emesso, con il credito d'autore permanente previsto dal bando.
+Il suo logo è il segno ufficiale del servizio gratuito di attestazione delle opere digitali e compare in ogni certificato emesso, con il credito d'autore permanente previsto dal bando.
 
 <figure class="logo-figure">
   <img src="/assets/logo-attestazioni-geometria.svg" alt="Logo del progetto ATTESTAZIONE disegnato da Manuela Valloscuro" />
@@ -41,3 +41,5 @@ La composizione geometrica ricorda la lettera "G" decostruita e richiama la form
 </blockquote>
 
 Il profilo e i lavori dell'autrice sono disponibili nella pagina biografia: [Manuela Valloscuro](/biografie/manuelavalloscuro/).
+
+Vuoi vedere il logo all'opera? Guarda com'è implementato nel servizio di attestazione delle opere digitali: [attestazione.spaziogenesi.org](https://attestazione.spaziogenesi.org).
