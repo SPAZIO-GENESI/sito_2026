@@ -56,27 +56,39 @@ import { u } from '../utils/url'
         </div>
       </div>
 
-      <!-- Lo spazio è concesso da -->
+      <!-- Partner e sponsor -->
       <div>
-        <h3 class="text-lg font-semibold mb-4">Lo spazio è concesso da</h3>
-        <a href="https://feelitshop.com/" target="_blank" rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1382 713" height="32px" version="1.1" aria-label="Feel it!">
-            <g>
-              <path fill="rgb(70%,70%,70%)" d="M 429 184 L 451 181 L 445 221 L 341 237 L 322 371 L 299 371 L 323 217 Z"/>
-              <path fill="rgb(70%,70%,70%)" d="M 624 154 L 646 151 L 640 191 L 536 207 L 517 341 L 494 341 L 518 187 Z"/>
-              <path fill="rgb(70%,70%,70%)" d="M 717 139 L 737 136 L 678 537 L 655 540 Z"/>
-              <path fill="currentColor" d="M 71 206 L 219 180 L 214 220 L 108 237 L 84 404 L 182 390 L 179 430 L 77 447 L 43 673 L 0 679 Z"/>
-              <path fill="currentColor" d="M 271 174 L 417 149 L 412 189 L 309 205 L 283 374 L 383 358 L 377 399 L 277 414 L 249 600 L 351 585 L 344 625 L 199 648 Z"/>
-              <path fill="currentColor" d="M 468 140 L 613 115 L 608 155 L 505 171 L 479 340 L 579 324 L 573 365 L 473 380 L 445 566 L 547 551 L 540 591 L 395 614 Z"/>
-              <path fill="currentColor" d="M 664 110 L 707 103 L 640 538 L 741 522 L 735 562 L 591 584 Z"/>
-              <path fill="currentColor" d="M 948 63 L 991 56 L 917 531 L 874 537 Z"/>
-              <path fill="currentColor" d="M 1208 417 L 1257 246 L 1194 259 L 1273 16 L 1354 0 L 1274 195 L 1333 186 Z"/>
-              <path fill="currentColor" d="M 1012 92 L 1018 51 L 1202 22 L 1196 62 L 1127 72 L 1058 509 L 1016 515 L 1084 79 Z"/>
-            </g>
-          </svg>
-          Feel it!
-        </a>
+        <h3 class="text-lg font-semibold mb-4">Partner e sponsor</h3>
+        <div class="flex flex-wrap gap-x-8 gap-y-5">
+          <div>
+            <a href="https://feelitshop.com/" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-muted-foreground hover:text-accent transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1382 713" height="28px" version="1.1" aria-label="Feel it!">
+                <g>
+                  <path fill="rgb(70%,70%,70%)" d="M 429 184 L 451 181 L 445 221 L 341 237 L 322 371 L 299 371 L 323 217 Z"/>
+                  <path fill="rgb(70%,70%,70%)" d="M 624 154 L 646 151 L 640 191 L 536 207 L 517 341 L 494 341 L 518 187 Z"/>
+                  <path fill="rgb(70%,70%,70%)" d="M 717 139 L 737 136 L 678 537 L 655 540 Z"/>
+                  <path fill="currentColor" d="M 71 206 L 219 180 L 214 220 L 108 237 L 84 404 L 182 390 L 179 430 L 77 447 L 43 673 L 0 679 Z"/>
+                  <path fill="currentColor" d="M 271 174 L 417 149 L 412 189 L 309 205 L 283 374 L 383 358 L 377 399 L 277 414 L 249 600 L 351 585 L 344 625 L 199 648 Z"/>
+                  <path fill="currentColor" d="M 468 140 L 613 115 L 608 155 L 505 171 L 479 340 L 579 324 L 573 365 L 473 380 L 445 566 L 547 551 L 540 591 L 395 614 Z"/>
+                  <path fill="currentColor" d="M 664 110 L 707 103 L 640 538 L 741 522 L 735 562 L 591 584 Z"/>
+                  <path fill="currentColor" d="M 948 63 L 991 56 L 917 531 L 874 537 Z"/>
+                  <path fill="currentColor" d="M 1208 417 L 1257 246 L 1194 259 L 1273 16 L 1354 0 L 1274 195 L 1333 186 Z"/>
+                  <path fill="currentColor" d="M 1012 92 L 1018 51 L 1202 22 L 1196 62 L 1127 72 L 1058 509 L 1016 515 L 1084 79 Z"/>
+                </g>
+              </svg>
+              Feel it!
+            </a>
+            <p class="text-xs text-muted-foreground mt-1">Spazio concesso da</p>
+          </div>
+          <div>
+            <a href="https://elevenlabs.io/impact-program" target="_blank" rel="noopener noreferrer">
+              <img src={u('/assets/elevenlabs-logo-black.svg')}
+                alt="ElevenLabs" class="h-5 w-auto mt-1.5" />
+            </a>
+            <p class="text-xs text-muted-foreground mt-1">Impact Program non profit</p>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -97,13 +109,6 @@ import { u } from '../utils/url'
           Cookie Policy
         </a>
       </div>
-    </div>
-
-    <div class="border-t border-border pt-8 mt-8 flex justify-center">
-      <a href="https://elevenlabs.io/impact-program" target="_blank" rel="noopener noreferrer">
-        <img src={u('/assets/elevenlabs-logo-black.svg')}
-          alt="ElevenLabs Impact Program" class="h-6 w-auto" />
-      </a>
     </div>
   </div>
 </footer>
