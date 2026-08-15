@@ -13,7 +13,9 @@ export default defineConfig({
       filter: (page) =>
         !page.includes('/mostre/') &&
         !page.includes('/newsletter/') &&
-        !page.includes('/su/'),
+        !page.includes('/su/') &&
+        !page.includes('/area-artisti/') &&
+        !page.includes('/cerca/'),
 
       // Priorità e changefreq per tipo di pagina
       serialize(item) {

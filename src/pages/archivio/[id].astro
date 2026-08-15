@@ -34,12 +34,57 @@ const creditLabels: Record<string, string> = {
 const creditOrder = ['cura', 'coordinamento', 'grafiche', 'allestimento', 'grazie']
 
 const fotoBase = `/assets/eventi/${evento.id}/`
+
+// Converte una data italiana ("13 Maggio 2026") in formato ISO 8601 per JSON-LD.
+const MESI_ITALIANI: Record<string, string> = {
+  gennaio: '01', febbraio: '02', marzo: '03', aprile: '04', maggio: '05', giugno: '06',
+  luglio: '07', agosto: '08', settembre: '09', ottobre: '10', novembre: '11', dicembre: '12',
+}
+function dataItalianaToISO(data?: string): string | undefined {
+  const m = data?.match(/^(\d{1,2})\s+([A-Za-zàèéìòù]+)\s+(\d{4})$/)
+  if (!m) return undefined
+  const mese = MESI_ITALIANI[m[2].toLowerCase()]
+  if (!mese) return undefined
+  return `${m[3]}-${mese}-${m[1].padStart(2, '0')}`
+}
+
+const startDate = dataItalianaToISO(info?.data)
+
+const exhibitionSchema = info ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ExhibitionEvent',
+  name: info.titolo,
+  description: info.descrizione,
+  ...(startDate ? { startDate } : {}),
+  location: {
+    '@type': 'ArtGallery',
+    name: 'Spazio Genesi ETS',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Galleria Commerciale Via Roma, 215, primo piano',
+      addressLocality: "L'Aquila",
+      addressRegion: 'AQ',
+      postalCode: '67100',
+      addressCountry: 'IT',
+    },
+  },
+  organizer: {
+    '@type': 'Organization',
+    name: 'Spazio Genesi ETS',
+    url: 'https://spaziogenesi.org',
+  },
+  ...(evento.locandina ? { image: `https://spaziogenesi.org${u(evento.locandina)}` } : {}),
+  ...(info.artiste && info.artiste.length > 0
+    ? { performer: info.artiste.map((nome: string) => ({ '@type': 'Person', name: nome })) }
+    : {}),
+}) : undefined
 ---
 
 <BaseLayout
   title={`${info?.titolo ?? evento.id} — Spazio Genesi ETS`}
   description={info?.descrizione ?? ''}
   ogImage={evento.locandina ? `https://spaziogenesi.org${u(evento.locandina)}` : undefined}
+  schemaLD={exhibitionSchema}
   activePage="archivio"
 >
 
