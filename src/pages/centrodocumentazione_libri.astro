@@ -55,10 +55,31 @@ try {
   console.error('Centrodoc fetch error:', e)
 }
 
+const catalogSchema = libri.length > 0 ? JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Centro Documentazione Ivan Donatelli — Catalogo libri',
+  numberOfItems: libri.length,
+  itemListElement: libri.map((libro, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Book',
+      name: libro.titolo,
+      ...(libro.autore ? { author: { '@type': 'Person', name: libro.autore } } : {}),
+      ...(libro.editore ? { publisher: { '@type': 'Organization', name: libro.editore } } : {}),
+      ...(libro.isbn ? { isbn: libro.isbn } : {}),
+      ...((libro.coverUrl || libro.thumbUrl) ? { image: libro.coverUrl || libro.thumbUrl } : {}),
+      ...(libro.estratto3 ? { description: libro.estratto3 } : {}),
+      ...(libro.googleBooks ? { url: libro.googleBooks } : {}),
+    },
+  })),
+}) : undefined
 ---
 <BaseLayout
   title="Centro Documentazione Ivan Donatelli — Spazio Genesi"
   description="Archivio libri del Centro Documentazione Ivan Donatelli presso Spazio Genesi. Testi, cataloghi, rarità, riviste, fanzine, donazioni."
+  schemaLD={catalogSchema}
   activePage=""
 >
   <section class="py-16 lg:py-20 bg-secondary border-b border-border">
