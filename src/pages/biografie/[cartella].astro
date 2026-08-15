@@ -39,6 +39,11 @@ const ogImageUrl = primaImg
   ? `https://ogcdn.net/e4b8c678-7bd5-445d-ba03-bfaad510c686/v4/${encodeURIComponent('Biografia ' + nomeDecoded)}/${encodeURIComponent('Artista Spazio Genesi')}/${encodeURIComponent('https://spaziogenesi.org/biografie/' + artista.cartella + '/' + primaImg.img)}/og.png`
   : undefined
 
+const sameAs = [
+  ...(artista.IG ? [`https://www.instagram.com/${artista.IG}`] : []),
+  ...(artista.social ? [artista.social] : []),
+]
+
 const personSchema = JSON.stringify({
   '@context': 'https://schema.org',
   '@type': 'Person',
@@ -46,6 +51,7 @@ const personSchema = JSON.stringify({
   description: abstract,
   ...(primaImg ? { image: `https://spaziogenesi.org/biografie/${artista.cartella}/${primaImg.img}` } : {}),
   url: `https://spaziogenesi.org/biografie/${artista.cartella}/`,
+  ...(sameAs.length > 0 ? { sameAs } : {}),
   affiliation: {
     '@type': 'Organization',
     name: 'Spazio Genesi ETS',
