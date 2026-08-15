@@ -6,7 +6,4 @@ Disallow: /mostre/
 Disallow: /newsletter/
 Disallow: /su/
 
-# Asset e file di build — non utili all'indice
-Disallow: /_astro/
-
 Sitemap: https://spaziogenesi.org/sitemap-index.xml
