@@ -329,6 +329,27 @@ import BaseLayout from '../layouts/BaseLayout.astro'
               </div>
             </details>
 
+            <details class="group border-b border-border">
+              <summary class="flex items-baseline gap-3 py-3.5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                <span class="text-accent font-semibold w-4 shrink-0 text-center transition-transform group-open:rotate-45">+</span>
+                <span>
+                  <span class="font-semibold text-foreground group-hover:text-accent transition-colors">Riserva sull'addestramento AI</span><br>
+                  <span class="text-sm text-muted-foreground">Puoi dichiarare che non vuoi che la tua opera sia usata per addestrare sistemi di intelligenza artificiale.</span>
+                </span>
+              </summary>
+              <div class="pb-4 pl-7 text-sm text-muted-foreground space-y-2">
+                <p>Al momento dell'attestazione puoi scegliere se <strong class="text-foreground">acconsenti</strong>,
+                <strong class="text-foreground">acconsenti solo a condizioni</strong> da concordare, oppure
+                <strong class="text-foreground">non acconsenti</strong> che l'opera venga usata per addestrare
+                sistemi di intelligenza artificiale. La scelta è facoltativa e, se la fai, viene registrata con la
+                stessa data e la stessa firma del certificato: non è modificabile dopo l'emissione ed è verificabile
+                a partire dalla sola impronta del file, anche se il file che circola in giro ha perso ogni metadato.</p>
+                <p><strong class="text-foreground">Cosa non fa:</strong> non impedisce a nessuno di usare l'opera —
+                nessun blocco tecnico esiste, né potrebbe esistere una volta condiviso il file. Rende però l'uso non
+                autorizzato dimostrabile, e toglie a chi lo facesse la possibilità di dire di non poter sapere.</p>
+              </div>
+            </details>
+
           </div>
 
           <p class="text-sm text-muted-foreground mt-6 px-4 py-3 bg-secondary border border-border rounded-lg">
