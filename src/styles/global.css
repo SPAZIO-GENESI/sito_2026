@@ -84,6 +84,13 @@ h4 {
   margin: 1rem 0;
 }
 
+.regdiv audio,
+[contenteditable] audio {
+  display: block;
+  width: 100%;
+  margin: 0.6em 0;
+}
+
 /* elenchi puntati nelle bio / descrizioni (e negli editor visuali) */
 .regdiv ul,
 [contenteditable] ul {

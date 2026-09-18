@@ -1,9 +1,14 @@
 // Mini editor visuale (zero dipendenze) per i campi bio.
-// Produce solo i tag ammessi: b, i, br, hr, p, a[href]. Il server sanifica comunque.
+// Produce solo i tag ammessi: b, i, br, hr, p, a[href], audio[src]. Il server sanifica comunque.
 (function () {
   function esc(s) {
     return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
+  function escAttr(s) {
+    return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+  }
+  // src ammessi: http/https assoluto, oppure path relativo al sito (upload manuale in /public)
+  const AUDIO_SRC_OK = /^(https?:\/\/|\/)/i;
 
   // DOM (contenteditable) -> HTML ristretto
   function walk(node) {
@@ -20,6 +25,11 @@
         const href = n.getAttribute('href') || '';
         const i = walk(n);
         out += /^(https?:|mailto:)/i.test(href) ? '<a href="' + href + '">' + i + '</a>' : i;
+        return;
+      }
+      if (tag === 'AUDIO') {
+        const src = n.getAttribute('src') || '';
+        if (AUDIO_SRC_OK.test(src)) out += '<audio controls src="' + escAttr(src) + '"></audio>';
         return;
       }
       if (tag === 'P') {
@@ -66,6 +76,11 @@
           if (cmd === 'createLink') {
             const url = prompt('Indirizzo del link (https://… oppure mailto:…):', 'https://');
             if (url) document.execCommand('createLink', false, url);
+          } else if (cmd === 'insertAudio') {
+            const url = prompt('Indirizzo del file audio (https://… oppure /biografie/cartella/file.mp3):', 'https://');
+            if (!url) return;
+            if (!AUDIO_SRC_OK.test(url)) { alert('Indirizzo non valido: deve iniziare con https:// oppure con /'); return; }
+            document.execCommand('insertHTML', false, '<audio controls src="' + escAttr(url) + '"></audio><br>');
           } else {
             document.execCommand(cmd, false, null);
           }
