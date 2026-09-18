@@ -29,7 +29,7 @@
       }
       if (tag === 'AUDIO') {
         const src = n.getAttribute('src') || '';
-        if (AUDIO_SRC_OK.test(src)) out += '<audio controls src="' + escAttr(src) + '"></audio>';
+        if (AUDIO_SRC_OK.test(src)) out += '<audio controls controlslist="nodownload" src="' + escAttr(src) + '"></audio>';
         return;
       }
       if (tag === 'P') {
@@ -80,7 +80,7 @@
             const url = prompt('Indirizzo del file audio (https://… oppure /biografie/cartella/file.mp3):', 'https://');
             if (!url) return;
             if (!AUDIO_SRC_OK.test(url)) { alert('Indirizzo non valido: deve iniziare con https:// oppure con /'); return; }
-            document.execCommand('insertHTML', false, '<audio controls src="' + escAttr(url) + '"></audio><br>');
+            document.execCommand('insertHTML', false, '<audio controls controlslist="nodownload" src="' + escAttr(url) + '"></audio><br>');
           } else {
             document.execCommand(cmd, false, null);
           }
