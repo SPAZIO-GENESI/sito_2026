@@ -1,5 +1,18 @@
 [
   {
+    "id": "carezze-sotto-la-pioggia",
+    "titolo": "CA-REZ-ZE SOTTO LA PIOGGIA",
+    "data": "6 Ottobre 2026",
+    "anno": 2026,
+    "tipo": "Mostra",
+    "artiste": ["Francesca Chiola", "Stefania Delli Compagni"],
+    "curatrice": "Sara Dias",
+    "tags": ["Pittura", "Video", "Performance", "Arte Contemporanea"],
+    "descrizione": "Francesca Chiola e Stefania Delli Compagni: gioco, infanzia e migrazione tra video, pittura e performance. Arte contemporanea, Spazio Genesi L'Aquila, ottobre 2026.",
+    "comunicato": "/assets/media/Comunicato stampa Carezze sotto la pioggia.pdf",
+    "href": "/archivio/carezze-sotto-la-pioggia/"
+  },
+  {
     "id": "adhuc-una-persistenza-ostinata",
     "titolo": "ADHUC, una persistenza ostinata",
     "data": "13 Maggio 2026",

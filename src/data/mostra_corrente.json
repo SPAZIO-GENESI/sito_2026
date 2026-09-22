@@ -45,8 +45,14 @@
     {
       "label": "20° Giornata del Contemporaneo — AMACI",
       "url": "https://www.amaci.org/events/66fd241cf01c41ed371319e0",
-      "logo": "https://www.amaci.org/wp-content/uploads/2020/01/logo_amaci_nero.svg",
-      "logoAlt": "AMACI"
+      "logo": "/assets/gdc20.png",
+      "logoAlt": "20ª Giornata del Contemporaneo"
+    },
+    {
+      "label": "22ª Giornata del Contemporaneo — 10 ottobre 2026",
+      "url": "https://www.amaci.org",
+      "logo": "/assets/eventi/amaci-gdc-2026/GDC2026-logo.png",
+      "logoAlt": "22ª Giornata del Contemporaneo"
     }
   ]
 }

@@ -1,7 +1,8 @@
 {
   "meta": {
-    "total_docs": 12,
+    "total_docs": 13,
     "doc_names": [
+      "Comunicato stampa Carezze sotto la pioggia",
       "Comunicato stampa Che non si potrà mai avere",
       "Comunicato stampa Possibile da scrivere",
       "Comunicato_stampa_Mēdèn_ágan",
@@ -16,8 +17,8 @@
       "Spaziogenesi_comunicato_trattienimipure"
     ],
     "total_concepts": 19,
-    "total_edges": 46,
-    "generated": "2026-06-06T09:14:29.850021+00:00"
+    "total_edges": 47,
+    "generated": "2026-09-22T19:10:50.911301+00:00"
   },
   "nodes": [
     {
@@ -25,7 +26,7 @@
       "label": "comunità",
       "cat": "spazio",
       "freq": 5,
-      "size": 0.773,
+      "size": 0.768,
       "docs": [
         {
           "name": "Comunicato stampa Che non si potrà mai avere",
@@ -63,9 +64,15 @@
       "id": "corpo",
       "label": "corpo",
       "cat": "corpo",
-      "freq": 33,
-      "size": 1.184,
+      "freq": 36,
+      "size": 1.189,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Luoghi e oggetti quotidiani - dai giochi d'infanzia ai prodotti di consumo di massa - vengono qui rifunzionalizzati per assumere nuovi significati.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato_stampa_Mēdèn_ágan",
           "title": "Mēdèn ágan",
@@ -126,9 +133,15 @@
       "id": "dolore",
       "label": "dolore",
       "cat": "relazione",
-      "freq": 16,
-      "size": 0.935,
+      "freq": 18,
+      "size": 0.944,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Chiola e Delli Compagni si rendono interpreti proprio di tale dualismo, da una parte vi è il bisogno di evadere da un luogo tangibile per avviare il proprio percorso di autodeterminazione mentre dall’altro tale necessità passa attraverso la…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "SPAZIO_GENESI_Aureum_Sul significare_COMUNICATO",
           "title": "Aureum. Sul significare",
@@ -153,9 +166,15 @@
       "id": "emotività",
       "label": "emotività",
       "cat": "relazione",
-      "freq": 4,
-      "size": 0.759,
+      "freq": 5,
+      "size": 0.768,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Suddetto agire può manifestarsi in modi differenti, ponendo un’effettiva distanza fisica tra sé ed il proprio luogo di provenienza o mediante un audace distacco emotivo da determinate porzioni della propria esistenza.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
           "title": "La comune esigenza di rispondere",
@@ -181,7 +200,7 @@
       "label": "equilibrio",
       "cat": "relazione",
       "freq": 18,
-      "size": 0.964,
+      "size": 0.944,
       "docs": [
         {
           "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
@@ -232,7 +251,7 @@
       "label": "femminile",
       "cat": "corpo",
       "freq": 20,
-      "size": 0.993,
+      "size": 0.972,
       "docs": [
         {
           "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
@@ -276,9 +295,15 @@
       "id": "figura",
       "label": "figura",
       "cat": "corpo",
-      "freq": 17,
-      "size": 0.949,
+      "freq": 18,
+      "size": 0.944,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Attraverso un consapevole allontanamento dalla propria area di comfort, l'artista si appropria di elementi culturali altri, dando vita a un'ibridazione proficua tra figurazione, colore e sollecitazioni di natura emotiva ed ambientale.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato_stampa_Mēdèn_ágan",
           "title": "Mēdèn ágan",
@@ -333,9 +358,15 @@
       "id": "identità",
       "label": "identità",
       "cat": "relazione",
-      "freq": 7,
-      "size": 0.803,
+      "freq": 8,
+      "size": 0.809,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Il presente appuntamento intende focalizzarsi sul ruolo che il gioco e la migrazione assumono nel percorso individuativo di ciascun soggetto.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato_stampa_Mēdèn_ágan",
           "title": "Mēdèn ágan",
@@ -373,7 +404,7 @@
       "label": "materia",
       "cat": "processo",
       "freq": 23,
-      "size": 1.037,
+      "size": 1.012,
       "docs": [
         {
           "name": "Comunicato_stampa_Mēdèn_ágan",
@@ -417,9 +448,15 @@
       "id": "memoria",
       "label": "memoria",
       "cat": "memoria",
-      "freq": 26,
-      "size": 1.081,
+      "freq": 30,
+      "size": 1.107,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Vi è alla base un prepotente bisogno di ritrovare se stesse altrove, in luoghi altri che, seppur non familiari, siano in grado di trasmettere delle perturbanti tracce del passato.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato stampa Che non si potrà mai avere",
           "title": "Che non si potrà mai avere",
@@ -481,7 +518,7 @@
       "label": "narrazione",
       "cat": "memoria",
       "freq": 31,
-      "size": 1.155,
+      "size": 1.121,
       "docs": [
         {
           "name": "Comunicato stampa Possibile da scrivere",
@@ -555,9 +592,15 @@
       "id": "opera",
       "label": "opera",
       "cat": "processo",
-      "freq": 48,
-      "size": 1.404,
+      "freq": 51,
+      "size": 1.393,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Ciò avviene mediante l’esposizione delle opere di Francesca Chiola e Stefania Delli Compagni, artiste ed autrici che, mediante la loro produzione, sperimentano forme tramite cui tornare alle origini e ritrovare dei punti fermi in una quotid…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato stampa Che non si potrà mai avere",
           "title": "Che non si potrà mai avere",
@@ -636,9 +679,15 @@
       "id": "processo",
       "label": "processo",
       "cat": "processo",
-      "freq": 68,
-      "size": 1.697,
+      "freq": 72,
+      "size": 1.678,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Video, pittura, performance si offrono a servizio delle artiste Francesca Chiola e Stefania Delli Compagni allo scopo di evidenziare il profondo legame tra paura di lasciar andare e spinta alla ricostruzione.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato stampa Che non si potrà mai avere",
           "title": "Che non si potrà mai avere",
@@ -717,9 +766,15 @@
       "id": "quotidiano",
       "label": "quotidiano",
       "cat": "processo",
-      "freq": 24,
-      "size": 1.052,
+      "freq": 28,
+      "size": 1.08,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Suddetto agire può manifestarsi in modi differenti, ponendo un’effettiva distanza fisica tra sé ed il proprio luogo di provenienza o mediante un audace distacco emotivo da determinate porzioni della propria esistenza.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato stampa Possibile da scrivere",
           "title": "Possibile da scrivere",
@@ -780,9 +835,15 @@
       "id": "relazione",
       "label": "relazione",
       "cat": "relazione",
-      "freq": 75,
+      "freq": 81,
       "size": 1.8,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Francesca Chiola (Pescara, 1999) 2026 – Corso di Sound design con Fabio Perletta 2025 – Diploma accademico di secondo livello in Arti visive presso l’Accademia di Belle Arti di L’Aquila (AQ) 2023 – Diploma accademico di primo livello in Pit…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato stampa Che non si potrà mai avere",
           "title": "Che non si potrà mai avere",
@@ -862,7 +923,7 @@
       "label": "soglia",
       "cat": "spazio",
       "freq": 12,
-      "size": 0.876,
+      "size": 0.863,
       "docs": [
         {
           "name": "Comunicato stampa Che non si potrà mai avere",
@@ -906,9 +967,15 @@
       "id": "spazio",
       "label": "spazio",
       "cat": "spazio",
-      "freq": 20,
-      "size": 0.993,
+      "freq": 25,
+      "size": 1.04,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Martedì 6 ottobre presso Spazio Genesi, Carezze sotto la pioggia.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato stampa Possibile da scrivere",
           "title": "Possibile da scrivere",
@@ -963,9 +1030,15 @@
       "id": "tempo",
       "label": "tempo",
       "cat": "memoria",
-      "freq": 19,
-      "size": 0.979,
+      "freq": 24,
+      "size": 1.026,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Sottratti alla loro banalità, essi diventano strumenti per contrastare la frenesia del tempo presente ed affrontare la paura della perdita e la vulnerabilità.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato stampa Che non si potrà mai avere",
           "title": "Che non si potrà mai avere",
@@ -1032,9 +1105,15 @@
       "id": "traccia",
       "label": "traccia",
       "cat": "corpo",
-      "freq": 17,
-      "size": 0.949,
+      "freq": 19,
+      "size": 0.958,
       "docs": [
+        {
+          "name": "Comunicato stampa Carezze sotto la pioggia",
+          "title": "Comunicato stampa Carezze sotto la pioggia",
+          "excerpt": "Vi è alla base un prepotente bisogno di ritrovare se stesse altrove, in luoghi altri che, seppur non familiari, siano in grado di trasmettere delle perturbanti tracce del passato.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/Comunicato%20stampa%20Carezze%20sotto%20la%20pioggia.pdf"
+        },
         {
           "name": "Comunicato stampa Che non si potrà mai avere",
           "title": "Che non si potrà mai avere",
@@ -1095,227 +1174,232 @@
     {
       "source": "dolore",
       "target": "traccia",
-      "weight": 0.977
+      "weight": 0.942
     },
     {
       "source": "emotività",
-      "target": "identità",
-      "weight": 0.929
+      "target": "spazio",
+      "weight": 0.899
     },
     {
       "source": "dolore",
       "target": "spazio",
-      "weight": 0.892
-    },
-    {
-      "source": "figura",
-      "target": "identità",
-      "weight": 0.843
-    },
-    {
-      "source": "dolore",
-      "target": "tempo",
-      "weight": 0.824
+      "weight": 0.869
     },
     {
       "source": "femminile",
       "target": "narrazione",
-      "weight": 0.805
+      "weight": 0.86
+    },
+    {
+      "source": "emotività",
+      "target": "identità",
+      "weight": 0.827
+    },
+    {
+      "source": "figura",
+      "target": "identità",
+      "weight": 0.813
+    },
+    {
+      "source": "dolore",
+      "target": "tempo",
+      "weight": 0.803
     },
     {
       "source": "emotività",
       "target": "memoria",
-      "weight": 0.698
-    },
-    {
-      "source": "emotività",
-      "target": "spazio",
-      "weight": 0.693
-    },
-    {
-      "source": "emotività",
-      "target": "figura",
-      "weight": 0.689
-    },
-    {
-      "source": "materia",
-      "target": "quotidiano",
-      "weight": 0.678
+      "weight": 0.697
     },
     {
       "source": "femminile",
       "target": "figura",
-      "weight": 0.666
+      "weight": 0.692
     },
     {
       "source": "emotività",
-      "target": "equilibrio",
-      "weight": 0.664
-    },
-    {
-      "source": "spazio",
-      "target": "tempo",
-      "weight": 0.653
+      "target": "quotidiano",
+      "weight": 0.681
     },
     {
       "source": "corpo",
       "target": "femminile",
-      "weight": 0.653
+      "weight": 0.666
+    },
+    {
+      "source": "materia",
+      "target": "quotidiano",
+      "weight": 0.661
+    },
+    {
+      "source": "spazio",
+      "target": "tempo",
+      "weight": 0.628
     },
     {
       "source": "soglia",
       "target": "traccia",
-      "weight": 0.624
+      "weight": 0.625
     },
     {
-      "source": "corpo",
+      "source": "emotività",
       "target": "figura",
-      "weight": 0.609
-    },
-    {
-      "source": "femminile",
-      "target": "quotidiano",
-      "weight": 0.609
+      "weight": 0.615
     },
     {
       "source": "corpo",
       "target": "identità",
-      "weight": 0.604
+      "weight": 0.612
     },
     {
-      "source": "figura",
-      "target": "traccia",
-      "weight": 0.603
+      "source": "equilibrio",
+      "target": "figura",
+      "weight": 0.609
     },
     {
-      "source": "comunità",
-      "target": "processo",
-      "weight": 0.57
+      "source": "identità",
+      "target": "tempo",
+      "weight": 0.605
     },
     {
-      "source": "dolore",
-      "target": "soglia",
-      "weight": 0.567
+      "source": "corpo",
+      "target": "figura",
+      "weight": 0.605
     },
     {
       "source": "memoria",
       "target": "quotidiano",
+      "weight": 0.594
+    },
+    {
+      "source": "comunità",
+      "target": "processo",
+      "weight": 0.593
+    },
+    {
+      "source": "femminile",
+      "target": "quotidiano",
+      "weight": 0.59
+    },
+    {
+      "source": "comunità",
+      "target": "femminile",
+      "weight": 0.568
+    },
+    {
+      "source": "comunità",
+      "target": "opera",
       "weight": 0.563
     },
     {
       "source": "corpo",
       "target": "soglia",
+      "weight": 0.563
+    },
+    {
+      "source": "dolore",
+      "target": "soglia",
+      "weight": 0.563
+    },
+    {
+      "source": "spazio",
+      "target": "traccia",
       "weight": 0.553
     },
     {
-      "source": "comunità",
-      "target": "opera",
-      "weight": 0.542
-    },
-    {
-      "source": "soglia",
-      "target": "spazio",
-      "weight": 0.526
-    },
-    {
-      "source": "identità",
+      "source": "corpo",
       "target": "tempo",
-      "weight": 0.522
+      "weight": 0.534
     },
     {
       "source": "comunità",
-      "target": "femminile",
+      "target": "relazione",
       "weight": 0.519
     },
     {
-      "source": "tempo",
-      "target": "traccia",
-      "weight": 0.512
+      "source": "equilibrio",
+      "target": "processo",
+      "weight": 0.518
     },
     {
-      "source": "opera",
-      "target": "tempo",
+      "source": "memoria",
+      "target": "traccia",
       "weight": 0.51
     },
     {
       "source": "comunità",
-      "target": "relazione",
-      "weight": 0.506
-    },
-    {
-      "source": "corpo",
-      "target": "spazio",
-      "weight": 0.504
-    },
-    {
-      "source": "memoria",
       "target": "soglia",
-      "weight": 0.5
+      "weight": 0.508
     },
     {
-      "source": "equilibrio",
-      "target": "processo",
-      "weight": 0.496
+      "source": "narrazione",
+      "target": "opera",
+      "weight": 0.505
     },
     {
       "source": "materia",
       "target": "traccia",
-      "weight": 0.492
+      "weight": 0.49
     },
     {
       "source": "memoria",
-      "target": "opera",
-      "weight": 0.489
-    },
-    {
-      "source": "narrazione",
-      "target": "opera",
+      "target": "soglia",
       "weight": 0.484
     },
     {
-      "source": "opera",
-      "target": "quotidiano",
-      "weight": 0.467
-    },
-    {
-      "source": "materia",
-      "target": "memoria",
-      "weight": 0.447
+      "source": "memoria",
+      "target": "tempo",
+      "weight": 0.475
     },
     {
       "source": "equilibrio",
       "target": "materia",
-      "weight": 0.425
+      "weight": 0.471
+    },
+    {
+      "source": "opera",
+      "target": "spazio",
+      "weight": 0.459
+    },
+    {
+      "source": "opera",
+      "target": "quotidiano",
+      "weight": 0.459
     },
     {
       "source": "narrazione",
       "target": "processo",
-      "weight": 0.416
+      "weight": 0.436
+    },
+    {
+      "source": "opera",
+      "target": "processo",
+      "weight": 0.434
     },
     {
       "source": "equilibrio",
       "target": "relazione",
-      "weight": 0.407
+      "weight": 0.417
     },
     {
-      "source": "narrazione",
-      "target": "quotidiano",
-      "weight": 0.403
+      "source": "equilibrio",
+      "target": "narrazione",
+      "weight": 0.399
     },
     {
       "source": "materia",
       "target": "relazione",
-      "weight": 0.375
+      "weight": 0.385
     },
     {
-      "source": "processo",
-      "target": "relazione",
-      "weight": 0.345
+      "source": "materia",
+      "target": "processo",
+      "weight": 0.381
     },
     {
       "source": "dolore",
       "target": "relazione",
-      "weight": 0.247
+      "weight": 0.201
     }
   ]
 }
