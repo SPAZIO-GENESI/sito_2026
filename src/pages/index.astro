@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import data from '../data/artisti.json'
 import mostra from '../data/mostra_corrente.json'
+import carezze from '../data/eventi/carezze-sotto-la-pioggia.json'
 import { flattenImmagini, extractAbstract } from '../types'
 import type { Artista } from '../types'
 import { u } from '../utils/url'
@@ -23,6 +24,12 @@ const ultimeInserite = artisti.slice(-3).reverse()
 // ───────────────────────────────────────────────────────────────────────────
 // `fit`/`position`: le slide riempiono il riquadro (object-cover). La locandina è
 // verticale, quindi viene inquadrata dall'alto per tenere leggibile il titolo.
+// Rassegna stampa dell'hero: stessa fonte della pagina evento
+// (`src/data/eventi/carezze-sotto-la-pioggia.json` → `comunicati_stampa`), così
+// basta aggiungere una testata lì e compare in entrambi i posti.
+type Comunicato = { fonte: string; titolo: string; url: string }
+const rassegna = carezze.comunicati_stampa as Comunicato[]
+
 type HeroSlide = { src: string; alt: string; fit?: string; position?: string }
 const heroSlides: HeroSlide[] = [
   { src: '/assets/eventi/carezze-sotto-la-pioggia/Carezze_locandina.png', alt: 'Locandina Ca-rez-ze sotto la pioggia — Francesca Chiola e Stefania Delli Compagni, Spazio Genesi, 6 ottobre 2026', position: 'object-top' },
@@ -111,6 +118,19 @@ const heroSlides: HeroSlide[] = [
               </svg>
             </a>
           </div>
+
+          {rassegna.length > 0 && (
+            <p class="mt-6 text-xs text-muted-foreground leading-relaxed">
+              <span class="uppercase tracking-wider">Ne hanno parlato</span>
+              {rassegna.map((cs) => (
+                <Fragment>
+                  <span class="text-border" aria-hidden="true"> · </span>
+                  <a href={cs.url} target="_blank" rel="noopener noreferrer" title={cs.titolo}
+                    class="underline decoration-border underline-offset-2 hover:text-accent transition-colors">{cs.fonte}</a>
+                </Fragment>
+              ))}
+            </p>
+          )}
         </div>
 
       </div>
