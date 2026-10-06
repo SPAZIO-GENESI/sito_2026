@@ -47,11 +47,11 @@
       if (imgs.length) {
         grid.innerHTML = imgs.map((e) => {
           const cap = (e.des || e.deslunga)
-            ? '<figcaption class="p-4 bg-card">' + (e.des ? '<p class="text-sm font-medium text-foreground mb-1">' + eh(e.des) + '</p>' : '') + (e.deslunga ? '<div class="opera-desc regdiv text-xs text-muted-foreground">' + e.deslunga + '</div><button type="button" class="opera-toggle">Leggi tutto &#9662;</button>' : '') + '</figcaption>'
+            ? '<figcaption class="p-4 bg-card">' + (e.des ? '<p class="opera-caption text-sm font-medium text-foreground mb-1">' + e.des + '</p>' : '') + (e.deslunga ? '<div class="opera-desc regdiv text-xs text-muted-foreground">' + e.deslunga + '</div><button type="button" class="opera-toggle">Leggi tutto &#9662;</button>' : '') + '</figcaption>'
             : '';
           const media = isVid(e.img)
             ? '<video src="' + resolve(e.img) + '" controls preload="metadata" class="w-full bg-black"></video>'
-            : '<img src="' + resolve(e.img) + '" alt="' + eh(e.des || '') + '" class="w-full object-cover" loading="lazy" />';
+            : '<img src="' + resolve(e.img) + '" alt="' + eh(String(e.des || '').replace(/<[^>]*>/g, '').trim()) + '" class="w-full object-cover" loading="lazy" />';
           return '<figure class="rounded-lg overflow-hidden shadow-lg">' + media + cap + '</figure>';
         }).join('');
         if (sec) sec.classList.remove('hidden');
