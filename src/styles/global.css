@@ -74,7 +74,8 @@ h4 {
   word-break: break-word;
 }
 
-.regdiv a {
+.regdiv a,
+.opera-caption a {
   color: var(--accent);
   text-decoration: underline;
 }

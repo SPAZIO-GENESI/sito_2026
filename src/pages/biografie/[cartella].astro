@@ -26,6 +26,8 @@ const abstract = extractAbstract(artista.bio, 300)
 // URL media: assoluto (R2) usato così com'è, altrimenti file locale in /public
 const imgSrc = (v: string) => (/^https?:\/\//.test(v) ? v : u(`/biografie/${artista.cartella}/${v}`))
 const isVideo = (v: string) => /\.(mp4|webm|mov|m4v)$/i.test(v)
+// la didascalia breve può contenere HTML (es. link): per l'alt serve solo il testo
+const stripTags = (s: string) => (s || '').replace(/<[^>]*>/g, '').trim()
 // il ritratto/OG è sempre un'immagine (mai un video)
 const primaImg = tutteImg.find(i => !isVideo(i.img))
 
@@ -215,14 +217,14 @@ const personSchema = JSON.stringify({
             ) : (
               <img
                 src={imgSrc(img.img)}
-                alt={img.des || nomeDecoded}
+                alt={stripTags(img.des) || nomeDecoded}
                 class="w-full object-cover"
                 loading="lazy"
               />
             )}
             {(img.des || img.deslunga) && (
               <figcaption class="p-4 bg-card">
-                {img.des && <p class="text-sm font-medium text-foreground mb-1">{img.des}</p>}
+                {img.des && <p class="opera-caption text-sm font-medium text-foreground mb-1" set:html={img.des} />}
                 {img.deslunga && (
                   <>
                     <div class="opera-desc regdiv text-xs text-muted-foreground">
