@@ -1,6 +1,6 @@
 {
   "meta": {
-    "total_docs": 13,
+    "total_docs": 14,
     "doc_names": [
       "Comunicato stampa Carezze sotto la pioggia",
       "Comunicato stampa Che non si potrà mai avere",
@@ -14,11 +14,12 @@
       "SPAZIO_GENESI_comunicato_ADHUC._Una_persistenza_ostinata",
       "SPAZIO_GENESI_comunicato_Tessere",
       "SPAZIO_GENESI_comunicato_amore_e_odio",
-      "Spaziogenesi_comunicato_trattienimipure"
+      "Spaziogenesi_comunicato_trattienimipure",
+      "comunicato_stampa_natalucci_turco-ANATOMIE "
     ],
     "total_concepts": 19,
-    "total_edges": 47,
-    "generated": "2026-09-22T19:10:50.911301+00:00"
+    "total_edges": 46,
+    "generated": "2026-11-04T18:03:34.430433+00:00"
   },
   "nodes": [
     {
@@ -26,7 +27,7 @@
       "label": "comunità",
       "cat": "spazio",
       "freq": 5,
-      "size": 0.768,
+      "size": 0.765,
       "docs": [
         {
           "name": "Comunicato stampa Che non si potrà mai avere",
@@ -64,8 +65,8 @@
       "id": "corpo",
       "label": "corpo",
       "cat": "corpo",
-      "freq": 36,
-      "size": 1.189,
+      "freq": 41,
+      "size": 1.237,
       "docs": [
         {
           "name": "Comunicato stampa Carezze sotto la pioggia",
@@ -126,6 +127,12 @@
           "title": "Trattienimi pure",
           "excerpt": "La mostra, ponendo in dialogo le artiste Sabrina Iezzi e Marianna Mancini, intende riflettere sul ruolo del corpo in quanto entità attraversabile e multiforme.",
           "pdf_url": "https://spaziogenesi.org/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "Lo sguardo delle artiste, spaziando dalla grafica editoriale, l'incisione e la pittura ad olio convergono nell'utilizzare il corpo femminile e la creatura non umana come proiezioni plastiche di istanze interiori, fragilità e desideri altrim…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -134,7 +141,7 @@
       "label": "dolore",
       "cat": "relazione",
       "freq": 18,
-      "size": 0.944,
+      "size": 0.936,
       "docs": [
         {
           "name": "Comunicato stampa Carezze sotto la pioggia",
@@ -166,8 +173,8 @@
       "id": "emotività",
       "label": "emotività",
       "cat": "relazione",
-      "freq": 5,
-      "size": 0.768,
+      "freq": 7,
+      "size": 0.792,
       "docs": [
         {
           "name": "Comunicato stampa Carezze sotto la pioggia",
@@ -192,6 +199,12 @@
           "title": "Trattienimi pure",
           "excerpt": "Nella costante stratificazione della memoria, uno spazio centrale è destinato alle reminiscenze del passato familiare che con emotività temperata vengono riportate alla luce mediante la pratica del narrare storie.",
           "pdf_url": "https://spaziogenesi.org/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "La natura si fa ecosistema dell'anima e cassa di risonanza delle emozioni: i cicli del giorno e della notte si fondono con la figura femminile in un unico, ininterrotto organismo vivente.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -200,7 +213,7 @@
       "label": "equilibrio",
       "cat": "relazione",
       "freq": 18,
-      "size": 0.944,
+      "size": 0.936,
       "docs": [
         {
           "name": "Comunicato_stampa_SPAZIOGENESI_Ciò_che_conosco",
@@ -250,8 +263,8 @@
       "id": "femminile",
       "label": "femminile",
       "cat": "corpo",
-      "freq": 20,
-      "size": 0.972,
+      "freq": 24,
+      "size": 1.014,
       "docs": [
         {
           "name": "Comunicato_stampa_SPAZIO_GENESI_La_comune_esigenza_di_rispondere",
@@ -288,6 +301,12 @@
           "title": "Trattienimi pure",
           "excerpt": "La figura femminile diviene narratrice del mondo intorno a sé, della propria vita e dei propri tentativi di sublimazione.",
           "pdf_url": "https://spaziogenesi.org/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "Lo sguardo delle artiste, spaziando dalla grafica editoriale, l'incisione e la pittura ad olio convergono nell'utilizzare il corpo femminile e la creatura non umana come proiezioni plastiche di istanze interiori, fragilità e desideri altrim…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -295,8 +314,8 @@
       "id": "figura",
       "label": "figura",
       "cat": "corpo",
-      "freq": 18,
-      "size": 0.944,
+      "freq": 23,
+      "size": 1.001,
       "docs": [
         {
           "name": "Comunicato stampa Carezze sotto la pioggia",
@@ -351,6 +370,12 @@
           "title": "Trattienimi pure",
           "excerpt": "La figura femminile diviene narratrice del mondo intorno a sé, della propria vita e dei propri tentativi di sublimazione.",
           "pdf_url": "https://spaziogenesi.org/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "Anatomie dell'Altrove Il rifugio immaginifico tra trasfigurazione e indagine interiore Caterina Natalucci e Elisa Turco.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -359,7 +384,7 @@
       "label": "identità",
       "cat": "relazione",
       "freq": 8,
-      "size": 0.809,
+      "size": 0.805,
       "docs": [
         {
           "name": "Comunicato stampa Carezze sotto la pioggia",
@@ -403,8 +428,8 @@
       "id": "materia",
       "label": "materia",
       "cat": "processo",
-      "freq": 23,
-      "size": 1.012,
+      "freq": 27,
+      "size": 1.054,
       "docs": [
         {
           "name": "Comunicato_stampa_Mēdèn_ágan",
@@ -441,6 +466,12 @@
           "title": "Tessere",
           "excerpt": "abstract Mercoledì 3 dicembre presso Spazio Genesi, Tessere.",
           "pdf_url": "https://spaziogenesi.org/assets/media/SPAZIO_GENESI_comunicato_Tessere.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "Mercoledì 18 novembre 2026, alle ore 18.00, presso la Galleria Commerciale di Via Roma a L’Aquila si terrà il vernissage della mostra d'arte contemporanea organizzata da Spazio Genesi, realtà associativa nata per creare connessioni tra gli…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -448,8 +479,8 @@
       "id": "memoria",
       "label": "memoria",
       "cat": "memoria",
-      "freq": 30,
-      "size": 1.107,
+      "freq": 34,
+      "size": 1.145,
       "docs": [
         {
           "name": "Comunicato stampa Carezze sotto la pioggia",
@@ -510,6 +541,12 @@
           "title": "Trattienimi pure",
           "excerpt": "Nella costante stratificazione della memoria, uno spazio centrale è destinato alle reminiscenze del passato familiare che con emotività temperata vengono riportate alla luce mediante la pratica del narrare storie.",
           "pdf_url": "https://spaziogenesi.org/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "Dall’altra, l’alchimia della grafica d’arte — tra acquaforti, cianotipie, litografie e trasparenze in acetato — catturano una natura più intima che si fa impronta impressa sulla materia, restituendo il ricordo di un'evasione nell’altrove ch…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -517,8 +554,8 @@
       "id": "narrazione",
       "label": "narrazione",
       "cat": "memoria",
-      "freq": 31,
-      "size": 1.121,
+      "freq": 32,
+      "size": 1.119,
       "docs": [
         {
           "name": "Comunicato stampa Possibile da scrivere",
@@ -585,6 +622,12 @@
           "title": "Trattienimi pure",
           "excerpt": "Trattienimi pure La pratica artistica come modalità per dissolversi e al contempo come linguaggio per non morire.",
           "pdf_url": "https://spaziogenesi.org/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "All'interno dell’immaginifico, la narrazione intreccia continuamente la forza protettiva dei grandi elementi naturali alla delicatezza tagliente della traccia intima: da un lato, la densità della pittura a olio evoca una natura cosmica e no…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -593,7 +636,7 @@
       "label": "opera",
       "cat": "processo",
       "freq": 51,
-      "size": 1.393,
+      "size": 1.368,
       "docs": [
         {
           "name": "Comunicato stampa Carezze sotto la pioggia",
@@ -679,8 +722,8 @@
       "id": "processo",
       "label": "processo",
       "cat": "processo",
-      "freq": 72,
-      "size": 1.678,
+      "freq": 78,
+      "size": 1.721,
       "docs": [
         {
           "name": "Comunicato stampa Carezze sotto la pioggia",
@@ -759,6 +802,12 @@
           "title": "Trattienimi pure",
           "excerpt": "Trattienimi pure La pratica artistica come modalità per dissolversi e al contempo come linguaggio per non morire.",
           "pdf_url": "https://spaziogenesi.org/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "Lo sguardo delle artiste, spaziando dalla grafica editoriale, l'incisione e la pittura ad olio convergono nell'utilizzare il corpo femminile e la creatura non umana come proiezioni plastiche di istanze interiori, fragilità e desideri altrim…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -766,8 +815,8 @@
       "id": "quotidiano",
       "label": "quotidiano",
       "cat": "processo",
-      "freq": 28,
-      "size": 1.08,
+      "freq": 31,
+      "size": 1.106,
       "docs": [
         {
           "name": "Comunicato stampa Carezze sotto la pioggia",
@@ -828,6 +877,12 @@
           "title": "Trattienimi pure",
           "excerpt": "La figura femminile diviene narratrice del mondo intorno a sé, della propria vita e dei propri tentativi di sublimazione.",
           "pdf_url": "https://spaziogenesi.org/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "La mostra invita il visitatore a varcare la soglia della realtà ordinaria per immergersi in un mondo immaginifico inteso come spazio di risonanza emotiva, un territorio sospeso entro cui rispecchiarsi e interrogare la propria interiorità.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -835,7 +890,7 @@
       "id": "relazione",
       "label": "relazione",
       "cat": "relazione",
-      "freq": 81,
+      "freq": 84,
       "size": 1.8,
       "docs": [
         {
@@ -915,6 +970,12 @@
           "title": "Trattienimi pure",
           "excerpt": "La mostra, ponendo in dialogo le artiste Sabrina Iezzi e Marianna Mancini, intende riflettere sul ruolo del corpo in quanto entità attraversabile e multiforme.",
           "pdf_url": "https://spaziogenesi.org/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "Il suo immaginario intrattiene un dialogo con la poetica di Loputyn, condividendone la capacità di tradurre il perturbante in un'iconografia delicata ma tagliente.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -922,8 +983,8 @@
       "id": "soglia",
       "label": "soglia",
       "cat": "spazio",
-      "freq": 12,
-      "size": 0.863,
+      "freq": 15,
+      "size": 0.896,
       "docs": [
         {
           "name": "Comunicato stampa Che non si potrà mai avere",
@@ -960,6 +1021,12 @@
           "title": "Trattienimi pure",
           "excerpt": "Nei loro lavori, la massa corporea diviene nascondiglio, spazio sicuro e legittimato, esso assurge a dispositivo tramite cui varcare una soglia.",
           "pdf_url": "https://spaziogenesi.org/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "La mostra invita il visitatore a varcare la soglia della realtà ordinaria per immergersi in un mondo immaginifico inteso come spazio di risonanza emotiva, un territorio sospeso entro cui rispecchiarsi e interrogare la propria interiorità.",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -967,7 +1034,7 @@
       "id": "spazio",
       "label": "spazio",
       "cat": "spazio",
-      "freq": 25,
+      "freq": 26,
       "size": 1.04,
       "docs": [
         {
@@ -1023,6 +1090,12 @@
           "title": "L'amore e l'odio",
           "excerpt": "Mercoledì 28 gennaio presso Spazio Genesi, L’amore e l’odio.",
           "pdf_url": "https://spaziogenesi.org/assets/media/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "Mercoledì 18 novembre 2026, alle ore 18.00, presso la Galleria Commerciale di Via Roma a L’Aquila si terrà il vernissage della mostra d'arte contemporanea organizzata da Spazio Genesi, realtà associativa nata per creare connessioni tra gli…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -1030,8 +1103,8 @@
       "id": "tempo",
       "label": "tempo",
       "cat": "memoria",
-      "freq": 24,
-      "size": 1.026,
+      "freq": 27,
+      "size": 1.054,
       "docs": [
         {
           "name": "Comunicato stampa Carezze sotto la pioggia",
@@ -1098,6 +1171,12 @@
           "title": "Trattienimi pure",
           "excerpt": "Trattienimi pure La pratica artistica come modalità per dissolversi e al contempo come linguaggio per non morire.",
           "pdf_url": "https://spaziogenesi.org/assets/media/Spaziogenesi_comunicato_trattienimipure.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "Mercoledì 18 novembre 2026, alle ore 18.00, presso la Galleria Commerciale di Via Roma a L’Aquila si terrà il vernissage della mostra d'arte contemporanea organizzata da Spazio Genesi, realtà associativa nata per creare connessioni tra gli…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     },
@@ -1105,8 +1184,8 @@
       "id": "traccia",
       "label": "traccia",
       "cat": "corpo",
-      "freq": 19,
-      "size": 0.958,
+      "freq": 22,
+      "size": 0.988,
       "docs": [
         {
           "name": "Comunicato stampa Carezze sotto la pioggia",
@@ -1161,6 +1240,12 @@
           "title": "L'amore e l'odio",
           "excerpt": "di Marzo, STORIES UNTOLD MAGAZINE 2024 - ART & FASHION - nel segno dello stile, a cura dell’indirizzo di Moda e Costume dell’Accademia di Belle Arti, Palazzo Burri Gatti, L’Aquila (AQ) Sebastiano Bacci (Asti, 2004) In corso - Diploma accade…",
           "pdf_url": "https://spaziogenesi.org/assets/media/SPAZIO_GENESI_comunicato_amore_e_odio.pdf"
+        },
+        {
+          "name": "comunicato_stampa_natalucci_turco-ANATOMIE ",
+          "title": "comunicato stampa natalucci turco-ANATOMIE ",
+          "excerpt": "Il presente appuntamento propone le ricerche artistiche di Caterina Natalucci e Elisa Turco che rivelano una comune urgenza: filtrare la realtà attraverso il segno come strumento di permanenza, capace di mediare tra la fragilità dell'esperi…",
+          "pdf_url": "https://spaziogenesi.org/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE%20.pdf"
         }
       ]
     }
@@ -1174,12 +1259,7 @@
     {
       "source": "dolore",
       "target": "traccia",
-      "weight": 0.942
-    },
-    {
-      "source": "emotività",
-      "target": "spazio",
-      "weight": 0.899
+      "weight": 0.892
     },
     {
       "source": "dolore",
@@ -1189,217 +1269,217 @@
     {
       "source": "femminile",
       "target": "narrazione",
-      "weight": 0.86
+      "weight": 0.806
     },
     {
       "source": "emotività",
-      "target": "identità",
-      "weight": 0.827
+      "target": "spazio",
+      "weight": 0.77
+    },
+    {
+      "source": "dolore",
+      "target": "tempo",
+      "weight": 0.769
     },
     {
       "source": "figura",
       "target": "identità",
-      "weight": 0.813
-    },
-    {
-      "source": "dolore",
-      "target": "tempo",
-      "weight": 0.803
+      "weight": 0.723
     },
     {
       "source": "emotività",
-      "target": "memoria",
-      "weight": 0.697
+      "target": "quotidiano",
+      "weight": 0.722
+    },
+    {
+      "source": "emotività",
+      "target": "figura",
+      "weight": 0.713
+    },
+    {
+      "source": "emotività",
+      "target": "identità",
+      "weight": 0.696
     },
     {
       "source": "femminile",
       "target": "figura",
-      "weight": 0.692
-    },
-    {
-      "source": "emotività",
-      "target": "quotidiano",
-      "weight": 0.681
+      "weight": 0.685
     },
     {
       "source": "corpo",
       "target": "femminile",
-      "weight": 0.666
-    },
-    {
-      "source": "materia",
-      "target": "quotidiano",
-      "weight": 0.661
+      "weight": 0.681
     },
     {
       "source": "spazio",
       "target": "tempo",
-      "weight": 0.628
+      "weight": 0.64
+    },
+    {
+      "source": "corpo",
+      "target": "figura",
+      "weight": 0.605
+    },
+    {
+      "source": "materia",
+      "target": "quotidiano",
+      "weight": 0.593
+    },
+    {
+      "source": "comunità",
+      "target": "opera",
+      "weight": 0.586
+    },
+    {
+      "source": "comunità",
+      "target": "processo",
+      "weight": 0.58
     },
     {
       "source": "soglia",
       "target": "traccia",
-      "weight": 0.625
-    },
-    {
-      "source": "emotività",
-      "target": "figura",
-      "weight": 0.615
+      "weight": 0.578
     },
     {
       "source": "corpo",
       "target": "identità",
-      "weight": 0.612
-    },
-    {
-      "source": "equilibrio",
-      "target": "figura",
-      "weight": 0.609
+      "weight": 0.576
     },
     {
       "source": "identità",
       "target": "tempo",
-      "weight": 0.605
-    },
-    {
-      "source": "corpo",
-      "target": "figura",
-      "weight": 0.605
+      "weight": 0.575
     },
     {
       "source": "memoria",
       "target": "quotidiano",
-      "weight": 0.594
+      "weight": 0.574
+    },
+    {
+      "source": "materia",
+      "target": "traccia",
+      "weight": 0.57
+    },
+    {
+      "source": "emotività",
+      "target": "memoria",
+      "weight": 0.566
+    },
+    {
+      "source": "figura",
+      "target": "memoria",
+      "weight": 0.566
+    },
+    {
+      "source": "soglia",
+      "target": "tempo",
+      "weight": 0.555
+    },
+    {
+      "source": "soglia",
+      "target": "spazio",
+      "weight": 0.55
     },
     {
       "source": "comunità",
-      "target": "processo",
-      "weight": 0.593
+      "target": "relazione",
+      "weight": 0.527
     },
     {
       "source": "femminile",
       "target": "quotidiano",
-      "weight": 0.59
+      "weight": 0.525
     },
     {
-      "source": "comunità",
-      "target": "femminile",
-      "weight": 0.568
-    },
-    {
-      "source": "comunità",
+      "source": "narrazione",
       "target": "opera",
-      "weight": 0.563
-    },
-    {
-      "source": "corpo",
-      "target": "soglia",
-      "weight": 0.563
-    },
-    {
-      "source": "dolore",
-      "target": "soglia",
-      "weight": 0.563
+      "weight": 0.514
     },
     {
       "source": "spazio",
       "target": "traccia",
-      "weight": 0.553
+      "weight": 0.512
+    },
+    {
+      "source": "comunità",
+      "target": "femminile",
+      "weight": 0.51
+    },
+    {
+      "source": "equilibrio",
+      "target": "processo",
+      "weight": 0.506
+    },
+    {
+      "source": "corpo",
+      "target": "soglia",
+      "weight": 0.489
+    },
+    {
+      "source": "dolore",
+      "target": "soglia",
+      "weight": 0.487
     },
     {
       "source": "corpo",
       "target": "tempo",
-      "weight": 0.534
-    },
-    {
-      "source": "comunità",
-      "target": "relazione",
-      "weight": 0.519
-    },
-    {
-      "source": "equilibrio",
-      "target": "processo",
-      "weight": 0.518
-    },
-    {
-      "source": "memoria",
-      "target": "traccia",
-      "weight": 0.51
-    },
-    {
-      "source": "comunità",
-      "target": "soglia",
-      "weight": 0.508
-    },
-    {
-      "source": "narrazione",
-      "target": "opera",
-      "weight": 0.505
-    },
-    {
-      "source": "materia",
-      "target": "traccia",
-      "weight": 0.49
-    },
-    {
-      "source": "memoria",
-      "target": "soglia",
       "weight": 0.484
     },
     {
+      "source": "dolore",
+      "target": "opera",
+      "weight": 0.457
+    },
+    {
       "source": "memoria",
-      "target": "tempo",
-      "weight": 0.475
-    },
-    {
-      "source": "equilibrio",
-      "target": "materia",
-      "weight": 0.471
-    },
-    {
-      "source": "opera",
-      "target": "spazio",
-      "weight": 0.459
+      "target": "traccia",
+      "weight": 0.456
     },
     {
       "source": "opera",
       "target": "quotidiano",
-      "weight": 0.459
+      "weight": 0.439
+    },
+    {
+      "source": "memoria",
+      "target": "opera",
+      "weight": 0.437
+    },
+    {
+      "source": "equilibrio",
+      "target": "relazione",
+      "weight": 0.427
+    },
+    {
+      "source": "equilibrio",
+      "target": "materia",
+      "weight": 0.425
     },
     {
       "source": "narrazione",
       "target": "processo",
-      "weight": 0.436
-    },
-    {
-      "source": "opera",
-      "target": "processo",
-      "weight": 0.434
-    },
-    {
-      "source": "equilibrio",
-      "target": "relazione",
-      "weight": 0.417
+      "weight": 0.421
     },
     {
       "source": "equilibrio",
       "target": "narrazione",
-      "weight": 0.399
+      "weight": 0.411
     },
     {
-      "source": "materia",
+      "source": "processo",
       "target": "relazione",
-      "weight": 0.385
+      "weight": 0.361
     },
     {
       "source": "materia",
       "target": "processo",
-      "weight": 0.381
+      "weight": 0.355
     },
     {
-      "source": "dolore",
+      "source": "materia",
       "target": "relazione",
-      "weight": 0.201
+      "weight": 0.346
     }
   ]
 }
