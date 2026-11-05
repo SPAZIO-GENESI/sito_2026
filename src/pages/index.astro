@@ -157,7 +157,7 @@ const comunicato = '/assets/media/comunicato_stampa_natalucci_turco-ANATOMIE.pdf
             <a href={u(`/biografie/${artista.cartella}/`)} class="group block">
               <div class="overflow-hidden rounded-lg mb-3 aspect-video bg-muted">
                 {img && (
-                  <img src={u(`/biografie/${artista.cartella}/${img.img}`)} alt={nome}
+                  <img src={(/^https?:\/\//.test(img.img) ? img.img : u(`/biografie/${artista.cartella}/${img.img}`))} alt={nome}
                     class="w-full h-full object-cover group-hover:opacity-80 transition-opacity" loading="lazy" />
                 )}
               </div>

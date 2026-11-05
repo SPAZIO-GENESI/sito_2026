@@ -59,7 +59,7 @@ const artisti: Artista[] = data.artisti
               <div class="mb-3 rounded-lg overflow-hidden aspect-square bg-muted" data-thumb={artista.cartella}>
                 {primaImg ? (
                   <img
-                    src={u(`/biografie/${artista.cartella}/${primaImg.img}`)}
+                    src={(/^https?:\/\//.test(primaImg.img) ? primaImg.img : u(`/biografie/${artista.cartella}/${primaImg.img}`))}
                     alt={nomeDecoded}
                     class="w-full h-full object-cover group-hover:opacity-80 transition-opacity"
                     loading="lazy"
