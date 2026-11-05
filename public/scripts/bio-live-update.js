@@ -8,11 +8,8 @@
     const parts = location.pathname.split('/').filter(Boolean);
     const cartella = parts[parts.indexOf('biografie') + 1];
     if (!cartella) return;
-    // slug del sito -> slug nel database, dove differiscono
-    const DB_SLUG = { caterinanatalucci: 'caterinatalucci' };
-    const dbCartella = DB_SLUG[cartella] || cartella;
 
-    const r = await fetch(WORKER_URL + '/api/bio?cartella=' + encodeURIComponent(dbCartella), { cache: 'no-store' });
+    const r = await fetch(WORKER_URL + '/api/bio?cartella=' + encodeURIComponent(cartella), { cache: 'no-store' });
     if (!r.ok) return;
     const a = await r.json();
     if (a.error) return;
