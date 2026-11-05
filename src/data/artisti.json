@@ -750,6 +750,33 @@
           ]
         }
       ]
+    },
+    {
+      "cartella": "elisaturco",
+      "nome": "Elisa Turco",
+      "IG": "elisaa.aart",
+      "social": "https://www.tiktok.com/@ejlaisaart?_r=1&_t=ZG-9B9Y3YLsuCu",
+      "portfolio": "Portfolio elisa turco_20261027_160326_0000.pdf",
+      "bio": "Sono nata a Pesaro nel 2004, appassionata da sempre di arte. Ho frequentato il liceo artistico, dove ho avuto modo di avvicinarmi alla pittura a olio, una tecnica che mi ha affascinata e che è diventata parte fondamentale della mia ricerca artistica.<br>Successivamente mi sono trasferita a L’Aquila per frequentare l’Accademia di Belle Arti e approfondire il mio percorso. Il paesaggio aquilano ha avuto una forte influenza sul mio immaginario artistico, in particolare le imponenti montagne che caratterizzano il territorio, con la loro maestosità e il loro fascino suggestivo.<br><br>La mia ricerca artistica prende ispirazione principalmente dalla natura, dalla fotografia e dalle immagini fantastiche. Amo creare scenari immaginari, paesaggi fantastici e surreali, popolati da atmosfere misteriose, castelli medievali e suggestioni provenienti dal mondo dell’illustrazione fantasy.<br>Attraverso la pittura cerco di catturare istanti sospesi, quasi magici, capaci di trasportare chi osserva al di fuori della realtà quotidiana e di stimolarne l’immaginazione, invitandolo a sognare e a perdersi in mondi lontani.<br>Utilizzo tonalità fredde e profonde, come il blu, il verde e il viola, colori che contribuiscono a creare atmosfere cupe, enigmatiche e suggestive, nelle quali il reale si mescola con l'immaginario.",
+      "img": []
+    },
+    {
+      "cartella": "caterinanatalucci",
+      "nome": "Caterina Natalucci",
+      "IG": "mooonmilo",
+      "portfolio": "https://drive.google.com/file/d/1C08cWpBTz1XSzDkrwRcMDLzBIQxTF7Cv/view?usp=drivesdk",
+      "bio": "<b>Caterina Natalucci</b> (in arte <i>mooonmilo</i>), nata a Viterbo nel 2004 è da sempre appassionata della bellezza dell’arte, ha intrapreso il suo percorso creativo presso l’Accademia di Belle Arti de L’Aquila nel 2023, con il corso triennale in Grafica d’Arte e Illustrazione. Durante questo periodo ha partecipato a numerosi workshop e incontrato artisti da tutto il mondo, grazie ai quali ha migliorato la sua padronanza delle tecniche grafiche e la sua sensibilità artistica.<br>Solitamente le sue opere sono ambientate in spazi naturali come campi e boschi e come protagonisti hanno creature fantastiche.",
+      "img": [
+        {
+          "opere": [
+            {
+              "img": "https://artisti-api.it-e3f.workers.dev/img/caterinatalucci/b5da91e4.jpg",
+              "des": "Fairy Dance",
+              "deslunga": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

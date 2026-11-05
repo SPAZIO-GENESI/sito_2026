@@ -5,7 +5,10 @@
     const r = await fetch('https://artisti-api.it-e3f.workers.dev/api/portraits', { cache: 'no-store' });
     if (!r.ok) return;
     const { portraits } = await r.json();
+    // slug del database -> slug del sito, dove differiscono
+    const SITE_SLUG = { caterinatalucci: 'caterinanatalucci' };
     for (const p of portraits || []) {
+      p.cartella = SITE_SLUG[p.cartella] || p.cartella;
       const card = document.querySelector('[data-cartella="' + p.cartella + '"]');
       if (!card) continue;
       // nome
