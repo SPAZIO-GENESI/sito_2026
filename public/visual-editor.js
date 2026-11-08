@@ -1,5 +1,5 @@
 // Mini editor visuale (zero dipendenze) per i campi bio.
-// Produce solo i tag ammessi: b, i, br, hr, p, a[href], audio[src]. Il server sanifica comunque.
+// Produce solo i tag ammessi: b, i, br, hr, p, a[href], audio[src], iframe YouTube (solo ID validato, markup rigenerato). Il server sanifica comunque.
 (function () {
   function esc(s) {
     return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -9,6 +9,24 @@
   }
   // src ammessi: http/https assoluto, oppure path relativo al sito (upload manuale in /public)
   const AUDIO_SRC_OK = /^(https?:\/\/|\/)/i;
+
+  // Solo YouTube: estrae l'ID (11 car.) da watch?v=, youtu.be, shorts, embed. Altrimenti null.
+  function youtubeId(url) {
+    let u;
+    try { u = new URL(String(url).trim()); } catch (e) { return null; }
+    if (u.protocol !== 'https:' && u.protocol !== 'http:') return null;
+    const host = u.hostname.replace(/^(www\.|m\.)/, '');
+    let id = null;
+    if (host === 'youtu.be') id = u.pathname.slice(1).split('/')[0];
+    else if (host === 'youtube.com' || host === 'youtube-nocookie.com') {
+      const m = /^\/(?:embed|shorts|live)\/([^/]+)/.exec(u.pathname);
+      id = m ? m[1] : (u.pathname === '/watch' ? u.searchParams.get('v') : null);
+    }
+    return id && /^[A-Za-z0-9_-]{11}$/.test(id) ? id : null;
+  }
+  function youtubeHtml(id) {
+    return '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '" title="Video YouTube" loading="lazy" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-presentation"></iframe>';
+  }
 
   // DOM (contenteditable) -> HTML ristretto
   function walk(node) {
@@ -30,6 +48,11 @@
       if (tag === 'AUDIO') {
         const src = n.getAttribute('src') || '';
         if (AUDIO_SRC_OK.test(src)) out += '<audio controls controlslist="nodownload" src="' + escAttr(src) + '"></audio>';
+        return;
+      }
+      if (tag === 'IFRAME') {
+        const id = youtubeId(n.getAttribute('src') || '');
+        if (id) out += youtubeHtml(id);
         return;
       }
       if (tag === 'P') {
@@ -81,6 +104,12 @@
             if (!url) return;
             if (!AUDIO_SRC_OK.test(url)) { alert('Indirizzo non valido: deve iniziare con https:// oppure con /'); return; }
             document.execCommand('insertHTML', false, '<audio controls controlslist="nodownload" src="' + escAttr(url) + '"></audio><br>');
+          } else if (cmd === 'insertYoutube') {
+            const url = prompt('Indirizzo del video YouTube (https://www.youtube.com/watch?v=… oppure https://youtu.be/…):', 'https://');
+            if (!url) return;
+            const id = youtubeId(url);
+            if (!id) { alert('Indirizzo non valido: sono ammessi solo video YouTube.'); return; }
+            document.execCommand('insertHTML', false, youtubeHtml(id) + '<br>');
           } else {
             document.execCommand(cmd, false, null);
           }

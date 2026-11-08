@@ -92,6 +92,24 @@ h4 {
   margin: 0.6em 0;
 }
 
+/* video YouTube incorporato nelle bio (e negli editor visuali) */
+.regdiv iframe,
+[contenteditable] iframe {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin: 1em auto;
+  border: 0;
+  border-radius: 0.5rem;
+  background: #000;
+}
+
+@media print {
+  .regdiv iframe { display: none !important; }
+}
+
 /* elenchi puntati nelle bio / descrizioni (e negli editor visuali) */
 .regdiv ul,
 [contenteditable] ul {
