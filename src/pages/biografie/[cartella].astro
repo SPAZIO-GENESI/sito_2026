@@ -138,8 +138,8 @@ const personSchema = JSON.stringify({
           </div>
 
           <div class="space-y-2 text-sm">
-            {artista.IG && (
-              <a id="lnk-ig" href={`https://www.instagram.com/${artista.IG}`} target="_blank" rel="noopener noreferrer"
+            {(
+              <a id="lnk-ig" href={artista.IG ? `https://www.instagram.com/${artista.IG}` : "#"} style={artista.IG ? undefined : "display:none"} target="_blank" rel="noopener noreferrer"
                 class="flex items-center gap-2 text-accent hover:opacity-80 transition-opacity">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -150,8 +150,8 @@ const personSchema = JSON.stringify({
                 <span data-igtext>Instagram @{artista.IG}</span>
               </a>
             )}
-            {artista.social && (
-              <a id="lnk-social" href={artista.social} target="_blank" rel="noopener noreferrer"
+            {(
+              <a id="lnk-social" href={artista.social || "#"} style={artista.social ? undefined : "display:none"} target="_blank" rel="noopener noreferrer"
                 class="flex items-center gap-2 text-accent hover:opacity-80 transition-opacity break-all">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
                   fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

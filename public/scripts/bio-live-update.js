@@ -23,9 +23,9 @@
       }
     }
     const ig = document.getElementById('lnk-ig');
-    if (ig && a.ig) { ig.href = 'https://www.instagram.com/' + a.ig; const t = ig.querySelector('[data-igtext]'); if (t) t.textContent = 'Instagram @' + a.ig; }
+    if (ig && a.ig) { ig.style.display = ''; ig.href = 'https://www.instagram.com/' + a.ig; const t = ig.querySelector('[data-igtext]'); if (t) t.textContent = 'Instagram @' + a.ig; }
     const soc = document.getElementById('lnk-social');
-    if (soc && a.social) { soc.href = a.social; const t = soc.querySelector('[data-soctext]'); if (t) t.textContent = a.social; }
+    if (soc && a.social) { soc.style.display = ''; soc.href = a.social; const t = soc.querySelector('[data-soctext]'); if (t) t.textContent = a.social; }
     const pf = document.getElementById('lnk-portfolio');
     if (pf && a.portfolio) { pf.href = /^https?:\/\//i.test(a.portfolio) ? a.portfolio : '/biografie/' + cartella + '/' + a.portfolio; }
 
